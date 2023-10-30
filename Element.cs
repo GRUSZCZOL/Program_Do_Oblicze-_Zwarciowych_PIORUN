@@ -41,5 +41,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Z = Math.Sqrt(setR * setR + setX * setX);
         }
 
+       
+
     }
 }

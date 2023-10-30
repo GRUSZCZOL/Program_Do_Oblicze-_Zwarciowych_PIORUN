@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
+using MathNet.Numerics.LinearAlgebra.Double;
+using MathNet.Numerics.LinearAlgebra.Complex32;
+using MathNet.Numerics;
+
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
@@ -38,8 +42,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             // Wgrywanie pliku przez filtrowanie treści
 
-            this.openFileDialog1.Filter = "PNG(*.png)|*.png|BitMap (*.BMP)|*.BMP|JPG(*.JPG)|*.JPG";
-           
+            this.openFileDialog1.Filter = "BMP Files (*.BMP;*.DIB;*.RLE)|*.BMP;*.DIB;*.RLE|JPEG Files (*.JPG;*.JPEG;*.JPE;*.JFIF)|*.JPG;*.JPEG;*.JPE;*.JFIF|GIF Files(*.GIF)|*.GIF|TIFF Files (*.TIF;*.TIFF)|*.TIF;*.TIFF|PNG Files(*.PNG)|*.PNG";
+           // Filtr dla obrazów
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -82,8 +86,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             pictureBox_Map.Image = null; // zamienia obraz na null
 
             // TODO: Usuwanie mapy wraz z elementami
-           
 
+            
         }
+
+       
     }
 }

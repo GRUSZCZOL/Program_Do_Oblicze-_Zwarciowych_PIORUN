@@ -63,11 +63,16 @@
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ustawieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rozwiązaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.odAutoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pomocToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.odAutoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zapiszToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zapiszJakoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.otwórzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.opcjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -430,7 +435,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.plikToolStripMenuItem,
             this.ustawieniaToolStripMenuItem,
-            this.pomocToolStripMenuItem});
+            this.pomocToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
@@ -439,6 +444,11 @@
             // 
             // plikToolStripMenuItem
             // 
+            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nowyToolStripMenuItem,
+            this.zapiszToolStripMenuItem,
+            this.zapiszJakoToolStripMenuItem,
+            this.otwórzToolStripMenuItem});
             this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
@@ -446,7 +456,8 @@
             // ustawieniaToolStripMenuItem
             // 
             this.ustawieniaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rozwiązaniaToolStripMenuItem});
+            this.rozwiązaniaToolStripMenuItem,
+            this.opcjeToolStripMenuItem});
             this.ustawieniaToolStripMenuItem.Name = "ustawieniaToolStripMenuItem";
             this.ustawieniaToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.ustawieniaToolStripMenuItem.Text = "Ustawienia";
@@ -454,40 +465,70 @@
             // rozwiązaniaToolStripMenuItem
             // 
             this.rozwiązaniaToolStripMenuItem.Name = "rozwiązaniaToolStripMenuItem";
-            this.rozwiązaniaToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.rozwiązaniaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.rozwiązaniaToolStripMenuItem.Text = "Rozwiązania";
-            // 
-            // pomocToolStripMenuItem
-            // 
-            this.pomocToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.odAutoraToolStripMenuItem,
-            this.skrótyKlawiszoweToolStripMenuItem,
-            this.poradnikToolStripMenuItem});
-            this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
-            this.pomocToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.pomocToolStripMenuItem.Text = "Pomoc";
-            // 
-            // odAutoraToolStripMenuItem
-            // 
-            this.odAutoraToolStripMenuItem.Name = "odAutoraToolStripMenuItem";
-            this.odAutoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.odAutoraToolStripMenuItem.Text = "Od autora";
-            // 
-            // skrótyKlawiszoweToolStripMenuItem
-            // 
-            this.skrótyKlawiszoweToolStripMenuItem.Name = "skrótyKlawiszoweToolStripMenuItem";
-            this.skrótyKlawiszoweToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.skrótyKlawiszoweToolStripMenuItem.Text = "Skróty klawiszowe";
-            // 
-            // poradnikToolStripMenuItem
-            // 
-            this.poradnikToolStripMenuItem.Name = "poradnikToolStripMenuItem";
-            this.poradnikToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.poradnikToolStripMenuItem.Text = " ";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pomocToolStripMenuItem1
+            // 
+            this.pomocToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.odAutoraToolStripMenuItem,
+            this.poradnikToolStripMenuItem,
+            this.skrótyKlawiszoweToolStripMenuItem});
+            this.pomocToolStripMenuItem1.Name = "pomocToolStripMenuItem1";
+            this.pomocToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
+            this.pomocToolStripMenuItem1.Text = "Pomoc";
+            // 
+            // odAutoraToolStripMenuItem
+            // 
+            this.odAutoraToolStripMenuItem.Name = "odAutoraToolStripMenuItem";
+            this.odAutoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.odAutoraToolStripMenuItem.Text = "Od Autora";
+            // 
+            // poradnikToolStripMenuItem
+            // 
+            this.poradnikToolStripMenuItem.Name = "poradnikToolStripMenuItem";
+            this.poradnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.poradnikToolStripMenuItem.Text = "Poradnik";
+            // 
+            // nowyToolStripMenuItem
+            // 
+            this.nowyToolStripMenuItem.Name = "nowyToolStripMenuItem";
+            this.nowyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nowyToolStripMenuItem.Text = "Nowy";
+            // 
+            // zapiszToolStripMenuItem
+            // 
+            this.zapiszToolStripMenuItem.Name = "zapiszToolStripMenuItem";
+            this.zapiszToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zapiszToolStripMenuItem.Text = "Zapisz";
+            // 
+            // zapiszJakoToolStripMenuItem
+            // 
+            this.zapiszJakoToolStripMenuItem.Name = "zapiszJakoToolStripMenuItem";
+            this.zapiszJakoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zapiszJakoToolStripMenuItem.Text = "Zapisz jako";
+            // 
+            // otwórzToolStripMenuItem
+            // 
+            this.otwórzToolStripMenuItem.Name = "otwórzToolStripMenuItem";
+            this.otwórzToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.otwórzToolStripMenuItem.Text = "Otwórz";
+            // 
+            // opcjeToolStripMenuItem
+            // 
+            this.opcjeToolStripMenuItem.Name = "opcjeToolStripMenuItem";
+            this.opcjeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.opcjeToolStripMenuItem.Text = "Wygląd";
+            // 
+            // skrótyKlawiszoweToolStripMenuItem
+            // 
+            this.skrótyKlawiszoweToolStripMenuItem.Name = "skrótyKlawiszoweToolStripMenuItem";
+            this.skrótyKlawiszoweToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.skrótyKlawiszoweToolStripMenuItem.Text = "Skróty klawiszowe";
             // 
             // MainWindow
             // 
@@ -549,13 +590,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ustawieniaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage3;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage4;
         private System.Windows.Forms.ToolStripMenuItem rozwiązaniaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem odAutoraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem skrótyKlawiszoweToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem poradnikToolStripMenuItem;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage5;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage6;
         private System.Windows.Forms.Button button_Map_Delete;
@@ -571,6 +608,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_Map_Set_Scale_Kilometers;
         private System.Windows.Forms.TextBox textBox_Map_Set_Scale_Pixels;
+        private System.Windows.Forms.ToolStripMenuItem nowyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zapiszToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zapiszJakoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem otwórzToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem opcjeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem odAutoraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem poradnikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem skrótyKlawiszoweToolStripMenuItem;
     }
 }
 
