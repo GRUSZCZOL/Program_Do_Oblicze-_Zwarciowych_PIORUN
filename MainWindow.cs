@@ -38,7 +38,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             // Wgrywanie pliku przez filtrowanie treści
 
-            this.openFileDialog1.Filter = "Pdf Files|*.png";
+            this.openFileDialog1.Filter = "PNG(*.png)|*.png|BitMap (*.BMP)|*.BMP|JPG(*.JPG)|*.JPG";
            
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)

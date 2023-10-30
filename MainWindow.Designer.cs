@@ -212,7 +212,7 @@
             this.kryptonPage4,
             this.kryptonPage5,
             this.kryptonPage6});
-            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonNavigator1.SelectedIndex = 0;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 95);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -372,7 +372,7 @@
             this.kryptonPage3.LastVisibleSet = true;
             this.kryptonPage3.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage3.Name = "kryptonPage3";
-            this.kryptonPage3.Size = new System.Drawing.Size(963, 141);
+            this.kryptonPage3.Size = new System.Drawing.Size(1051, 68);
             this.kryptonPage3.Text = "Zwarcie";
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "1378D86E742D472512BFACCB9F4A561A";
@@ -384,7 +384,7 @@
             this.kryptonPage4.LastVisibleSet = true;
             this.kryptonPage4.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage4.Name = "kryptonPage4";
-            this.kryptonPage4.Size = new System.Drawing.Size(963, 141);
+            this.kryptonPage4.Size = new System.Drawing.Size(1051, 68);
             this.kryptonPage4.Text = "Rozpływ Mocy";
             this.kryptonPage4.ToolTipTitle = "Page ToolTip";
             this.kryptonPage4.UniqueName = "57BAD251C33349270ABD15D545CF3E81";
@@ -396,7 +396,7 @@
             this.kryptonPage5.LastVisibleSet = true;
             this.kryptonPage5.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage5.Name = "kryptonPage5";
-            this.kryptonPage5.Size = new System.Drawing.Size(963, 141);
+            this.kryptonPage5.Size = new System.Drawing.Size(1051, 68);
             this.kryptonPage5.Text = "Nagrzewanie";
             this.kryptonPage5.ToolTipTitle = "Page ToolTip";
             this.kryptonPage5.UniqueName = "377892426D384060558757A1DEB331EE";
@@ -408,7 +408,7 @@
             this.kryptonPage6.LastVisibleSet = true;
             this.kryptonPage6.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage6.Name = "kryptonPage6";
-            this.kryptonPage6.Size = new System.Drawing.Size(963, 141);
+            this.kryptonPage6.Size = new System.Drawing.Size(1051, 68);
             this.kryptonPage6.Text = "Rysowanie";
             this.kryptonPage6.ToolTipTitle = "Page ToolTip";
             this.kryptonPage6.UniqueName = "743438BE66BE4199BD9BC84246277C31";

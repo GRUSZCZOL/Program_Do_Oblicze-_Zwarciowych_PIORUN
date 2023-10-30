@@ -21,6 +21,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static int m_X; // Wspolrzedne myszy X
         public static int m_Y; // Wspolrzedne myszy Y
 
+        public static double scale_pix; // Odniesienie dla skali wyrażone w pikselach
+        public static double scale_km; // Odniesienie dla skali wyrażone w km
+        public static double scale_pix_per_km; // Odniesienie dla skali wyrażone w pikselach na km
+
         // Zmienne pomocnicze
     }
 }
