@@ -10,14 +10,16 @@ using System.Collections.Generic;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
-    public partial class MainWindow : Form
+    public static class Var
     {
-
         // Zmienne globalne
 
-        int N; // Liczba węzłów
+        public static string mode = "NULL";
 
-        int m_X, m_Y; // Wspolrzedne myszy
+        public static int N; // Liczba węzłów
+
+        public static int m_X; // Wspolrzedne myszy X
+        public static int m_Y; // Wspolrzedne myszy Y
 
         // Zmienne pomocnicze
     }

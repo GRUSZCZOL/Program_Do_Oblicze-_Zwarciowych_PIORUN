@@ -11,18 +11,16 @@ using System.Collections.Generic;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
-    public partial class MainWindow : Form
+    public static class Database 
     {
+        // Przechowywanie danych dla Combobox i obiektów
 
-        // Baza danych dla Combobox
 
-        List<LinesData> ListOfLines = new List<LinesData>();
-       
-    }
+        /*public static int Number = 0; // Tesotawnie
+        public static List<int> newList = new List<int>();*/
 
-    public static class Test_Values 
-    {
-        public static int Number = 0;
-        public static List<int> newList = new List<int>();
+
+        public static List<Element> ListOfElements = new  List<Element>();
+
     }
 }

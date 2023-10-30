@@ -41,6 +41,11 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Map_Set_Scale_Selected = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_Map_Set_Scale_Kilometers = new System.Windows.Forms.TextBox();
+            this.textBox_Map_Set_Scale_Pixels = new System.Windows.Forms.TextBox();
             this.button_Map_Flag_Delete = new System.Windows.Forms.Button();
             this.button_Map_Set_Flag_Color = new System.Windows.Forms.Button();
             this.button_Map_Set_Flag = new System.Windows.Forms.Button();
@@ -63,11 +68,6 @@
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox_Map_Set_Scale_Pixels = new System.Windows.Forms.TextBox();
-            this.textBox_Map_Set_Scale_Kilometers = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button_Map_Set_Scale_Selected = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -144,17 +144,17 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(984, 437);
-            this.splitContainer1.SplitterDistance = 180;
+            this.splitContainer1.Size = new System.Drawing.Size(1184, 537);
+            this.splitContainer1.SplitterDistance = 127;
             this.splitContainer1.TabIndex = 0;
             // 
             // HELP_Multiline2
             // 
             this.HELP_Multiline2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 244);
+            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 344);
             this.HELP_Multiline2.Multiline = true;
             this.HELP_Multiline2.Name = "HELP_Multiline2";
-            this.HELP_Multiline2.Size = new System.Drawing.Size(180, 193);
+            this.HELP_Multiline2.Size = new System.Drawing.Size(127, 193);
             this.HELP_Multiline2.TabIndex = 2;
             this.HELP_Multiline2.Text = "Dodatkowe opcje";
             // 
@@ -164,7 +164,7 @@
             this.HELP_Multiline1.Location = new System.Drawing.Point(0, 20);
             this.HELP_Multiline1.Multiline = true;
             this.HELP_Multiline1.Name = "HELP_Multiline1";
-            this.HELP_Multiline1.Size = new System.Drawing.Size(180, 417);
+            this.HELP_Multiline1.Size = new System.Drawing.Size(127, 517);
             this.HELP_Multiline1.TabIndex = 1;
             this.HELP_Multiline1.Text = "Notatnik";
             // 
@@ -173,7 +173,7 @@
             this.HELP.Dock = System.Windows.Forms.DockStyle.Top;
             this.HELP.Location = new System.Drawing.Point(0, 0);
             this.HELP.Name = "HELP";
-            this.HELP.Size = new System.Drawing.Size(180, 20);
+            this.HELP.Size = new System.Drawing.Size(127, 20);
             this.HELP.TabIndex = 0;
             this.HELP.Text = "To jest pasek pomocy";
             // 
@@ -192,8 +192,8 @@
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.pictureBox_Map);
-            this.splitContainer2.Size = new System.Drawing.Size(800, 437);
-            this.splitContainer2.SplitterDistance = 90;
+            this.splitContainer2.Size = new System.Drawing.Size(1053, 537);
+            this.splitContainer2.SplitterDistance = 95;
             this.splitContainer2.TabIndex = 0;
             // 
             // kryptonNavigator1
@@ -201,23 +201,9 @@
             this.kryptonNavigator1.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
             this.kryptonNavigator1.Button.CloseButtonAction = ComponentFactory.Krypton.Navigator.CloseButtonAction.None;
             this.kryptonNavigator1.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
-            this.kryptonNavigator1.Button.ContextButtonAction = ComponentFactory.Krypton.Navigator.ContextButtonAction.SelectPage;
-            this.kryptonNavigator1.Button.ContextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.kryptonNavigator1.Button.ContextMenuMapImage = ComponentFactory.Krypton.Navigator.MapKryptonPageImage.Small;
-            this.kryptonNavigator1.Button.ContextMenuMapText = ComponentFactory.Krypton.Navigator.MapKryptonPageText.TextTitle;
-            this.kryptonNavigator1.Button.NextButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.kryptonNavigator1.Button.NextButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
-            this.kryptonNavigator1.Button.PreviousButtonAction = ComponentFactory.Krypton.Navigator.DirectionButtonAction.ModeAppropriateAction;
-            this.kryptonNavigator1.Button.PreviousButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Logic;
             this.kryptonNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonNavigator1.Group.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient;
-            this.kryptonNavigator1.Group.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient;
-            this.kryptonNavigator1.Header.HeaderStyleBar = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
-            this.kryptonNavigator1.Header.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Primary;
-            this.kryptonNavigator1.Header.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Secondary;
             this.kryptonNavigator1.Location = new System.Drawing.Point(0, 0);
             this.kryptonNavigator1.Name = "kryptonNavigator1";
-            this.kryptonNavigator1.NavigatorMode = ComponentFactory.Krypton.Navigator.NavigatorMode.BarTabGroup;
             this.kryptonNavigator1.PageBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonNavigatorOverflow;
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage2,
@@ -226,9 +212,8 @@
             this.kryptonPage4,
             this.kryptonPage5,
             this.kryptonPage6});
-            this.kryptonNavigator1.Panel.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient;
-            this.kryptonNavigator1.SelectedIndex = 0;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(800, 90);
+            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 95);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
             // 
@@ -251,11 +236,57 @@
             this.kryptonPage2.LastVisibleSet = true;
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage2.Name = "kryptonPage2";
-            this.kryptonPage2.Size = new System.Drawing.Size(798, 63);
+            this.kryptonPage2.Size = new System.Drawing.Size(1051, 68);
             this.kryptonPage2.Text = "Mapa";
-            this.kryptonPage2.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "F4A6012C153145B6E394BB5199BED7CB";
+            // 
+            // button_Map_Set_Scale_Selected
+            // 
+            this.button_Map_Set_Scale_Selected.Location = new System.Drawing.Point(571, 4);
+            this.button_Map_Set_Scale_Selected.Name = "button_Map_Set_Scale_Selected";
+            this.button_Map_Set_Scale_Selected.Size = new System.Drawing.Size(75, 57);
+            this.button_Map_Set_Scale_Selected.TabIndex = 11;
+            this.button_Map_Set_Scale_Selected.Text = "Ustaw Wybraną Skale ";
+            this.button_Map_Set_Scale_Selected.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(652, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Kilometry:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(652, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Piksele:";
+            // 
+            // textBox_Map_Set_Scale_Kilometers
+            // 
+            this.textBox_Map_Set_Scale_Kilometers.Location = new System.Drawing.Point(711, 34);
+            this.textBox_Map_Set_Scale_Kilometers.Name = "textBox_Map_Set_Scale_Kilometers";
+            this.textBox_Map_Set_Scale_Kilometers.Size = new System.Drawing.Size(49, 20);
+            this.textBox_Map_Set_Scale_Kilometers.TabIndex = 8;
+            this.textBox_Map_Set_Scale_Kilometers.Text = "0";
+            this.textBox_Map_Set_Scale_Kilometers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox_Map_Set_Scale_Pixels
+            // 
+            this.textBox_Map_Set_Scale_Pixels.Location = new System.Drawing.Point(711, 8);
+            this.textBox_Map_Set_Scale_Pixels.Name = "textBox_Map_Set_Scale_Pixels";
+            this.textBox_Map_Set_Scale_Pixels.Size = new System.Drawing.Size(49, 20);
+            this.textBox_Map_Set_Scale_Pixels.TabIndex = 7;
+            this.textBox_Map_Set_Scale_Pixels.Text = "0";
+            this.textBox_Map_Set_Scale_Pixels.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button_Map_Flag_Delete
             // 
@@ -329,9 +360,8 @@
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(798, 63);
+            this.kryptonPage1.Size = new System.Drawing.Size(1051, 68);
             this.kryptonPage1.Text = "Budowanie";
-            this.kryptonPage1.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "9110C834021D44397AAC87818037AF22";
             // 
@@ -342,9 +372,8 @@
             this.kryptonPage3.LastVisibleSet = true;
             this.kryptonPage3.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage3.Name = "kryptonPage3";
-            this.kryptonPage3.Size = new System.Drawing.Size(798, 63);
+            this.kryptonPage3.Size = new System.Drawing.Size(963, 141);
             this.kryptonPage3.Text = "Zwarcie";
-            this.kryptonPage3.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "1378D86E742D472512BFACCB9F4A561A";
             // 
@@ -355,9 +384,8 @@
             this.kryptonPage4.LastVisibleSet = true;
             this.kryptonPage4.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage4.Name = "kryptonPage4";
-            this.kryptonPage4.Size = new System.Drawing.Size(798, 63);
+            this.kryptonPage4.Size = new System.Drawing.Size(963, 141);
             this.kryptonPage4.Text = "Rozpływ Mocy";
-            this.kryptonPage4.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage4.ToolTipTitle = "Page ToolTip";
             this.kryptonPage4.UniqueName = "57BAD251C33349270ABD15D545CF3E81";
             // 
@@ -368,9 +396,8 @@
             this.kryptonPage5.LastVisibleSet = true;
             this.kryptonPage5.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage5.Name = "kryptonPage5";
-            this.kryptonPage5.Size = new System.Drawing.Size(798, 63);
+            this.kryptonPage5.Size = new System.Drawing.Size(963, 141);
             this.kryptonPage5.Text = "Nagrzewanie";
-            this.kryptonPage5.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage5.ToolTipTitle = "Page ToolTip";
             this.kryptonPage5.UniqueName = "377892426D384060558757A1DEB331EE";
             // 
@@ -381,16 +408,15 @@
             this.kryptonPage6.LastVisibleSet = true;
             this.kryptonPage6.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage6.Name = "kryptonPage6";
-            this.kryptonPage6.Size = new System.Drawing.Size(798, 63);
+            this.kryptonPage6.Size = new System.Drawing.Size(963, 141);
             this.kryptonPage6.Text = "Rysowanie";
-            this.kryptonPage6.ToolTipStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.ToolTip;
             this.kryptonPage6.ToolTipTitle = "Page ToolTip";
             this.kryptonPage6.UniqueName = "743438BE66BE4199BD9BC84246277C31";
             // 
             // pictureBox_Map
             // 
             this.pictureBox_Map.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox_Map.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_Map.Location = new System.Drawing.Point(-3, 5);
             this.pictureBox_Map.Name = "pictureBox_Map";
             this.pictureBox_Map.Size = new System.Drawing.Size(1676, 792);
             this.pictureBox_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -407,7 +433,7 @@
             this.pomocToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -457,65 +483,18 @@
             // 
             this.poradnikToolStripMenuItem.Name = "poradnikToolStripMenuItem";
             this.poradnikToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
-            this.poradnikToolStripMenuItem.Text = "Poradnik";
+            this.poradnikToolStripMenuItem.Text = " ";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // textBox_Map_Set_Scale_Pixels
-            // 
-            this.textBox_Map_Set_Scale_Pixels.Location = new System.Drawing.Point(711, 8);
-            this.textBox_Map_Set_Scale_Pixels.Name = "textBox_Map_Set_Scale_Pixels";
-            this.textBox_Map_Set_Scale_Pixels.Size = new System.Drawing.Size(49, 20);
-            this.textBox_Map_Set_Scale_Pixels.TabIndex = 7;
-            this.textBox_Map_Set_Scale_Pixels.Text = "0";
-            this.textBox_Map_Set_Scale_Pixels.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox_Map_Set_Scale_Kilometers
-            // 
-            this.textBox_Map_Set_Scale_Kilometers.Location = new System.Drawing.Point(711, 34);
-            this.textBox_Map_Set_Scale_Kilometers.Name = "textBox_Map_Set_Scale_Kilometers";
-            this.textBox_Map_Set_Scale_Kilometers.Size = new System.Drawing.Size(49, 20);
-            this.textBox_Map_Set_Scale_Kilometers.TabIndex = 8;
-            this.textBox_Map_Set_Scale_Kilometers.Text = "0";
-            this.textBox_Map_Set_Scale_Kilometers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(652, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Piksele:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(652, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Kilometry:";
-            // 
-            // button_Map_Set_Scale_Selected
-            // 
-            this.button_Map_Set_Scale_Selected.Location = new System.Drawing.Point(571, 4);
-            this.button_Map_Set_Scale_Selected.Name = "button_Map_Set_Scale_Selected";
-            this.button_Map_Set_Scale_Selected.Size = new System.Drawing.Size(75, 57);
-            this.button_Map_Set_Scale_Selected.TabIndex = 11;
-            this.button_Map_Set_Scale_Selected.Text = "Ustaw Wybraną Skale ";
-            this.button_Map_Set_Scale_Selected.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

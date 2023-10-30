@@ -29,8 +29,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         private void pictureBox_Map_MouseMove(object sender, MouseEventArgs e)
         {          
-            m_X = e.Location.X + pictureBox_Map.Location.X;
-            m_Y = e.Location.Y + pictureBox_Map.Location.Y;
+            Var.m_X = e.Location.X + pictureBox_Map.Location.X;
+            Var.m_Y = e.Location.Y + pictureBox_Map.Location.Y;
             HELP.Text = "Pozycja: " + string.Format("{0}: ,{1}: ", e.Location.X, e.Location.Y);
         }  // Lokalizowanie pozycji myszy
 
@@ -54,24 +54,35 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 pictureBox_Map.Height = size_y;
                 pictureBox_Map.Width = size_x;
                 pictureBox_Map.Image = Image.FromFile(filename);
-                N = 0;
+                Var.N = 0;
             }
         } // Załadowanie mapy przez przycisk button_Map_Select
 
         private void button_Map_Delete_Click(object sender, EventArgs e) // Usuwanie mapy
         {
             #region Testowanie funkcji statycznej
-            HELP_Multiline1.Text+=Test_Values.Number.ToString()+"      ";
+            /*HELP_Multiline1.Text += Test_Values.Number.ToString() + "      ";
             Test_Values.Number = 1;
             HELP_Multiline1.Text += Test_Values.Number.ToString();
             HELP_Multiline1.Text += " ----- ";
             Test_Values.newList.Add(1);
             Test_Values.newList.Add(2);
             Test_Values.newList.Add(3);
-            Test_Values.newList.Add(N+1);
-            HELP_Multiline1.Text += Test_Values.newList.Max();
-            #endregion
+            Test_Values.newList.Add(N + 1);
 
+            foreach (int item in Test_Values.newList)
+            {
+                HELP_Multiline1.Text += item.ToString();
+            }
+
+            Test_Values.newList.Clear();
+            HELP_Multiline1.Text += Test_Values.newList.Count.ToString();*/
+
+            #endregion
+            pictureBox_Map.Image = null; // zamienia obraz na null
+
+            // TODO: Usuwanie mapy wraz z elementami
+           
 
         }
     }
