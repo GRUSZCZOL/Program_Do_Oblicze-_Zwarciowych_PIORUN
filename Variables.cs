@@ -14,6 +14,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
     {
         // Zmienne globalne
 
+        public static double PI = 3.141592653589793; // Liczba PI
+
         public static string mode = "NULL";
 
         public static int N; // Liczba węzłów
@@ -37,15 +39,21 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static int Point_Y2 = 1;
         public static int distance;
 
-       /* public static void Distanse_Point(double setX1,double setX2,double setY1, double setY2) // Funkcja określająca odległość między punktami
-        {
-            // Punkt początkowy i końcowy dla Linii
-            Point_X1 = Convert.ToDouble(setX1);
-            Point_X2 = setX2;
-            Point_Y1 = setY1;
-            Point_Y2 = setY2;
-            distance = Math.Sqrt(Math.Pow(Point_X2-Point_X1,2) +   Math.Pow(Point_Y2-Point_Y1,2) ) ;
-        }*/
+             // Parametry elektryczne
+
+        public static double Frec = 50; //Częstotliwość
+
+        
+
+        /* public static void Distanse_Point(double setX1,double setX2,double setY1, double setY2) // Funkcja określająca odległość między punktami
+         {
+             // Punkt początkowy i końcowy dla Linii
+             Point_X1 = Convert.ToDouble(setX1);
+             Point_X2 = setX2;
+             Point_Y1 = setY1;
+             Point_Y2 = setY2;
+             distance = Math.Sqrt(Math.Pow(Point_X2-Point_X1,2) +   Math.Pow(Point_Y2-Point_Y1,2) ) ;
+         }*/
 
         #region Graphics
         // Zmienne dla grafiki
@@ -56,7 +64,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         //Inne
 
-        public static int penSize=1;
+        public static int penSize=3;
 
        
 

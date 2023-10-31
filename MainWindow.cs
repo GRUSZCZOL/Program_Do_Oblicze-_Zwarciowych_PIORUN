@@ -24,7 +24,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         }
 
 
-
+       
         // Wydarzenia
 
         #region MODE TYPE PARTS
@@ -34,14 +34,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
 
         }
-
         private void pictureBox_Map_MouseMove(object sender, MouseEventArgs e)
         {          
             Var.m_X = e.Location.X + pictureBox_Map.Location.X;
             Var.m_Y = e.Location.Y + pictureBox_Map.Location.Y;
-            HELP_Multiline1.Text = string.Format("Pozycja kursora na mapie:X: {0},Y: {1}: ", e.Location.X, e.Location.Y);
+            HELP_Multiline1.Text = string.Format("Pozycja kursora na mapie:X: {0},Y: {1}: ", e.Location.X-20, e.Location.Y-20);
+            HELP_Multiline2.Text = panel_Main_Map.VerticalScroll.Value.ToString() +"\r\n" +panel_Main_Map.HorizontalScroll.Value.ToString();
         }  // Lokalizowanie pozycji myszy
-
         private void button_Map_Select_Click(object sender, EventArgs e)
         {
             // Wgrywanie pliku przez filtrowanie treści
@@ -65,7 +64,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Var.N = 0;
             }
         } // Załadowanie mapy przez przycisk button_Map_Select
-
         private void button_Map_Delete_Click(object sender, EventArgs e) // Usuwanie mapy
         {
         
@@ -92,7 +90,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Var.mode = "Build_Node";
             HELP_Multiline2.Text = Var.mode;
         }
-
+        private void button_Build_Line_Click(object sender, EventArgs e)
+        {
+            Var.mode = "Build_Line";
+            HELP_Multiline2.Text = Var.mode;
+        }// Zmiana trybu na budowanie Linii / Tworzy nowy Element: LINE
+        private void button_Build_Delete_Click(object sender, EventArgs e)
+        {
+            Var.mode = "Build_Delete";
+            HELP_Multiline2.Text = Var.mode;
+        } // Usuwanie wybranego elementu
         private void pictureBox_Map_Click(object sender, EventArgs e) // Inicjowanie budowania wybranego elementu poprzez kliknięcie w PictureBox
         {
             switch (Var.mode) 
@@ -110,12 +117,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             }
 
         }
-
-        private void button_Build_Delete_Click(object sender, EventArgs e)
-        {
-            Var.mode = "Build_Delete";
-            HELP_Multiline2.Text = Var.mode;
-        } // Usuwanie wybranego elementu
 
         #endregion
 
@@ -139,23 +140,17 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             }
 
         } // Usuwa wskazany element
-
-    
-
-
-
-
         public void Create_Element_Node()
         {
             Var.N++;
             Element newElement = new Element(Var.index_setup,"Node"); // Tworzenie nwego elementu
             Var.index_setup++; // Zwi?z?kowanie indeksu elementu
             this.Controls.Add(newElement);
-            newElement.Parent = pictureBox_Map;
+            
             newElement.Name = "Element_Node_" + Var.N.ToString();
             newElement.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
             newElement.Size = new Size(40, 40);
-            newElement.Location = new Point(Var.m_X-(newElement.Size.Width/2),   Var.m_Y-(newElement.Size.Height/2));      
+            newElement.Location = new Point(Var.m_X+ panel_Main_Map.HorizontalScroll.Value -(newElement.Size.Width/2),   Var.m_Y + panel_Main_Map.VerticalScroll.Value - (newElement.Size.Height/2));      
             newElement.BringToFront(); 
             newElement.Show();
             
@@ -163,10 +158,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             // Wydarzenia zaimplementowane do elementu
             newElement.Click += new EventHandler(this.Delete_Button);
             newElement.Click += new EventHandler(this.Create_Element_Line_For_Node);
+            newElement.Click += new EventHandler(this.Check_Location);
 
-
+            newElement.Parent = pictureBox_Map;
         } // Tworzy nowy Element: NODE
-
         public void Create_Element_Line_For_Node(Object sender, EventArgs e)
         {
        
@@ -209,11 +204,23 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             }
             else if (Var.mode != "Build_Line") { Var.m = 0; }
         } // Tworzy nowy Element: LINE / Funkcja przypisywana do każdego elementu NODE
-
-        private void button_Build_Line_Click(object sender, EventArgs e)
+        public void Check_Location(object sender, EventArgs e) 
         {
-            Var.mode = "Build_Line";
-            HELP_Multiline2.Text = Var.mode;
-        }// Zmiana trybu na budowanie Linii / Tworzy nowy Element: LINE
-    } 
+            Element thisElement = sender as Element;
+            textBox_Console_Read.Text = string.Format("\r\nPozycja wybranego Elementu: X: {0}, Y: {1}\r\n",thisElement.Location.X,thisElement.Location.Y);
+        }// Sprawdzenie pozycji NODE'a
+
+
+
+
+
+        public void ReDraw()
+        {
+            foreach (Element Line in Database.ListOfLines) 
+            {
+                Line.ReDrawLines();
+            }
+        } //Ponowne rysowanie linii
+        
+        } 
 }

@@ -61,9 +61,13 @@
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.kryptonNavigator2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.panel_Main_Map = new System.Windows.Forms.Panel();
             this.pictureBox_Map = new System.Windows.Forms.PictureBox();
+            this.textBox_Console_Write = new System.Windows.Forms.TextBox();
+            this.textBox_Console_Read = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,10 +82,6 @@
             this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox_Console_Read = new System.Windows.Forms.TextBox();
-            this.textBox_Console_Write = new System.Windows.Forms.TextBox();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.panel_Main_Map = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,17 +100,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).BeginInit();
-            this.kryptonNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).BeginInit();
-            this.kryptonPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).BeginInit();
+            this.kryptonNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).BeginInit();
+            this.kryptonPage7.SuspendLayout();
             this.panel_Main_Map.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -470,6 +470,25 @@
             this.kryptonPage6.ToolTipTitle = "Page ToolTip";
             this.kryptonPage6.UniqueName = "743438BE66BE4199BD9BC84246277C31";
             // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.kryptonNavigator2);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Write);
+            this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Read);
+            this.splitContainer3.Size = new System.Drawing.Size(1053, 422);
+            this.splitContainer3.SplitterDistance = 337;
+            this.splitContainer3.TabIndex = 0;
+            // 
             // kryptonNavigator2
             // 
             this.kryptonNavigator2.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
@@ -497,6 +516,16 @@
             this.kryptonPage7.ToolTipTitle = "Page ToolTip";
             this.kryptonPage7.UniqueName = "3C58A40CEAD844E2D4853D4D72F2F2EE";
             // 
+            // panel_Main_Map
+            // 
+            this.panel_Main_Map.AutoScroll = true;
+            this.panel_Main_Map.Controls.Add(this.pictureBox_Map);
+            this.panel_Main_Map.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Main_Map.Location = new System.Drawing.Point(0, 0);
+            this.panel_Main_Map.Name = "panel_Main_Map";
+            this.panel_Main_Map.Size = new System.Drawing.Size(1051, 310);
+            this.panel_Main_Map.TabIndex = 0;
+            // 
             // pictureBox_Map
             // 
             this.pictureBox_Map.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -508,6 +537,29 @@
             this.pictureBox_Map.TabStop = false;
             this.pictureBox_Map.Click += new System.EventHandler(this.pictureBox_Map_Click);
             this.pictureBox_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Map_MouseMove);
+            // 
+            // textBox_Console_Write
+            // 
+            this.textBox_Console_Write.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_Console_Write.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox_Console_Write.Location = new System.Drawing.Point(0, 61);
+            this.textBox_Console_Write.Name = "textBox_Console_Write";
+            this.textBox_Console_Write.Size = new System.Drawing.Size(1053, 20);
+            this.textBox_Console_Write.TabIndex = 1;
+            this.textBox_Console_Write.Text = "Console_Write//";
+            // 
+            // textBox_Console_Read
+            // 
+            this.textBox_Console_Read.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox_Console_Read.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_Console_Read.ForeColor = System.Drawing.SystemColors.Info;
+            this.textBox_Console_Read.Location = new System.Drawing.Point(0, 0);
+            this.textBox_Console_Read.Multiline = true;
+            this.textBox_Console_Read.Name = "textBox_Console_Read";
+            this.textBox_Console_Read.ReadOnly = true;
+            this.textBox_Console_Read.Size = new System.Drawing.Size(1053, 81);
+            this.textBox_Console_Read.TabIndex = 0;
+            this.textBox_Console_Read.Text = "Console_Read";
             // 
             // menuStrip1
             // 
@@ -610,58 +662,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // textBox_Console_Read
-            // 
-            this.textBox_Console_Read.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox_Console_Read.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_Console_Read.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox_Console_Read.Location = new System.Drawing.Point(0, 0);
-            this.textBox_Console_Read.Multiline = true;
-            this.textBox_Console_Read.Name = "textBox_Console_Read";
-            this.textBox_Console_Read.ReadOnly = true;
-            this.textBox_Console_Read.Size = new System.Drawing.Size(1053, 81);
-            this.textBox_Console_Read.TabIndex = 0;
-            this.textBox_Console_Read.Text = "Console_Read";
-            // 
-            // textBox_Console_Write
-            // 
-            this.textBox_Console_Write.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox_Console_Write.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox_Console_Write.Location = new System.Drawing.Point(0, 61);
-            this.textBox_Console_Write.Name = "textBox_Console_Write";
-            this.textBox_Console_Write.Size = new System.Drawing.Size(1053, 20);
-            this.textBox_Console_Write.TabIndex = 1;
-            this.textBox_Console_Write.Text = "Console_Write//";
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer3.Name = "splitContainer3";
-            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.Controls.Add(this.kryptonNavigator2);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Write);
-            this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Read);
-            this.splitContainer3.Size = new System.Drawing.Size(1053, 422);
-            this.splitContainer3.SplitterDistance = 337;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // panel_Main_Map
-            // 
-            this.panel_Main_Map.AutoScroll = true;
-            this.panel_Main_Map.Controls.Add(this.pictureBox_Map);
-            this.panel_Main_Map.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_Main_Map.Location = new System.Drawing.Point(0, 0);
-            this.panel_Main_Map.Name = "panel_Main_Map";
-            this.panel_Main_Map.Size = new System.Drawing.Size(1051, 310);
-            this.panel_Main_Map.TabIndex = 0;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,20 +695,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).EndInit();
-            this.kryptonNavigator2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).EndInit();
-            this.kryptonPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
             this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).EndInit();
+            this.kryptonNavigator2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).EndInit();
+            this.kryptonPage7.ResumeLayout(false);
             this.panel_Main_Map.ResumeLayout(false);
             this.panel_Main_Map.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

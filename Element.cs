@@ -15,9 +15,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Type = setType; // Ustala typ elementu
         }
 
-      
 
-        
+        public int In; // Nazewnictwo węzłów i ich sąsiadó
+        public int Out;
+
 
         // Typ i index do kategoryzowania
 
@@ -33,6 +34,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         void Zfunc(double setR, double setX)
         {
             Z = Math.Sqrt(setR * setR + setX * setX);
+        }
+
+
+        public void ReDrawLines() 
+        {
+        
         }
     }
 }
