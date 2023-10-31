@@ -54,25 +54,34 @@
             this.button_Map_Delete = new System.Windows.Forms.Button();
             this.button_Map_Select = new System.Windows.Forms.Button();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Build_Delete = new System.Windows.Forms.Button();
+            this.button_Build_Line = new System.Windows.Forms.Button();
+            this.button_Build_Node = new System.Windows.Forms.Button();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.kryptonNavigator2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
+            this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.pictureBox_Map = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ustawieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rozwiązaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pomocToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.odAutoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zapiszJakoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otwórzToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ustawieniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rozwiązaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opcjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pomocToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.odAutoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox_Console_Read = new System.Windows.Forms.TextBox();
+            this.textBox_Console_Write = new System.Windows.Forms.TextBox();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.panel_Main_Map = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,12 +95,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
             this.kryptonPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
+            this.kryptonPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).BeginInit();
+            this.kryptonNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).BeginInit();
+            this.kryptonPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            this.panel_Main_Map.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -196,9 +215,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
-            this.splitContainer2.Panel2.Controls.Add(this.pictureBox_Map);
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
             this.splitContainer2.Size = new System.Drawing.Size(1053, 537);
-            this.splitContainer2.SplitterDistance = 95;
+            this.splitContainer2.SplitterDistance = 111;
             this.splitContainer2.TabIndex = 0;
             // 
             // kryptonNavigator1
@@ -217,8 +236,8 @@
             this.kryptonPage4,
             this.kryptonPage5,
             this.kryptonPage6});
-            this.kryptonNavigator1.SelectedIndex = 0;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 95);
+            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 111);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
             // 
@@ -241,7 +260,7 @@
             this.kryptonPage2.LastVisibleSet = true;
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage2.Name = "kryptonPage2";
-            this.kryptonPage2.Size = new System.Drawing.Size(1051, 68);
+            this.kryptonPage2.Size = new System.Drawing.Size(1051, 84);
             this.kryptonPage2.Text = "Mapa";
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "F4A6012C153145B6E394BB5199BED7CB";
@@ -361,14 +380,47 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage1.Controls.Add(this.button_Build_Delete);
+            this.kryptonPage1.Controls.Add(this.button_Build_Line);
+            this.kryptonPage1.Controls.Add(this.button_Build_Node);
             this.kryptonPage1.Flags = 65534;
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(1051, 68);
+            this.kryptonPage1.Size = new System.Drawing.Size(1051, 84);
             this.kryptonPage1.Text = "Budowanie";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "9110C834021D44397AAC87818037AF22";
+            // 
+            // button_Build_Delete
+            // 
+            this.button_Build_Delete.Location = new System.Drawing.Point(973, 4);
+            this.button_Build_Delete.Name = "button_Build_Delete";
+            this.button_Build_Delete.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Delete.TabIndex = 3;
+            this.button_Build_Delete.Text = "Usuń element";
+            this.button_Build_Delete.UseVisualStyleBackColor = true;
+            this.button_Build_Delete.Click += new System.EventHandler(this.button_Build_Delete_Click);
+            // 
+            // button_Build_Line
+            // 
+            this.button_Build_Line.Location = new System.Drawing.Point(85, 4);
+            this.button_Build_Line.Name = "button_Build_Line";
+            this.button_Build_Line.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Line.TabIndex = 2;
+            this.button_Build_Line.Text = "Linia";
+            this.button_Build_Line.UseVisualStyleBackColor = true;
+            this.button_Build_Line.Click += new System.EventHandler(this.button_Build_Line_Click);
+            // 
+            // button_Build_Node
+            // 
+            this.button_Build_Node.Location = new System.Drawing.Point(4, 4);
+            this.button_Build_Node.Name = "button_Build_Node";
+            this.button_Build_Node.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Node.TabIndex = 1;
+            this.button_Build_Node.Text = "Węzeł";
+            this.button_Build_Node.UseVisualStyleBackColor = true;
+            this.button_Build_Node.Click += new System.EventHandler(this.button_Build_Node_Click);
             // 
             // kryptonPage3
             // 
@@ -413,20 +465,48 @@
             this.kryptonPage6.LastVisibleSet = true;
             this.kryptonPage6.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage6.Name = "kryptonPage6";
-            this.kryptonPage6.Size = new System.Drawing.Size(1051, 68);
+            this.kryptonPage6.Size = new System.Drawing.Size(1051, 84);
             this.kryptonPage6.Text = "Rysowanie";
             this.kryptonPage6.ToolTipTitle = "Page ToolTip";
             this.kryptonPage6.UniqueName = "743438BE66BE4199BD9BC84246277C31";
             // 
+            // kryptonNavigator2
+            // 
+            this.kryptonNavigator2.Button.ButtonDisplayLogic = ComponentFactory.Krypton.Navigator.ButtonDisplayLogic.None;
+            this.kryptonNavigator2.Button.CloseButtonDisplay = ComponentFactory.Krypton.Navigator.ButtonDisplay.Hide;
+            this.kryptonNavigator2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonNavigator2.Location = new System.Drawing.Point(0, 0);
+            this.kryptonNavigator2.Name = "kryptonNavigator2";
+            this.kryptonNavigator2.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
+            this.kryptonPage7});
+            this.kryptonNavigator2.SelectedIndex = 0;
+            this.kryptonNavigator2.Size = new System.Drawing.Size(1053, 337);
+            this.kryptonNavigator2.TabIndex = 1;
+            this.kryptonNavigator2.Text = "kryptonNavigator2";
+            // 
+            // kryptonPage7
+            // 
+            this.kryptonPage7.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage7.Controls.Add(this.panel_Main_Map);
+            this.kryptonPage7.Flags = 65534;
+            this.kryptonPage7.LastVisibleSet = true;
+            this.kryptonPage7.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kryptonPage7.Name = "kryptonPage7";
+            this.kryptonPage7.Size = new System.Drawing.Size(1051, 310);
+            this.kryptonPage7.Text = "Mapa główna";
+            this.kryptonPage7.ToolTipTitle = "Page ToolTip";
+            this.kryptonPage7.UniqueName = "3C58A40CEAD844E2D4853D4D72F2F2EE";
+            // 
             // pictureBox_Map
             // 
             this.pictureBox_Map.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox_Map.Location = new System.Drawing.Point(-3, 5);
+            this.pictureBox_Map.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_Map.Name = "pictureBox_Map";
-            this.pictureBox_Map.Size = new System.Drawing.Size(1676, 792);
+            this.pictureBox_Map.Size = new System.Drawing.Size(1200, 800);
             this.pictureBox_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox_Map.TabIndex = 0;
             this.pictureBox_Map.TabStop = false;
+            this.pictureBox_Map.Click += new System.EventHandler(this.pictureBox_Map_Click);
             this.pictureBox_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Map_MouseMove);
             // 
             // menuStrip1
@@ -453,6 +533,30 @@
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
+            // nowyToolStripMenuItem
+            // 
+            this.nowyToolStripMenuItem.Name = "nowyToolStripMenuItem";
+            this.nowyToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.nowyToolStripMenuItem.Text = "Nowy";
+            // 
+            // zapiszToolStripMenuItem
+            // 
+            this.zapiszToolStripMenuItem.Name = "zapiszToolStripMenuItem";
+            this.zapiszToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.zapiszToolStripMenuItem.Text = "Zapisz";
+            // 
+            // zapiszJakoToolStripMenuItem
+            // 
+            this.zapiszJakoToolStripMenuItem.Name = "zapiszJakoToolStripMenuItem";
+            this.zapiszJakoToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.zapiszJakoToolStripMenuItem.Text = "Zapisz jako";
+            // 
+            // otwórzToolStripMenuItem
+            // 
+            this.otwórzToolStripMenuItem.Name = "otwórzToolStripMenuItem";
+            this.otwórzToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.otwórzToolStripMenuItem.Text = "Otwórz";
+            // 
             // ustawieniaToolStripMenuItem
             // 
             this.ustawieniaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -465,12 +569,14 @@
             // rozwiązaniaToolStripMenuItem
             // 
             this.rozwiązaniaToolStripMenuItem.Name = "rozwiązaniaToolStripMenuItem";
-            this.rozwiązaniaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rozwiązaniaToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.rozwiązaniaToolStripMenuItem.Text = "Rozwiązania";
             // 
-            // openFileDialog1
+            // opcjeToolStripMenuItem
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.opcjeToolStripMenuItem.Name = "opcjeToolStripMenuItem";
+            this.opcjeToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.opcjeToolStripMenuItem.Text = "Wygląd";
             // 
             // pomocToolStripMenuItem1
             // 
@@ -485,50 +591,76 @@
             // odAutoraToolStripMenuItem
             // 
             this.odAutoraToolStripMenuItem.Name = "odAutoraToolStripMenuItem";
-            this.odAutoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.odAutoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.odAutoraToolStripMenuItem.Text = "Od Autora";
             // 
             // poradnikToolStripMenuItem
             // 
             this.poradnikToolStripMenuItem.Name = "poradnikToolStripMenuItem";
-            this.poradnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.poradnikToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.poradnikToolStripMenuItem.Text = "Poradnik";
-            // 
-            // nowyToolStripMenuItem
-            // 
-            this.nowyToolStripMenuItem.Name = "nowyToolStripMenuItem";
-            this.nowyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nowyToolStripMenuItem.Text = "Nowy";
-            // 
-            // zapiszToolStripMenuItem
-            // 
-            this.zapiszToolStripMenuItem.Name = "zapiszToolStripMenuItem";
-            this.zapiszToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.zapiszToolStripMenuItem.Text = "Zapisz";
-            // 
-            // zapiszJakoToolStripMenuItem
-            // 
-            this.zapiszJakoToolStripMenuItem.Name = "zapiszJakoToolStripMenuItem";
-            this.zapiszJakoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.zapiszJakoToolStripMenuItem.Text = "Zapisz jako";
-            // 
-            // otwórzToolStripMenuItem
-            // 
-            this.otwórzToolStripMenuItem.Name = "otwórzToolStripMenuItem";
-            this.otwórzToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.otwórzToolStripMenuItem.Text = "Otwórz";
-            // 
-            // opcjeToolStripMenuItem
-            // 
-            this.opcjeToolStripMenuItem.Name = "opcjeToolStripMenuItem";
-            this.opcjeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.opcjeToolStripMenuItem.Text = "Wygląd";
             // 
             // skrótyKlawiszoweToolStripMenuItem
             // 
             this.skrótyKlawiszoweToolStripMenuItem.Name = "skrótyKlawiszoweToolStripMenuItem";
-            this.skrótyKlawiszoweToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.skrótyKlawiszoweToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.skrótyKlawiszoweToolStripMenuItem.Text = "Skróty klawiszowe";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // textBox_Console_Read
+            // 
+            this.textBox_Console_Read.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBox_Console_Read.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_Console_Read.ForeColor = System.Drawing.SystemColors.Info;
+            this.textBox_Console_Read.Location = new System.Drawing.Point(0, 0);
+            this.textBox_Console_Read.Multiline = true;
+            this.textBox_Console_Read.Name = "textBox_Console_Read";
+            this.textBox_Console_Read.ReadOnly = true;
+            this.textBox_Console_Read.Size = new System.Drawing.Size(1053, 81);
+            this.textBox_Console_Read.TabIndex = 0;
+            this.textBox_Console_Read.Text = "Console_Read";
+            // 
+            // textBox_Console_Write
+            // 
+            this.textBox_Console_Write.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.textBox_Console_Write.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox_Console_Write.Location = new System.Drawing.Point(0, 61);
+            this.textBox_Console_Write.Name = "textBox_Console_Write";
+            this.textBox_Console_Write.Size = new System.Drawing.Size(1053, 20);
+            this.textBox_Console_Write.TabIndex = 1;
+            this.textBox_Console_Write.Text = "Console_Write//";
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.kryptonNavigator2);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Write);
+            this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Read);
+            this.splitContainer3.Size = new System.Drawing.Size(1053, 422);
+            this.splitContainer3.SplitterDistance = 337;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // panel_Main_Map
+            // 
+            this.panel_Main_Map.AutoScroll = true;
+            this.panel_Main_Map.Controls.Add(this.pictureBox_Map);
+            this.panel_Main_Map.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Main_Map.Location = new System.Drawing.Point(0, 0);
+            this.panel_Main_Map.Name = "panel_Main_Map";
+            this.panel_Main_Map.Size = new System.Drawing.Size(1051, 310);
+            this.panel_Main_Map.TabIndex = 0;
             // 
             // MainWindow
             // 
@@ -550,7 +682,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
-            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).EndInit();
@@ -559,13 +690,25 @@
             this.kryptonPage2.ResumeLayout(false);
             this.kryptonPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
+            this.kryptonPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator2)).EndInit();
+            this.kryptonNavigator2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).EndInit();
+            this.kryptonPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            this.panel_Main_Map.ResumeLayout(false);
+            this.panel_Main_Map.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -617,6 +760,15 @@
         private System.Windows.Forms.ToolStripMenuItem odAutoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem poradnikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem skrótyKlawiszoweToolStripMenuItem;
+        private System.Windows.Forms.Button button_Build_Line;
+        private System.Windows.Forms.Button button_Build_Node;
+        private System.Windows.Forms.Button button_Build_Delete;
+        private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator2;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage7;
+        private System.Windows.Forms.TextBox textBox_Console_Write;
+        private System.Windows.Forms.TextBox textBox_Console_Read;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Panel panel_Main_Map;
     }
 }
 

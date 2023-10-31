@@ -32,14 +32,15 @@
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.button_FormSetLine_Accept = new System.Windows.Forms.Button();
-            this.button_FormSetLine_Add = new System.Windows.Forms.Button();
-            this.button_FormSetLine_Delete = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button_FormSetLine_Close = new System.Windows.Forms.Button();
+            this.button_FormSetLine_Delete = new System.Windows.Forms.Button();
+            this.button_FormSetLine_Add = new System.Windows.Forms.Button();
+            this.button_FormSetLine_Accept = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -47,15 +48,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
+            this.kryptonPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Enabled = false;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -84,7 +89,7 @@
             this.kryptonPage2,
             this.kryptonPage3,
             this.kryptonPage4});
-            this.kryptonNavigator1.SelectedIndex = 3;
+            this.kryptonNavigator1.SelectedIndex = 0;
             this.kryptonNavigator1.Size = new System.Drawing.Size(646, 553);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -92,6 +97,7 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage1.Controls.Add(this.splitContainer2);
             this.kryptonPage1.Flags = 65534;
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
@@ -112,30 +118,6 @@
             this.kryptonPage2.Text = "Parametry Elektryczne";
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "C0570842EFA14394B78C5E47980D90FA";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(293, 553);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button_FormSetLine_Close);
-            this.panel1.Controls.Add(this.button_FormSetLine_Delete);
-            this.panel1.Controls.Add(this.button_FormSetLine_Add);
-            this.panel1.Controls.Add(this.button_FormSetLine_Accept);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 346);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(293, 207);
-            this.panel1.TabIndex = 2;
             // 
             // kryptonPage3
             // 
@@ -161,23 +143,26 @@
             this.kryptonPage4.ToolTipTitle = "Page ToolTip";
             this.kryptonPage4.UniqueName = "439A528BD7254A658AAD2B412CC051F5";
             // 
-            // button_FormSetLine_Accept
+            // panel1
             // 
-            this.button_FormSetLine_Accept.Location = new System.Drawing.Point(0, 3);
-            this.button_FormSetLine_Accept.Name = "button_FormSetLine_Accept";
-            this.button_FormSetLine_Accept.Size = new System.Drawing.Size(287, 42);
-            this.button_FormSetLine_Accept.TabIndex = 0;
-            this.button_FormSetLine_Accept.Text = "Zatwierdź";
-            this.button_FormSetLine_Accept.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.button_FormSetLine_Close);
+            this.panel1.Controls.Add(this.button_FormSetLine_Delete);
+            this.panel1.Controls.Add(this.button_FormSetLine_Add);
+            this.panel1.Controls.Add(this.button_FormSetLine_Accept);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 346);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(293, 207);
+            this.panel1.TabIndex = 2;
             // 
-            // button_FormSetLine_Add
+            // button_FormSetLine_Close
             // 
-            this.button_FormSetLine_Add.Location = new System.Drawing.Point(0, 51);
-            this.button_FormSetLine_Add.Name = "button_FormSetLine_Add";
-            this.button_FormSetLine_Add.Size = new System.Drawing.Size(287, 42);
-            this.button_FormSetLine_Add.TabIndex = 1;
-            this.button_FormSetLine_Add.Text = "Dodaj";
-            this.button_FormSetLine_Add.UseVisualStyleBackColor = true;
+            this.button_FormSetLine_Close.Location = new System.Drawing.Point(0, 148);
+            this.button_FormSetLine_Close.Name = "button_FormSetLine_Close";
+            this.button_FormSetLine_Close.Size = new System.Drawing.Size(287, 42);
+            this.button_FormSetLine_Close.TabIndex = 3;
+            this.button_FormSetLine_Close.Text = "Anuluj";
+            this.button_FormSetLine_Close.UseVisualStyleBackColor = true;
             // 
             // button_FormSetLine_Delete
             // 
@@ -188,14 +173,45 @@
             this.button_FormSetLine_Delete.Text = "Usuń";
             this.button_FormSetLine_Delete.UseVisualStyleBackColor = true;
             // 
-            // button_FormSetLine_Close
+            // button_FormSetLine_Add
             // 
-            this.button_FormSetLine_Close.Location = new System.Drawing.Point(0, 148);
-            this.button_FormSetLine_Close.Name = "button_FormSetLine_Close";
-            this.button_FormSetLine_Close.Size = new System.Drawing.Size(287, 42);
-            this.button_FormSetLine_Close.TabIndex = 3;
-            this.button_FormSetLine_Close.Text = "Anuluj";
-            this.button_FormSetLine_Close.UseVisualStyleBackColor = true;
+            this.button_FormSetLine_Add.Location = new System.Drawing.Point(0, 51);
+            this.button_FormSetLine_Add.Name = "button_FormSetLine_Add";
+            this.button_FormSetLine_Add.Size = new System.Drawing.Size(287, 42);
+            this.button_FormSetLine_Add.TabIndex = 1;
+            this.button_FormSetLine_Add.Text = "Dodaj";
+            this.button_FormSetLine_Add.UseVisualStyleBackColor = true;
+            // 
+            // button_FormSetLine_Accept
+            // 
+            this.button_FormSetLine_Accept.Location = new System.Drawing.Point(0, 3);
+            this.button_FormSetLine_Accept.Name = "button_FormSetLine_Accept";
+            this.button_FormSetLine_Accept.Size = new System.Drawing.Size(287, 42);
+            this.button_FormSetLine_Accept.TabIndex = 0;
+            this.button_FormSetLine_Accept.Text = "Zatwierdź";
+            this.button_FormSetLine_Accept.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(293, 553);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Enabled = false;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Size = new System.Drawing.Size(644, 526);
+            this.splitContainer2.SplitterDistance = 309;
+            this.splitContainer2.TabIndex = 0;
             // 
             // FormSetLine
             // 
@@ -215,10 +231,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).EndInit();
             this.kryptonNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
+            this.kryptonPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -237,5 +256,6 @@
         private System.Windows.Forms.Button button_FormSetLine_Delete;
         private System.Windows.Forms.Button button_FormSetLine_Add;
         private System.Windows.Forms.Button button_FormSetLine_Accept;
+        private System.Windows.Forms.SplitContainer splitContainer2;
     }
 }

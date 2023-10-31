@@ -25,6 +25,44 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static double scale_km; // Odniesienie dla skali wyrażone w km
         public static double scale_pix_per_km; // Odniesienie dla skali wyrażone w pikselach na km
 
+        public static int index_setup = 1111; // Indeks przypisywany do elementu
+
+        public static int button_size_Width = 40; // Rozmiar przycisku
+        public static int button_size_Height = 40;
+
+
+        public static int Point_X1 = 1; 
+        public static int Point_X2 = 1;
+        public static int Point_Y1 = 1;
+        public static int Point_Y2 = 1;
+        public static int distance;
+
+       /* public static void Distanse_Point(double setX1,double setX2,double setY1, double setY2) // Funkcja określająca odległość między punktami
+        {
+            // Punkt początkowy i końcowy dla Linii
+            Point_X1 = Convert.ToDouble(setX1);
+            Point_X2 = setX2;
+            Point_Y1 = setY1;
+            Point_Y2 = setY2;
+            distance = Math.Sqrt(Math.Pow(Point_X2-Point_X1,2) +   Math.Pow(Point_Y2-Point_Y1,2) ) ;
+        }*/
+
+        #region Graphics
+        // Zmienne dla grafiki
+        //Kolory
+
+        public static Color color_background = Color.White;
+        public static Color color_foreground = Color.Black;
+
+        //Inne
+
+        public static int penSize=1;
+
+       
+
+        #endregion
         // Zmienne pomocnicze
+
+        public static int m; // zmienna pomocnicza wykorzystywanaa w tworzeniu obiektu linni
     }
 }

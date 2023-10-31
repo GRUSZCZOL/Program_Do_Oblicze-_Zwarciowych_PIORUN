@@ -9,26 +9,20 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
     public class Element : Button
     {
-        Element(int setIndex,string setType) 
+       public Element(int setIndex,string setType) 
         {
             Index = setIndex; // Ustala Index dla wybranego elementu
             Type = setType; // Ustala typ elementu
         }
 
-        Element(double setZ)
-        {
-            Z = setZ; // Wariant z Z=const
-        }
+      
 
-        Element()
-        {
-            // Wariant domyślny
-        }
+        
 
         // Typ i index do kategoryzowania
 
-        int Index;
-        string Type;
+        public int Index;
+        public string Type;
 
         // Rezystancja, Reaktancja, Impedancja
 
@@ -40,8 +34,5 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             Z = Math.Sqrt(setR * setR + setX * setX);
         }
-
-       
-
     }
 }
