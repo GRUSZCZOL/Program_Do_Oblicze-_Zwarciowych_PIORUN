@@ -21,9 +21,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public MainWindow()
         {
             InitializeComponent();
+            comboBox_Control_1.DataSource = Database.ListOfElements;
+            comboBox_Control_2.DataSource = Database.ListOfNode;
+            comboBox_Control_3.DataSource = Database.ListOfLines;
         }
 
-
+        
        
         // Wydarzenia
 
