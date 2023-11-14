@@ -128,6 +128,14 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 {
                     ControlExtension.Draggable(item, true);
                 }
+                foreach (Element item in Database.ListOfElements) 
+                {
+                if(item.Type != "Line") 
+                    {
+                    ControlExtension.Draggable(item, true);
+                    }
+            
+                }
             } // Ustawia na przenoszenie elementów
            
 
@@ -211,6 +219,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
             // Wydarzenia zaimplementowane do elementu
             Nd.Click += new EventHandler(this.Delete_Button);
+            Nd.Click += new EventHandler(this.Inspector_Node);
             Nd.Click += new EventHandler(this.Create_Element_Line);
             Nd.Click += new EventHandler(this.Create_Element_Generator);
             Nd.MouseUp += new MouseEventHandler(MousePressGrab);
@@ -227,31 +236,36 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             public void Create_Element_Generator(Object sender, EventArgs e) 
             {
             Node Nd = sender as Node;
-            if(Database.Support.Count == 0) 
+            if(Database.Support.Count == 0&& Var.mode =="Build_Generator") 
             {
             Database.Support.Add(Nd);
 
-                Var.N++;
+                
                 Element Elm = new Element(Var.index_setup, "Generator"); // Tworzenie nwego elementu
                 Var.index_setup++; // Zwi?z?kowanie indeksu elementu
                 this.Controls.Add(Elm);
 
+                Elm.Parent = pictureBox_Map;
                 Elm.Name = "Element_Generator_" + Var.index_setup.ToString();
                 Elm.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
                 Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
-                Elm.Location = new Point(Nd.Location.X + Var.button_size_Width/2,Nd.Location.Y + 80 + Var.button_size_Height/2);
+                Elm.Location = new Point( Nd.Location.X, Nd.Location.Y + 80);
                 Elm.Text = "Gen_"+Elm.Index.ToString();
                 Elm.BringToFront();
                 Elm.Show();
 
+                Elm.Click += new EventHandler(this.Inspector_Element);
+
                 Elm.ListOfNghbNode.Add(Nd);
+                Database.ListOfElements.Add(Elm);
+                Database.ListOfGenerators.Add(Elm);
 
 
                 // Wydarzenia zaimplementowane do elementu
                 
                 // Elm.MouseUp += new MouseEventHandler(MousePressGrab);
 
-                pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue,3), Nd.Location, Elm.Location);
+                pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue,3), Nd.Location.X+(Var.button_size_Width/2), Nd.Location.Y + (Var.button_size_Height/2), Elm.Location.X + (Var.button_size_Width/2), Elm.Location.Y + (Var.button_size_Height/2));
                 Database.Support.Clear();
             }
             
@@ -259,133 +273,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
            
         } // Tworzenie elementu generator
-
-
-        /*  public void Create_Element_Line_For_Node2(Object sender, EventArgs e)
-        {
-            Node Nd = sender as Node;
-            Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego elementu
-
-
-
-            if (Var.mode == "Build_Line" && Var.m == 0)
-            {
-                Var.Point_X1 = Nd.Location.X + (Nd.Size.Width / 2);
-                Var.Point_Y1 = Nd.Location.Y + (Nd.Size.Height / 2);
-                Var.m = 1;
-
-                Elm.ListOfNghbNode.Add(Nd);
-                HELP.Text = Elm.ListOfNghbNode.Count.ToString();
-
-            }
-            else if (Var.mode == "Build_Line" && Var.m == 1)
-            {
-
-                Var.Point_X2 = Nd.Location.X + (Nd.Size.Width / 2);
-                Var.Point_Y2 = Nd.Location.Y + (Nd.Size.Height / 2);
-                //Var.m = 0;
-
-
-                Elm.ListOfNghbNode.Add(Nd);
-                HELP.Text += Elm.ListOfNghbNode.Count.ToString();
-
-
-                if (Var.Point_X1 != Var.Point_X2 && Var.Point_Y1 != Var.Point_Y2)
-                {
-
-                    Point P_1 = new Point(Convert.ToInt32(Var.Point_X1), Convert.ToInt32(Var.Point_Y1));
-                    Point P_2 = new Point(Convert.ToInt32(Var.Point_X2), Convert.ToInt32(Var.Point_Y2));
-                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), P_1, P_2);
-
-                    //Var.N++;
-
-                    Var.index_setup++; // Zwi?z?kowanie indeksu elementu
-                    this.Controls.Add(Elm);
-
-                    // TODO: Trzeba wprowadzić warunek. Jeżeli w kryptonie otwarta jest dana karta to do niej należy zparentować element
-                    Elm.Parent = pictureBox_Map;
-                    Elm.Name = "Element_Line_" + Var.index_setup.ToString();
-                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
-                    Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
-                    Elm.Location = new Point(
-                        ((Var.Point_X1 + Var.Point_X2) / 2) - (Elm.Size.Width / 2),
-                        ((Var.Point_Y1 + Var.Point_Y2) / 2) - (Elm.Size.Width / 2));
-
-
-                    Elm.BringToFront();
-                    Elm.Show();
-
-                    Var.m = 0;
-
-                    Database.ListOfLines.Add(Elm);
-                    Database.ListOfElements.Add(Elm);
-
-                }
-
-            }
-
-
-        }*/
-
-        /*public void Create_Element_Line_For_Node(Object sender, EventArgs e)
-     {
-
-         Node thisNd = sender as Node;
-         if (Var.mode == "Build_Line" && Var.m == 0)
-         {
-             Var.Point_X1 = thisNd.Location.X + (thisNd.Size.Width / 2);
-             Var.Point_Y1 = thisNd.Location.Y + (thisNd.Size.Height / 2);
-             Var.m = 1;
-
-         }
-         else if (Var.mode == "Build_Line" && Var.m == 1)
-         {
-             Var.Point_X2 = thisNd.Location.X + (thisNd.Size.Width / 2);
-             Var.Point_Y2 = thisNd.Location.Y + (thisNd.Size.Height / 2);
-
-             Var.m = 0;
-             if(Var.Point_X1!=Var.Point_X2 && Var.Point_Y1 != Var.Point_Y2)
-             {
-
-                 Point P_1 = new Point(Convert.ToInt32(Var.Point_X1), Convert.ToInt32(Var.Point_Y1));
-                 Point P_2 = new Point(Convert.ToInt32(Var.Point_X2), Convert.ToInt32(Var.Point_Y2));
-                 pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), P_1, P_2);
-
-                 Var.N++;
-                 Element newElement = new Element(Var.index_setup, "Line"); // Tworzenie nwego elementu
-                 Var.index_setup++; // Zwi?z?kowanie indeksu elementu
-                 this.Controls.Add(newElement);
-
-                 // TODO: Trzeba wprowadzić warunek. Jeżeli w kryptonie otwarta jest dana karta to do niej należy zparentować element
-                 newElement.Parent = pictureBox_Map;
-                 newElement.Name = "Element_Line_" + Var.N.ToString();
-                 newElement.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
-                 newElement.Size = new Size(Var.button_size_Width, Var.button_size_Height);
-                 newElement.Location = new Point( 
-                     ((Var.Point_X1+Var.Point_X2)/2)-(newElement.Size.Width/2)                ,   
-                     ((Var.Point_Y1 + Var.Point_Y2) / 2)- (newElement.Size.Width / 2));
-
-
-                 //newElement.Click += new EventHandler(Show_Info_Element());
-
-
-
-                 newElement.BringToFront();
-                 newElement.Show();
-
-                 Var.m = 0;
-
-                 Database.ListOfLines.Add(newElement);
-                 Database.ListOfElements.Add(newElement);
-
-
-             }
-
-
-         }
-         else if (Var.mode != "Build_Line") { Var.m = 0; }
-     } // Tworzy nowy Element: LINE / Funkcja przypisywana do każdego elementu NODE*/
-
             public void Create_Element_Line(Object sender, EventArgs e) 
         {
             Node Nd = sender as Node;
@@ -428,6 +315,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.ListOfNghbNode[0].ListOfNghElements.Add(Elm);
                     Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
 
+                    Elm.Click += new EventHandler(this.Inspector_Element);
+
                    // comboBox_Control_1.DataSource = Elm.ListOfNghbNode;
                     
                     Database.Support.Clear(); // Czyszczenie listy support  
@@ -453,8 +342,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 {
                     ControlExtension.Draggable(item, false);
                 }
-           
-            }// Anuluj przesuwanie elementów
+                foreach (Element item in Database.ListOfElements)
+                {
+                    if (item.Type != "Line")
+                    {
+                        ControlExtension.Draggable(item, false);
+                    }
+
+            }   
+
+        }// Anuluj przesuwanie elementów
             public void MousePressGrab(Object sender,MouseEventArgs e) 
             {
             if(Var.mode == "Build_Grab") {
@@ -478,6 +375,20 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
            
 
         }  // Zmiana pozycji po przesunięciu // Rysowanie od nowa linii
+            public void Inspector_Node(Object sender, EventArgs e) 
+        {
+            Node Nd = sender as Node;
+            if (Var.mode == "Build_Inspector")
+            { HELP_Multiline1.Text = Nd.Location.ToString(); }
+        }
+            public void Inspector_Element(Object sender, EventArgs e) 
+        {
+            Element Elm = sender as Element;
+            if (Var.mode == "Build_Inspector") 
+            { HELP_Multiline1.Text = Elm.Location.ToString()+"\r\n"+Elm.Name; }
+            
+            
+        }
             
 
 
