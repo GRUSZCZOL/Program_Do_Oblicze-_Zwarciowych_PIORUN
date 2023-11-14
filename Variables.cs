@@ -20,6 +20,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static int N; // Liczba węzłów
 
+        public static int selectedIndex;
+
         public static int m_X; // Wspolrzedne myszy X
         public static int m_Y; // Wspolrzedne myszy Y
 
@@ -72,5 +74,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         // Zmienne pomocnicze
 
         public static int m; // zmienna pomocnicza wykorzystywanaa w tworzeniu obiektu linni
+
+        public static int v = 0; // przechowalnia indexów elementów
+        public static int b = 0;
+
+        // Listy
+
+       
+
     }
 }

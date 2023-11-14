@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
 using MathNet.Numerics.LinearAlgebra.Double;
-using MathNet.Numerics.LinearAlgebra.Complex32;
+
 using MathNet.Numerics;
 using ComponentFactory.Krypton.Toolkit;
+using System.Diagnostics.Eventing.Reader;
 using System.Numerics;
+using static System.Windows.Forms.AxHost;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
@@ -22,290 +24,419 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public MainWindow()
         {
             InitializeComponent();
-            comboBox_Control_1.DataSource = Database.ListOfElements;
-            comboBox_Control_2.DataSource = Database.ListOfNode;
-            comboBox_Control_3.DataSource = Database.ListOfLines;
+
         }
 
         
        
-        // Wydarzenia
+     // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------
 
         #region MODE TYPE PARTS
 
-        // TRYB MAPY / MAP MODE
-        private void MainWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBox_Map_MouseMove(object sender, MouseEventArgs e)
-        {          Var.m_X = e.X ;
-                   Var.m_Y = e.Y ;
-            HELP_Multiline2.Text = Var.m_X.ToString()+" / "+Var.m_Y.ToString();
-        }  // Lokalizowanie pozycji myszy
-        private void button_Map_Select_Click(object sender, EventArgs e)
-        {
-            // Wgrywanie pliku przez filtrowanie treści
-
-            this.openFileDialog1.Filter = "BMP Files (*.BMP;*.DIB;*.RLE)|*.BMP;*.DIB;*.RLE|JPEG Files (*.JPG;*.JPEG;*.JPE;*.JFIF)|*.JPG;*.JPEG;*.JPE;*.JFIF|GIF Files(*.GIF)|*.GIF|TIFF Files (*.TIF;*.TIFF)|*.TIF;*.TIFF|PNG Files(*.PNG)|*.PNG";
-           // Filtr dla obrazów
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            // TRYB MAPY / MAP MODE
+        
+            private void pictureBox_Map_MouseMove(object sender, MouseEventArgs e)
+            {          
+                Var.m_X = e.Location.X + pictureBox_Map.Location.X;
+                Var.m_Y = e.Location.Y + pictureBox_Map.Location.Y;
+               // HELP_Multiline1.Text = string.Format("Pozycja kursora na mapie:X: {0},Y: {1}: ", e.Location.X-20, e.Location.Y-20);
+                //HELP_Multiline2.Text = panel_Main_Map.VerticalScroll.Value.ToString() +"\r\n" +panel_Main_Map.HorizontalScroll.Value.ToString();
+            }  // Lokalizowanie pozycji myszy
+            private void button_Map_Select_Click(object sender, EventArgs e)
             {
-                string filename = openFileDialog1.FileName;
+                // Wgrywanie pliku przez filtrowanie treści
 
-                // Ustawienia PictureBox i wgrywanie pliku ze ścieżki
+                this.openFileDialog1.Filter = "BMP Files (*.BMP;*.DIB;*.RLE)|*.BMP;*.DIB;*.RLE|JPEG Files (*.JPG;*.JPEG;*.JPE;*.JFIF)|*.JPG;*.JPEG;*.JPE;*.JFIF|GIF Files(*.GIF)|*.GIF|TIFF Files (*.TIF;*.TIFF)|*.TIF;*.TIFF|PNG Files(*.PNG)|*.PNG";
+               // Filtr dla obrazów
 
-                Bitmap bmp = new Bitmap(filename);
-                int size_x = bmp.Width;
-                int size_y = bmp.Height;
-                pictureBox_Map.Visible = true;
-                pictureBox_Map.Height = size_y;
-                pictureBox_Map.Width = size_x;
-                pictureBox_Map.Image = Image.FromFile(filename);
-                Var.N = 0;
-            }
-        } // Załadowanie mapy przez przycisk button_Map_Select
-        private void button_Map_Delete_Click(object sender, EventArgs e) // Usuwanie mapy
-        {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string filename = openFileDialog1.FileName;
+
+                    // Ustawienia PictureBox i wgrywanie pliku ze ścieżki
+
+                    Bitmap bmp = new Bitmap(filename);
+                    int size_x = bmp.Width;
+                    int size_y = bmp.Height;
+                    pictureBox_Map.Visible = true;
+                    pictureBox_Map.Height = size_y;
+                    pictureBox_Map.Width = size_x;
+                    pictureBox_Map.Image = Image.FromFile(filename);
+                    Var.N = 0;
+                }
+            } // Załadowanie mapy przez przycisk button_Map_Select
+            private void button_Map_Delete_Click(object sender, EventArgs e) // Usuwanie mapy
+            {
         
 
             
-            pictureBox_Map.Image = null; // zamienia obraz na null
+                pictureBox_Map.Image = null; // zamienia obraz na null
 
             // TODO: Usuwanie mapy wraz z elementami
-
             
-        }
-
-
-
-
-
-
-
-
-
-        // TRYB: BUDOWANIE / BUILD MODE
-        private void button_Build_Node_Click(object sender, EventArgs e) // Przejście do trybu budowania Węzła
-        {
-            Var.mode = "Build_Node";
-            HELP_Multiline2.Text = Var.mode;
-            foreach (Node item in Database.ListOfNode)
-            {
-                ControlExtension.Draggable(item, false);
-            }
-        }
-        private void button_Build_Line_Click(object sender, EventArgs e)
-        {
-            Var.mode = "Build_Line";
-            HELP_Multiline2.Text = Var.mode;
-            foreach (Node item in Database.ListOfNode)
-            {
-                ControlExtension.Draggable(item, false);
-            }
-        }// Zmiana trybu na budowanie Linii / Tworzy nowy Element: LINE
-        private void button_Build_Delete_Click(object sender, EventArgs e)
-        {
-            Var.mode = "Build_Delete";
-            HELP_Multiline2.Text = Var.mode;
-            foreach (Node item in Database.ListOfNode)
-            {
-                ControlExtension.Draggable(item, false);
-            }
-        } // Usuwanie wybranego elementu
-        private void button_Build_Grab_Click(object sender, EventArgs e)
-        {
-            Var.mode = "Build_Grab";
-
-            foreach (Node item in Database.ListOfNode) 
-            {
-                ControlExtension.Draggable(item, true);
-            }
             
-            HELP.Text = Var.mode;
-        } // Zmienia tryb na przesuwanie
-        private void button_Build_Inspector_Click(object sender, EventArgs e) // Zmiana na inspekcje
-
-        {
-            Var.mode = "Build_Inspector";
-            foreach (Node item in Database.ListOfNode)
-            {
-                ControlExtension.Draggable(item, false);
-            }
-        }
-        private void pictureBox_Map_Click(object sender, EventArgs e) // Inicjowanie budowania wybranego elementu poprzez kliknięcie w PictureBox
-        {
-            switch (Var.mode) 
-            {
-                case "Build_Node": Create_Element_Node(); break;
-                case "Build_Line": /*Create_Element_Line()*/ break;
-                case "Build_Transformator": /*Create_Element_Transformer()*/; break;
-                case "Build_Generator": /*Create_Element_Generator()*/; break;
-                case "Build_Receiver": /*Create_Element_Receiver()*/; break;
-                case "Build_System": /*Create_Element_System()*/; break;
-                case "Build_Delete": /*Delete_Element()*/; break;
-
-                default: MessageBox.Show("Coś poszło nie tak. Upewnij sie że typ string mode jest prawidłowo ustawiony"); break;
-
             }
 
-        }
+
+
+
+
+
+
+
+
+            // TRYB: BUDOWANIE / BUILD MODE
+            private void button_Build_Node_Click(object sender, EventArgs e) // Przejście do trybu budowania Węzła
+            {
+                Cancel_Grab();
+                Var.mode = "Build_Node";
+                HELP.Text = Var.mode;
+            
+            }
+            private void button_Build_Line_Click(object sender, EventArgs e)
+            {
+                Cancel_Grab();
+                Var.mode = "Build_Line";
+                HELP.Text = Var.mode;
+            }// Zmiana trybu na budowanie Linii / Tworzy nowy Element: LINE
+            private void button_Build_Delete_Click(object sender, EventArgs e)
+            {
+                Cancel_Grab();
+                Var.mode = "Build_Delete";
+                HELP.Text = Var.mode;
+            } // Usuwanie wybranego elementu
+            private void button_Build_Inspector_Click(object sender, EventArgs e) // Ustawia treyb inspekcji umożliwiający zmiane parametrów elementów
+            {
+                Cancel_Grab();
+                Var.mode = "Build_Inspector";
+                HELP.Text = Var.mode;
+            }
+            private void button_Build_Grab_Click(object sender, EventArgs e)
+            {
+            
+                Var.mode = "Build_Grab";
+                HELP.Text = Var.mode;
+
+                foreach (Node item in Database.ListOfNodes) 
+                {
+                    ControlExtension.Draggable(item, true);
+                }
+            } // Ustawia na przenoszenie elementów
+
+            private void pictureBox_Map_Click(object sender, EventArgs e) // Inicjowanie budowania wybranego elementu poprzez kliknięcie w PictureBox
+            {
+                switch (Var.mode) 
+                {
+                    case "Build_Node": Create_Element_Node(); break;
+                    case "Build_Line":  break;
+                    case "Build_Transformator": ; break;
+                    case "Build_Generator": ; break;
+                    case "Build_Receiver": ; break;
+                    case "Build_System": ; break;
+
+                    case "Build_Delete": ; break; // Usuwanie wybranego elementu
+                    case "Build_Inspector": ; break; // Przejście do trybu inspekcji
+                    case "Build_Grab":; break; //Przejście do trybu przesuwania
+                    default: MessageBox.Show("Coś poszło nie tak. Upewnij sie, że zmienna Var.mode jest prawidłowo ustawiona"); break;
+
+                }
+
+            }
+
+
+            // TRYB: ZWARCIE / SHORT MODE
+
 
         #endregion
 
 
 
 
+        
 
+             // Funkcje / Metody
 
-        // Funkcje / Metody
-
-        public void Delete_Button(Object sender, EventArgs e)
-        {
-            if (Var.mode == "Build_Delete")
+            public void Delete_Button(Object sender, EventArgs e)
             {
-                Node ToDelete = sender as Node;
-                ToDelete.Parent = null;
-                this.Controls.Remove(ToDelete);
+            Node Nd = sender as Node;
 
-                //Zaznaczony element
-
+            foreach(Element item in Nd.ListOfNghElements)
+            {
+                this.Controls.Remove(item);
             }
+                int k = panel_Main_Map.HorizontalScroll.Value;
+                int l = panel_Main_Map.VerticalScroll.Value;
 
-        } // Usuwa wskazany element
-        public void Create_Element_Node()
+                if (Var.mode == "Build_Delete")
+                {
+                    Node ToDelete = sender as Node;
+                    ToDelete.Parent = null;
+                    this.Controls.Remove(ToDelete);
+
+
+                    panel_Main_Map.HorizontalScroll.Value = k;
+                    panel_Main_Map.VerticalScroll.Value = l;
+
+                    
+                    //Zaznaczony element
+
+                }
+
+            } // Usuwa wskazany element
+            public void Create_Element_Node()
         {
+
+
             Var.N++;
             Node Nd = new Node(Var.N); // Tworzenie nwego elementu
             Var.index_setup++; // Zwi?z?kowanie indeksu elementu
             this.Controls.Add(Nd);
-            
+
             Nd.Name = "Element_Node_" + Var.N.ToString();
             Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
             Nd.Size = new Size(40, 40);
-            Nd.Location = new Point(Var.m_X -(Nd.Size.Width/2),   Var.m_Y  - (Nd.Size.Height/2));
+            Nd.Location = new Point(Var.m_X + panel_Main_Map.HorizontalScroll.Value - (Nd.Size.Width / 2), Var.m_Y + panel_Main_Map.VerticalScroll.Value - (Nd.Size.Height / 2));
             Nd.Text = Nd.Index.ToString();
-            Nd.BringToFront(); 
+            Nd.BringToFront();
             Nd.Show();
 
-            Database.ListOfNode.Add(Nd);
 
             // Wydarzenia zaimplementowane do elementu
             Nd.Click += new EventHandler(this.Delete_Button);
             Nd.Click += new EventHandler(this.Create_Element_Line);
-            Nd.MouseUp += new MouseEventHandler(this.GrabPressMouseButton);
-            Nd.Click += new EventHandler(this.ShowLocation);
+            Nd.MouseUp += new MouseEventHandler(MousePressGrab);
+
 
             Nd.Parent = pictureBox_Map;
 
+            Database.ListOfNodes.Add(Nd);
+
+
+
+
         } // Tworzy nowy Element: NODE
-        public void Create_Element_Line(Object sender, EventArgs e)
+
+
+        /*  public void Create_Element_Line_For_Node2(Object sender, EventArgs e)
         {
-            
             Node Nd = sender as Node;
-
-            if (Database.SupportList.Count == 0 && Var.mode == "Build_Line")
-            {
-                Database.SupportList.Add(Nd);
-            }
-            else if (Database.SupportList.Count == 1 && Var.mode == "Build_Line")
-            {
-                Database.SupportList.Add(Nd);
-
-                if (Database.SupportList[0] != Database.SupportList[1]) 
-                {
-                Element Elm = new Element(Var.index_setup,"Line"); // Tworzenie nowego elementu
-
-                    Var.index_setup++; // Zwi?z?kowanie indeksu elementu
-                    this.Controls.Add(Elm);
-                    Elm.Parent = pictureBox_Map;
-                    Elm.Name = "Element_Line_" + Var.N.ToString();
-                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
-                    Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
-
-                    Elm.ListOfNghNodes.Add(Database.SupportList[0]); // Dodaje Nody do Linii
-                    Elm.ListOfNghNodes.Add(Database.SupportList[1]);
-
-                    Database.SupportList[0].ListOfNghElements.Add(Elm); // Dodaje Element do nodów
-                    Database.SupportList[1].ListOfNghElements.Add(Elm);
+            Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego elementu
 
 
 
-                    Elm.Location = new Point(
-                        ((Database.SupportList[0].Location.X + Database.SupportList[1].Location.X) / 2),
-                        ((Database.SupportList[0].Location.Y + Database.SupportList[1].Location.Y)/2 ));
-
-                    Elm.BringToFront();
-                    Elm.Show();
-                }
-            }
-            else
-            {
-                Database.SupportList.Clear();
-            }
-       /*
-            Element thisElement = sender as Element;
             if (Var.mode == "Build_Line" && Var.m == 0)
             {
-                Var.Point_X1 = thisElement.Location.X + (thisElement.Size.Width / 2);
-                Var.Point_Y1 = thisElement.Location.Y + (thisElement.Size.Height / 2);
+                Var.Point_X1 = Nd.Location.X + (Nd.Size.Width / 2);
+                Var.Point_Y1 = Nd.Location.Y + (Nd.Size.Height / 2);
                 Var.m = 1;
+
+                Elm.ListOfNghbNode.Add(Nd);
+                HELP.Text = Elm.ListOfNghbNode.Count.ToString();
 
             }
             else if (Var.mode == "Build_Line" && Var.m == 1)
             {
-                Var.Point_X2 = thisElement.Location.X + (thisElement.Size.Width / 2);
-                Var.Point_Y2 = thisElement.Location.Y + (thisElement.Size.Height / 2);
-                Var.m = 0;
-                if(Var.Point_X1!=Var.Point_X2 && Var.Point_Y1 != Var.Point_Y2)
+
+                Var.Point_X2 = Nd.Location.X + (Nd.Size.Width / 2);
+                Var.Point_Y2 = Nd.Location.Y + (Nd.Size.Height / 2);
+                //Var.m = 0;
+
+
+                Elm.ListOfNghbNode.Add(Nd);
+                HELP.Text += Elm.ListOfNghbNode.Count.ToString();
+
+
+                if (Var.Point_X1 != Var.Point_X2 && Var.Point_Y1 != Var.Point_Y2)
                 {
+
                     Point P_1 = new Point(Convert.ToInt32(Var.Point_X1), Convert.ToInt32(Var.Point_Y1));
                     Point P_2 = new Point(Convert.ToInt32(Var.Point_X2), Convert.ToInt32(Var.Point_Y2));
                     pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), P_1, P_2);
 
-                    Element newElement = new Element(Var.index_setup, "Line"); // Tworzenie nwego elementu
+                    //Var.N++;
+
                     Var.index_setup++; // Zwi?z?kowanie indeksu elementu
-                    this.Controls.Add(newElement);
-                    newElement.Parent = pictureBox_Map;
-                    newElement.Name = "Element_Line_" + Var.N.ToString();
-                    newElement.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
-                    newElement.Size = new Size(Var.button_size_Width, Var.button_size_Height);
-                    newElement.Location = new Point( 
-                        ((Var.Point_X1+Var.Point_X2)/2)-(newElement.Size.Width/2)                ,   
-                        ((Var.Point_Y1 + Var.Point_Y2) / 2)- (newElement.Size.Width / 2));
-                    newElement.BringToFront();
-                    newElement.Show();
+                    this.Controls.Add(Elm);
+
+                    // TODO: Trzeba wprowadzić warunek. Jeżeli w kryptonie otwarta jest dana karta to do niej należy zparentować element
+                    Elm.Parent = pictureBox_Map;
+                    Elm.Name = "Element_Line_" + Var.index_setup.ToString();
+                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
+                    Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
+                    Elm.Location = new Point(
+                        ((Var.Point_X1 + Var.Point_X2) / 2) - (Elm.Size.Width / 2),
+                        ((Var.Point_Y1 + Var.Point_Y2) / 2) - (Elm.Size.Width / 2));
+
+
+                    Elm.BringToFront();
+                    Elm.Show();
 
                     Var.m = 0;
+
+                    Database.ListOfLines.Add(Elm);
+                    Database.ListOfElements.Add(Elm);
+
                 }
-               
 
             }
-            else if (Var.mode != "Build_Line") { Var.m = 0; }*/
-        } // Tworzy nowy Element: LINE / Funkcja przypisywana do każdego elementu NODE
-        public void GrabPressMouseButton(Object sender, MouseEventArgs e) 
+
+
+        }*/
+
+        /*public void Create_Element_Line_For_Node(Object sender, EventArgs e)
+     {
+
+         Node thisNd = sender as Node;
+         if (Var.mode == "Build_Line" && Var.m == 0)
+         {
+             Var.Point_X1 = thisNd.Location.X + (thisNd.Size.Width / 2);
+             Var.Point_Y1 = thisNd.Location.Y + (thisNd.Size.Height / 2);
+             Var.m = 1;
+
+         }
+         else if (Var.mode == "Build_Line" && Var.m == 1)
+         {
+             Var.Point_X2 = thisNd.Location.X + (thisNd.Size.Width / 2);
+             Var.Point_Y2 = thisNd.Location.Y + (thisNd.Size.Height / 2);
+
+             Var.m = 0;
+             if(Var.Point_X1!=Var.Point_X2 && Var.Point_Y1 != Var.Point_Y2)
+             {
+
+                 Point P_1 = new Point(Convert.ToInt32(Var.Point_X1), Convert.ToInt32(Var.Point_Y1));
+                 Point P_2 = new Point(Convert.ToInt32(Var.Point_X2), Convert.ToInt32(Var.Point_Y2));
+                 pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), P_1, P_2);
+
+                 Var.N++;
+                 Element newElement = new Element(Var.index_setup, "Line"); // Tworzenie nwego elementu
+                 Var.index_setup++; // Zwi?z?kowanie indeksu elementu
+                 this.Controls.Add(newElement);
+
+                 // TODO: Trzeba wprowadzić warunek. Jeżeli w kryptonie otwarta jest dana karta to do niej należy zparentować element
+                 newElement.Parent = pictureBox_Map;
+                 newElement.Name = "Element_Line_" + Var.N.ToString();
+                 newElement.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
+                 newElement.Size = new Size(Var.button_size_Width, Var.button_size_Height);
+                 newElement.Location = new Point( 
+                     ((Var.Point_X1+Var.Point_X2)/2)-(newElement.Size.Width/2)                ,   
+                     ((Var.Point_Y1 + Var.Point_Y2) / 2)- (newElement.Size.Width / 2));
+
+
+                 //newElement.Click += new EventHandler(Show_Info_Element());
+
+
+
+                 newElement.BringToFront();
+                 newElement.Show();
+
+                 Var.m = 0;
+
+                 Database.ListOfLines.Add(newElement);
+                 Database.ListOfElements.Add(newElement);
+
+
+             }
+
+
+         }
+         else if (Var.mode != "Build_Line") { Var.m = 0; }
+     } // Tworzy nowy Element: LINE / Funkcja przypisywana do każdego elementu NODE*/
+
+            public void Create_Element_Line(Object sender, EventArgs e) 
         {
             Node Nd = sender as Node;
-            if(Var.mode == "Build_Grab") 
+            if (Database.Support.Count == 0&& Var.mode=="Build_Line") 
             {
-               // MessageBox.Show(Nd.ListOfNghElements.Count.ToString());
-                foreach (Element item in Nd.ListOfNghElements)
+                Database.Support.Add(Nd);
+
+            } else if(Database.Support.Count == 1) 
+            {
+                Database.Support.Add(Nd);
+                HELP_Multiline1.Text = Database.Support[0].Name.ToString() +" / " +Database.Support[1].Name.ToString();
+
+                if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Line")
                 {
-                    item.Reposition();
+                    Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
+
+                  //  MessageBox.Show(Database.Support.Count.ToString());
+
+                    Elm.ListOfNghbNode.Add(Database.Support[0]);
+                    Elm.ListOfNghbNode.Add(Database.Support[1]);
+
+                    Var.index_setup++;
+                    Elm.Parent = pictureBox_Map;
+                    Elm.Name = "Element_Line_" + Var.index_setup.ToString();
+                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
+                    Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
+                    Elm.Location = new Point(
+                        ((Elm.ListOfNghbNode[0].Location.X + Elm.ListOfNghbNode[1].Location.X) / 2) /*+ (Elm.Size.Width / 2)*/,
+                        ((Elm.ListOfNghbNode[0].Location.Y + Elm.ListOfNghbNode[1].Location.Y) / 2)) /*+(Elm.Size.Height / 2))*/;
+
+                    Point P = new Point(20, 20);
+                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), Elm.ListOfNghbNode[0].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[0].Location.Y + (Elm.Size.Height / 2), Elm.ListOfNghbNode[1].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[1].Location.Y + (Elm.Size.Height / 2));
+
+                   
+                    Elm.BringToFront();
+                    Elm.Show();
+
+                    Database.ListOfLines.Add(Elm);
+                    Database.ListOfElements.Add(Elm);
+                    Elm.ListOfNghbNode[0].ListOfNghElements.Add(Elm);
+                    Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
+
+                   // comboBox_Control_1.DataSource = Elm.ListOfNghbNode;
+                    
+                    Database.Support.Clear(); // Czyszczenie listy support  
                 }
+                else if(Database.Support[0].Location == Database.Support[1].Location) 
+                {
+                    Database.Support.Clear(); // Czyszczenie listy support  
+                }
+                
+
+               
             }
             
 
-        } // Repozycjonowanie pry przesuwaniu
 
-        public void ShowLocation(Object sender, EventArgs e) 
-        {
-            Node Nd = sender as Node;
+        } // Pojawia się problem przy tworzeniu linii
 
-            HELP_Multiline1.Text = "X: " + Nd.Location.X.ToString() + "\n" + "Y: " + Nd.Location.Y.ToString() + "\n";
-        }
+       
 
-      
-    } 
+            public void Cancel_Grab() 
+            {
+                foreach (Node item in Database.ListOfNodes)
+                {
+                    ControlExtension.Draggable(item, false);
+                }
+           
+            }// Anuluj przesuwanie elementów
+            public void MousePressGrab(Object sender,MouseEventArgs e) 
+            {
+            if(Var.mode == "Build_Grab") {
+                Node Nd = sender as Node;
+
+                pictureBox_Map.Invalidate();
+                foreach (Element item in Nd.ListOfNghElements)
+                {
+                    HELP.Text = item.ListOfNghbNode.Count.ToString();
+
+                    item.LineReposition();                    
+                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), item.ListOfNghbNode[0].Location.X + (item.Size.Width / 2), item.ListOfNghbNode[0].Location.Y + (item.Size.Height / 2), item.ListOfNghbNode[1].Location.X + (item.Size.Width / 2), item.ListOfNghbNode[1].Location.Y + (item.Size.Height / 2));
+
+                }
+                           
+            }
+            
+           
+
+           
+
+        }  // Zmiana pozycji po przesunięciu // Rysowanie od nowa linii
+            
+        
+
+       
+
+        } 
 }

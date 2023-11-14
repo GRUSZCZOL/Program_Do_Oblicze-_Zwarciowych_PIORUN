@@ -55,6 +55,8 @@
             this.button_Map_Delete = new System.Windows.Forms.Button();
             this.button_Map_Select = new System.Windows.Forms.Button();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Build_Grab = new System.Windows.Forms.Button();
+            this.button_Build_Inspector = new System.Windows.Forms.Button();
             this.button_Build_Delete = new System.Windows.Forms.Button();
             this.button_Build_Line = new System.Windows.Forms.Button();
             this.button_Build_Node = new System.Windows.Forms.Button();
@@ -87,9 +89,8 @@
             this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button_Build_Grab = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button_Build_Inspector = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -186,20 +187,20 @@
             // HELP_Multiline2
             // 
             this.HELP_Multiline2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 344);
+            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 271);
             this.HELP_Multiline2.Multiline = true;
             this.HELP_Multiline2.Name = "HELP_Multiline2";
-            this.HELP_Multiline2.Size = new System.Drawing.Size(127, 193);
+            this.HELP_Multiline2.Size = new System.Drawing.Size(127, 159);
             this.HELP_Multiline2.TabIndex = 2;
             this.HELP_Multiline2.Text = "Dodatkowe opcje";
             // 
             // HELP_Multiline1
             // 
-            this.HELP_Multiline1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HELP_Multiline1.Location = new System.Drawing.Point(0, 20);
+            this.HELP_Multiline1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.HELP_Multiline1.Location = new System.Drawing.Point(0, 430);
             this.HELP_Multiline1.Multiline = true;
             this.HELP_Multiline1.Name = "HELP_Multiline1";
-            this.HELP_Multiline1.Size = new System.Drawing.Size(127, 517);
+            this.HELP_Multiline1.Size = new System.Drawing.Size(127, 107);
             this.HELP_Multiline1.TabIndex = 1;
             this.HELP_Multiline1.Text = "Notatnik";
             // 
@@ -392,8 +393,8 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage1.Controls.Add(this.button_Build_Inspector);
             this.kryptonPage1.Controls.Add(this.button_Build_Grab);
+            this.kryptonPage1.Controls.Add(this.button_Build_Inspector);
             this.kryptonPage1.Controls.Add(this.button_Build_Delete);
             this.kryptonPage1.Controls.Add(this.button_Build_Line);
             this.kryptonPage1.Controls.Add(this.button_Build_Node);
@@ -405,6 +406,26 @@
             this.kryptonPage1.Text = "Budowanie";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "9110C834021D44397AAC87818037AF22";
+            // 
+            // button_Build_Grab
+            // 
+            this.button_Build_Grab.Location = new System.Drawing.Point(892, 3);
+            this.button_Build_Grab.Name = "button_Build_Grab";
+            this.button_Build_Grab.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Grab.TabIndex = 5;
+            this.button_Build_Grab.Text = "Przesuń";
+            this.button_Build_Grab.UseVisualStyleBackColor = true;
+            this.button_Build_Grab.Click += new System.EventHandler(this.button_Build_Grab_Click);
+            // 
+            // button_Build_Inspector
+            // 
+            this.button_Build_Inspector.Location = new System.Drawing.Point(4, 4);
+            this.button_Build_Inspector.Name = "button_Build_Inspector";
+            this.button_Build_Inspector.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Inspector.TabIndex = 4;
+            this.button_Build_Inspector.Text = "Inspektor";
+            this.button_Build_Inspector.UseVisualStyleBackColor = true;
+            this.button_Build_Inspector.Click += new System.EventHandler(this.button_Build_Inspector_Click);
             // 
             // button_Build_Delete
             // 
@@ -418,7 +439,7 @@
             // 
             // button_Build_Line
             // 
-            this.button_Build_Line.Location = new System.Drawing.Point(176, 4);
+            this.button_Build_Line.Location = new System.Drawing.Point(166, 4);
             this.button_Build_Line.Name = "button_Build_Line";
             this.button_Build_Line.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Line.TabIndex = 2;
@@ -428,7 +449,7 @@
             // 
             // button_Build_Node
             // 
-            this.button_Build_Node.Location = new System.Drawing.Point(95, 4);
+            this.button_Build_Node.Location = new System.Drawing.Point(85, 4);
             this.button_Build_Node.Name = "button_Build_Node";
             this.button_Build_Node.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Node.TabIndex = 1;
@@ -495,7 +516,7 @@
             this.kryptonPage8.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage8.Name = "kryptonPage8";
             this.kryptonPage8.Size = new System.Drawing.Size(1051, 84);
-            this.kryptonPage8.Text = "Kontrola";
+            this.kryptonPage8.Text = "Kontrola elementów";
             this.kryptonPage8.ToolTipTitle = "Page ToolTip";
             this.kryptonPage8.UniqueName = "6273A0BC2D634AEEE2BC1189B6857918";
             // 
@@ -721,29 +742,9 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button_Build_Grab
-            // 
-            this.button_Build_Grab.Location = new System.Drawing.Point(892, 4);
-            this.button_Build_Grab.Name = "button_Build_Grab";
-            this.button_Build_Grab.Size = new System.Drawing.Size(75, 57);
-            this.button_Build_Grab.TabIndex = 4;
-            this.button_Build_Grab.Text = "Przesuń node\'a";
-            this.button_Build_Grab.UseVisualStyleBackColor = true;
-            this.button_Build_Grab.Click += new System.EventHandler(this.button_Build_Grab_Click);
-            // 
             // databaseBindingSource
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
-            // 
-            // button_Build_Inspector
-            // 
-            this.button_Build_Inspector.Location = new System.Drawing.Point(4, 4);
-            this.button_Build_Inspector.Name = "button_Build_Inspector";
-            this.button_Build_Inspector.Size = new System.Drawing.Size(75, 57);
-            this.button_Build_Inspector.TabIndex = 5;
-            this.button_Build_Inspector.Text = "Inspekcja";
-            this.button_Build_Inspector.UseVisualStyleBackColor = true;
-            this.button_Build_Inspector.Click += new System.EventHandler(this.button_Build_Inspector_Click);
             // 
             // MainWindow
             // 
@@ -757,7 +758,6 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "P.I.O.R.U.N.";
-            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -860,8 +860,9 @@
         private System.Windows.Forms.ComboBox comboBox_Control_2;
         private System.Windows.Forms.ComboBox comboBox_Control_1;
         private System.Windows.Forms.BindingSource databaseBindingSource;
-        private System.Windows.Forms.Button button_Build_Grab;
         private System.Windows.Forms.Button button_Build_Inspector;
+        private System.Windows.Forms.Button button_Build_Grab;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
