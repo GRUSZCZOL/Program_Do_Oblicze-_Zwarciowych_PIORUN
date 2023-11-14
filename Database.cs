@@ -22,7 +22,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static List<Element> ListOfElements = new  List<Element>();
         public static List<Node> ListOfNodes = new List<Node>();
+
         public static List<Element> ListOfLines = new List<Element>();
+        public static List<Element> ListOfGenerators = new List<Element>();
+
         public static List<Node> Support = new List<Node>();
         
 

@@ -91,6 +91,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button_Build_Generator = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -393,6 +394,7 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage1.Controls.Add(this.button_Build_Generator);
             this.kryptonPage1.Controls.Add(this.button_Build_Grab);
             this.kryptonPage1.Controls.Add(this.button_Build_Inspector);
             this.kryptonPage1.Controls.Add(this.button_Build_Delete);
@@ -746,6 +748,16 @@
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
             // 
+            // button_Build_Generator
+            // 
+            this.button_Build_Generator.Location = new System.Drawing.Point(247, 4);
+            this.button_Build_Generator.Name = "button_Build_Generator";
+            this.button_Build_Generator.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Generator.TabIndex = 6;
+            this.button_Build_Generator.Text = "Generator";
+            this.button_Build_Generator.UseVisualStyleBackColor = true;
+            this.button_Build_Generator.Click += new System.EventHandler(this.button_Build_Generator_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,6 +875,7 @@
         private System.Windows.Forms.Button button_Build_Inspector;
         private System.Windows.Forms.Button button_Build_Grab;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button_Build_Generator;
     }
 }
 

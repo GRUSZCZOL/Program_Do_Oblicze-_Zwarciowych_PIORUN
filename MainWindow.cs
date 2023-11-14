@@ -16,6 +16,7 @@ using ComponentFactory.Krypton.Toolkit;
 using System.Diagnostics.Eventing.Reader;
 using System.Numerics;
 using static System.Windows.Forms.AxHost;
+using System.Runtime.Remoting.Channels;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
@@ -99,6 +100,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Var.mode = "Build_Line";
                 HELP.Text = Var.mode;
             }// Zmiana trybu na budowanie Linii / Tworzy nowy Element: LINE
+            private void button_Build_Generator_Click(object sender, EventArgs e)
+        {
+            Cancel_Grab();
+            Var.mode = "Build_Generator";
+            HELP.Text = Var.mode;
+        } // Przejście do trybu budowania Generatora
             private void button_Build_Delete_Click(object sender, EventArgs e)
             {
                 Cancel_Grab();
@@ -122,6 +129,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     ControlExtension.Draggable(item, true);
                 }
             } // Ustawia na przenoszenie elementów
+           
 
             private void pictureBox_Map_Click(object sender, EventArgs e) // Inicjowanie budowania wybranego elementu poprzez kliknięcie w PictureBox
             {
@@ -204,6 +212,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             // Wydarzenia zaimplementowane do elementu
             Nd.Click += new EventHandler(this.Delete_Button);
             Nd.Click += new EventHandler(this.Create_Element_Line);
+            Nd.Click += new EventHandler(this.Create_Element_Generator);
             Nd.MouseUp += new MouseEventHandler(MousePressGrab);
 
 
@@ -215,6 +224,41 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
 
         } // Tworzy nowy Element: NODE
+            public void Create_Element_Generator(Object sender, EventArgs e) 
+            {
+            Node Nd = sender as Node;
+            if(Database.Support.Count == 0) 
+            {
+            Database.Support.Add(Nd);
+
+                Var.N++;
+                Element Elm = new Element(Var.index_setup, "Generator"); // Tworzenie nwego elementu
+                Var.index_setup++; // Zwi?z?kowanie indeksu elementu
+                this.Controls.Add(Elm);
+
+                Elm.Name = "Element_Generator_" + Var.index_setup.ToString();
+                Elm.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
+                Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
+                Elm.Location = new Point(Nd.Location.X + Var.button_size_Width/2,Nd.Location.Y + 80 + Var.button_size_Height/2);
+                Elm.Text = "Gen_"+Elm.Index.ToString();
+                Elm.BringToFront();
+                Elm.Show();
+
+                Elm.ListOfNghbNode.Add(Nd);
+
+
+                // Wydarzenia zaimplementowane do elementu
+                
+                // Elm.MouseUp += new MouseEventHandler(MousePressGrab);
+
+                pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue,3), Nd.Location, Elm.Location);
+                Database.Support.Clear();
+            }
+            
+
+
+           
+        } // Tworzenie elementu generator
 
 
         /*  public void Create_Element_Line_For_Node2(Object sender, EventArgs e)
@@ -421,10 +465,11 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 {
                     HELP.Text = item.ListOfNghbNode.Count.ToString();
 
-                    item.LineReposition();                    
+                    item.LineReposition();                 
                     pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), item.ListOfNghbNode[0].Location.X + (item.Size.Width / 2), item.ListOfNghbNode[0].Location.Y + (item.Size.Height / 2), item.ListOfNghbNode[1].Location.X + (item.Size.Width / 2), item.ListOfNghbNode[1].Location.Y + (item.Size.Height / 2));
 
                 }
+                
                            
             }
             
@@ -434,9 +479,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         }  // Zmiana pozycji po przesunięciu // Rysowanie od nowa linii
             
-        
 
-       
 
-        } 
+    } 
 }

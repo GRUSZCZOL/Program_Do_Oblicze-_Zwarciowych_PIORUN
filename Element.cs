@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Numerics;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
@@ -39,13 +40,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // Rezystancja, Reaktancja, Impedancja
 
-        public double R=0;
-        public double X=0;
-        public double Z=0;
+        public Complex R=0;
+        public Complex X=0;
+        public Complex Z=0;
         
-        public void Zfunc(double setR, double setX)
+        public void Zfunc(Complex setR, Complex setX)
         {
-            Z = Math.Sqrt(setR * setR + setX * setX);
+            Z = Complex.Sqrt(setR * setR + setX * setX);
         }
 
       
@@ -60,9 +61,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     double Y2 = ListOfNghbNode[1].Location.Y;
 
                     Location = new Point(Convert.ToInt32(X1 + X2) / 2, Convert.ToInt32(Y1 + Y2) / 2);
-            
-
         }
+      
 
         public void DrawingLine(PaintEventArgs e) 
         {
