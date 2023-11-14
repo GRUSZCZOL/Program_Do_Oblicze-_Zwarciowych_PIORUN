@@ -23,8 +23,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         // Funkcje
 
         private void button_FormSetLine_Close_Click(object sender, EventArgs e)
-        {
-            Close();
+        {           
+            Hide();
         }
 
         

@@ -247,7 +247,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                 Elm.Parent = pictureBox_Map;
                 Elm.Name = "Element_Generator_" + Var.index_setup.ToString();
-                Elm.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
+                Elm.Image = ((System.Drawing.Image)(Properties.Resources.Square)); // Do odkomentowania
                 Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Elm.Location = new Point( Nd.Location.X, Nd.Location.Y + 80);
                 Elm.Text = "Gen_"+Elm.Index.ToString();
@@ -289,6 +289,14 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 {
                     Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
                     FormSetLine FsLine = new FormSetLine();
+                    
+
+
+                    // Child Form do zrobienia
+
+
+
+                   // FsLine.MdiParent = MainWindow.ActiveForm;
 
                   //  MessageBox.Show(Database.Support.Count.ToString());
 
@@ -320,13 +328,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.Click += (FormSetLine, args) =>
                     {
                         if(Var.mode == "Build_Inspector")
-                        {
-                            FsLine.Enabled = true;                           
+                        {                                             
                             FsLine.Show();                           
                         }
                         
-                        //Close();
-                    }; ;
+
+                    };
 
                    // comboBox_Control_1.DataSource = Elm.ListOfNghbNode;
                     
@@ -391,18 +398,23 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Node Nd = sender as Node;
             if (Var.mode == "Build_Inspector")
             { HELP_Multiline1.Text = Nd.Location.ToString(); }
-        }
-            public void Inspector_Element(Object sender, EventArgs e) 
+        } // Wyświetla informacje o obiekcie
+            public void Inspector_Element(Object sender, EventArgs e)
         {
             Element Elm = sender as Element;
-            if (Var.mode == "Build_Inspector") 
-            { HELP_Multiline1.Text = Elm.Location.ToString()+"\r\n"+Elm.Name; }
-            
-            
-        }
+            if (Var.mode == "Build_Inspector" && Elm.Type == "Generator")
+            { HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString(); }
+            else if (Var.mode == "Build_Inspector") 
+            {
+                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name; 
+            }
 
-           
-            
+
+
+        } // Wyświetla informacje o obiekcie
+
+
+
 
 
     } 

@@ -26,7 +26,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
        public Complex R=0;
        public Complex X=0;
-       public Complex Z=0;
+       public Complex Z= new Complex(1,1);
+
+        // Napięcie dla generatora
+
+        public Complex U = new Complex(1,1);
+
+    
         
        public void Zfunc(Complex setR, Complex setX)
         {
