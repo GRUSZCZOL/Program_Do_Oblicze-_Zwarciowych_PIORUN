@@ -87,7 +87,9 @@
             this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button_Build_Grab = new System.Windows.Forms.Button();
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button_Build_Inspector = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -246,7 +248,7 @@
             this.kryptonPage5,
             this.kryptonPage6,
             this.kryptonPage8});
-            this.kryptonNavigator1.SelectedIndex = 0;
+            this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 111);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -390,6 +392,8 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage1.Controls.Add(this.button_Build_Inspector);
+            this.kryptonPage1.Controls.Add(this.button_Build_Grab);
             this.kryptonPage1.Controls.Add(this.button_Build_Delete);
             this.kryptonPage1.Controls.Add(this.button_Build_Line);
             this.kryptonPage1.Controls.Add(this.button_Build_Node);
@@ -414,7 +418,7 @@
             // 
             // button_Build_Line
             // 
-            this.button_Build_Line.Location = new System.Drawing.Point(85, 4);
+            this.button_Build_Line.Location = new System.Drawing.Point(176, 4);
             this.button_Build_Line.Name = "button_Build_Line";
             this.button_Build_Line.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Line.TabIndex = 2;
@@ -424,7 +428,7 @@
             // 
             // button_Build_Node
             // 
-            this.button_Build_Node.Location = new System.Drawing.Point(4, 4);
+            this.button_Build_Node.Location = new System.Drawing.Point(95, 4);
             this.button_Build_Node.Name = "button_Build_Node";
             this.button_Build_Node.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Node.TabIndex = 1;
@@ -717,9 +721,29 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button_Build_Grab
+            // 
+            this.button_Build_Grab.Location = new System.Drawing.Point(892, 4);
+            this.button_Build_Grab.Name = "button_Build_Grab";
+            this.button_Build_Grab.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Grab.TabIndex = 4;
+            this.button_Build_Grab.Text = "Przesuń node\'a";
+            this.button_Build_Grab.UseVisualStyleBackColor = true;
+            this.button_Build_Grab.Click += new System.EventHandler(this.button_Build_Grab_Click);
+            // 
             // databaseBindingSource
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
+            // 
+            // button_Build_Inspector
+            // 
+            this.button_Build_Inspector.Location = new System.Drawing.Point(4, 4);
+            this.button_Build_Inspector.Name = "button_Build_Inspector";
+            this.button_Build_Inspector.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Inspector.TabIndex = 5;
+            this.button_Build_Inspector.Text = "Inspekcja";
+            this.button_Build_Inspector.UseVisualStyleBackColor = true;
+            this.button_Build_Inspector.Click += new System.EventHandler(this.button_Build_Inspector_Click);
             // 
             // MainWindow
             // 
@@ -836,6 +860,8 @@
         private System.Windows.Forms.ComboBox comboBox_Control_2;
         private System.Windows.Forms.ComboBox comboBox_Control_1;
         private System.Windows.Forms.BindingSource databaseBindingSource;
+        private System.Windows.Forms.Button button_Build_Grab;
+        private System.Windows.Forms.Button button_Build_Inspector;
     }
 }
 

@@ -13,6 +13,7 @@ using MathNet.Numerics.LinearAlgebra.Double;
 using MathNet.Numerics.LinearAlgebra.Complex32;
 using MathNet.Numerics;
 using ComponentFactory.Krypton.Toolkit;
+using System.Numerics;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
@@ -38,11 +39,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         }
         private void pictureBox_Map_MouseMove(object sender, MouseEventArgs e)
-        {          
-            Var.m_X = e.Location.X + pictureBox_Map.Location.X;
-            Var.m_Y = e.Location.Y + pictureBox_Map.Location.Y;
-            HELP_Multiline1.Text = string.Format("Pozycja kursora na mapie:X: {0},Y: {1}: ", e.Location.X-20, e.Location.Y-20);
-            HELP_Multiline2.Text = panel_Main_Map.VerticalScroll.Value.ToString() +"\r\n" +panel_Main_Map.HorizontalScroll.Value.ToString();
+        {          Var.m_X = e.X ;
+                   Var.m_Y = e.Y ;
+            HELP_Multiline2.Text = Var.m_X.ToString()+" / "+Var.m_Y.ToString();
         }  // Lokalizowanie pozycji myszy
         private void button_Map_Select_Click(object sender, EventArgs e)
         {
@@ -92,17 +91,49 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             Var.mode = "Build_Node";
             HELP_Multiline2.Text = Var.mode;
+            foreach (Node item in Database.ListOfNode)
+            {
+                ControlExtension.Draggable(item, false);
+            }
         }
         private void button_Build_Line_Click(object sender, EventArgs e)
         {
             Var.mode = "Build_Line";
             HELP_Multiline2.Text = Var.mode;
+            foreach (Node item in Database.ListOfNode)
+            {
+                ControlExtension.Draggable(item, false);
+            }
         }// Zmiana trybu na budowanie Linii / Tworzy nowy Element: LINE
         private void button_Build_Delete_Click(object sender, EventArgs e)
         {
             Var.mode = "Build_Delete";
             HELP_Multiline2.Text = Var.mode;
+            foreach (Node item in Database.ListOfNode)
+            {
+                ControlExtension.Draggable(item, false);
+            }
         } // Usuwanie wybranego elementu
+        private void button_Build_Grab_Click(object sender, EventArgs e)
+        {
+            Var.mode = "Build_Grab";
+
+            foreach (Node item in Database.ListOfNode) 
+            {
+                ControlExtension.Draggable(item, true);
+            }
+            
+            HELP.Text = Var.mode;
+        } // Zmienia tryb na przesuwanie
+        private void button_Build_Inspector_Click(object sender, EventArgs e) // Zmiana na inspekcje
+
+        {
+            Var.mode = "Build_Inspector";
+            foreach (Node item in Database.ListOfNode)
+            {
+                ControlExtension.Draggable(item, false);
+            }
+        }
         private void pictureBox_Map_Click(object sender, EventArgs e) // Inicjowanie budowania wybranego elementu poprzez kliknięcie w PictureBox
         {
             switch (Var.mode) 
@@ -134,7 +165,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             if (Var.mode == "Build_Delete")
             {
-                Element ToDelete = sender as Element;
+                Node ToDelete = sender as Node;
                 ToDelete.Parent = null;
                 this.Controls.Remove(ToDelete);
 
@@ -146,28 +177,74 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public void Create_Element_Node()
         {
             Var.N++;
-            Element newElement = new Element(Var.index_setup,"Node"); // Tworzenie nwego elementu
+            Node Nd = new Node(Var.N); // Tworzenie nwego elementu
             Var.index_setup++; // Zwi?z?kowanie indeksu elementu
-            this.Controls.Add(newElement);
+            this.Controls.Add(Nd);
             
-            newElement.Name = "Element_Node_" + Var.N.ToString();
-            newElement.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
-            newElement.Size = new Size(40, 40);
-            newElement.Location = new Point(Var.m_X+ panel_Main_Map.HorizontalScroll.Value -(newElement.Size.Width/2),   Var.m_Y + panel_Main_Map.VerticalScroll.Value - (newElement.Size.Height/2));      
-            newElement.BringToFront(); 
-            newElement.Show();
-            
+            Nd.Name = "Element_Node_" + Var.N.ToString();
+            Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
+            Nd.Size = new Size(40, 40);
+            Nd.Location = new Point(Var.m_X -(Nd.Size.Width/2),   Var.m_Y  - (Nd.Size.Height/2));
+            Nd.Text = Nd.Index.ToString();
+            Nd.BringToFront(); 
+            Nd.Show();
+
+            Database.ListOfNode.Add(Nd);
 
             // Wydarzenia zaimplementowane do elementu
-            newElement.Click += new EventHandler(this.Delete_Button);
-            newElement.Click += new EventHandler(this.Create_Element_Line_For_Node);
-            newElement.Click += new EventHandler(this.Check_Location);
+            Nd.Click += new EventHandler(this.Delete_Button);
+            Nd.Click += new EventHandler(this.Create_Element_Line);
+            Nd.MouseUp += new MouseEventHandler(this.GrabPressMouseButton);
+            Nd.Click += new EventHandler(this.ShowLocation);
 
-            newElement.Parent = pictureBox_Map;
+            Nd.Parent = pictureBox_Map;
+
         } // Tworzy nowy Element: NODE
-        public void Create_Element_Line_For_Node(Object sender, EventArgs e)
+        public void Create_Element_Line(Object sender, EventArgs e)
         {
-       
+            
+            Node Nd = sender as Node;
+
+            if (Database.SupportList.Count == 0 && Var.mode == "Build_Line")
+            {
+                Database.SupportList.Add(Nd);
+            }
+            else if (Database.SupportList.Count == 1 && Var.mode == "Build_Line")
+            {
+                Database.SupportList.Add(Nd);
+
+                if (Database.SupportList[0] != Database.SupportList[1]) 
+                {
+                Element Elm = new Element(Var.index_setup,"Line"); // Tworzenie nowego elementu
+
+                    Var.index_setup++; // Zwi?z?kowanie indeksu elementu
+                    this.Controls.Add(Elm);
+                    Elm.Parent = pictureBox_Map;
+                    Elm.Name = "Element_Line_" + Var.N.ToString();
+                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
+                    Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
+
+                    Elm.ListOfNghNodes.Add(Database.SupportList[0]); // Dodaje Nody do Linii
+                    Elm.ListOfNghNodes.Add(Database.SupportList[1]);
+
+                    Database.SupportList[0].ListOfNghElements.Add(Elm); // Dodaje Element do nodów
+                    Database.SupportList[1].ListOfNghElements.Add(Elm);
+
+
+
+                    Elm.Location = new Point(
+                        ((Database.SupportList[0].Location.X + Database.SupportList[1].Location.X) / 2),
+                        ((Database.SupportList[0].Location.Y + Database.SupportList[1].Location.Y)/2 ));
+
+                    Elm.BringToFront();
+                    Elm.Show();
+                }
+            }
+            else
+            {
+                Database.SupportList.Clear();
+            }
+       /*
             Element thisElement = sender as Element;
             if (Var.mode == "Build_Line" && Var.m == 0)
             {
@@ -205,25 +282,30 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                
 
             }
-            else if (Var.mode != "Build_Line") { Var.m = 0; }
+            else if (Var.mode != "Build_Line") { Var.m = 0; }*/
         } // Tworzy nowy Element: LINE / Funkcja przypisywana do każdego elementu NODE
-        public void Check_Location(object sender, EventArgs e) 
+        public void GrabPressMouseButton(Object sender, MouseEventArgs e) 
         {
-            Element thisElement = sender as Element;
-            textBox_Console_Read.Text = string.Format("\r\nPozycja wybranego Elementu: X: {0}, Y: {1}\r\n",thisElement.Location.X,thisElement.Location.Y);
-        }// Sprawdzenie pozycji NODE'a
-
-
-
-
-
-        public void ReDraw()
-        {
-            foreach (Element Line in Database.ListOfLines) 
+            Node Nd = sender as Node;
+            if(Var.mode == "Build_Grab") 
             {
-                Line.ReDrawLines();
+               // MessageBox.Show(Nd.ListOfNghElements.Count.ToString());
+                foreach (Element item in Nd.ListOfNghElements)
+                {
+                    item.Reposition();
+                }
             }
-        } //Ponowne rysowanie linii
-        
-        } 
+            
+
+        } // Repozycjonowanie pry przesuwaniu
+
+        public void ShowLocation(Object sender, EventArgs e) 
+        {
+            Node Nd = sender as Node;
+
+            HELP_Multiline1.Text = "X: " + Nd.Location.X.ToString() + "\n" + "Y: " + Nd.Location.Y.ToString() + "\n";
+        }
+
+      
+    } 
 }
