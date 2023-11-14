@@ -27,6 +27,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Close();
         }
 
-       
+        
     }
 }

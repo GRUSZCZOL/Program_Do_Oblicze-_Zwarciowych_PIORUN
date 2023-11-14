@@ -288,6 +288,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Line")
                 {
                     Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
+                    FormSetLine FsLine = new FormSetLine();
 
                   //  MessageBox.Show(Database.Support.Count.ToString());
 
@@ -316,6 +317,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
 
                     Elm.Click += new EventHandler(this.Inspector_Element);
+                    Elm.Click += (FormSetLine, args) =>
+                    {
+                        if(Var.mode == "Build_Inspector")
+                        {
+                            FsLine.Enabled = true;                           
+                            FsLine.Show();                           
+                        }
+                        
+                        //Close();
+                    }; ;
 
                    // comboBox_Control_1.DataSource = Elm.ListOfNghbNode;
                     
@@ -389,6 +400,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             
             
         }
+
+           
             
 
 
