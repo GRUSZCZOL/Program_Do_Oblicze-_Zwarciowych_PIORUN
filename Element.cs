@@ -19,32 +19,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
        public List<Node> ListOfNghbNode = new List<Node>(); // Lista sąsiednich Nodeów  
 
-        // Zegary
-
-         public static Timer tim = new Timer();
-         
-        
-
-        // Punkt poczatkowy
-
-        public int StartX;
-        public int StartY;
-        public int FinishX;
-        public int FinishY;
-
-        int k=0;
-        // Typ i index do kategoryzowania
-
-        public int Index;
-        public string Type;
+       public int Index;
+       public string Type;
 
         // Rezystancja, Reaktancja, Impedancja
 
-        public Complex R=0;
-        public Complex X=0;
-        public Complex Z=0;
+       public Complex R=0;
+       public Complex X=0;
+       public Complex Z=0;
         
-        public void Zfunc(Complex setR, Complex setX)
+       public void Zfunc(Complex setR, Complex setX)
         {
             Z = Complex.Sqrt(setR * setR + setX * setX);
         }
@@ -52,7 +36,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
       
         
         
-        public void LineReposition() 
+       public void LineReposition() 
         {          // MessageBox.Show(ListOfNghbNode.Count.ToString());
 
                     double X1 = ListOfNghbNode[0].Location.X;
@@ -64,7 +48,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         }
       
 
-        public void DrawingLine(PaintEventArgs e) 
+       public void DrawingLine(PaintEventArgs e) 
         {
             
             Graphics gra = e.Graphics;
