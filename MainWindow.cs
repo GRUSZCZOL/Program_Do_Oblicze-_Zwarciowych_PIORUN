@@ -287,23 +287,14 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                 if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Line")
                 {
+                    Var.index_setup++;
                     Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
-                    FormSetLine FsLine = new FormSetLine();
-                    
-
-
-                    // Child Form do zrobienia
-
-
-
-                   // FsLine.MdiParent = MainWindow.ActiveForm;
-
-                  //  MessageBox.Show(Database.Support.Count.ToString());
+                    TEST test = new TEST(Var.index_setup);
 
                     Elm.ListOfNghbNode.Add(Database.Support[0]);
                     Elm.ListOfNghbNode.Add(Database.Support[1]);
 
-                    Var.index_setup++;
+                    
                     Elm.Parent = pictureBox_Map;
                     Elm.Name = "Element_Line_" + Var.index_setup.ToString();
                     Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
@@ -328,8 +319,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.Click += (FormSetLine, args) =>
                     {
                         if(Var.mode == "Build_Inspector")
-                        {                                             
-                            FsLine.Show();                           
+                        {   
+                            
+                            test.Show();                           
                         }
                         
 
