@@ -242,6 +242,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                 
                 Element Elm = new Element(Var.index_setup, "Generator"); // Tworzenie nwego elementu
+                FormSetGenerator FSGen = new FormSetGenerator();
                 Var.index_setup++; // Zwi?z?kowanie indeksu elementu
                 this.Controls.Add(Elm);
 
@@ -255,6 +256,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Elm.Show();
 
                 Elm.Click += new EventHandler(this.Inspector_Element);
+                Elm.Click += (FormSetLine, args) =>
+                {
+                    if (Var.mode == "Build_Inspector")
+                    {
+                        Var.selectedIndex = Elm.Index;
+                        FSGen.Show();
+                    }
+
+
+                };
 
                 Elm.ListOfNghbNode.Add(Nd);
                 Database.ListOfElements.Add(Elm);
@@ -289,12 +300,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 {
                     Var.index_setup++;
                     Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
-                    TEST test = new TEST(Var.index_setup);
+                    FormSetLine fsline = new FormSetLine();
 
                     Elm.ListOfNghbNode.Add(Database.Support[0]);
                     Elm.ListOfNghbNode.Add(Database.Support[1]);
 
-                    
+                    Elm.Index = Var.index_setup;
                     Elm.Parent = pictureBox_Map;
                     Elm.Name = "Element_Line_" + Var.index_setup.ToString();
                     Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
@@ -319,9 +330,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.Click += (FormSetLine, args) =>
                     {
                         if(Var.mode == "Build_Inspector")
-                        {   
-                            
-                            test.Show();                           
+                        {
+                            Var.selectedIndex = Elm.Index;
+                            fsline.Show();                           
                         }
                         
 
@@ -398,7 +409,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             { HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString(); }
             else if (Var.mode == "Build_Inspector") 
             {
-                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name; 
+                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" +Elm.Z + "\r\n"+Elm.U;
             }
 
 

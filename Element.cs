@@ -30,7 +30,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // Napięcie dla generatora
 
-        public Complex U = new Complex(1,1);
+        public Complex U = new Complex(0,0);
 
     
         

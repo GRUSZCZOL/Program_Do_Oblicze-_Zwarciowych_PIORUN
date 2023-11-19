@@ -83,6 +83,12 @@
     <Compile Include="Element.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormSetGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetGenerator.Designer.cs">
+      <DependentUpon>FormSetGenerator.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSetLine.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
       <DependentUpon>TEST.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables.cs" />
+    <EmbeddedResource Include="FormSetGenerator.resx">
+      <DependentUpon>FormSetGenerator.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSetLine.resx">
       <DependentUpon>FormSetLine.cs</DependentUpon>
     </EmbeddedResource>
