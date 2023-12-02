@@ -28,7 +28,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     foreach (Element line in Database.ListOfLines)
                     {
                         if (line.Index == Var.selectedIndex)
-                        { line.Z = Set_Impedance; Hide(); }
+                        { line.Z_1 = Set_Impedance; Hide(); }
                     }
                 }
                 else

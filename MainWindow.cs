@@ -323,7 +323,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Database.Support.Add(Nd);
                 HELP_Multiline1.Text = Database.Support[0].Name.ToString() +" / " +Database.Support[1].Name.ToString();
 
-                if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Line")
+                if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Line" && Database.Support[0].voltage_Zone == Database.Support[1].voltage_Zone)
                 {
                     Var.index_setup++;
                     Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
@@ -335,6 +335,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.Index = Var.index_setup;
                     Elm.Parent = pictureBox_Map;
                     Elm.Name = "Element_Line_" + Var.index_setup.ToString();
+                    
+                    Elm.BackColor = Elm.ListOfNghbNode[1].BackColor;
                     Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
                     Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                     Elm.Location = new Point(
@@ -369,8 +371,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     
                     Database.Support.Clear(); // Czyszczenie listy support  
                 }
-                else if(Database.Support[0].Location == Database.Support[1].Location) 
+                else 
                 {
+                    MessageBox.Show("Zaznaczono ten sam obiekt lub wskazano dwie różne strefy napięcia");
                     Database.Support.Clear(); // Czyszczenie listy support  
                 }
                 
@@ -435,10 +438,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             if (Var.mode == "Build_Inspector" && Elm.Type == "Generator")
             { HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n"+ 
                     "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() +"\r\n" + 
-                    "Impedancja: " + "\r\n" + Elm.Z.Real + " +j" + Elm.Z.Imaginary; }
+                    "Impedancja: " + "\r\n" + Elm.Z_1.Real + " +j" + Elm.Z_1.Imaginary; }
             else if (Var.mode == "Build_Inspector" && Elm.Type == "Line") 
             {
-                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() + "\r\n" + "Impedancja: " + "\r\n" + Elm.Z.Real + " +j" + Elm.Z.Imaginary;
+                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() + "\r\n" + "Impedancja: " + "\r\n" + Elm.Z_1.Real + " +j" + Elm.Z_1.Imaginary;
             }
             else if(Var.mode == "Build_Inspector")
             {

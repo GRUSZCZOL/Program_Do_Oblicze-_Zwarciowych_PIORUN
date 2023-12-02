@@ -24,9 +24,20 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // Rezystancja, Reaktancja, Impedancja
 
-       public Complex R=0;
-       public Complex X=0;
-       public Complex Z= new Complex(1,1);
+        //ZGODNA
+       public Complex R_1=0;
+       public Complex X_1=0;
+       public Complex Z_1= new Complex(1,1);
+
+        //PRZECIWNA
+        public Complex R_2 = 0;
+        public Complex X_2 = 0;
+        public Complex Z_2 = new Complex(1, 1);
+
+        //ZEROWA
+        public Complex R_0 = 0;
+        public Complex X_0 = 0;
+        public Complex Z_0 = new Complex(1, 1);
 
         // Napięcie dla generatora
 
@@ -36,7 +47,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         
        public void Zfunc(Complex setR, Complex setX)
         {
-            Z = Complex.Sqrt(setR * setR + setX * setX);
+            Z_1 = Complex.Sqrt(setR * setR + setX * setX);
         }
 
       

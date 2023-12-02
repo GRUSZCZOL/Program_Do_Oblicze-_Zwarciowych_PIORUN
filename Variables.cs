@@ -100,9 +100,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             int interpolatedB = (int)(blueB + (redB - blueB) * t/n);*/
 
             // Interpolacja kolorów tęczy w przestrzeni RGB
-            double red = Math.Max(0, Math.Cos((t/n - 1) * Math.PI)); // od 1 do 0
-            double green = Math.Max(0, Math.Cos((t/n + 1.0 / 3) * Math.PI)); // od 0 do 1
-            double blue = Math.Max(0, Math.Cos((t/n + 2.0 / 3) * Math.PI)); // od 0 do 0
+            double red = Math.Max(0, Math.Cos(((t * 10/n) - 1) * Math.PI)); // od 1 do 0
+            double green = Math.Max(0, Math.Cos(((t * 10 / n) + 1.0 / 3) * Math.PI)); // od 0 do 1
+            double blue = Math.Max(0, Math.Cos(((t * 10 / n) + 2.0 / 3) * Math.PI)); // od 0 do 0
 
             int interpolatedR = (int)(red * 255);
             int interpolatedG = (int)(green * 255);

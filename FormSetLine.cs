@@ -31,13 +31,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             if(checkBox_Impedance_Static.Checked == true) 
             {
-                if (textBox_Impedance_Static_Re.Text != null && textBox_Impedance_Static_Im.Text != null)
+                if (textBox_Impedance_Static_Re.Text != null || textBox_Impedance_Static_Im.Text != null)
                 {
                     Complex Set_Impedance = new Complex(Convert.ToDouble(textBox_Impedance_Static_Re.Text), Convert.ToDouble(textBox_Impedance_Static_Im.Text));
                     foreach (Element line in Database.ListOfLines) 
                     {
                     if (line.Index == Var.selectedIndex) 
-                        { line.Z = Set_Impedance; Hide(); }
+                        { line.Z_1 = Set_Impedance; Hide(); }
                     }
                 }
                 else 
@@ -45,20 +45,18 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     MessageBox.Show("Wykryto błąd!","Funkcja: Wymuś impedancje jest włączona, natomiast wymagane pola nie zwracają wartości");
                 }
             }
+            else 
+            
+            {
+            
+            }
         }
 
-        private void checkBox_Impedance_Static_CheckedChanged(object sender, EventArgs e)
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (checkBox_Impedance_Static.Checked = true)
-            {
-                textBox_Impedance_Static_Re.Enabled = true;
-                textBox_Impedance_Static_Im.Enabled = true;
-            }
-            else if (checkBox_Impedance_Static.Checked = false)
-            {
-                textBox_Impedance_Static_Re.Enabled = false;
-                textBox_Impedance_Static_Im.Enabled = true;
-            }
+
         }
+
+       
     }
 }
