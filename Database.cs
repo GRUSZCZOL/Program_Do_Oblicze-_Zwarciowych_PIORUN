@@ -27,6 +27,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static List<Element> ListOfGenerators = new List<Element>();
 
         public static List<Node> Support = new List<Node>();
+
+
+        public static List<VoltageZone> ListOfVoltageZones = new List<VoltageZone>(); // Zapamiętuje strefy napięcia
         
 
         

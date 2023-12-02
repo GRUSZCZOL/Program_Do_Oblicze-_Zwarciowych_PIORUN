@@ -12,6 +12,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public Node(int setIndex) { Index = setIndex; }
 
+        public double voltage_Zone;
         public int Index;
         public List<Element> ListOfNghElements = new List<Element> { };
 

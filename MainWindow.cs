@@ -25,7 +25,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public MainWindow()
         {
             InitializeComponent();
-
+            
         }
 
         
@@ -87,6 +87,26 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
 
             // TRYB: BUDOWANIE / BUILD MODE
+
+            //////////////////////////////// Strefa napięcia
+            private void button_Voltage_Zones_Add_Click(object sender, EventArgs e) // Dodawanie stryfy napięcia
+        {
+            if (textBox_Set_Voltage_Zone.Text != null)
+            { listBox_Voltage_Zones.Items.Add(textBox_Set_Voltage_Zone.Text); }
+            else { MessageBox.Show("Nie ustawiono wartości"); }
+        }
+            private void button_Voltage_Zones_Delete_Click(object sender, EventArgs e)
+        {
+            while (listBox_Voltage_Zones.SelectedItems.Count > 0)
+            {
+                listBox_Voltage_Zones.Items.Remove(listBox_Voltage_Zones.SelectedItems[0]);
+            }
+        } // Usuwanie strefy napięcia
+
+
+
+
+            //////////////////////////////// Przyciski budowania
             private void button_Build_Node_Click(object sender, EventArgs e) // Przejście do trybu budowania Węzła
             {
                 Cancel_Grab();
@@ -137,8 +157,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             
                 }
             } // Ustawia na przenoszenie elementów
-           
 
+
+            //////////////////////////////// Funkcje mapy
             private void pictureBox_Map_Click(object sender, EventArgs e) // Inicjowanie budowania wybranego elementu poprzez kliknięcie w PictureBox
             {
                 switch (Var.mode) 
@@ -201,35 +222,41 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             } // Usuwa wskazany element
             public void Create_Element_Node()
         {
+                if (listBox_Voltage_Zones.SelectedItems.Count > 0) 
+                
+            {
+                Var.N++;
+                Node Nd = new Node(Var.N); // Tworzenie nwego elementu
+                Var.index_setup++; // Zwi?z?kowanie indeksu elementu
+                this.Controls.Add(Nd);
+
+                Nd.voltage_Zone = Convert.ToDouble(listBox_Voltage_Zones.SelectedItem);
+                Nd.Name = "Element_Node_" + Var.N.ToString();
+                Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
+                Nd.Size = new Size(Var.button_size_Width, Var.button_size_Height);
+                Nd.Location = new Point(Var.m_X + panel_Main_Map.HorizontalScroll.Value - (Nd.Size.Width / 2), Var.m_Y + panel_Main_Map.VerticalScroll.Value - (Nd.Size.Height / 2));
+                Nd.Text = Nd.Index.ToString();
+
+                Color bc = Color.FromArgb(Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[0], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[1], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[2]);
+                //;
+                Nd.BackColor = bc;
+                Nd.BringToFront();
+                Nd.Show();
 
 
-            Var.N++;
-            Node Nd = new Node(Var.N); // Tworzenie nwego elementu
-            Var.index_setup++; // Zwi?z?kowanie indeksu elementu
-            this.Controls.Add(Nd);
-
-            Nd.Name = "Element_Node_" + Var.N.ToString();
-            Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
-            Nd.Size = new Size(40, 40);
-            Nd.Location = new Point(Var.m_X + panel_Main_Map.HorizontalScroll.Value - (Nd.Size.Width / 2), Var.m_Y + panel_Main_Map.VerticalScroll.Value - (Nd.Size.Height / 2));
-            Nd.Text = Nd.Index.ToString();
-            Nd.BringToFront();
-            Nd.Show();
+                // Wydarzenia zaimplementowane do elementu
+                Nd.Click += new EventHandler(this.Delete_Button);
+                Nd.Click += new EventHandler(this.Inspector_Node);
+                Nd.Click += new EventHandler(this.Create_Element_Line);
+                Nd.Click += new EventHandler(this.Create_Element_Generator);
+                Nd.MouseUp += new MouseEventHandler(MousePressGrab);
 
 
-            // Wydarzenia zaimplementowane do elementu
-            Nd.Click += new EventHandler(this.Delete_Button);
-            Nd.Click += new EventHandler(this.Inspector_Node);
-            Nd.Click += new EventHandler(this.Create_Element_Line);
-            Nd.Click += new EventHandler(this.Create_Element_Generator);
-            Nd.MouseUp += new MouseEventHandler(MousePressGrab);
+                Nd.Parent = pictureBox_Map;
 
+                Database.ListOfNodes.Add(Nd);
 
-            Nd.Parent = pictureBox_Map;
-
-            Database.ListOfNodes.Add(Nd);
-
-
+            } else { MessageBox.Show("Nie wybrano strefy napięcia"); }
 
 
         } // Tworzy nowy Element: NODE
@@ -256,7 +283,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Elm.Show();
 
                 Elm.Click += new EventHandler(this.Inspector_Element);
-                Elm.Click += (FormSetLine, args) =>
+                Elm.Click += (FormSetGenerator, args) =>
                 {
                     if (Var.mode == "Build_Inspector")
                     {
@@ -400,23 +427,27 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             Node Nd = sender as Node;
             if (Var.mode == "Build_Inspector")
-            { HELP_Multiline1.Text = Nd.Location.ToString(); }
+            { HELP_Multiline1.Text = Nd.Location.ToString() +"\r\n"+Nd.voltage_Zone.ToString(); }
         } // Wyświetla informacje o obiekcie
             public void Inspector_Element(Object sender, EventArgs e)
         {
             Element Elm = sender as Element;
             if (Var.mode == "Build_Inspector" && Elm.Type == "Generator")
-            { HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString(); }
-            else if (Var.mode == "Build_Inspector") 
+            { HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n"+ 
+                    "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() +"\r\n" + 
+                    "Impedancja: " + "\r\n" + Elm.Z.Real + " +j" + Elm.Z.Imaginary; }
+            else if (Var.mode == "Build_Inspector" && Elm.Type == "Line") 
             {
-                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" +Elm.Z + "\r\n"+Elm.U;
+                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() + "\r\n" + "Impedancja: " + "\r\n" + Elm.Z.Real + " +j" + Elm.Z.Imaginary;
+            }
+            else if(Var.mode == "Build_Inspector")
+            {
+                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name;
             }
 
 
 
         } // Wyświetla informacje o obiekcie
-
-
 
 
 

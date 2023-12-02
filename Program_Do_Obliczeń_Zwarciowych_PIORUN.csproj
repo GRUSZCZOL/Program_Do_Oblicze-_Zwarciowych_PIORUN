@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ColorHelper, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ColorHelper.1.8.1\lib\netstandard2.0\ColorHelper.dll</HintPath>
+    </Reference>
     <Reference Include="ComponentFactory.Krypton.Docking">
       <HintPath>..\..\..\Krypton\RashiCode Krypton_toolKitDemo\Krypton_toolKitDemo\bin\Debug\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
@@ -95,6 +98,12 @@
     <Compile Include="FormSetLine.Designer.cs">
       <DependentUpon>FormSetLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Voltage_Zones_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Voltage_Zones_Add.Designer.cs">
+      <DependentUpon>Form_Voltage_Zones_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,11 +122,15 @@
       <DependentUpon>TEST.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables.cs" />
+    <Compile Include="VoltageZone.cs" />
     <EmbeddedResource Include="FormSetGenerator.resx">
       <DependentUpon>FormSetGenerator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetLine.resx">
       <DependentUpon>FormSetLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Voltage_Zones_Add.resx">
+      <DependentUpon>Form_Voltage_Zones_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

@@ -55,6 +55,7 @@
             this.button_Map_Delete = new System.Windows.Forms.Button();
             this.button_Map_Select = new System.Windows.Forms.Button();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Build_Generator = new System.Windows.Forms.Button();
             this.button_Build_Grab = new System.Windows.Forms.Button();
             this.button_Build_Inspector = new System.Windows.Forms.Button();
             this.button_Build_Delete = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@
             this.kryptonNavigator2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.panel_Main_Map = new System.Windows.Forms.Panel();
-            this.pictureBox_Map = new System.Windows.Forms.PictureBox();
             this.textBox_Console_Write = new System.Windows.Forms.TextBox();
             this.textBox_Console_Read = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -90,8 +90,13 @@
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button_Voltage_Zones_Add = new System.Windows.Forms.Button();
+            this.button_Voltage_Zones_Delete = new System.Windows.Forms.Button();
+            this.pictureBox_Map = new System.Windows.Forms.PictureBox();
+            this.listBox_Voltage_Zones = new System.Windows.Forms.ListBox();
+            this.textBox_Set_Voltage_Zone = new System.Windows.Forms.TextBox();
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button_Build_Generator = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -121,8 +126,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).BeginInit();
             this.kryptonPage7.SuspendLayout();
             this.panel_Main_Map.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -394,6 +399,11 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage1.Controls.Add(this.textBox1);
+            this.kryptonPage1.Controls.Add(this.textBox_Set_Voltage_Zone);
+            this.kryptonPage1.Controls.Add(this.listBox_Voltage_Zones);
+            this.kryptonPage1.Controls.Add(this.button_Voltage_Zones_Delete);
+            this.kryptonPage1.Controls.Add(this.button_Voltage_Zones_Add);
             this.kryptonPage1.Controls.Add(this.button_Build_Generator);
             this.kryptonPage1.Controls.Add(this.button_Build_Grab);
             this.kryptonPage1.Controls.Add(this.button_Build_Inspector);
@@ -409,6 +419,16 @@
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "9110C834021D44397AAC87818037AF22";
             // 
+            // button_Build_Generator
+            // 
+            this.button_Build_Generator.Location = new System.Drawing.Point(396, 15);
+            this.button_Build_Generator.Name = "button_Build_Generator";
+            this.button_Build_Generator.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Generator.TabIndex = 6;
+            this.button_Build_Generator.Text = "Generator";
+            this.button_Build_Generator.UseVisualStyleBackColor = true;
+            this.button_Build_Generator.Click += new System.EventHandler(this.button_Build_Generator_Click);
+            // 
             // button_Build_Grab
             // 
             this.button_Build_Grab.Location = new System.Drawing.Point(892, 3);
@@ -421,7 +441,7 @@
             // 
             // button_Build_Inspector
             // 
-            this.button_Build_Inspector.Location = new System.Drawing.Point(4, 4);
+            this.button_Build_Inspector.Location = new System.Drawing.Point(811, 4);
             this.button_Build_Inspector.Name = "button_Build_Inspector";
             this.button_Build_Inspector.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Inspector.TabIndex = 4;
@@ -441,7 +461,7 @@
             // 
             // button_Build_Line
             // 
-            this.button_Build_Line.Location = new System.Drawing.Point(166, 4);
+            this.button_Build_Line.Location = new System.Drawing.Point(97, 15);
             this.button_Build_Line.Name = "button_Build_Line";
             this.button_Build_Line.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Line.TabIndex = 2;
@@ -451,7 +471,7 @@
             // 
             // button_Build_Node
             // 
-            this.button_Build_Node.Location = new System.Drawing.Point(85, 4);
+            this.button_Build_Node.Location = new System.Drawing.Point(16, 15);
             this.button_Build_Node.Name = "button_Build_Node";
             this.button_Build_Node.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Node.TabIndex = 1;
@@ -608,18 +628,6 @@
             this.panel_Main_Map.Size = new System.Drawing.Size(1051, 310);
             this.panel_Main_Map.TabIndex = 0;
             // 
-            // pictureBox_Map
-            // 
-            this.pictureBox_Map.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox_Map.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox_Map.Name = "pictureBox_Map";
-            this.pictureBox_Map.Size = new System.Drawing.Size(1200, 800);
-            this.pictureBox_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_Map.TabIndex = 0;
-            this.pictureBox_Map.TabStop = false;
-            this.pictureBox_Map.Click += new System.EventHandler(this.pictureBox_Map_Click);
-            this.pictureBox_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Map_MouseMove);
-            // 
             // textBox_Console_Write
             // 
             this.textBox_Console_Write.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -744,19 +752,71 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button_Voltage_Zones_Add
+            // 
+            this.button_Voltage_Zones_Add.Location = new System.Drawing.Point(268, 34);
+            this.button_Voltage_Zones_Add.Name = "button_Voltage_Zones_Add";
+            this.button_Voltage_Zones_Add.Size = new System.Drawing.Size(36, 35);
+            this.button_Voltage_Zones_Add.TabIndex = 8;
+            this.button_Voltage_Zones_Add.Text = "+";
+            this.button_Voltage_Zones_Add.UseVisualStyleBackColor = true;
+            this.button_Voltage_Zones_Add.Click += new System.EventHandler(this.button_Voltage_Zones_Add_Click);
+            // 
+            // button_Voltage_Zones_Delete
+            // 
+            this.button_Voltage_Zones_Delete.Location = new System.Drawing.Point(310, 34);
+            this.button_Voltage_Zones_Delete.Name = "button_Voltage_Zones_Delete";
+            this.button_Voltage_Zones_Delete.Size = new System.Drawing.Size(36, 35);
+            this.button_Voltage_Zones_Delete.TabIndex = 9;
+            this.button_Voltage_Zones_Delete.Text = "-";
+            this.button_Voltage_Zones_Delete.UseVisualStyleBackColor = true;
+            this.button_Voltage_Zones_Delete.Click += new System.EventHandler(this.button_Voltage_Zones_Delete_Click);
+            // 
+            // pictureBox_Map
+            // 
+            this.pictureBox_Map.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureBox_Map.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_Map.Name = "pictureBox_Map";
+            this.pictureBox_Map.Size = new System.Drawing.Size(1200, 800);
+            this.pictureBox_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_Map.TabIndex = 0;
+            this.pictureBox_Map.TabStop = false;
+            this.pictureBox_Map.Click += new System.EventHandler(this.pictureBox_Map_Click);
+            this.pictureBox_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Map_MouseMove);
+            // 
+            // listBox_Voltage_Zones
+            // 
+            this.listBox_Voltage_Zones.FormattingEnabled = true;
+            this.listBox_Voltage_Zones.Items.AddRange(new object[] {
+            "400",
+            "220",
+            "30",
+            "6"});
+            this.listBox_Voltage_Zones.Location = new System.Drawing.Point(198, 8);
+            this.listBox_Voltage_Zones.Name = "listBox_Voltage_Zones";
+            this.listBox_Voltage_Zones.Size = new System.Drawing.Size(64, 69);
+            this.listBox_Voltage_Zones.TabIndex = 10;
+            // 
+            // textBox_Set_Voltage_Zone
+            // 
+            this.textBox_Set_Voltage_Zone.Location = new System.Drawing.Point(269, 8);
+            this.textBox_Set_Voltage_Zone.Name = "textBox_Set_Voltage_Zone";
+            this.textBox_Set_Voltage_Zone.Size = new System.Drawing.Size(45, 20);
+            this.textBox_Set_Voltage_Zone.TabIndex = 11;
+            // 
             // databaseBindingSource
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
             // 
-            // button_Build_Generator
+            // textBox1
             // 
-            this.button_Build_Generator.Location = new System.Drawing.Point(247, 4);
-            this.button_Build_Generator.Name = "button_Build_Generator";
-            this.button_Build_Generator.Size = new System.Drawing.Size(75, 57);
-            this.button_Build_Generator.TabIndex = 6;
-            this.button_Build_Generator.Text = "Generator";
-            this.button_Build_Generator.UseVisualStyleBackColor = true;
-            this.button_Build_Generator.Click += new System.EventHandler(this.button_Build_Generator_Click);
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(320, 8);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(26, 20);
+            this.textBox1.TabIndex = 12;
+            this.textBox1.Text = "kV";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MainWindow
             // 
@@ -786,6 +846,7 @@
             this.kryptonPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
             this.kryptonPage1.ResumeLayout(false);
+            this.kryptonPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage5)).EndInit();
@@ -803,9 +864,9 @@
             this.kryptonPage7.ResumeLayout(false);
             this.panel_Main_Map.ResumeLayout(false);
             this.panel_Main_Map.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -876,6 +937,11 @@
         private System.Windows.Forms.Button button_Build_Grab;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button_Build_Generator;
+        private System.Windows.Forms.Button button_Voltage_Zones_Delete;
+        private System.Windows.Forms.Button button_Voltage_Zones_Add;
+        private System.Windows.Forms.ListBox listBox_Voltage_Zones;
+        private System.Windows.Forms.TextBox textBox_Set_Voltage_Zone;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
