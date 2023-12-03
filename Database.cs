@@ -16,22 +16,19 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         // Przechowywanie danych dla Combobox i obiektów
 
 
-        /*public static int Number = 0; // Tesotawnie
-        public static List<int> newList = new List<int>();*/
 
+        public static List<Element> ListOfElements = new  List<Element>(); // Lista wszystkich elementów
+        public static List<Node> ListOfNodes = new List<Node>(); // Lista wszystkich nodów
 
-        public static List<Element> ListOfElements = new  List<Element>();
-        public static List<Node> ListOfNodes = new List<Node>();
+        public static List<Element> ListOfLines = new List<Element>(); // Lista wszystkich Linii
+        public static List<Element> ListOfGenerators = new List<Element>(); // Lista generatorów
 
-        public static List<Element> ListOfLines = new List<Element>();
-        public static List<Element> ListOfGenerators = new List<Element>();
-
-        public static List<Node> Support = new List<Node>();
+        public static List<Node> Support = new List<Node>(); // Lista wspomagająca
 
 
         public static List<VoltageZone> ListOfVoltageZones = new List<VoltageZone>(); // Zapamiętuje strefy napięcia
         
-
+        public static List<Line_Data> ListOfLineData = new List<Line_Data>(); // Lista przechowująca wszystkie typy linii
         
 
     }

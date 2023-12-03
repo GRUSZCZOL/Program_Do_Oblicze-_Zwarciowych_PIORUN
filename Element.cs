@@ -45,9 +45,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
     
         
-       public void Zfunc(Complex setR, Complex setX)
+       public Complex Zfunc(Complex setR, Complex setX)
         {
-            Z_1 = Complex.Sqrt(setR * setR + setX * setX);
+            Complex c = Complex.Sqrt(setR * setR + setX * setX);
+            return c;
         }
 
       

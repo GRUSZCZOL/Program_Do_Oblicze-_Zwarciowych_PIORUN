@@ -104,6 +104,7 @@
     <Compile Include="Form_Voltage_Zones_Add.Designer.cs">
       <DependentUpon>Form_Voltage_Zones_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Line_Data.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

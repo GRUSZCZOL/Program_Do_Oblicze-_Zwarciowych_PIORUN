@@ -16,5 +16,17 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             InitializeComponent();
         }
+
+       
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

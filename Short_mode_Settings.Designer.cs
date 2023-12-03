@@ -52,6 +52,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Parametry globalne";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -67,6 +68,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rodzaj zwarcia";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // checkedListBox1
             // 
