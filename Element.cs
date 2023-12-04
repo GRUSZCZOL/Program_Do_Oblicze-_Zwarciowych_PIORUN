@@ -27,7 +27,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         //ZGODNA
        public Complex R_1=0;
        public Complex X_1=0;
-       public Complex Z_1= new Complex(1,1);
+       public Complex Z_1= new Complex(1, 1);
 
         //PRZECIWNA
         public Complex R_2 = 0;
@@ -41,7 +41,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // Napięcie dla generatora
 
-        public Complex U = new Complex(0,0);
+        public Complex U = new Complex(0, 0);
 
     
         

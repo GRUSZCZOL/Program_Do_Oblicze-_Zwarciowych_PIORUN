@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Reflection.Emit;
 using MathNet.Numerics.LinearAlgebra.Double;
-
 using MathNet.Numerics;
 using ComponentFactory.Krypton.Toolkit;
 using System.Diagnostics.Eventing.Reader;
@@ -24,8 +23,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
     {
         public MainWindow()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         
@@ -181,19 +179,24 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             }
 
 
-            // TRYB: ZWARCIE / SHORT MODE
+        // TRYB: ZWARCIE / SHORT MODE
 
+        private void button_Short_parameters_Click(object sender, EventArgs e)
+        {
+            Short_mode_Settings SM_Set = new Short_mode_Settings();
+            SM_Set.Show();
+        }
 
         #endregion
 
 
 
 
-        
 
-             // Funkcje / Metody
 
-            public void Delete_Button(Object sender, EventArgs e)
+        // Funkcje / Metody
+
+        public void Delete_Button(Object sender, EventArgs e)
             {
             Node Nd = sender as Node;
 
@@ -273,12 +276,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Var.index_setup++; // Zwi?z?kowanie indeksu elementu
                 this.Controls.Add(Elm);
 
+                Elm.ListOfNghbNode.Add(Database.Support[0]);
+
                 Elm.Parent = pictureBox_Map;
                 Elm.Name = "Element_Generator_" + Var.index_setup.ToString();
                 Elm.Image = ((System.Drawing.Image)(Properties.Resources.Square)); // Do odkomentowania
                 Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Elm.Location = new Point( Nd.Location.X, Nd.Location.Y + 80);
                 Elm.Text = "Gen_"+Elm.Index.ToString();
+                Elm.BackColor = Elm.ListOfNghbNode[0].BackColor;
                 Elm.BringToFront();
                 Elm.Show();
 
@@ -303,7 +309,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 
                 // Elm.MouseUp += new MouseEventHandler(MousePressGrab);
 
-                pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue,3), Nd.Location.X+(Var.button_size_Width/2), Nd.Location.Y + (Var.button_size_Height/2), Elm.Location.X + (Var.button_size_Width/2), Elm.Location.Y + (Var.button_size_Height/2));
+                pictureBox_Map.CreateGraphics().DrawLine(new Pen(Elm.ListOfNghbNode[0].BackColor,3), Nd.Location.X+(Var.button_size_Width/2), Nd.Location.Y + (Var.button_size_Height/2), Elm.Location.X + (Var.button_size_Width/2), Elm.Location.Y + (Var.button_size_Height/2));
                 Database.Support.Clear();
             }
             
@@ -327,7 +333,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 {
                     Var.index_setup++;
                     Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
-                    FormSetLine fsline = new FormSetLine();
+                    
 
                     Elm.ListOfNghbNode.Add(Database.Support[0]);
                     Elm.ListOfNghbNode.Add(Database.Support[1]);
@@ -344,7 +350,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                         ((Elm.ListOfNghbNode[0].Location.Y + Elm.ListOfNghbNode[1].Location.Y) / 2)) /*+(Elm.Size.Height / 2))*/;
 
                     Point P = new Point(20, 20);
-                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Blue, 3), Elm.ListOfNghbNode[0].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[0].Location.Y + (Elm.Size.Height / 2), Elm.ListOfNghbNode[1].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[1].Location.Y + (Elm.Size.Height / 2));
+                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Elm.ListOfNghbNode[1].BackColor, 3), Elm.ListOfNghbNode[0].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[0].Location.Y + (Elm.Size.Height / 2), Elm.ListOfNghbNode[1].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[1].Location.Y + (Elm.Size.Height / 2));
 
                    
                     Elm.BringToFront();
@@ -356,11 +362,14 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
 
                     Elm.Click += new EventHandler(this.Inspector_Element);
+
+                    FormSetLine fsline = new FormSetLine(Elm.Name, Elm.Index, Elm.ListOfNghbNode[0].Name, Elm.ListOfNghbNode[1].Name, Elm.ListOfNghbNode[0].Index, Elm.ListOfNghbNode[1].Index);
                     Elm.Click += (FormSetLine, args) =>
                     {
                         if(Var.mode == "Build_Inspector")
                         {
-                            Var.selectedIndex = Elm.Index;
+                            Var.selectedIndex = Elm.Index;                           
+                            fsline.Text = "Ustawienie Parametrów Obiektu: Linia";
                             fsline.Show();                           
                         }
                         
@@ -452,7 +461,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         } // Wyświetla informacje o obiekcie
 
-
-
+       
     } 
 }

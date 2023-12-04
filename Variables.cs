@@ -41,21 +41,23 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static int Point_Y2 = 1;
         public static int distance;
 
-             // Parametry elektryczne
+        // Parametry elektryczne
+
+        public static string short_mode = "3-Faz";
+
+            // 3-Faz             - trójfazowe
+            // 3-Faz_GND         - trójfazowe z ziemią
+            // 2-Faz             - międzyprewodowe
+            // 2-Faz_GND         - międzyprewodowe
+            // 1-Faz             - jednofazowe
+            // 1-Faz_GND         - jednofazowe z ziemią
+
+
 
         public static double Frec = 50; //Częstotliwość
 
-        
-
-        /* public static void Distanse_Point(double setX1,double setX2,double setY1, double setY2) // Funkcja określająca odległość między punktami
-         {
-             // Punkt początkowy i końcowy dla Linii
-             Point_X1 = Convert.ToDouble(setX1);
-             Point_X2 = setX2;
-             Point_Y1 = setY1;
-             Point_Y2 = setY2;
-             distance = Math.Sqrt(Math.Pow(Point_X2-Point_X1,2) +   Math.Pow(Point_Y2-Point_Y1,2) ) ;
-         }*/
+        public static double c = 1.1 ; // Parametr korygujący zwarcie
+     
 
         #region Graphics
         // Zmienne dla grafiki
@@ -68,22 +70,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static int penSize=3;
 
-       
-
-        #endregion
-        // Zmienne pomocnicze
-
         public static int m; // zmienna pomocnicza wykorzystywanaa w tworzeniu obiektu linni
 
         public static int v = 0; // przechowalnia indexów elementów
         public static int b = 0;
         public static bool IsVoltageZones = false; // Określa czy wybór strefy powstał pierwszy raz
 
-        // Listy
-
-        // Funkcje
-
-        public static int[] InterpolateColor(double t,double n) // t - wybrany indeks // n - wszystkie indexy
+        public static int[] InterpolateColor(double t, double n) // t - wybrany indeks // n - wszystkie indexy
         {
             /*int blueR = 0;
             int blueG = 0;
@@ -100,7 +93,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             int interpolatedB = (int)(blueB + (redB - blueB) * t/n);*/
 
             // Interpolacja kolorów tęczy w przestrzeni RGB
-            double red = Math.Max(0, Math.Cos(((t * 10/n) - 1) * Math.PI)); // od 1 do 0
+            double red = Math.Max(0, Math.Cos(((t * 10 / n) - 1) * Math.PI)); // od 1 do 0
             double green = Math.Max(0, Math.Cos(((t * 10 / n) + 1.0 / 3) * Math.PI)); // od 0 do 1
             double blue = Math.Max(0, Math.Cos(((t * 10 / n) + 2.0 / 3) * Math.PI)); // od 0 do 0
 
@@ -110,6 +103,18 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
             return new int[] { interpolatedR, interpolatedG, interpolatedB };
         }
+        #endregion
+
+
+        // Zmienne pomocnicze
+
+
+
+        // Listy
+
+    
+
+
 
 
 

@@ -64,12 +64,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         private void checkBox_Impedance_Static_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_Impedance_Static.Checked = true)
+            if (checkBox_Impedance_Static.Checked == true)
             {
                 textBox_Impedance_Static_Re.Enabled = true;
                 textBox_Impedance_Static_Im.Enabled = true;
             }
-            else if (checkBox_Impedance_Static.Checked = false)
+            else if (checkBox_Impedance_Static.Checked == false)
             {
                 textBox_Impedance_Static_Re.Enabled = false;
                 textBox_Impedance_Static_Im.Enabled = true;
@@ -78,12 +78,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         private void checkBox_Voltage_Static_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_Voltage_Static.Checked = true)
+            if (checkBox_Voltage_Static.Checked == true)
             {
                 textBox_Voltage_Static_Re.Enabled = true;
                 textBox_Voltage_Static_Im.Enabled = true;
             }
-            else if (checkBox_Impedance_Static.Checked = false)
+            else if (checkBox_Impedance_Static.Checked == false)
             {
                 textBox_Voltage_Static_Re.Enabled = false;
                 textBox_Voltage_Static_Im.Enabled = true;
