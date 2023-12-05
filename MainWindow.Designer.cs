@@ -67,6 +67,8 @@
             this.button_Build_Line = new System.Windows.Forms.Button();
             this.button_Build_Node = new System.Windows.Forms.Button();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Short_Run = new System.Windows.Forms.Button();
+            this.button_Short_parameters = new System.Windows.Forms.Button();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -96,9 +98,7 @@
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button_Short_parameters = new System.Windows.Forms.Button();
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button_Short_Run = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -258,7 +258,7 @@
             this.kryptonPage5,
             this.kryptonPage6,
             this.kryptonPage8});
-            this.kryptonNavigator1.SelectedIndex = 0;
+            this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 111);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -546,6 +546,26 @@
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "1378D86E742D472512BFACCB9F4A561A";
             // 
+            // button_Short_Run
+            // 
+            this.button_Short_Run.Location = new System.Drawing.Point(97, 12);
+            this.button_Short_Run.Name = "button_Short_Run";
+            this.button_Short_Run.Size = new System.Drawing.Size(75, 57);
+            this.button_Short_Run.TabIndex = 4;
+            this.button_Short_Run.Text = "Rozpocznij obliczenia";
+            this.button_Short_Run.UseVisualStyleBackColor = true;
+            this.button_Short_Run.Click += new System.EventHandler(this.button_Short_Run_Click);
+            // 
+            // button_Short_parameters
+            // 
+            this.button_Short_parameters.Location = new System.Drawing.Point(16, 12);
+            this.button_Short_parameters.Name = "button_Short_parameters";
+            this.button_Short_parameters.Size = new System.Drawing.Size(75, 57);
+            this.button_Short_parameters.TabIndex = 3;
+            this.button_Short_parameters.Text = "Ustawienia zwarciowe";
+            this.button_Short_parameters.UseVisualStyleBackColor = true;
+            this.button_Short_parameters.Click += new System.EventHandler(this.button_Short_parameters_Click);
+            // 
             // kryptonPage4
             // 
             this.kryptonPage4.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
@@ -819,28 +839,9 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button_Short_parameters
-            // 
-            this.button_Short_parameters.Location = new System.Drawing.Point(16, 12);
-            this.button_Short_parameters.Name = "button_Short_parameters";
-            this.button_Short_parameters.Size = new System.Drawing.Size(75, 57);
-            this.button_Short_parameters.TabIndex = 3;
-            this.button_Short_parameters.Text = "Ustawienia zwarciowe";
-            this.button_Short_parameters.UseVisualStyleBackColor = true;
-            this.button_Short_parameters.Click += new System.EventHandler(this.button_Short_parameters_Click);
-            // 
             // databaseBindingSource
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
-            // 
-            // button_Short_Run
-            // 
-            this.button_Short_Run.Location = new System.Drawing.Point(97, 12);
-            this.button_Short_Run.Name = "button_Short_Run";
-            this.button_Short_Run.Size = new System.Drawing.Size(75, 57);
-            this.button_Short_Run.TabIndex = 4;
-            this.button_Short_Run.Text = "Rozpocznij obliczenia";
-            this.button_Short_Run.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
@@ -854,6 +855,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "P.I.O.R.U.N.";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

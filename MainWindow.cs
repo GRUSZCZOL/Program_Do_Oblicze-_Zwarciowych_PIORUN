@@ -26,14 +26,19 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             InitializeComponent();            
         }
 
-        
-       
-     // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            // UZUPEŁNIANIE BAZ DANYCH
+            Line_Data L_data_1 = new Line_Data("AFL","B04",false,200,25,1000,33,240,6,6,30,30,6,6,6,6,7,7,7);
+            Database.ListOfLineData.Add(L_data_1); 
+        }
+
+        // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------
 
         #region MODE TYPE PARTS
 
-            // TRYB MAPY / MAP MODE
-        
+        // TRYB MAPY / MAP MODE
+
             private void pictureBox_Map_MouseMove(object sender, MouseEventArgs e)
             {          
                 Var.m_X = e.Location.X + pictureBox_Map.Location.X;
@@ -181,11 +186,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // TRYB: ZWARCIE / SHORT MODE
 
-        private void button_Short_parameters_Click(object sender, EventArgs e)
+            private void button_Short_parameters_Click(object sender, EventArgs e)
         {
             Short_mode_Settings SM_Set = new Short_mode_Settings();
             SM_Set.Show();
-        }
+        } // Pokazuje parametry zwarciowe
+            private void button_Short_Run_Click(object sender, EventArgs e)
+        {
+
+        } // Rozpoczyna obliczenia zwarciowe
 
         #endregion
 
@@ -196,7 +205,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // Funkcje / Metody
 
-        public void Delete_Button(Object sender, EventArgs e)
+            public void Delete_Button(Object sender, EventArgs e)
             {
             Node Nd = sender as Node;
 
