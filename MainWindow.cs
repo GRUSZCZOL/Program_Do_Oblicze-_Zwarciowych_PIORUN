@@ -23,14 +23,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
     {
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();      
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
             // UZUPEŁNIANIE BAZ DANYCH
-            Line_Data L_data_1 = new Line_Data("AFL","B04",false,200,25,1000,33,240,6,6,30,30,6,6,6,6,7,7,7);
-            Database.ListOfLineData.Add(L_data_1); 
+                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04", _2Way=false,temp = 25,resistivity=200,lenght=1000,conductivity=33,cross_section=280,r = 6,r_0=5,mediumdistance1=30,mediumdistance2=0,D1_1=6,D2_1=8,D3_1=6,D1_2=0,D2_2=0,D3_2=0,D_w=0 });
+                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL2", PoleType = "B04", _2Way = false, temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, mediumdistance1 = 30, mediumdistance2 = 0, D1_1 = 6, D2_1 = 8, D3_1 = 6, D1_2 = 0, D2_2 = 0, D3_2 = 0, D_w = 0 });
+                        Database.ListOfLineData.Add(new Line_Data() { Name = "Test", PoleType = "B04", _2Way = false, temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, mediumdistance1 = 30, mediumdistance2 = 0, D1_1 = 6, D2_1 = 8, D3_1 = 6, D1_2 = 0, D2_2 = 0, D3_2 = 0, D_w = 0 });
         }
 
         // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------

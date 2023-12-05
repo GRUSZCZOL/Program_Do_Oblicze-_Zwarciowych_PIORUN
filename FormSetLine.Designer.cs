@@ -184,7 +184,7 @@
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1,
             this.kryptonPage2});
-            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonNavigator1.SelectedIndex = 0;
             this.kryptonNavigator1.Size = new System.Drawing.Size(424, 506);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "Parametry Ogólne";
@@ -262,7 +262,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox1.Location = new System.Drawing.Point(230, 134);
             this.textBox1.Name = "textBox1";
@@ -292,7 +291,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox2.Location = new System.Drawing.Point(230, 53);
             this.textBox2.Name = "textBox2";
@@ -316,7 +314,6 @@
             // 
             // textBox_Resistivity_GND
             // 
-            this.textBox_Resistivity_GND.Enabled = false;
             this.textBox_Resistivity_GND.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_Resistivity_GND.Location = new System.Drawing.Point(227, 83);
             this.textBox_Resistivity_GND.Name = "textBox_Resistivity_GND";
@@ -346,7 +343,6 @@
             // 
             // textBox_Temp
             // 
-            this.textBox_Temp.Enabled = false;
             this.textBox_Temp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_Temp.Location = new System.Drawing.Point(227, 46);
             this.textBox_Temp.Name = "textBox_Temp";
@@ -471,7 +467,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(117, 301);
+            this.comboBox3.Location = new System.Drawing.Point(117, 326);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(130, 28);
             this.comboBox3.TabIndex = 12;
@@ -479,7 +475,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(117, 344);
+            this.checkBox1.Location = new System.Drawing.Point(87, 291);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(157, 24);
             this.checkBox1.TabIndex = 10;
@@ -490,7 +486,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(25, 308);
+            this.label7.Location = new System.Drawing.Point(25, 333);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 8;

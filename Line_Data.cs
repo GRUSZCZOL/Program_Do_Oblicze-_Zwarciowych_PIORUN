@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Collections.Specialized.BitVector32;
@@ -34,10 +35,37 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             double D1_2 = setD1_2;
             double D2_2 = setD2_2;
             double D3_2 = setD3_2;
-            double D_w = setD_w; // Odległość między torami
+            double D_w = setD_w; // Odległość między torami           
+    }
 
-
-            string Name = type_Name;
+        public Line_Data() 
+        {
+        
         }
+
+        public string Name { get; set; }
+        public string PoleType { get; set; }
+
+        public bool _2Way { get; set; }
+        public double temp { get; set; }
+        public double resistivity { get; set; }
+        public double lenght { get; set; }
+        public double conductivity { get; set; }
+        public double cross_section { get; set; }
+        public double r { get; set; }
+
+        public double r_0 { get; set; }
+        public double mediumdistance1 { get; set; }
+        public double mediumdistance2 { get; set; }
+        public double D1_1 { get; set; }
+        public double D2_1 { get; set; }
+        public double D3_1 { get; set; }
+
+        public double D1_2 { get; set; }
+        public double D2_2 { get; set; }
+        public double D3_2 { get; set; }
+
+        public double D_w { get; set; }
+
     }
 }

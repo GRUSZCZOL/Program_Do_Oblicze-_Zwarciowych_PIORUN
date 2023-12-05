@@ -70,8 +70,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         private void FormSetLine_Load(object sender, EventArgs e)
         {
+            
             comboBox_Form_Set_Line.DataSource = Database.ListOfLineData;
             comboBox_Form_Set_Line.DisplayMember = "Name";
+
         }
     }
 }
