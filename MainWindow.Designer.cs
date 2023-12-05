@@ -195,21 +195,21 @@
             // 
             // HELP_Multiline2
             // 
-            this.HELP_Multiline2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 271);
+            this.HELP_Multiline2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 20);
             this.HELP_Multiline2.Multiline = true;
             this.HELP_Multiline2.Name = "HELP_Multiline2";
-            this.HELP_Multiline2.Size = new System.Drawing.Size(127, 159);
+            this.HELP_Multiline2.Size = new System.Drawing.Size(127, 299);
             this.HELP_Multiline2.TabIndex = 2;
             this.HELP_Multiline2.Text = "Dodatkowe opcje";
             // 
             // HELP_Multiline1
             // 
             this.HELP_Multiline1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.HELP_Multiline1.Location = new System.Drawing.Point(0, 430);
+            this.HELP_Multiline1.Location = new System.Drawing.Point(0, 319);
             this.HELP_Multiline1.Multiline = true;
             this.HELP_Multiline1.Name = "HELP_Multiline1";
-            this.HELP_Multiline1.Size = new System.Drawing.Size(127, 107);
+            this.HELP_Multiline1.Size = new System.Drawing.Size(127, 218);
             this.HELP_Multiline1.TabIndex = 1;
             this.HELP_Multiline1.Text = "Notatnik";
             // 

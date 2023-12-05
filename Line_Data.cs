@@ -43,6 +43,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         
         }
 
+        
+
         public string Name { get; set; }
         public string PoleType { get; set; }
 

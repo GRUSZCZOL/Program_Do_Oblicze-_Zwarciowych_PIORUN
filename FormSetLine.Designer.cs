@@ -66,20 +66,20 @@
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox_Line_2 = new System.Windows.Forms.GroupBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox_D_w = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox_Line_2_D3 = new System.Windows.Forms.TextBox();
+            this.textBox_Line_2_Geometric_Distance_2 = new System.Windows.Forms.TextBox();
+            this.textBox_Line_2_D2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox_Line_2_D1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox_Line_1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_Line_1_D3 = new System.Windows.Forms.TextBox();
-            this.textBox_Line_1_Geometric_Distance = new System.Windows.Forms.TextBox();
+            this.textBox_Line_1_Geometric_Distance_1 = new System.Windows.Forms.TextBox();
             this.textBox_Line_1_D2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -107,6 +107,7 @@
             this.button_Accept = new System.Windows.Forms.Button();
             this.button_Hide = new System.Windows.Forms.Button();
             this.comboBox_Form_Set_Line = new System.Windows.Forms.ComboBox();
+            this.button_Save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -145,6 +146,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button_Save);
             this.splitContainer1.Panel2.Controls.Add(this.button_Delete);
             this.splitContainer1.Panel2.Controls.Add(this.button_Duplicate);
             this.splitContainer1.Panel2.Controls.Add(this.button_Add);
@@ -565,15 +567,15 @@
             // 
             // groupBox_Line_2
             // 
-            this.groupBox_Line_2.Controls.Add(this.textBox18);
+            this.groupBox_Line_2.Controls.Add(this.textBox_D_w);
             this.groupBox_Line_2.Controls.Add(this.label18);
             this.groupBox_Line_2.Controls.Add(this.label14);
-            this.groupBox_Line_2.Controls.Add(this.textBox10);
-            this.groupBox_Line_2.Controls.Add(this.textBox15);
-            this.groupBox_Line_2.Controls.Add(this.textBox16);
+            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_D3);
+            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_Geometric_Distance_2);
+            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_D2);
             this.groupBox_Line_2.Controls.Add(this.label15);
             this.groupBox_Line_2.Controls.Add(this.label16);
-            this.groupBox_Line_2.Controls.Add(this.textBox17);
+            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_D1);
             this.groupBox_Line_2.Controls.Add(this.label17);
             this.groupBox_Line_2.Enabled = false;
             this.groupBox_Line_2.Location = new System.Drawing.Point(10, 239);
@@ -583,13 +585,13 @@
             this.groupBox_Line_2.TabStop = false;
             this.groupBox_Line_2.Text = "Linia nr2:";
             // 
-            // textBox18
+            // textBox_D_w
             // 
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox18.Location = new System.Drawing.Point(198, 179);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(123, 31);
-            this.textBox18.TabIndex = 14;
+            this.textBox_D_w.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_D_w.Location = new System.Drawing.Point(198, 179);
+            this.textBox_D_w.Name = "textBox_D_w";
+            this.textBox_D_w.Size = new System.Drawing.Size(123, 31);
+            this.textBox_D_w.TabIndex = 14;
             // 
             // label18
             // 
@@ -611,29 +613,29 @@
             this.label14.TabIndex = 6;
             this.label14.Text = "Uśredniona odległość:";
             // 
-            // textBox10
+            // textBox_Line_2_D3
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox10.Location = new System.Drawing.Point(198, 142);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(123, 31);
-            this.textBox10.TabIndex = 12;
+            this.textBox_Line_2_D3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Line_2_D3.Location = new System.Drawing.Point(198, 142);
+            this.textBox_Line_2_D3.Name = "textBox_Line_2_D3";
+            this.textBox_Line_2_D3.Size = new System.Drawing.Size(123, 31);
+            this.textBox_Line_2_D3.TabIndex = 12;
             // 
-            // textBox15
+            // textBox_Line_2_Geometric_Distance_2
             // 
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox15.Location = new System.Drawing.Point(198, 31);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(123, 31);
-            this.textBox15.TabIndex = 3;
+            this.textBox_Line_2_Geometric_Distance_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Line_2_Geometric_Distance_2.Location = new System.Drawing.Point(198, 31);
+            this.textBox_Line_2_Geometric_Distance_2.Name = "textBox_Line_2_Geometric_Distance_2";
+            this.textBox_Line_2_Geometric_Distance_2.Size = new System.Drawing.Size(123, 31);
+            this.textBox_Line_2_Geometric_Distance_2.TabIndex = 3;
             // 
-            // textBox16
+            // textBox_Line_2_D2
             // 
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox16.Location = new System.Drawing.Point(198, 105);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(123, 31);
-            this.textBox16.TabIndex = 11;
+            this.textBox_Line_2_D2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Line_2_D2.Location = new System.Drawing.Point(198, 105);
+            this.textBox_Line_2_D2.Name = "textBox_Line_2_D2";
+            this.textBox_Line_2_D2.Size = new System.Drawing.Size(123, 31);
+            this.textBox_Line_2_D2.TabIndex = 11;
             // 
             // label15
             // 
@@ -655,13 +657,13 @@
             this.label16.TabIndex = 10;
             this.label16.Text = "Odległość D3:";
             // 
-            // textBox17
+            // textBox_Line_2_D1
             // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox17.Location = new System.Drawing.Point(198, 68);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(123, 31);
-            this.textBox17.TabIndex = 8;
+            this.textBox_Line_2_D1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Line_2_D1.Location = new System.Drawing.Point(198, 68);
+            this.textBox_Line_2_D1.Name = "textBox_Line_2_D1";
+            this.textBox_Line_2_D1.Size = new System.Drawing.Size(123, 31);
+            this.textBox_Line_2_D1.TabIndex = 8;
             // 
             // label17
             // 
@@ -677,7 +679,7 @@
             // 
             this.groupBox_Line_1.Controls.Add(this.label6);
             this.groupBox_Line_1.Controls.Add(this.textBox_Line_1_D3);
-            this.groupBox_Line_1.Controls.Add(this.textBox_Line_1_Geometric_Distance);
+            this.groupBox_Line_1.Controls.Add(this.textBox_Line_1_Geometric_Distance_1);
             this.groupBox_Line_1.Controls.Add(this.textBox_Line_1_D2);
             this.groupBox_Line_1.Controls.Add(this.label4);
             this.groupBox_Line_1.Controls.Add(this.label13);
@@ -708,13 +710,13 @@
             this.textBox_Line_1_D3.Size = new System.Drawing.Size(123, 31);
             this.textBox_Line_1_D3.TabIndex = 12;
             // 
-            // textBox_Line_1_Geometric_Distance
+            // textBox_Line_1_Geometric_Distance_1
             // 
-            this.textBox_Line_1_Geometric_Distance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_1_Geometric_Distance.Location = new System.Drawing.Point(198, 31);
-            this.textBox_Line_1_Geometric_Distance.Name = "textBox_Line_1_Geometric_Distance";
-            this.textBox_Line_1_Geometric_Distance.Size = new System.Drawing.Size(123, 31);
-            this.textBox_Line_1_Geometric_Distance.TabIndex = 3;
+            this.textBox_Line_1_Geometric_Distance_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Line_1_Geometric_Distance_1.Location = new System.Drawing.Point(198, 31);
+            this.textBox_Line_1_Geometric_Distance_1.Name = "textBox_Line_1_Geometric_Distance_1";
+            this.textBox_Line_1_Geometric_Distance_1.Size = new System.Drawing.Size(123, 31);
+            this.textBox_Line_1_Geometric_Distance_1.TabIndex = 3;
             // 
             // textBox_Line_1_D2
             // 
@@ -920,39 +922,42 @@
             // button_Delete
             // 
             this.button_Delete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Delete.Location = new System.Drawing.Point(0, 306);
+            this.button_Delete.Location = new System.Drawing.Point(0, 331);
             this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(258, 40);
+            this.button_Delete.Size = new System.Drawing.Size(258, 35);
             this.button_Delete.TabIndex = 5;
             this.button_Delete.Text = "Usuń";
             this.button_Delete.UseVisualStyleBackColor = true;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // button_Duplicate
             // 
             this.button_Duplicate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Duplicate.Location = new System.Drawing.Point(0, 346);
+            this.button_Duplicate.Location = new System.Drawing.Point(0, 366);
             this.button_Duplicate.Name = "button_Duplicate";
-            this.button_Duplicate.Size = new System.Drawing.Size(258, 40);
+            this.button_Duplicate.Size = new System.Drawing.Size(258, 35);
             this.button_Duplicate.TabIndex = 4;
             this.button_Duplicate.Text = "Duplikuj";
             this.button_Duplicate.UseVisualStyleBackColor = true;
+            this.button_Duplicate.Click += new System.EventHandler(this.button_Duplicate_Click);
             // 
             // button_Add
             // 
             this.button_Add.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Add.Location = new System.Drawing.Point(0, 386);
+            this.button_Add.Location = new System.Drawing.Point(0, 401);
             this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(258, 40);
+            this.button_Add.Size = new System.Drawing.Size(258, 35);
             this.button_Add.TabIndex = 3;
             this.button_Add.Text = "Dodaj";
             this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
             // button_Accept
             // 
             this.button_Accept.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Accept.Location = new System.Drawing.Point(0, 426);
+            this.button_Accept.Location = new System.Drawing.Point(0, 436);
             this.button_Accept.Name = "button_Accept";
-            this.button_Accept.Size = new System.Drawing.Size(258, 40);
+            this.button_Accept.Size = new System.Drawing.Size(258, 35);
             this.button_Accept.TabIndex = 2;
             this.button_Accept.Text = "Zatwierdź";
             this.button_Accept.UseVisualStyleBackColor = true;
@@ -961,9 +966,9 @@
             // button_Hide
             // 
             this.button_Hide.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Hide.Location = new System.Drawing.Point(0, 466);
+            this.button_Hide.Location = new System.Drawing.Point(0, 471);
             this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(258, 40);
+            this.button_Hide.Size = new System.Drawing.Size(258, 35);
             this.button_Hide.TabIndex = 1;
             this.button_Hide.Text = "Anuluj";
             this.button_Hide.UseVisualStyleBackColor = true;
@@ -979,6 +984,17 @@
             this.comboBox_Form_Set_Line.Name = "comboBox_Form_Set_Line";
             this.comboBox_Form_Set_Line.Size = new System.Drawing.Size(258, 300);
             this.comboBox_Form_Set_Line.TabIndex = 0;
+            // 
+            // button_Save
+            // 
+            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button_Save.Location = new System.Drawing.Point(0, 296);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(258, 35);
+            this.button_Save.TabIndex = 6;
+            this.button_Save.Text = "Zapisz";
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // FormSetLine
             // 
@@ -1054,7 +1070,7 @@
         private System.Windows.Forms.TextBox textBox_Conductivity_value;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_Line_1_Geometric_Distance;
+        private System.Windows.Forms.TextBox textBox_Line_1_Geometric_Distance_1;
         private System.Windows.Forms.PictureBox pictureBox_Pole_Type;
         private System.Windows.Forms.PictureBox pictureBox_Model;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1073,14 +1089,14 @@
         private System.Windows.Forms.GroupBox groupBox_Line_2;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox_Line_2_D3;
+        private System.Windows.Forms.TextBox textBox_Line_2_Geometric_Distance_2;
+        private System.Windows.Forms.TextBox textBox_Line_2_D2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox_Line_2_D1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBox_D_w;
         private System.Windows.Forms.TextBox textBox_Node_1_Name;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label11;
@@ -1110,5 +1126,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button_Save;
     }
 }

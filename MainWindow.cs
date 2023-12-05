@@ -29,9 +29,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         private void MainWindow_Load(object sender, EventArgs e)
         {
             // UZUPEŁNIANIE BAZ DANYCH
-                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04", _2Way=false,temp = 25,resistivity=200,lenght=1000,conductivity=33,cross_section=280,r = 6,r_0=5,mediumdistance1=30,mediumdistance2=0,D1_1=6,D2_1=8,D3_1=6,D1_2=0,D2_2=0,D3_2=0,D_w=0 });
-                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL2", PoleType = "B04", _2Way = false, temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, mediumdistance1 = 30, mediumdistance2 = 0, D1_1 = 6, D2_1 = 8, D3_1 = 6, D1_2 = 0, D2_2 = 0, D3_2 = 0, D_w = 0 });
-                        Database.ListOfLineData.Add(new Line_Data() { Name = "Test", PoleType = "B04", _2Way = false, temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, mediumdistance1 = 30, mediumdistance2 = 0, D1_1 = 6, D2_1 = 8, D3_1 = 6, D1_2 = 0, D2_2 = 0, D3_2 = 0, D_w = 0 });
+                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04", _2Way=false,temp = 25,resistivity=200,lenght=1000,conductivity=33,cross_section=280,r = 6,r_0=5,mediumdistance1=30,mediumdistance2=0,D1_1=6,D2_1=8,D3_1=6,D1_2=0,D2_2=0,D3_2=0,D_w=0 }); 
+                        Database.ListOfLineData.Add(new Line_Data() {  Name = "AFL2", PoleType = "B04", _2Way = false, temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, mediumdistance1 = 30, mediumdistance2 = 0, D1_1 = 6, D2_1 = 8, D3_1 = 6, D1_2 = 0, D2_2 = 0, D3_2 = 0, D_w = 0 }); 
+                        Database.ListOfLineData.Add(new Line_Data() {  Name = "Test", PoleType = "B04", _2Way = false, temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, mediumdistance1 = 30, mediumdistance2 = 0, D1_1 = 6, D2_1 = 8, D3_1 = 6, D1_2 = 0, D2_2 = 0, D3_2 = 0, D_w = 0 }); 
         }
 
         // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------
