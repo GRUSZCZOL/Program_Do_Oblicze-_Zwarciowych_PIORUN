@@ -258,7 +258,6 @@
             this.textBox_units_parameters_reactance.Size = new System.Drawing.Size(72, 31);
             this.textBox_units_parameters_reactance.TabIndex = 16;
             this.textBox_units_parameters_reactance.Text = "0";
-            this.textBox_units_parameters_reactance.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label25
             // 
@@ -857,7 +856,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ustawienie Parametrów Obiektu: Linia";
             this.Load += new System.EventHandler(this.FormSetLine_Load);
-            this.Shown += new System.EventHandler(this.FormSetLine_Shown);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

@@ -32,6 +32,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public bool SelectedIndexChange = true;
 
         // PRZYCISKI FUNKCYJNE
+
         private void button_Hide_Click(object sender, EventArgs e)
         {
             Hide();
@@ -116,9 +117,21 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             SelectedIndexChange = true;
 
         } // Zapisuje wybrane zmiany w elemencie
+       
+
+
+        // WYDARZENIA
+
+        private void FormSetLine_Load(object sender, EventArgs e)
+        {
+
+            comboBox_Form_Set_Line.DataSource = Database.ListOfLineData;
+            comboBox_Form_Set_Line.DisplayMember = "Name";
+
+        }
         private void comboBox_Form_Set_Line_SelectedIndexChanged(object sender, EventArgs e)
         {
-           if(SelectedIndexChange != false)
+            if (SelectedIndexChange != false)
             {
                 textBox_Lenght_value.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].lenght.ToString();
                 textBox_Conductivity_value.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].conductivity.ToString();
@@ -130,35 +143,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 textBox_Line_1_D2.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].D2_1.ToString();
                 textBox_Line_1_D3.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].D3_1.ToString();
             }
-            
-               
-            
-           
+
+
+
+
         } // Wczytywanie danych podczas zmiany indeksu
 
 
-        // WYDARZENIA
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void FormSetLine_Shown(object sender, EventArgs e)
-        {
-
-        }
-        private void FormSetLine_Load(object sender, EventArgs e)
-        {
-
-            comboBox_Form_Set_Line.DataSource = Database.ListOfLineData;
-            comboBox_Form_Set_Line.DisplayMember = "Name";
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
