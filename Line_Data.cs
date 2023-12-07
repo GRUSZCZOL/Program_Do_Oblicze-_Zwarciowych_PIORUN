@@ -48,7 +48,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public string Name { get; set; }
         public string PoleType { get; set; }
 
-        public bool _2Way { get; set; }
+        // public bool _2Way { get; set; }
         public double temp { get; set; }
         public double resistivity { get; set; }
         public double lenght { get; set; }
@@ -57,17 +57,17 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public double r { get; set; }
 
         public double r_0 { get; set; }
-        public double mediumdistance1 { get; set; }
-        public double mediumdistance2 { get; set; }
+        //public double mediumdistance1 { get; set; }
+        //public double mediumdistance2 { get; set; }
         public double D1_1 { get; set; }
         public double D2_1 { get; set; }
         public double D3_1 { get; set; }
 
-        public double D1_2 { get; set; }
-        public double D2_2 { get; set; }
-        public double D3_2 { get; set; }
+        //public double D1_2 { get; set; }
+        //public double D2_2 { get; set; }
+        //public double D3_2 { get; set; }
 
-        public double D_w { get; set; }
+        //public double D_w { get; set; }
 
     }
 }

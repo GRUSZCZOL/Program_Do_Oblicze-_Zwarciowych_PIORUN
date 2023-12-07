@@ -20,6 +20,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static int N; // Liczba węzłów
 
+        
+
         public static int selectedIndex;
 
         public static int m_X; // Wspolrzedne myszy X
@@ -34,12 +36,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static int button_size_Width = 45; // Rozmiar przycisku
         public static int button_size_Height = 45;
 
-
-        public static int Point_X1 = 1; 
-        public static int Point_X2 = 1;
-        public static int Point_Y1 = 1;
-        public static int Point_Y2 = 1;
-        public static int distance;
 
         // Parametry elektryczne
 

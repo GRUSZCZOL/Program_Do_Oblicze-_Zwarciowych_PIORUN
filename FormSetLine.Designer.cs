@@ -33,18 +33,19 @@
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox_units_parameters = new System.Windows.Forms.CheckBox();
+            this.textBox_units_parameters_reactance = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_units_parameters_resistance = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox_Resistivity_GND = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.textBox_Temp = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.textBox_Line_Index = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -57,29 +58,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox_Impedance_Static_Im = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBox_Impedance_Static_Re = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox_Line_Name = new System.Windows.Forms.TextBox();
+            this.checkBox_Impedance_Static = new System.Windows.Forms.CheckBox();
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox_Line_2 = new System.Windows.Forms.GroupBox();
-            this.textBox_D_w = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox_Line_2_D3 = new System.Windows.Forms.TextBox();
-            this.textBox_Line_2_Geometric_Distance_2 = new System.Windows.Forms.TextBox();
-            this.textBox_Line_2_D2 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox_Line_2_D1 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox_Line_1 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox_Line_1_D3 = new System.Windows.Forms.TextBox();
-            this.textBox_Line_1_Geometric_Distance_1 = new System.Windows.Forms.TextBox();
             this.textBox_Line_1_D2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -96,18 +84,15 @@
             this.textBox_S_value = new System.Windows.Forms.TextBox();
             this.textBox_Conductivity_value = new System.Windows.Forms.TextBox();
             this.textBox_Lenght_value = new System.Windows.Forms.TextBox();
-            this.textBox_Impedance_Static_Im = new System.Windows.Forms.TextBox();
-            this.textBox_Impedance_Static_Re = new System.Windows.Forms.TextBox();
-            this.checkBox_Impedance_Static = new System.Windows.Forms.CheckBox();
             this.pictureBox_Pole_Type = new System.Windows.Forms.PictureBox();
             this.pictureBox_Model = new System.Windows.Forms.PictureBox();
+            this.button_Save = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Duplicate = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.button_Accept = new System.Windows.Forms.Button();
             this.button_Hide = new System.Windows.Forms.Button();
             this.comboBox_Form_Set_Line = new System.Windows.Forms.ComboBox();
-            this.button_Save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -127,7 +112,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).BeginInit();
             this.kryptonPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox_Line_2.SuspendLayout();
             this.groupBox_Line_1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pole_Type)).BeginInit();
@@ -186,7 +170,7 @@
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1,
             this.kryptonPage2});
-            this.kryptonNavigator1.SelectedIndex = 0;
+            this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(424, 506);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "Parametry Ogólne";
@@ -207,75 +191,80 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.checkBox_units_parameters);
+            this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox5);
+            this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.textBox_Line_Index);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.comboBox3);
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.textBox_Impedance_Static_Im);
             this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.textBox_Impedance_Static_Re);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox_Line_Name);
+            this.groupBox3.Controls.Add(this.checkBox_Impedance_Static);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(405, 716);
+            this.groupBox3.Size = new System.Drawing.Size(405, 804);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacje o obiekcie";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label22.Location = new System.Drawing.Point(128, 585);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(31, 20);
+            this.label22.TabIndex = 14;
+            this.label22.Text = "Im:";
+            // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.checkBox3);
-            this.groupBox6.Controls.Add(this.checkBox2);
-            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.textBox_units_parameters_reactance);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.label26);
-            this.groupBox6.Controls.Add(this.textBox2);
+            this.groupBox6.Controls.Add(this.textBox_units_parameters_resistance);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox6.Location = new System.Drawing.Point(16, 532);
+            this.groupBox6.Location = new System.Drawing.Point(18, 655);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(372, 176);
+            this.groupBox6.Size = new System.Drawing.Size(372, 145);
             this.groupBox6.TabIndex = 18;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "parametry jednostkowe";
             // 
-            // checkBox3
+            // checkBox_units_parameters
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(23, 102);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(276, 24);
-            this.checkBox3.TabIndex = 18;
-            this.checkBox3.Text = "ręczna reaktancja jednostkowa";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox_units_parameters.AutoSize = true;
+            this.checkBox_units_parameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox_units_parameters.Location = new System.Drawing.Point(18, 622);
+            this.checkBox_units_parameters.Name = "checkBox_units_parameters";
+            this.checkBox_units_parameters.Size = new System.Drawing.Size(244, 24);
+            this.checkBox_units_parameters.TabIndex = 17;
+            this.checkBox_units_parameters.Text = "ręczne parametry jednostkowe";
+            this.checkBox_units_parameters.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // textBox_units_parameters_reactance
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(23, 29);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(283, 24);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "ręczna rezystancja jednostkowa";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(230, 134);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 31);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "200";
+            this.textBox_units_parameters_reactance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_units_parameters_reactance.Location = new System.Drawing.Point(231, 102);
+            this.textBox_units_parameters_reactance.Name = "textBox_units_parameters_reactance";
+            this.textBox_units_parameters_reactance.Size = new System.Drawing.Size(72, 31);
+            this.textBox_units_parameters_reactance.TabIndex = 16;
+            this.textBox_units_parameters_reactance.Text = "0";
+            this.textBox_units_parameters_reactance.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label25.Location = new System.Drawing.Point(37, 141);
+            this.label25.Location = new System.Drawing.Point(38, 109);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(187, 20);
             this.label25.TabIndex = 15;
@@ -285,20 +274,20 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label26.Location = new System.Drawing.Point(35, 60);
+            this.label26.Location = new System.Drawing.Point(35, 68);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(193, 20);
             this.label26.TabIndex = 6;
             this.label26.Text = "Rezystancja jednostkowa:";
             // 
-            // textBox2
+            // textBox_units_parameters_resistance
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(230, 53);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(72, 31);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "25";
+            this.textBox_units_parameters_resistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_units_parameters_resistance.Location = new System.Drawing.Point(230, 61);
+            this.textBox_units_parameters_resistance.Name = "textBox_units_parameters_resistance";
+            this.textBox_units_parameters_resistance.Size = new System.Drawing.Size(72, 31);
+            this.textBox_units_parameters_resistance.TabIndex = 3;
+            this.textBox_units_parameters_resistance.Text = "0";
             // 
             // groupBox5
             // 
@@ -321,7 +310,7 @@
             this.textBox_Resistivity_GND.Name = "textBox_Resistivity_GND";
             this.textBox_Resistivity_GND.Size = new System.Drawing.Size(72, 31);
             this.textBox_Resistivity_GND.TabIndex = 16;
-            this.textBox_Resistivity_GND.Text = "200";
+            this.textBox_Resistivity_GND.Text = "0";
             // 
             // label24
             // 
@@ -350,7 +339,17 @@
             this.textBox_Temp.Name = "textBox_Temp";
             this.textBox_Temp.Size = new System.Drawing.Size(72, 31);
             this.textBox_Temp.TabIndex = 3;
-            this.textBox_Temp.Text = "25";
+            this.textBox_Temp.Text = "0";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label21.Location = new System.Drawing.Point(35, 585);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(34, 20);
+            this.label21.TabIndex = 11;
+            this.label21.Text = "Re:";
             // 
             // textBox_Line_Index
             // 
@@ -469,30 +468,43 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(117, 326);
+            this.comboBox3.Items.AddRange(new object[] {
+            "B04",
+            "A02",
+            "C01"});
+            this.comboBox3.Location = new System.Drawing.Point(117, 312);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(130, 28);
             this.comboBox3.TabIndex = 12;
+            this.comboBox3.Text = "B04";
             // 
-            // checkBox1
+            // textBox_Impedance_Static_Im
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(87, 291);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(157, 24);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Linia dwutorowa";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.textBox_Impedance_Static_Im.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Impedance_Static_Im.Location = new System.Drawing.Point(163, 578);
+            this.textBox_Impedance_Static_Im.Name = "textBox_Impedance_Static_Im";
+            this.textBox_Impedance_Static_Im.Size = new System.Drawing.Size(54, 31);
+            this.textBox_Impedance_Static_Im.TabIndex = 2;
+            this.textBox_Impedance_Static_Im.Text = "0";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(25, 333);
+            this.label7.Location = new System.Drawing.Point(25, 319);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "Typ słupa:";
+            // 
+            // textBox_Impedance_Static_Re
+            // 
+            this.textBox_Impedance_Static_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Impedance_Static_Re.Location = new System.Drawing.Point(69, 578);
+            this.textBox_Impedance_Static_Re.Name = "textBox_Impedance_Static_Re";
+            this.textBox_Impedance_Static_Re.Size = new System.Drawing.Size(53, 31);
+            this.textBox_Impedance_Static_Re.TabIndex = 1;
+            this.textBox_Impedance_Static_Re.Text = "0";
             // 
             // label9
             // 
@@ -513,17 +525,23 @@
             this.textBox_Line_Name.Size = new System.Drawing.Size(272, 31);
             this.textBox_Line_Name.TabIndex = 3;
             // 
+            // checkBox_Impedance_Static
+            // 
+            this.checkBox_Impedance_Static.AutoSize = true;
+            this.checkBox_Impedance_Static.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox_Impedance_Static.Location = new System.Drawing.Point(17, 547);
+            this.checkBox_Impedance_Static.Name = "checkBox_Impedance_Static";
+            this.checkBox_Impedance_Static.Size = new System.Drawing.Size(198, 24);
+            this.checkBox_Impedance_Static.TabIndex = 0;
+            this.checkBox_Impedance_Static.Text = "Wymuś opór elektryczny";
+            this.checkBox_Impedance_Static.UseVisualStyleBackColor = true;
+            // 
             // kryptonPage2
             // 
             this.kryptonPage2.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
             this.kryptonPage2.AutoScroll = true;
-            this.kryptonPage2.Controls.Add(this.label22);
-            this.kryptonPage2.Controls.Add(this.label21);
             this.kryptonPage2.Controls.Add(this.groupBox1);
             this.kryptonPage2.Controls.Add(this.groupBox2);
-            this.kryptonPage2.Controls.Add(this.textBox_Impedance_Static_Im);
-            this.kryptonPage2.Controls.Add(this.textBox_Impedance_Static_Re);
-            this.kryptonPage2.Controls.Add(this.checkBox_Impedance_Static);
             this.kryptonPage2.Flags = 65534;
             this.kryptonPage2.LastVisibleSet = true;
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
@@ -533,153 +551,20 @@
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "A7FE1DEDC3CE4DE008B73A110407DD9A";
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label22.Location = new System.Drawing.Point(304, 17);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 20);
-            this.label22.TabIndex = 14;
-            this.label22.Text = "Im:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(211, 17);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 20);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Re:";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox_Line_2);
             this.groupBox1.Controls.Add(this.groupBox_Line_1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 315);
+            this.groupBox1.Location = new System.Drawing.Point(8, 260);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(394, 486);
+            this.groupBox1.Size = new System.Drawing.Size(394, 215);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odległości";
             // 
-            // groupBox_Line_2
-            // 
-            this.groupBox_Line_2.Controls.Add(this.textBox_D_w);
-            this.groupBox_Line_2.Controls.Add(this.label18);
-            this.groupBox_Line_2.Controls.Add(this.label14);
-            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_D3);
-            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_Geometric_Distance_2);
-            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_D2);
-            this.groupBox_Line_2.Controls.Add(this.label15);
-            this.groupBox_Line_2.Controls.Add(this.label16);
-            this.groupBox_Line_2.Controls.Add(this.textBox_Line_2_D1);
-            this.groupBox_Line_2.Controls.Add(this.label17);
-            this.groupBox_Line_2.Enabled = false;
-            this.groupBox_Line_2.Location = new System.Drawing.Point(10, 239);
-            this.groupBox_Line_2.Name = "groupBox_Line_2";
-            this.groupBox_Line_2.Size = new System.Drawing.Size(372, 237);
-            this.groupBox_Line_2.TabIndex = 13;
-            this.groupBox_Line_2.TabStop = false;
-            this.groupBox_Line_2.Text = "Linia nr2:";
-            // 
-            // textBox_D_w
-            // 
-            this.textBox_D_w.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_D_w.Location = new System.Drawing.Point(198, 179);
-            this.textBox_D_w.Name = "textBox_D_w";
-            this.textBox_D_w.Size = new System.Drawing.Size(123, 31);
-            this.textBox_D_w.TabIndex = 14;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.Location = new System.Drawing.Point(67, 186);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(120, 20);
-            this.label18.TabIndex = 13;
-            this.label18.Text = "Odległość D_w:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(25, 38);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(167, 20);
-            this.label14.TabIndex = 6;
-            this.label14.Text = "Uśredniona odległość:";
-            // 
-            // textBox_Line_2_D3
-            // 
-            this.textBox_Line_2_D3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_2_D3.Location = new System.Drawing.Point(198, 142);
-            this.textBox_Line_2_D3.Name = "textBox_Line_2_D3";
-            this.textBox_Line_2_D3.Size = new System.Drawing.Size(123, 31);
-            this.textBox_Line_2_D3.TabIndex = 12;
-            // 
-            // textBox_Line_2_Geometric_Distance_2
-            // 
-            this.textBox_Line_2_Geometric_Distance_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_2_Geometric_Distance_2.Location = new System.Drawing.Point(198, 31);
-            this.textBox_Line_2_Geometric_Distance_2.Name = "textBox_Line_2_Geometric_Distance_2";
-            this.textBox_Line_2_Geometric_Distance_2.Size = new System.Drawing.Size(123, 31);
-            this.textBox_Line_2_Geometric_Distance_2.TabIndex = 3;
-            // 
-            // textBox_Line_2_D2
-            // 
-            this.textBox_Line_2_D2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_2_D2.Location = new System.Drawing.Point(198, 105);
-            this.textBox_Line_2_D2.Name = "textBox_Line_2_D2";
-            this.textBox_Line_2_D2.Size = new System.Drawing.Size(123, 31);
-            this.textBox_Line_2_D2.TabIndex = 11;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(81, 75);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 20);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "Odległość D1:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(81, 149);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(109, 20);
-            this.label16.TabIndex = 10;
-            this.label16.Text = "Odległość D3:";
-            // 
-            // textBox_Line_2_D1
-            // 
-            this.textBox_Line_2_D1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_2_D1.Location = new System.Drawing.Point(198, 68);
-            this.textBox_Line_2_D1.Name = "textBox_Line_2_D1";
-            this.textBox_Line_2_D1.Size = new System.Drawing.Size(123, 31);
-            this.textBox_Line_2_D1.TabIndex = 8;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.Location = new System.Drawing.Point(81, 112);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(109, 20);
-            this.label17.TabIndex = 9;
-            this.label17.Text = "Odległość D2:";
-            // 
             // groupBox_Line_1
             // 
-            this.groupBox_Line_1.Controls.Add(this.label6);
             this.groupBox_Line_1.Controls.Add(this.textBox_Line_1_D3);
-            this.groupBox_Line_1.Controls.Add(this.textBox_Line_1_Geometric_Distance_1);
             this.groupBox_Line_1.Controls.Add(this.textBox_Line_1_D2);
             this.groupBox_Line_1.Controls.Add(this.label4);
             this.groupBox_Line_1.Controls.Add(this.label13);
@@ -687,50 +572,34 @@
             this.groupBox_Line_1.Controls.Add(this.label5);
             this.groupBox_Line_1.Location = new System.Drawing.Point(10, 37);
             this.groupBox_Line_1.Name = "groupBox_Line_1";
-            this.groupBox_Line_1.Size = new System.Drawing.Size(372, 196);
+            this.groupBox_Line_1.Size = new System.Drawing.Size(372, 162);
             this.groupBox_Line_1.TabIndex = 9;
             this.groupBox_Line_1.TabStop = false;
             this.groupBox_Line_1.Text = "Linia nr1:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(25, 38);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Uśredniona odległość:";
-            // 
             // textBox_Line_1_D3
             // 
             this.textBox_Line_1_D3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_1_D3.Location = new System.Drawing.Point(198, 142);
+            this.textBox_Line_1_D3.Location = new System.Drawing.Point(193, 106);
             this.textBox_Line_1_D3.Name = "textBox_Line_1_D3";
             this.textBox_Line_1_D3.Size = new System.Drawing.Size(123, 31);
             this.textBox_Line_1_D3.TabIndex = 12;
-            // 
-            // textBox_Line_1_Geometric_Distance_1
-            // 
-            this.textBox_Line_1_Geometric_Distance_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_1_Geometric_Distance_1.Location = new System.Drawing.Point(198, 31);
-            this.textBox_Line_1_Geometric_Distance_1.Name = "textBox_Line_1_Geometric_Distance_1";
-            this.textBox_Line_1_Geometric_Distance_1.Size = new System.Drawing.Size(123, 31);
-            this.textBox_Line_1_Geometric_Distance_1.TabIndex = 3;
+            this.textBox_Line_1_D3.Text = "0";
             // 
             // textBox_Line_1_D2
             // 
             this.textBox_Line_1_D2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_1_D2.Location = new System.Drawing.Point(198, 105);
+            this.textBox_Line_1_D2.Location = new System.Drawing.Point(193, 69);
             this.textBox_Line_1_D2.Name = "textBox_Line_1_D2";
             this.textBox_Line_1_D2.Size = new System.Drawing.Size(123, 31);
             this.textBox_Line_1_D2.TabIndex = 11;
+            this.textBox_Line_1_D2.Text = "0";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(81, 75);
+            this.label4.Location = new System.Drawing.Point(76, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 20);
             this.label4.TabIndex = 7;
@@ -740,7 +609,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(81, 149);
+            this.label13.Location = new System.Drawing.Point(76, 113);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(109, 20);
             this.label13.TabIndex = 10;
@@ -749,16 +618,17 @@
             // textBox_Line_1_D1
             // 
             this.textBox_Line_1_D1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Line_1_D1.Location = new System.Drawing.Point(198, 68);
+            this.textBox_Line_1_D1.Location = new System.Drawing.Point(193, 32);
             this.textBox_Line_1_D1.Name = "textBox_Line_1_D1";
             this.textBox_Line_1_D1.Size = new System.Drawing.Size(123, 31);
             this.textBox_Line_1_D1.TabIndex = 8;
+            this.textBox_Line_1_D1.Text = "0";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(81, 112);
+            this.label5.Location = new System.Drawing.Point(76, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 20);
             this.label5.TabIndex = 9;
@@ -777,7 +647,7 @@
             this.groupBox2.Controls.Add(this.textBox_Conductivity_value);
             this.groupBox2.Controls.Add(this.textBox_Lenght_value);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(11, 65);
+            this.groupBox2.Location = new System.Drawing.Point(8, 11);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(394, 243);
             this.groupBox2.TabIndex = 12;
@@ -791,6 +661,7 @@
             this.textBox_r_value.Name = "textBox_r_value";
             this.textBox_r_value.Size = new System.Drawing.Size(130, 31);
             this.textBox_r_value.TabIndex = 12;
+            this.textBox_r_value.Text = "0";
             // 
             // label23
             // 
@@ -809,6 +680,7 @@
             this.textBox_r_0_value.Name = "textBox_r_0_value";
             this.textBox_r_0_value.Size = new System.Drawing.Size(130, 31);
             this.textBox_r_0_value.TabIndex = 10;
+            this.textBox_r_0_value.Text = "0";
             // 
             // label20
             // 
@@ -857,6 +729,7 @@
             this.textBox_S_value.Name = "textBox_S_value";
             this.textBox_S_value.Size = new System.Drawing.Size(128, 31);
             this.textBox_S_value.TabIndex = 5;
+            this.textBox_S_value.Text = "240";
             // 
             // textBox_Conductivity_value
             // 
@@ -865,6 +738,7 @@
             this.textBox_Conductivity_value.Name = "textBox_Conductivity_value";
             this.textBox_Conductivity_value.Size = new System.Drawing.Size(128, 31);
             this.textBox_Conductivity_value.TabIndex = 4;
+            this.textBox_Conductivity_value.Text = "33";
             // 
             // textBox_Lenght_value
             // 
@@ -873,33 +747,7 @@
             this.textBox_Lenght_value.Name = "textBox_Lenght_value";
             this.textBox_Lenght_value.Size = new System.Drawing.Size(127, 31);
             this.textBox_Lenght_value.TabIndex = 3;
-            // 
-            // textBox_Impedance_Static_Im
-            // 
-            this.textBox_Impedance_Static_Im.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Impedance_Static_Im.Location = new System.Drawing.Point(339, 10);
-            this.textBox_Impedance_Static_Im.Name = "textBox_Impedance_Static_Im";
-            this.textBox_Impedance_Static_Im.Size = new System.Drawing.Size(54, 31);
-            this.textBox_Impedance_Static_Im.TabIndex = 2;
-            // 
-            // textBox_Impedance_Static_Re
-            // 
-            this.textBox_Impedance_Static_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Impedance_Static_Re.Location = new System.Drawing.Point(245, 10);
-            this.textBox_Impedance_Static_Re.Name = "textBox_Impedance_Static_Re";
-            this.textBox_Impedance_Static_Re.Size = new System.Drawing.Size(53, 31);
-            this.textBox_Impedance_Static_Re.TabIndex = 1;
-            // 
-            // checkBox_Impedance_Static
-            // 
-            this.checkBox_Impedance_Static.AutoSize = true;
-            this.checkBox_Impedance_Static.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox_Impedance_Static.Location = new System.Drawing.Point(11, 16);
-            this.checkBox_Impedance_Static.Name = "checkBox_Impedance_Static";
-            this.checkBox_Impedance_Static.Size = new System.Drawing.Size(198, 24);
-            this.checkBox_Impedance_Static.TabIndex = 0;
-            this.checkBox_Impedance_Static.Text = "Wymuś opór elektryczny";
-            this.checkBox_Impedance_Static.UseVisualStyleBackColor = true;
+            this.textBox_Lenght_value.Text = "1";
             // 
             // pictureBox_Pole_Type
             // 
@@ -918,6 +766,17 @@
             this.pictureBox_Model.Size = new System.Drawing.Size(294, 260);
             this.pictureBox_Model.TabIndex = 0;
             this.pictureBox_Model.TabStop = false;
+            // 
+            // button_Save
+            // 
+            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button_Save.Location = new System.Drawing.Point(0, 296);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(258, 35);
+            this.button_Save.TabIndex = 6;
+            this.button_Save.Text = "Zapisz";
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // button_Delete
             // 
@@ -984,17 +843,7 @@
             this.comboBox_Form_Set_Line.Name = "comboBox_Form_Set_Line";
             this.comboBox_Form_Set_Line.Size = new System.Drawing.Size(258, 300);
             this.comboBox_Form_Set_Line.TabIndex = 0;
-            // 
-            // button_Save
-            // 
-            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Save.Location = new System.Drawing.Point(0, 296);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(258, 35);
-            this.button_Save.TabIndex = 6;
-            this.button_Save.Text = "Zapisz";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
+            this.comboBox_Form_Set_Line.SelectedIndexChanged += new System.EventHandler(this.comboBox_Form_Set_Line_SelectedIndexChanged);
             // 
             // FormSetLine
             // 
@@ -1031,10 +880,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
             this.kryptonPage2.ResumeLayout(false);
-            this.kryptonPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox_Line_2.ResumeLayout(false);
-            this.groupBox_Line_2.PerformLayout();
             this.groupBox_Line_1.ResumeLayout(false);
             this.groupBox_Line_1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1069,14 +915,11 @@
         private System.Windows.Forms.TextBox textBox_S_value;
         private System.Windows.Forms.TextBox textBox_Conductivity_value;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_Line_1_Geometric_Distance_1;
         private System.Windows.Forms.PictureBox pictureBox_Pole_Type;
         private System.Windows.Forms.PictureBox pictureBox_Model;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_Line_Name;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.GroupBox groupBox_Line_1;
@@ -1086,17 +929,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_Line_1_D1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox_Line_2;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox_Line_2_D3;
-        private System.Windows.Forms.TextBox textBox_Line_2_Geometric_Distance_2;
-        private System.Windows.Forms.TextBox textBox_Line_2_D2;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox_Line_2_D1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox_D_w;
         private System.Windows.Forms.TextBox textBox_Node_1_Name;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label11;
@@ -1120,12 +952,11 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox_Temp;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox checkBox_units_parameters;
+        private System.Windows.Forms.TextBox textBox_units_parameters_reactance;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_units_parameters_resistance;
         private System.Windows.Forms.Button button_Save;
     }
 }
