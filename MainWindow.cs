@@ -113,6 +113,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             //////////////////////////////// Przyciski budowania
             private void button_Build_Node_Click(object sender, EventArgs e) // Przejście do trybu budowania Węzła
             {
+                Database.Support.Clear();
                 Cancel_Grab();
                 Var.mode = "Build_Node";
                 HELP.Text = Var.mode;
@@ -120,22 +121,25 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             }
             private void button_Build_Line_Click(object sender, EventArgs e)
             {
+                Database.Support.Clear();
                 Cancel_Grab();
                 Var.mode = "Build_Line";
                 HELP.Text = Var.mode;
             }// Zmiana trybu na budowanie Linii / Tworzy nowy Element: LINE
             private void button_Build_Generator_Click(object sender, EventArgs e)
-        {
-            Cancel_Grab();
-            Var.mode = "Build_Generator";
-            HELP.Text = Var.mode;
-        } // Przejście do trybu budowania Generatora
+            {
+                Database.Support.Clear();
+                Cancel_Grab();
+                Var.mode = "Build_Generator";
+                HELP.Text = Var.mode;
+            } // Przejście do trybu budowania Generatora
             private void button_Build_Transformator_Click(object sender, EventArgs e)
-        {
-            Cancel_Grab();
-            Var.mode = "Build_Transformator";
-            HELP.Text = Var.mode;
-        } // Przycisk odpowiedzialny za budwanie transformatora
+            {
+                Database.Support.Clear();
+                Cancel_Grab();
+                Var.mode = "Build_Transformator";
+                HELP.Text = Var.mode;
+            } // Przycisk odpowiedzialny za budwanie transformatora
 
 
 
@@ -194,7 +198,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             }
 
 
-        // TRYB: ZWARCIE / SHORT MODE
+            // TRYB: ZWARCIE / SHORT MODE
 
             private void button_Short_parameters_Click(object sender, EventArgs e)
         {
@@ -213,7 +217,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
 
 
-        // Funkcje / Metody
+            // Funkcje / Metody
 
             public void Delete_Button(Object sender, EventArgs e)
             {
@@ -344,7 +348,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             {
                 Database.Support.Add(Nd);
 
-            } else if(Database.Support.Count == 1) 
+            } else if(Database.Support.Count == 1 && Var.mode == "Build_Line") 
             {
                 Database.Support.Add(Nd);
                 HELP_Multiline1.Text = Database.Support[0].Name.ToString() +" / " +Database.Support[1].Name.ToString();
@@ -354,7 +358,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Var.index_setup++;
                     Element Elm = new Element(Var.index_setup, "Line"); // Tworzenie nowego element
                     
-
                     Elm.ListOfNghbNode.Add(Database.Support[0]);
                     Elm.ListOfNghbNode.Add(Database.Support[1]);
 
@@ -416,20 +419,20 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             public void Create_Element_Transformator(Object sender, EventArgs e) 
             {
             Node Nd = sender as Node;
-            if (Database.Support.Count == 0 && Var.mode == "Build_Transformator")
-            {
+
+            if(Database.Support.Count == 0 && Var.mode == "Build_Transformator") 
+            {               
                 Database.Support.Add(Nd);
             }
-            else if (Database.Support.Count == 1)
+            else if(Database.Support.Count == 1 && Var.mode == "Build_Transformator") 
             {
                 Database.Support.Add(Nd);
-                HELP_Multiline1.Text = Database.Support[0].Name.ToString() + " / " + Database.Support[1].Name.ToString();
-
-                if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Transformator" && Database.Support[0].voltage_Zone != Database.Support[1].voltage_Zone) 
+                if (Database.Support[0].voltage_Zone != Database.Support[1].voltage_Zone && Database.Support[0].Location != Database.Support[1].Location) 
                 {
+                    MessageBox.Show("POWODZENIE: Wybrano dwie różne strefy napięcia");
+
                     Var.index_setup++;
                     Element Elm = new Element(Var.index_setup, "Transformator"); // Tworzenie nowego element
-
 
                     Elm.ListOfNghbNode.Add(Database.Support[0]);
                     Elm.ListOfNghbNode.Add(Database.Support[1]);
@@ -438,24 +441,62 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.Parent = pictureBox_Map;
                     Elm.Name = "Element_Transformator_" + Var.index_setup.ToString();
 
-                    Elm.BackColor = Elm.ListOfNghbNode[1].BackColor;
-                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
+                    Elm.BackColor = Color.Purple;
+                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Square)); // Do odkomentowania
                     Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                     Elm.Location = new Point(
                         ((Elm.ListOfNghbNode[0].Location.X + Elm.ListOfNghbNode[1].Location.X) / 2) /*+ (Elm.Size.Width / 2)*/,
                         ((Elm.ListOfNghbNode[0].Location.Y + Elm.ListOfNghbNode[1].Location.Y) / 2)) /*+(Elm.Size.Height / 2))*/;
 
                     Point P = new Point(20, 20);
-                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Elm.ListOfNghbNode[1].BackColor, 3), Elm.ListOfNghbNode[0].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[0].Location.Y + (Elm.Size.Height / 2), Elm.ListOfNghbNode[1].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[1].Location.Y + (Elm.Size.Height / 2));
+                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Color.Purple, 3), Elm.ListOfNghbNode[0].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[0].Location.Y + (Elm.Size.Height / 2), Elm.ListOfNghbNode[1].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[1].Location.Y + (Elm.Size.Height / 2));
 
 
                     Elm.BringToFront();
                     Elm.Show();
-                }
 
+                    Database.ListOfTransformators.Add(Elm);
+                    Database.ListOfElements.Add(Elm);
+                    Elm.ListOfNghbNode[0].ListOfNghElements.Add(Elm);
+                    Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
+                    Elm.Click += new EventHandler(this.Inspector_Element);
+
+                    FormSetTransformator F_tr = new FormSetTransformator();
+                    Elm.Click += (FormSetTransformator, args) =>
+                    {
+                        if (Var.mode == "Build_Inspector")
+                        {
+                            Var.selectedIndex = Elm.Index;
+                            F_tr.Text = "Ustawienie Parametrów Obiektu: Transformator";
+                            F_tr.Show();
+                        }
+
+
+                    };
+
+
+                    Database.Support.Clear();
+                }
+                else 
+                {
+                    MessageBox.Show("NIEPOWODZENIE: Wybrano tę samą strefe napięcia");
+                    Database.Support.Clear();
+                }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             }
 
-            } // Tworzenie elementu transformator
+        } // Tworzenie elementu transformator
 
 
 
