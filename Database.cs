@@ -22,6 +22,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static List<Element> ListOfLines = new List<Element>(); // Lista wszystkich Linii
         public static List<Element> ListOfGenerators = new List<Element>(); // Lista generatorów
+        public static List<Element> ListOfTransformators = new List<Element>(); // Lista transforów
 
         public static List<Node> Support = new List<Node>(); // Lista wspomagająca
 
@@ -29,7 +30,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static List<VoltageZone> ListOfVoltageZones = new List<VoltageZone>(); // Zapamiętuje strefy napięcia
         
         public static List<Line_Data> ListOfLineData = new List<Line_Data>(); // Lista przechowująca wszystkie typy linii
-        
+        public static List<Generator_Data> ListOfGeneratorData = new List<Generator_Data>(); // Lista przechowująca wszystkie typy Generatorów
+        public static List<Transformator_Data> ListOfTransformatorData = new List<Transformator_Data>(); // Lista przechowująca wszystkie typy Transformatorów
+
 
     }
 }

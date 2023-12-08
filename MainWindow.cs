@@ -415,7 +415,46 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         } // Tworzenie elementu linii
             public void Create_Element_Transformator(Object sender, EventArgs e) 
             {
-            
+            Node Nd = sender as Node;
+            if (Database.Support.Count == 0 && Var.mode == "Build_Transformator")
+            {
+                Database.Support.Add(Nd);
+            }
+            else if (Database.Support.Count == 1)
+            {
+                Database.Support.Add(Nd);
+                HELP_Multiline1.Text = Database.Support[0].Name.ToString() + " / " + Database.Support[1].Name.ToString();
+
+                if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Transformator" && Database.Support[0].voltage_Zone != Database.Support[1].voltage_Zone) 
+                {
+                    Var.index_setup++;
+                    Element Elm = new Element(Var.index_setup, "Transformator"); // Tworzenie nowego element
+
+
+                    Elm.ListOfNghbNode.Add(Database.Support[0]);
+                    Elm.ListOfNghbNode.Add(Database.Support[1]);
+
+                    Elm.Index = Var.index_setup;
+                    Elm.Parent = pictureBox_Map;
+                    Elm.Name = "Element_Transformator_" + Var.index_setup.ToString();
+
+                    Elm.BackColor = Elm.ListOfNghbNode[1].BackColor;
+                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
+                    Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
+                    Elm.Location = new Point(
+                        ((Elm.ListOfNghbNode[0].Location.X + Elm.ListOfNghbNode[1].Location.X) / 2) /*+ (Elm.Size.Width / 2)*/,
+                        ((Elm.ListOfNghbNode[0].Location.Y + Elm.ListOfNghbNode[1].Location.Y) / 2)) /*+(Elm.Size.Height / 2))*/;
+
+                    Point P = new Point(20, 20);
+                    pictureBox_Map.CreateGraphics().DrawLine(new Pen(Elm.ListOfNghbNode[1].BackColor, 3), Elm.ListOfNghbNode[0].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[0].Location.Y + (Elm.Size.Height / 2), Elm.ListOfNghbNode[1].Location.X + (Elm.Size.Width / 2), Elm.ListOfNghbNode[1].Location.Y + (Elm.Size.Height / 2));
+
+
+                    Elm.BringToFront();
+                    Elm.Show();
+                }
+
+            }
+
             } // Tworzenie elementu transformator
 
 
