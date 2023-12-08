@@ -33,9 +33,9 @@
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBox_units_parameters = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox_units_parameters = new System.Windows.Forms.CheckBox();
             this.textBox_units_parameters_reactance = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -92,7 +92,8 @@
             this.button_Add = new System.Windows.Forms.Button();
             this.button_Accept = new System.Windows.Forms.Button();
             this.button_Hide = new System.Windows.Forms.Button();
-            this.comboBox_Form_Set_Line = new System.Windows.Forms.ComboBox();
+            this.listBox_Set_Line = new System.Windows.Forms.ListBox();
+            this.textBox_Listbox_Name = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -130,13 +131,14 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.textBox_Listbox_Name);
+            this.splitContainer1.Panel2.Controls.Add(this.listBox_Set_Line);
             this.splitContainer1.Panel2.Controls.Add(this.button_Save);
             this.splitContainer1.Panel2.Controls.Add(this.button_Delete);
             this.splitContainer1.Panel2.Controls.Add(this.button_Duplicate);
             this.splitContainer1.Panel2.Controls.Add(this.button_Add);
             this.splitContainer1.Panel2.Controls.Add(this.button_Accept);
             this.splitContainer1.Panel2.Controls.Add(this.button_Hide);
-            this.splitContainer1.Panel2.Controls.Add(this.comboBox_Form_Set_Line);
             this.splitContainer1.Size = new System.Drawing.Size(984, 506);
             this.splitContainer1.SplitterDistance = 722;
             this.splitContainer1.TabIndex = 0;
@@ -170,7 +172,7 @@
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1,
             this.kryptonPage2});
-            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonNavigator1.SelectedIndex = 0;
             this.kryptonNavigator1.Size = new System.Drawing.Size(424, 506);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "Parametry Ogólne";
@@ -215,6 +217,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacje o obiekcie";
             // 
+            // checkBox_units_parameters
+            // 
+            this.checkBox_units_parameters.AutoSize = true;
+            this.checkBox_units_parameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox_units_parameters.Location = new System.Drawing.Point(18, 622);
+            this.checkBox_units_parameters.Name = "checkBox_units_parameters";
+            this.checkBox_units_parameters.Size = new System.Drawing.Size(244, 24);
+            this.checkBox_units_parameters.TabIndex = 17;
+            this.checkBox_units_parameters.Text = "ręczne parametry jednostkowe";
+            this.checkBox_units_parameters.UseVisualStyleBackColor = true;
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -239,17 +252,6 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "parametry jednostkowe";
             // 
-            // checkBox_units_parameters
-            // 
-            this.checkBox_units_parameters.AutoSize = true;
-            this.checkBox_units_parameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox_units_parameters.Location = new System.Drawing.Point(18, 622);
-            this.checkBox_units_parameters.Name = "checkBox_units_parameters";
-            this.checkBox_units_parameters.Size = new System.Drawing.Size(244, 24);
-            this.checkBox_units_parameters.TabIndex = 17;
-            this.checkBox_units_parameters.Text = "ręczne parametry jednostkowe";
-            this.checkBox_units_parameters.UseVisualStyleBackColor = true;
-            // 
             // textBox_units_parameters_reactance
             // 
             this.textBox_units_parameters_reactance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -258,6 +260,7 @@
             this.textBox_units_parameters_reactance.Size = new System.Drawing.Size(72, 31);
             this.textBox_units_parameters_reactance.TabIndex = 16;
             this.textBox_units_parameters_reactance.Text = "0";
+            this.textBox_units_parameters_reactance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Impedance_Static_Im_KeyPress);
             // 
             // label25
             // 
@@ -287,6 +290,7 @@
             this.textBox_units_parameters_resistance.Size = new System.Drawing.Size(72, 31);
             this.textBox_units_parameters_resistance.TabIndex = 3;
             this.textBox_units_parameters_resistance.Text = "0";
+            this.textBox_units_parameters_resistance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Impedance_Static_Im_KeyPress);
             // 
             // groupBox5
             // 
@@ -310,6 +314,7 @@
             this.textBox_Resistivity_GND.Size = new System.Drawing.Size(72, 31);
             this.textBox_Resistivity_GND.TabIndex = 16;
             this.textBox_Resistivity_GND.Text = "0";
+            this.textBox_Resistivity_GND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Resistivity_GND_KeyPress);
             // 
             // label24
             // 
@@ -339,6 +344,7 @@
             this.textBox_Temp.Size = new System.Drawing.Size(72, 31);
             this.textBox_Temp.TabIndex = 3;
             this.textBox_Temp.Text = "0";
+            this.textBox_Temp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Temp_KeyPress);
             // 
             // label21
             // 
@@ -485,6 +491,7 @@
             this.textBox_Impedance_Static_Im.Size = new System.Drawing.Size(54, 31);
             this.textBox_Impedance_Static_Im.TabIndex = 2;
             this.textBox_Impedance_Static_Im.Text = "0";
+            this.textBox_Impedance_Static_Im.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Impedance_Static_Im_KeyPress);
             // 
             // label7
             // 
@@ -504,6 +511,7 @@
             this.textBox_Impedance_Static_Re.Size = new System.Drawing.Size(53, 31);
             this.textBox_Impedance_Static_Re.TabIndex = 1;
             this.textBox_Impedance_Static_Re.Text = "0";
+            this.textBox_Impedance_Static_Re.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Impedance_Static_Re_KeyPress);
             // 
             // label9
             // 
@@ -584,6 +592,7 @@
             this.textBox_Line_1_D3.Size = new System.Drawing.Size(123, 31);
             this.textBox_Line_1_D3.TabIndex = 12;
             this.textBox_Line_1_D3.Text = "0";
+            this.textBox_Line_1_D3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // textBox_Line_1_D2
             // 
@@ -593,6 +602,7 @@
             this.textBox_Line_1_D2.Size = new System.Drawing.Size(123, 31);
             this.textBox_Line_1_D2.TabIndex = 11;
             this.textBox_Line_1_D2.Text = "0";
+            this.textBox_Line_1_D2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // label4
             // 
@@ -622,6 +632,7 @@
             this.textBox_Line_1_D1.Size = new System.Drawing.Size(123, 31);
             this.textBox_Line_1_D1.TabIndex = 8;
             this.textBox_Line_1_D1.Text = "0";
+            this.textBox_Line_1_D1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // label5
             // 
@@ -661,6 +672,7 @@
             this.textBox_r_value.Size = new System.Drawing.Size(130, 31);
             this.textBox_r_value.TabIndex = 12;
             this.textBox_r_value.Text = "0";
+            this.textBox_r_value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // label23
             // 
@@ -680,6 +692,7 @@
             this.textBox_r_0_value.Size = new System.Drawing.Size(130, 31);
             this.textBox_r_0_value.TabIndex = 10;
             this.textBox_r_0_value.Text = "0";
+            this.textBox_r_0_value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // label20
             // 
@@ -729,6 +742,7 @@
             this.textBox_S_value.Size = new System.Drawing.Size(128, 31);
             this.textBox_S_value.TabIndex = 5;
             this.textBox_S_value.Text = "240";
+            this.textBox_S_value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // textBox_Conductivity_value
             // 
@@ -738,6 +752,7 @@
             this.textBox_Conductivity_value.Size = new System.Drawing.Size(128, 31);
             this.textBox_Conductivity_value.TabIndex = 4;
             this.textBox_Conductivity_value.Text = "33";
+            this.textBox_Conductivity_value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // textBox_Lenght_value
             // 
@@ -747,6 +762,7 @@
             this.textBox_Lenght_value.Size = new System.Drawing.Size(127, 31);
             this.textBox_Lenght_value.TabIndex = 3;
             this.textBox_Lenght_value.Text = "1";
+            this.textBox_Lenght_value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
             // pictureBox_Pole_Type
             // 
@@ -832,17 +848,25 @@
             this.button_Hide.UseVisualStyleBackColor = true;
             this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
             // 
-            // comboBox_Form_Set_Line
+            // listBox_Set_Line
             // 
-            this.comboBox_Form_Set_Line.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBox_Form_Set_Line.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox_Form_Set_Line.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.comboBox_Form_Set_Line.FormattingEnabled = true;
-            this.comboBox_Form_Set_Line.Location = new System.Drawing.Point(0, 0);
-            this.comboBox_Form_Set_Line.Name = "comboBox_Form_Set_Line";
-            this.comboBox_Form_Set_Line.Size = new System.Drawing.Size(258, 300);
-            this.comboBox_Form_Set_Line.TabIndex = 0;
-            this.comboBox_Form_Set_Line.SelectedIndexChanged += new System.EventHandler(this.comboBox_Form_Set_Line_SelectedIndexChanged);
+            this.listBox_Set_Line.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBox_Set_Line.FormattingEnabled = true;
+            this.listBox_Set_Line.ItemHeight = 25;
+            this.listBox_Set_Line.Location = new System.Drawing.Point(0, 31);
+            this.listBox_Set_Line.Name = "listBox_Set_Line";
+            this.listBox_Set_Line.Size = new System.Drawing.Size(255, 254);
+            this.listBox_Set_Line.TabIndex = 7;
+            this.listBox_Set_Line.SelectedIndexChanged += new System.EventHandler(this.listBox_Set_Line_SelectedIndexChanged);
+            // 
+            // textBox_Listbox_Name
+            // 
+            this.textBox_Listbox_Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_Listbox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Listbox_Name.Location = new System.Drawing.Point(0, 0);
+            this.textBox_Listbox_Name.Name = "textBox_Listbox_Name";
+            this.textBox_Listbox_Name.Size = new System.Drawing.Size(258, 31);
+            this.textBox_Listbox_Name.TabIndex = 8;
             // 
             // FormSetLine
             // 
@@ -858,6 +882,7 @@
             this.Load += new System.EventHandler(this.FormSetLine_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -896,7 +921,6 @@
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage2;
-        private System.Windows.Forms.ComboBox comboBox_Form_Set_Line;
         private System.Windows.Forms.Button button_Accept;
         private System.Windows.Forms.Button button_Hide;
         private System.Windows.Forms.Button button_Duplicate;
@@ -956,5 +980,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox_units_parameters_resistance;
         private System.Windows.Forms.Button button_Save;
+        private System.Windows.Forms.TextBox textBox_Listbox_Name;
+        private System.Windows.Forms.ListBox listBox_Set_Line;
     }
 }

@@ -73,10 +73,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             SelectedIndexChange = false;
 
-            Database.ListOfLineData.RemoveAt(comboBox_Form_Set_Line.SelectedIndex);
-            comboBox_Form_Set_Line.DataSource = null;
-            comboBox_Form_Set_Line.DataSource = Database.ListOfLineData;
-            comboBox_Form_Set_Line.DisplayMember = "Name";
+            Database.ListOfLineData.RemoveAt(listBox_Set_Line.SelectedIndex);
+            listBox_Set_Line.DataSource = null;
+            listBox_Set_Line.DataSource = Database.ListOfLineData;
+            listBox_Set_Line.DisplayMember = "Name";
 
 
             SelectedIndexChange = true;
@@ -86,13 +86,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             SelectedIndexChange = false;
 
-            int k = comboBox_Form_Set_Line.SelectedIndex;
+            int k = listBox_Set_Line.SelectedIndex;
             Line_Data L_D = Database.ListOfLineData[k];
             Database.ListOfLineData.Add(L_D);
 
-            comboBox_Form_Set_Line.DataSource = null;
-            comboBox_Form_Set_Line.DataSource = Database.ListOfLineData;
-            comboBox_Form_Set_Line.DisplayMember = "Name";
+            listBox_Set_Line.DataSource = null;
+            listBox_Set_Line.DataSource = Database.ListOfLineData;
+            listBox_Set_Line.DisplayMember = "Name";
 
             SelectedIndexChange = true;
 
@@ -101,10 +101,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             SelectedIndexChange = false;
 
-            Database.ListOfLineData.Add(new Line_Data() { Name = comboBox_Form_Set_Line.Text, PoleType = comboBox3.SelectedText, temp = Convert.ToDouble(textBox_Temp.Text), resistivity = Convert.ToDouble(textBox_Resistivity_GND.Text), lenght = Convert.ToDouble(textBox_Lenght_value.Text), conductivity = Convert.ToDouble(textBox_Conductivity_value.Text), cross_section = Convert.ToDouble(textBox_S_value.Text), r = Convert.ToDouble(textBox_r_value.Text), r_0 = Convert.ToDouble(textBox_r_0_value.Text), D1_1 = Convert.ToDouble(textBox_Line_1_D1.Text), D2_1 = Convert.ToDouble(textBox_Line_1_D2.Text), D3_1 = Convert.ToDouble(textBox_Line_1_D3.Text) });
-            comboBox_Form_Set_Line.DataSource = null;
-            comboBox_Form_Set_Line.DataSource = Database.ListOfLineData;
-            comboBox_Form_Set_Line.DisplayMember = "Name";
+            Database.ListOfLineData.Add(new Line_Data() { Name = textBox_Listbox_Name.Text, PoleType = comboBox3.SelectedText, temp = Convert.ToDouble(textBox_Temp.Text), resistivity = Convert.ToDouble(textBox_Resistivity_GND.Text), lenght = Convert.ToDouble(textBox_Lenght_value.Text), conductivity = Convert.ToDouble(textBox_Conductivity_value.Text), cross_section = Convert.ToDouble(textBox_S_value.Text), r = Convert.ToDouble(textBox_r_value.Text), r_0 = Convert.ToDouble(textBox_r_0_value.Text), D1_1 = Convert.ToDouble(textBox_Line_1_D1.Text), D2_1 = Convert.ToDouble(textBox_Line_1_D2.Text), D3_1 = Convert.ToDouble(textBox_Line_1_D3.Text) });
+            listBox_Set_Line.DataSource = null;
+            listBox_Set_Line.DataSource = Database.ListOfLineData;
+            listBox_Set_Line.DisplayMember = "Name";
 
             SelectedIndexChange = true;
 
@@ -112,6 +112,20 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         private void button_Save_Click(object sender, EventArgs e)
         {
             SelectedIndexChange = false;
+
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].Name = textBox_Listbox_Name.Text;
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].lenght = Convert.ToDouble(textBox_Lenght_value.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].PoleType = comboBox3.Text;
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].temp = Convert.ToDouble(textBox_Temp.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].resistivity = Convert.ToDouble(textBox_Resistivity_GND.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].conductivity = Convert.ToDouble(textBox_Conductivity_value.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].cross_section = Convert.ToDouble(textBox_S_value.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].r = Convert.ToDouble(textBox_r_value.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].r_0 = Convert.ToDouble(textBox_r_0_value.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].D1_1 = Convert.ToDouble(textBox_Line_1_D1.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].D2_1 = Convert.ToDouble(textBox_Line_1_D2.Text);
+            Database.ListOfLineData[listBox_Set_Line.SelectedIndex].D3_1 = Convert.ToDouble(textBox_Line_1_D3.Text);
+
 
 
             SelectedIndexChange = true;
@@ -125,31 +139,105 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         private void FormSetLine_Load(object sender, EventArgs e)
         {
 
-            comboBox_Form_Set_Line.DataSource = Database.ListOfLineData;
-            comboBox_Form_Set_Line.DisplayMember = "Name";
+            listBox_Set_Line.DataSource = Database.ListOfLineData;
+            listBox_Set_Line.DisplayMember = "Name";
 
         }
-        private void comboBox_Form_Set_Line_SelectedIndexChanged(object sender, EventArgs e)
+       
+        private void listBox_Set_Line_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SelectedIndexChange != false)
             {
-                textBox_Lenght_value.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].lenght.ToString();
-                textBox_Conductivity_value.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].conductivity.ToString();
-                textBox_S_value.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].cross_section.ToString();
-                textBox_Resistivity_GND.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].resistivity.ToString();
-                textBox_r_value.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].r.ToString();
-                textBox_r_0_value.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].r_0.ToString();
-                textBox_Line_1_D1.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].D1_1.ToString();
-                textBox_Line_1_D2.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].D2_1.ToString();
-                textBox_Line_1_D3.Text = Database.ListOfLineData[comboBox_Form_Set_Line.SelectedIndex].D3_1.ToString();
+                textBox_Listbox_Name.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].Name;
+                textBox_Lenght_value.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].lenght.ToString();
+                textBox_Conductivity_value.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].conductivity.ToString();
+                textBox_S_value.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].cross_section.ToString();
+                textBox_Resistivity_GND.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].resistivity.ToString();
+                textBox_r_value.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].r.ToString();
+                textBox_r_0_value.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].r_0.ToString();
+                textBox_Line_1_D1.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].D1_1.ToString();
+                textBox_Line_1_D2.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].D2_1.ToString();
+                textBox_Line_1_D3.Text = Database.ListOfLineData[listBox_Set_Line.SelectedIndex].D3_1.ToString();
+            }
+        }// Wczytywanie danych podczas zmiany indeksu
+
+
+
+
+        // BLOKOWANIE TEXTBOXÓW
+        private void textBox_Temp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
             }
 
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void textBox_Resistivity_GND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
 
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
 
-        } // Wczytywanie danych podczas zmiany indeksu
+        private void textBox_Impedance_Static_Re_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
 
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void textBox_Impedance_Static_Im_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
 
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_Lenght_value_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

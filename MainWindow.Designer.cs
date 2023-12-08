@@ -99,6 +99,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button_Build_Transformator = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -402,6 +403,7 @@
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage1.Controls.Add(this.button_Build_Transformator);
             this.kryptonPage1.Controls.Add(this.textBox1);
             this.kryptonPage1.Controls.Add(this.textBox_Set_Voltage_Zone);
             this.kryptonPage1.Controls.Add(this.listBox_Voltage_Zones);
@@ -843,6 +845,16 @@
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
             // 
+            // button_Build_Transformator
+            // 
+            this.button_Build_Transformator.Location = new System.Drawing.Point(477, 15);
+            this.button_Build_Transformator.Name = "button_Build_Transformator";
+            this.button_Build_Transformator.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Transformator.TabIndex = 13;
+            this.button_Build_Transformator.Text = "Transformator";
+            this.button_Build_Transformator.UseVisualStyleBackColor = true;
+            this.button_Build_Transformator.Click += new System.EventHandler(this.button_Build_Transformator_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -971,6 +983,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button_Short_parameters;
         private System.Windows.Forms.Button button_Short_Run;
+        private System.Windows.Forms.Button button_Build_Transformator;
     }
 }
 

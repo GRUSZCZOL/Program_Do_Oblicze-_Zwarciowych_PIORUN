@@ -98,6 +98,12 @@
     <Compile Include="FormSetLine.Designer.cs">
       <DependentUpon>FormSetLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSetTransformator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetTransformator.Designer.cs">
+      <DependentUpon>FormSetTransformator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Voltage_Zones_Add.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -29,9 +29,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         private void MainWindow_Load(object sender, EventArgs e)
         {
             // UZUPEŁNIANIE BAZ DANYCH
-                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04",temp = 25,resistivity=200,lenght=1000,conductivity=33,cross_section=280,r = 6,r_0=5,D1_1=6,D2_1=8,D3_1=6 }); 
-                        Database.ListOfLineData.Add(new Line_Data() {  Name = "AFL2", PoleType = "B04", temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 8, D3_1 = 6 }); 
-                        Database.ListOfLineData.Add(new Line_Data() {  Name = "Test", PoleType = "B04", temp = 25, resistivity = 200, lenght = 1000, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 8, D3_1 = 6}); 
+                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04",temp = 25,resistivity=200,lenght=10,conductivity=44,cross_section=280,r = 6,r_0=7,D1_1=6,D2_1=5,D3_1=6 }); 
+                        Database.ListOfLineData.Add(new Line_Data() {  Name = "AFL2", PoleType = "A03", temp = 25, resistivity = 100, lenght = 8, conductivity = 44, cross_section = 140, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 2, D3_1 = 2 }); 
+                        Database.ListOfLineData.Add(new Line_Data() {  Name = "Test", PoleType = "C02", temp = 25, resistivity = 300, lenght = 2, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 8, D3_1 = 6}); 
         }
 
         // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------
@@ -130,6 +130,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Var.mode = "Build_Generator";
             HELP.Text = Var.mode;
         } // Przejście do trybu budowania Generatora
+            private void button_Build_Transformator_Click(object sender, EventArgs e)
+        {
+            Cancel_Grab();
+            Var.mode = "Build_Transformator";
+            HELP.Text = Var.mode;
+        } // Przycisk odpowiedzialny za budwanie transformatora
+
+
+
             private void button_Build_Delete_Click(object sender, EventArgs e)
             {
                 Cancel_Grab();
@@ -262,6 +271,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Nd.Click += new EventHandler(this.Inspector_Node);
                 Nd.Click += new EventHandler(this.Create_Element_Line);
                 Nd.Click += new EventHandler(this.Create_Element_Generator);
+                Nd.Click += new EventHandler(this.Create_Element_Transformator);
                 Nd.MouseUp += new MouseEventHandler(MousePressGrab);
 
 
@@ -402,9 +412,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             
 
 
-        } // Pojawia się problem przy tworzeniu linii
+        } // Tworzenie elementu linii
+            public void Create_Element_Transformator(Object sender, EventArgs e) 
+            {
+            
+            } // Tworzenie elementu transformator
 
-       
+
 
             public void Cancel_Grab() 
             {
@@ -471,6 +485,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         } // Wyświetla informacje o obiekcie
 
-       
+        
     } 
 }
