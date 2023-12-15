@@ -50,6 +50,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             Hide();
         }
+
+
         private void checkBox_Impedance_Static_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox_Impedance_Static.Checked == true)
@@ -74,6 +76,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         }
 
-     
+      
     }
 }

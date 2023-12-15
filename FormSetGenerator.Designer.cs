@@ -54,13 +54,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Xdprc_value = new System.Windows.Forms.TextBox();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.checkBox_Impedance_Static = new System.Windows.Forms.CheckBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox_Impedance_Static_Im = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox_Impedance_Static_Re = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox_Impedance_Static_Im = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox_listbox_Name = new System.Windows.Forms.TextBox();
@@ -71,8 +73,6 @@
             this.button_Hide = new System.Windows.Forms.Button();
             this.button_Duplicate = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,7 +114,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.button_Duplicate);
             this.splitContainer1.Panel2.Controls.Add(this.button_Delete);
             this.splitContainer1.Size = new System.Drawing.Size(852, 541);
-            this.splitContainer1.SplitterDistance = 417;
+            this.splitContainer1.SplitterDistance = 416;
             this.splitContainer1.TabIndex = 0;
             // 
             // kryptonNavigator1
@@ -130,7 +130,7 @@
             this.kryptonPage2,
             this.kryptonPage3});
             this.kryptonNavigator1.SelectedIndex = 0;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(417, 541);
+            this.kryptonNavigator1.Size = new System.Drawing.Size(416, 541);
             this.kryptonNavigator1.TabIndex = 1;
             this.kryptonNavigator1.Text = "Parametry Ogólne";
             // 
@@ -143,7 +143,7 @@
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(415, 514);
+            this.kryptonPage1.Size = new System.Drawing.Size(414, 514);
             this.kryptonPage1.Text = "Informacje Ogólne";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "3FB0EAAF3EC4444886B2CAD61FC059DA";
@@ -159,7 +159,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 514);
+            this.groupBox3.Size = new System.Drawing.Size(414, 514);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacje o obiekcie";
@@ -275,7 +275,7 @@
             this.kryptonPage2.LastVisibleSet = true;
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage2.Name = "kryptonPage2";
-            this.kryptonPage2.Size = new System.Drawing.Size(412, 514);
+            this.kryptonPage2.Size = new System.Drawing.Size(414, 514);
             this.kryptonPage2.Text = "Parametry obliczeniowe";
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "A7FE1DEDC3CE4DE008B73A110407DD9A";
@@ -286,7 +286,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox2.Location = new System.Drawing.Point(0, 222);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(412, 292);
+            this.groupBox2.Size = new System.Drawing.Size(414, 292);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "struktura generatora";
@@ -305,7 +305,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(412, 222);
+            this.groupBox1.Size = new System.Drawing.Size(414, 222);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "parametry elektryczne";
@@ -390,20 +390,38 @@
             this.kryptonPage3.LastVisibleSet = true;
             this.kryptonPage3.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage3.Name = "kryptonPage3";
-            this.kryptonPage3.Size = new System.Drawing.Size(412, 514);
+            this.kryptonPage3.Size = new System.Drawing.Size(414, 514);
             this.kryptonPage3.Text = "Ustawienia";
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "38AA8F1F6A604BA6CF8B32F483F2F543";
             // 
-            // checkBox2
+            // groupBox5
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(11, 156);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(378, 29);
-            this.checkBox2.TabIndex = 22;
-            this.checkBox2.Text = "automatyczny współczynnik korekcji";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Controls.Add(this.checkBox_Impedance_Static);
+            this.groupBox5.Controls.Add(this.checkBox2);
+            this.groupBox5.Controls.Add(this.textBox_Impedance_Static_Re);
+            this.groupBox5.Controls.Add(this.checkBox1);
+            this.groupBox5.Controls.Add(this.label22);
+            this.groupBox5.Controls.Add(this.textBox_Impedance_Static_Im);
+            this.groupBox5.Controls.Add(this.label21);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(414, 514);
+            this.groupBox5.TabIndex = 23;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Wartości ustalone";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(68, 228);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(143, 31);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.Text = "0";
             // 
             // checkBox_Impedance_Static
             // 
@@ -416,34 +434,24 @@
             this.checkBox_Impedance_Static.UseVisualStyleBackColor = true;
             this.checkBox_Impedance_Static.CheckedChanged += new System.EventHandler(this.checkBox_Impedance_Static_CheckedChanged);
             // 
-            // label22
+            // checkBox2
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label22.Location = new System.Drawing.Point(127, 109);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(31, 20);
-            this.label22.TabIndex = 20;
-            this.label22.Text = "Im:";
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(11, 156);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(378, 29);
+            this.checkBox2.TabIndex = 22;
+            this.checkBox2.Text = "automatyczny współczynnik korekcji";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // label21
+            // textBox_Impedance_Static_Re
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label21.Location = new System.Drawing.Point(34, 109);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(34, 20);
-            this.label21.TabIndex = 19;
-            this.label21.Text = "Re:";
-            // 
-            // textBox_Impedance_Static_Im
-            // 
-            this.textBox_Impedance_Static_Im.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Impedance_Static_Im.Location = new System.Drawing.Point(162, 102);
-            this.textBox_Impedance_Static_Im.Name = "textBox_Impedance_Static_Im";
-            this.textBox_Impedance_Static_Im.Size = new System.Drawing.Size(54, 31);
-            this.textBox_Impedance_Static_Im.TabIndex = 18;
-            this.textBox_Impedance_Static_Im.Text = "0";
+            this.textBox_Impedance_Static_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Impedance_Static_Re.Location = new System.Drawing.Point(68, 102);
+            this.textBox_Impedance_Static_Re.Name = "textBox_Impedance_Static_Re";
+            this.textBox_Impedance_Static_Re.Size = new System.Drawing.Size(53, 31);
+            this.textBox_Impedance_Static_Re.TabIndex = 17;
+            this.textBox_Impedance_Static_Re.Text = "0";
             // 
             // checkBox1
             // 
@@ -455,20 +463,40 @@
             this.checkBox1.Text = "ręczny współczynnik korekcji";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox_Impedance_Static_Re
+            // label22
             // 
-            this.textBox_Impedance_Static_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Impedance_Static_Re.Location = new System.Drawing.Point(68, 102);
-            this.textBox_Impedance_Static_Re.Name = "textBox_Impedance_Static_Re";
-            this.textBox_Impedance_Static_Re.Size = new System.Drawing.Size(53, 31);
-            this.textBox_Impedance_Static_Re.TabIndex = 17;
-            this.textBox_Impedance_Static_Re.Text = "0";
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label22.Location = new System.Drawing.Point(127, 109);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(31, 20);
+            this.label22.TabIndex = 20;
+            this.label22.Text = "Im:";
+            // 
+            // textBox_Impedance_Static_Im
+            // 
+            this.textBox_Impedance_Static_Im.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Impedance_Static_Im.Location = new System.Drawing.Point(162, 102);
+            this.textBox_Impedance_Static_Im.Name = "textBox_Impedance_Static_Im";
+            this.textBox_Impedance_Static_Im.Size = new System.Drawing.Size(54, 31);
+            this.textBox_Impedance_Static_Im.TabIndex = 18;
+            this.textBox_Impedance_Static_Im.Text = "0";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label21.Location = new System.Drawing.Point(34, 109);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(34, 20);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Re:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(4, 28);
+            this.label6.Location = new System.Drawing.Point(121, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(198, 20);
             this.label6.TabIndex = 16;
@@ -489,7 +517,7 @@
             this.textBox_listbox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBox_listbox_Name.Location = new System.Drawing.Point(3, 51);
             this.textBox_listbox_Name.Name = "textBox_listbox_Name";
-            this.textBox_listbox_Name.Size = new System.Drawing.Size(263, 31);
+            this.textBox_listbox_Name.Size = new System.Drawing.Size(419, 31);
             this.textBox_listbox_Name.TabIndex = 14;
             this.textBox_listbox_Name.TextChanged += new System.EventHandler(this.textBox_listbox_Name_TextChanged);
             // 
@@ -557,34 +585,6 @@
             this.button_Delete.TabIndex = 11;
             this.button_Delete.Text = "Usuń";
             this.button_Delete.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Controls.Add(this.checkBox_Impedance_Static);
-            this.groupBox5.Controls.Add(this.checkBox2);
-            this.groupBox5.Controls.Add(this.textBox_Impedance_Static_Re);
-            this.groupBox5.Controls.Add(this.checkBox1);
-            this.groupBox5.Controls.Add(this.label22);
-            this.groupBox5.Controls.Add(this.textBox_Impedance_Static_Im);
-            this.groupBox5.Controls.Add(this.label21);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(412, 514);
-            this.groupBox5.TabIndex = 23;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Wartości ustalone";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(68, 228);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 31);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Text = "0";
             // 
             // FormSetGenerator
             // 

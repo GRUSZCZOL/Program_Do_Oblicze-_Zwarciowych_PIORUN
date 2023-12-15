@@ -41,6 +41,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             if (checkBox_Impedance_Static.Checked == true)
             {
+            // Rozwiązanie poprzez ręczne wpisanie Impedancji
                 if (textBox_Impedance_Static_Re.Text != null || textBox_Impedance_Static_Im.Text != null)
                 {
                     Complex Set_Impedance = new Complex(Convert.ToDouble(textBox_Impedance_Static_Re.Text), Convert.ToDouble(textBox_Impedance_Static_Im.Text));
@@ -57,17 +58,38 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             }
             else if(checkBox_units_parameters.Checked == true)
             {
+            // Rozwiązanie z uwzględnieniem parametrów jednostkowych
+
                 Complex Set_Impedance = new Complex(Convert.ToDouble(textBox_units_parameters_resistance.Text)*Convert.ToDouble(textBox_Lenght_value.Text), Convert.ToDouble(textBox_units_parameters_reactance.Text) * Convert.ToDouble(textBox_Lenght_value.Text));
+                
                 foreach (Element line in Database.ListOfLines)
                 {
                     if (line.Index == Var.selectedIndex)
                     { line.Z_1 = Set_Impedance; Hide(); }
                 }
+
+
             }
             else 
             {
-            
+                // Rozwiązanie matematyczne
+
+                double d = Math.Pow( Convert.ToDouble(textBox_Line_1_D1.Text) * Convert.ToDouble(textBox_Line_1_D2.Text) * Convert.ToDouble(textBox_Line_1_D3.Text), 1 / 3);
+                double r_0 = Convert.ToDouble(textBox_r_0_value.Text);
+                double Re = (Convert.ToDouble(textBox_Lenght_value.Text)) / (Convert.ToDouble(textBox_Conductivity_value.Text) * Convert.ToDouble(textBox_S_value.Text));
+                double Im = 4 * Var.PI * Math.Pow(10,-4) * Var.Frec * Math.Log10(d/r_0);
+
+                Complex Set_Impedance = new Complex(Re, Im);
+                foreach (Element line in Database.ListOfLines)
+                {
+                    if (line.Index == Var.selectedIndex)
+                    { line.Z_1 = Set_Impedance; Hide(); }
+                }
+
+
             }
+
+
         } // Akceptacja // Zamknięcie okna // Wyliczanie impedancji
         private void button_Delete_Click(object sender, EventArgs e)
         {

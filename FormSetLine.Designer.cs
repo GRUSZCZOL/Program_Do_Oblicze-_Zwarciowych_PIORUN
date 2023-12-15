@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox_units_parameters = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.checkBox_units_parameters = new System.Windows.Forms.CheckBox();
             this.textBox_units_parameters_reactance = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -84,8 +83,6 @@
             this.textBox_S_value = new System.Windows.Forms.TextBox();
             this.textBox_Conductivity_value = new System.Windows.Forms.TextBox();
             this.textBox_Lenght_value = new System.Windows.Forms.TextBox();
-            this.pictureBox_Pole_Type = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Model = new System.Windows.Forms.PictureBox();
             this.textBox_Listbox_Name = new System.Windows.Forms.TextBox();
             this.listBox_Set_Line = new System.Windows.Forms.ListBox();
             this.button_Save = new System.Windows.Forms.Button();
@@ -94,14 +91,17 @@
             this.button_Add = new System.Windows.Forms.Button();
             this.button_Accept = new System.Windows.Forms.Button();
             this.button_Hide = new System.Windows.Forms.Button();
+            this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
@@ -115,8 +115,10 @@
             this.groupBox1.SuspendLayout();
             this.groupBox_Line_1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pole_Type)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Model)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
+            this.kryptonPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -127,10 +129,12 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Panel1.Controls.Add(this.kryptonNavigator1);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label14);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.textBox_Listbox_Name);
             this.splitContainer1.Panel2.Controls.Add(this.listBox_Set_Line);
             this.splitContainer1.Panel2.Controls.Add(this.button_Save);
@@ -139,27 +143,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.button_Add);
             this.splitContainer1.Panel2.Controls.Add(this.button_Accept);
             this.splitContainer1.Panel2.Controls.Add(this.button_Hide);
-            this.splitContainer1.Size = new System.Drawing.Size(984, 506);
-            this.splitContainer1.SplitterDistance = 722;
+            this.splitContainer1.Size = new System.Drawing.Size(879, 506);
+            this.splitContainer1.SplitterDistance = 412;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.kryptonNavigator1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.pictureBox_Pole_Type);
-            this.splitContainer2.Panel2.Controls.Add(this.pictureBox_Model);
-            this.splitContainer2.Size = new System.Drawing.Size(722, 506);
-            this.splitContainer2.SplitterDistance = 424;
-            this.splitContainer2.TabIndex = 0;
             // 
             // kryptonNavigator1
             // 
@@ -171,9 +157,10 @@
             this.kryptonNavigator1.Name = "kryptonNavigator1";
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1,
-            this.kryptonPage2});
-            this.kryptonNavigator1.SelectedIndex = 1;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(424, 506);
+            this.kryptonPage2,
+            this.kryptonPage3});
+            this.kryptonNavigator1.SelectedIndex = 2;
+            this.kryptonNavigator1.Size = new System.Drawing.Size(412, 506);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "Parametry Ogólne";
             // 
@@ -186,46 +173,28 @@
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(422, 479);
-            this.kryptonPage1.Text = "Parametry Ogólne";
+            this.kryptonPage1.Size = new System.Drawing.Size(410, 479);
+            this.kryptonPage1.Text = "Informacje ogólne";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "3FB0EAAF3EC4444886B2CAD61FC059DA";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.groupBox6);
-            this.groupBox3.Controls.Add(this.groupBox5);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.textBox_Line_Index);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.groupBox4);
-            this.groupBox3.Controls.Add(this.comboBox3);
-            this.groupBox3.Controls.Add(this.textBox_Impedance_Static_Im);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox_Impedance_Static_Re);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.textBox_Line_Name);
-            this.groupBox3.Controls.Add(this.checkBox_Impedance_Static);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(405, 804);
+            this.groupBox3.Size = new System.Drawing.Size(410, 479);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informacje o obiekcie";
-            // 
-            // checkBox_units_parameters
-            // 
-            this.checkBox_units_parameters.AutoSize = true;
-            this.checkBox_units_parameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox_units_parameters.Location = new System.Drawing.Point(42, 29);
-            this.checkBox_units_parameters.Name = "checkBox_units_parameters";
-            this.checkBox_units_parameters.Size = new System.Drawing.Size(244, 24);
-            this.checkBox_units_parameters.TabIndex = 17;
-            this.checkBox_units_parameters.Text = "ręczne parametry jednostkowe";
-            this.checkBox_units_parameters.UseVisualStyleBackColor = true;
             // 
             // label22
             // 
@@ -245,12 +214,23 @@
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.textBox_units_parameters_resistance);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox6.Location = new System.Drawing.Point(18, 655);
+            this.groupBox6.Location = new System.Drawing.Point(26, 295);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(372, 145);
             this.groupBox6.TabIndex = 18;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "parametry jednostkowe";
+            // 
+            // checkBox_units_parameters
+            // 
+            this.checkBox_units_parameters.AutoSize = true;
+            this.checkBox_units_parameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.checkBox_units_parameters.Location = new System.Drawing.Point(42, 29);
+            this.checkBox_units_parameters.Name = "checkBox_units_parameters";
+            this.checkBox_units_parameters.Size = new System.Drawing.Size(244, 24);
+            this.checkBox_units_parameters.TabIndex = 17;
+            this.checkBox_units_parameters.Text = "ręczne parametry jednostkowe";
+            this.checkBox_units_parameters.UseVisualStyleBackColor = true;
             // 
             // textBox_units_parameters_reactance
             // 
@@ -299,7 +279,7 @@
             this.groupBox5.Controls.Add(this.label30);
             this.groupBox5.Controls.Add(this.textBox_Temp);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox5.Location = new System.Drawing.Point(16, 381);
+            this.groupBox5.Location = new System.Drawing.Point(26, 142);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(372, 145);
             this.groupBox5.TabIndex = 17;
@@ -477,7 +457,7 @@
             "B04",
             "A02",
             "C01"});
-            this.comboBox3.Location = new System.Drawing.Point(117, 312);
+            this.comboBox3.Location = new System.Drawing.Point(198, 214);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(130, 28);
             this.comboBox3.TabIndex = 12;
@@ -486,7 +466,7 @@
             // textBox_Impedance_Static_Im
             // 
             this.textBox_Impedance_Static_Im.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Impedance_Static_Im.Location = new System.Drawing.Point(163, 578);
+            this.textBox_Impedance_Static_Im.Location = new System.Drawing.Point(178, 87);
             this.textBox_Impedance_Static_Im.Name = "textBox_Impedance_Static_Im";
             this.textBox_Impedance_Static_Im.Size = new System.Drawing.Size(54, 31);
             this.textBox_Impedance_Static_Im.TabIndex = 2;
@@ -497,7 +477,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(25, 319);
+            this.label7.Location = new System.Drawing.Point(111, 217);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 20);
             this.label7.TabIndex = 8;
@@ -506,7 +486,7 @@
             // textBox_Impedance_Static_Re
             // 
             this.textBox_Impedance_Static_Re.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Impedance_Static_Re.Location = new System.Drawing.Point(69, 578);
+            this.textBox_Impedance_Static_Re.Location = new System.Drawing.Point(70, 87);
             this.textBox_Impedance_Static_Re.Name = "textBox_Impedance_Static_Re";
             this.textBox_Impedance_Static_Re.Size = new System.Drawing.Size(53, 31);
             this.textBox_Impedance_Static_Re.TabIndex = 1;
@@ -536,7 +516,7 @@
             // 
             this.checkBox_Impedance_Static.AutoSize = true;
             this.checkBox_Impedance_Static.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox_Impedance_Static.Location = new System.Drawing.Point(17, 547);
+            this.checkBox_Impedance_Static.Location = new System.Drawing.Point(26, 49);
             this.checkBox_Impedance_Static.Name = "checkBox_Impedance_Static";
             this.checkBox_Impedance_Static.Size = new System.Drawing.Size(198, 24);
             this.checkBox_Impedance_Static.TabIndex = 0;
@@ -553,18 +533,22 @@
             this.kryptonPage2.LastVisibleSet = true;
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage2.Name = "kryptonPage2";
-            this.kryptonPage2.Size = new System.Drawing.Size(422, 479);
-            this.kryptonPage2.Text = "Parametry Elektryczne";
+            this.kryptonPage2.Size = new System.Drawing.Size(410, 479);
+            this.kryptonPage2.Text = "Parametry obliczeniowe";
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "A7FE1DEDC3CE4DE008B73A110407DD9A";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.groupBox_Line_1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 260);
+            this.groupBox1.Location = new System.Drawing.Point(0, 293);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(394, 215);
+            this.groupBox1.Size = new System.Drawing.Size(393, 493);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odległości";
@@ -656,10 +640,11 @@
             this.groupBox2.Controls.Add(this.textBox_S_value);
             this.groupBox2.Controls.Add(this.textBox_Conductivity_value);
             this.groupBox2.Controls.Add(this.textBox_Lenght_value);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 11);
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(394, 243);
+            this.groupBox2.Size = new System.Drawing.Size(393, 293);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Właściwości fizyczne";
@@ -764,31 +749,12 @@
             this.textBox_Lenght_value.Text = "1";
             this.textBox_Lenght_value.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Lenght_value_KeyPress);
             // 
-            // pictureBox_Pole_Type
-            // 
-            this.pictureBox_Pole_Type.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pictureBox_Pole_Type.Location = new System.Drawing.Point(0, 265);
-            this.pictureBox_Pole_Type.Name = "pictureBox_Pole_Type";
-            this.pictureBox_Pole_Type.Size = new System.Drawing.Size(294, 241);
-            this.pictureBox_Pole_Type.TabIndex = 1;
-            this.pictureBox_Pole_Type.TabStop = false;
-            // 
-            // pictureBox_Model
-            // 
-            this.pictureBox_Model.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox_Model.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox_Model.Name = "pictureBox_Model";
-            this.pictureBox_Model.Size = new System.Drawing.Size(294, 260);
-            this.pictureBox_Model.TabIndex = 0;
-            this.pictureBox_Model.TabStop = false;
-            // 
             // textBox_Listbox_Name
             // 
-            this.textBox_Listbox_Name.Dock = System.Windows.Forms.DockStyle.Top;
             this.textBox_Listbox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Listbox_Name.Location = new System.Drawing.Point(0, 0);
+            this.textBox_Listbox_Name.Location = new System.Drawing.Point(3, 58);
             this.textBox_Listbox_Name.Name = "textBox_Listbox_Name";
-            this.textBox_Listbox_Name.Size = new System.Drawing.Size(258, 31);
+            this.textBox_Listbox_Name.Size = new System.Drawing.Size(448, 31);
             this.textBox_Listbox_Name.TabIndex = 8;
             // 
             // listBox_Set_Line
@@ -796,18 +762,17 @@
             this.listBox_Set_Line.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.listBox_Set_Line.FormattingEnabled = true;
             this.listBox_Set_Line.ItemHeight = 25;
-            this.listBox_Set_Line.Location = new System.Drawing.Point(0, 31);
+            this.listBox_Set_Line.Location = new System.Drawing.Point(3, 125);
             this.listBox_Set_Line.Name = "listBox_Set_Line";
-            this.listBox_Set_Line.Size = new System.Drawing.Size(255, 254);
+            this.listBox_Set_Line.Size = new System.Drawing.Size(279, 354);
             this.listBox_Set_Line.TabIndex = 7;
             this.listBox_Set_Line.SelectedIndexChanged += new System.EventHandler(this.listBox_Set_Line_SelectedIndexChanged);
             // 
             // button_Save
             // 
-            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Save.Location = new System.Drawing.Point(0, 296);
+            this.button_Save.Location = new System.Drawing.Point(288, 128);
             this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(258, 35);
+            this.button_Save.Size = new System.Drawing.Size(163, 35);
             this.button_Save.TabIndex = 6;
             this.button_Save.Text = "Zapisz";
             this.button_Save.UseVisualStyleBackColor = true;
@@ -815,10 +780,9 @@
             // 
             // button_Delete
             // 
-            this.button_Delete.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Delete.Location = new System.Drawing.Point(0, 331);
+            this.button_Delete.Location = new System.Drawing.Point(288, 165);
             this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(258, 35);
+            this.button_Delete.Size = new System.Drawing.Size(163, 35);
             this.button_Delete.TabIndex = 5;
             this.button_Delete.Text = "Usuń";
             this.button_Delete.UseVisualStyleBackColor = true;
@@ -826,10 +790,9 @@
             // 
             // button_Duplicate
             // 
-            this.button_Duplicate.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Duplicate.Location = new System.Drawing.Point(0, 366);
+            this.button_Duplicate.Location = new System.Drawing.Point(288, 202);
             this.button_Duplicate.Name = "button_Duplicate";
-            this.button_Duplicate.Size = new System.Drawing.Size(258, 35);
+            this.button_Duplicate.Size = new System.Drawing.Size(163, 35);
             this.button_Duplicate.TabIndex = 4;
             this.button_Duplicate.Text = "Duplikuj";
             this.button_Duplicate.UseVisualStyleBackColor = true;
@@ -837,10 +800,9 @@
             // 
             // button_Add
             // 
-            this.button_Add.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Add.Location = new System.Drawing.Point(0, 401);
+            this.button_Add.Location = new System.Drawing.Point(288, 239);
             this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(258, 35);
+            this.button_Add.Size = new System.Drawing.Size(163, 35);
             this.button_Add.TabIndex = 3;
             this.button_Add.Text = "Dodaj";
             this.button_Add.UseVisualStyleBackColor = true;
@@ -848,10 +810,9 @@
             // 
             // button_Accept
             // 
-            this.button_Accept.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Accept.Location = new System.Drawing.Point(0, 436);
+            this.button_Accept.Location = new System.Drawing.Point(291, 407);
             this.button_Accept.Name = "button_Accept";
-            this.button_Accept.Size = new System.Drawing.Size(258, 35);
+            this.button_Accept.Size = new System.Drawing.Size(163, 35);
             this.button_Accept.TabIndex = 2;
             this.button_Accept.Text = "Zatwierdź";
             this.button_Accept.UseVisualStyleBackColor = true;
@@ -859,20 +820,99 @@
             // 
             // button_Hide
             // 
-            this.button_Hide.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Hide.Location = new System.Drawing.Point(0, 471);
+            this.button_Hide.Location = new System.Drawing.Point(291, 445);
             this.button_Hide.Name = "button_Hide";
-            this.button_Hide.Size = new System.Drawing.Size(258, 35);
+            this.button_Hide.Size = new System.Drawing.Size(163, 35);
             this.button_Hide.TabIndex = 1;
             this.button_Hide.Text = "Anuluj";
             this.button_Hide.UseVisualStyleBackColor = true;
             this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
             // 
+            // kryptonPage3
+            // 
+            this.kryptonPage3.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage3.Controls.Add(this.groupBox7);
+            this.kryptonPage3.Flags = 65534;
+            this.kryptonPage3.LastVisibleSet = true;
+            this.kryptonPage3.MinimumSize = new System.Drawing.Size(50, 50);
+            this.kryptonPage3.Name = "kryptonPage3";
+            this.kryptonPage3.Size = new System.Drawing.Size(410, 479);
+            this.kryptonPage3.Text = "Ustawienia";
+            this.kryptonPage3.ToolTipTitle = "Page ToolTip";
+            this.kryptonPage3.UniqueName = "268877EB76394DD28B8B03C81855C6BE";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 263);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(315, 205);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(4, 102);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(254, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Lista zapisanych obiektów w bazie:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(130, 35);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(198, 20);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Nazwa wybranego obiektu:";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label16);
+            this.groupBox7.Controls.Add(this.groupBox6);
+            this.groupBox7.Controls.Add(this.label15);
+            this.groupBox7.Controls.Add(this.groupBox5);
+            this.groupBox7.Controls.Add(this.textBox_Impedance_Static_Im);
+            this.groupBox7.Controls.Add(this.textBox_Impedance_Static_Re);
+            this.groupBox7.Controls.Add(this.checkBox_Impedance_Static);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox7.Location = new System.Drawing.Point(0, 0);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(410, 479);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Wartości ustalone";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(21, 90);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 25);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Re:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(138, 90);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 25);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Im:";
+            // 
             // FormSetLine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 506);
+            this.ClientSize = new System.Drawing.Size(879, 506);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -885,10 +925,6 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).EndInit();
             this.kryptonNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
@@ -904,12 +940,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
             this.kryptonPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox_Line_1.ResumeLayout(false);
             this.groupBox_Line_1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pole_Type)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Model)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
+            this.kryptonPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -917,7 +957,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.SplitContainer splitContainer2;
         private ComponentFactory.Krypton.Navigator.KryptonNavigator kryptonNavigator1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage1;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage2;
@@ -937,8 +976,6 @@
         private System.Windows.Forms.TextBox textBox_S_value;
         private System.Windows.Forms.TextBox textBox_Conductivity_value;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox_Pole_Type;
-        private System.Windows.Forms.PictureBox pictureBox_Model;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_Line_Name;
@@ -982,5 +1019,12 @@
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.TextBox textBox_Listbox_Name;
         private System.Windows.Forms.ListBox listBox_Set_Line;
+        private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }
