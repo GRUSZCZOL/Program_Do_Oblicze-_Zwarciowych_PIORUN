@@ -257,7 +257,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 this.Controls.Add(Nd);
 
                 Nd.voltage_Zone = Convert.ToDouble(listBox_Voltage_Zones.SelectedItem);
-                Nd.Name = "Element_Node_" + Var.N.ToString();
+                Nd.Name = "Node_" + Var.N.ToString();
                 Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
                 Nd.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Nd.Location = new Point(Var.m_X + panel_Main_Map.HorizontalScroll.Value - (Nd.Size.Width / 2), Var.m_Y + panel_Main_Map.VerticalScroll.Value - (Nd.Size.Height / 2));
@@ -296,7 +296,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                 
                 Element Elm = new Element(Var.index_setup, "Generator"); // Tworzenie nwego elementu
-                FormSetGenerator FSGen = new FormSetGenerator();
+                
                 Var.index_setup++; // Zwi?z?kowanie indeksu elementu
                 this.Controls.Add(Elm);
 
@@ -311,6 +311,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Elm.BackColor = Elm.ListOfNghbNode[0].BackColor;
                 Elm.BringToFront();
                 Elm.Show();
+
+
+                FormSetGenerator FSGen = new FormSetGenerator(Elm.Name, Elm.Index, Elm.ListOfNghbNode[0].Name, Elm.ListOfNghbNode[0].Index);
+
 
                 Elm.Click += new EventHandler(this.Inspector_Element);
                 Elm.Click += (FormSetGenerator, args) =>

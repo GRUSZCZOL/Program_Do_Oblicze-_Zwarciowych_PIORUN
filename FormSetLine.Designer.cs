@@ -86,14 +86,14 @@
             this.textBox_Lenght_value = new System.Windows.Forms.TextBox();
             this.pictureBox_Pole_Type = new System.Windows.Forms.PictureBox();
             this.pictureBox_Model = new System.Windows.Forms.PictureBox();
+            this.textBox_Listbox_Name = new System.Windows.Forms.TextBox();
+            this.listBox_Set_Line = new System.Windows.Forms.ListBox();
             this.button_Save = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Duplicate = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.button_Accept = new System.Windows.Forms.Button();
             this.button_Hide = new System.Windows.Forms.Button();
-            this.listBox_Set_Line = new System.Windows.Forms.ListBox();
-            this.textBox_Listbox_Name = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -172,7 +172,7 @@
             this.kryptonNavigator1.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage1,
             this.kryptonPage2});
-            this.kryptonNavigator1.SelectedIndex = 0;
+            this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(424, 506);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "Parametry Ogólne";
@@ -193,7 +193,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox_units_parameters);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox5);
@@ -221,7 +220,7 @@
             // 
             this.checkBox_units_parameters.AutoSize = true;
             this.checkBox_units_parameters.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.checkBox_units_parameters.Location = new System.Drawing.Point(18, 622);
+            this.checkBox_units_parameters.Location = new System.Drawing.Point(42, 29);
             this.checkBox_units_parameters.Name = "checkBox_units_parameters";
             this.checkBox_units_parameters.Size = new System.Drawing.Size(244, 24);
             this.checkBox_units_parameters.TabIndex = 17;
@@ -240,6 +239,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.checkBox_units_parameters);
             this.groupBox6.Controls.Add(this.textBox_units_parameters_reactance);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.label26);
@@ -266,7 +266,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label25.Location = new System.Drawing.Point(38, 109);
+            this.label25.Location = new System.Drawing.Point(35, 106);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(187, 20);
             this.label25.TabIndex = 15;
@@ -782,6 +782,26 @@
             this.pictureBox_Model.TabIndex = 0;
             this.pictureBox_Model.TabStop = false;
             // 
+            // textBox_Listbox_Name
+            // 
+            this.textBox_Listbox_Name.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_Listbox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox_Listbox_Name.Location = new System.Drawing.Point(0, 0);
+            this.textBox_Listbox_Name.Name = "textBox_Listbox_Name";
+            this.textBox_Listbox_Name.Size = new System.Drawing.Size(258, 31);
+            this.textBox_Listbox_Name.TabIndex = 8;
+            // 
+            // listBox_Set_Line
+            // 
+            this.listBox_Set_Line.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBox_Set_Line.FormattingEnabled = true;
+            this.listBox_Set_Line.ItemHeight = 25;
+            this.listBox_Set_Line.Location = new System.Drawing.Point(0, 31);
+            this.listBox_Set_Line.Name = "listBox_Set_Line";
+            this.listBox_Set_Line.Size = new System.Drawing.Size(255, 254);
+            this.listBox_Set_Line.TabIndex = 7;
+            this.listBox_Set_Line.SelectedIndexChanged += new System.EventHandler(this.listBox_Set_Line_SelectedIndexChanged);
+            // 
             // button_Save
             // 
             this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -847,26 +867,6 @@
             this.button_Hide.Text = "Anuluj";
             this.button_Hide.UseVisualStyleBackColor = true;
             this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
-            // 
-            // listBox_Set_Line
-            // 
-            this.listBox_Set_Line.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listBox_Set_Line.FormattingEnabled = true;
-            this.listBox_Set_Line.ItemHeight = 25;
-            this.listBox_Set_Line.Location = new System.Drawing.Point(0, 31);
-            this.listBox_Set_Line.Name = "listBox_Set_Line";
-            this.listBox_Set_Line.Size = new System.Drawing.Size(255, 254);
-            this.listBox_Set_Line.TabIndex = 7;
-            this.listBox_Set_Line.SelectedIndexChanged += new System.EventHandler(this.listBox_Set_Line_SelectedIndexChanged);
-            // 
-            // textBox_Listbox_Name
-            // 
-            this.textBox_Listbox_Name.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox_Listbox_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Listbox_Name.Location = new System.Drawing.Point(0, 0);
-            this.textBox_Listbox_Name.Name = "textBox_Listbox_Name";
-            this.textBox_Listbox_Name.Size = new System.Drawing.Size(258, 31);
-            this.textBox_Listbox_Name.TabIndex = 8;
             // 
             // FormSetLine
             // 

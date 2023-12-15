@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
-    public partial class FormSetTransformator : Form
+    public partial class Result_Form : Form
     {
-        public FormSetTransformator()
+        public Result_Form()
         {
             InitializeComponent();
-        }
-
-        private void button_Hide_Click(object sender, EventArgs e)
-        {
-            Hide();
         }
     }
 }

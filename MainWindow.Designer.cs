@@ -55,6 +55,7 @@
             this.button_Map_Delete = new System.Windows.Forms.Button();
             this.button_Map_Select = new System.Windows.Forms.Button();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Build_Transformator = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox_Set_Voltage_Zone = new System.Windows.Forms.TextBox();
             this.listBox_Voltage_Zones = new System.Windows.Forms.ListBox();
@@ -99,7 +100,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button_Build_Transformator = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -423,6 +423,16 @@
             this.kryptonPage1.Text = "Budowanie";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "9110C834021D44397AAC87818037AF22";
+            // 
+            // button_Build_Transformator
+            // 
+            this.button_Build_Transformator.Location = new System.Drawing.Point(477, 15);
+            this.button_Build_Transformator.Name = "button_Build_Transformator";
+            this.button_Build_Transformator.Size = new System.Drawing.Size(75, 57);
+            this.button_Build_Transformator.TabIndex = 13;
+            this.button_Build_Transformator.Text = "Transformator";
+            this.button_Build_Transformator.UseVisualStyleBackColor = true;
+            this.button_Build_Transformator.Click += new System.EventHandler(this.button_Build_Transformator_Click);
             // 
             // textBox1
             // 
@@ -844,16 +854,6 @@
             // databaseBindingSource
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
-            // 
-            // button_Build_Transformator
-            // 
-            this.button_Build_Transformator.Location = new System.Drawing.Point(477, 15);
-            this.button_Build_Transformator.Name = "button_Build_Transformator";
-            this.button_Build_Transformator.Size = new System.Drawing.Size(75, 57);
-            this.button_Build_Transformator.TabIndex = 13;
-            this.button_Build_Transformator.Text = "Transformator";
-            this.button_Build_Transformator.UseVisualStyleBackColor = true;
-            this.button_Build_Transformator.Click += new System.EventHandler(this.button_Build_Transformator_Click);
             // 
             // MainWindow
             // 
