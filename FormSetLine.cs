@@ -96,6 +96,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             SelectedIndexChange = false;
 
             Database.ListOfLineData.RemoveAt(listBox_Set_Line.SelectedIndex);
+
             listBox_Set_Line.DataSource = null;
             listBox_Set_Line.DataSource = Database.ListOfLineData;
             listBox_Set_Line.DisplayMember = "Name";

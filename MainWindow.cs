@@ -465,7 +465,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
                     Elm.Click += new EventHandler(this.Inspector_Element);
 
-                    FormSetTransformator F_tr = new FormSetTransformator();
+                    FormSetTransformator F_tr = new FormSetTransformator(Elm.Name, Elm.Index, Elm.ListOfNghbNode[0].Name, Elm.ListOfNghbNode[1].Name, Elm.ListOfNghbNode[0].Index, Elm.ListOfNghbNode[1].Index, Elm.ListOfNghbNode[0].voltage_Zone, Elm.ListOfNghbNode[1].voltage_Zone);
                     Elm.Click += (FormSetTransformator, args) =>
                     {
                         if (Var.mode == "Build_Inspector")
@@ -563,6 +563,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             else if(Var.mode == "Build_Inspector")
             {
                 HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name;
+                HELP_Multiline1.Text = "\r\n" + "Impedancja" + Elm.Z_1.Real + Elm.Z_1.Imaginary+"i";
             }
 
 

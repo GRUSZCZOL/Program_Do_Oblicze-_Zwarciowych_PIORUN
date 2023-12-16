@@ -30,6 +30,7 @@
         {
             this.textBox_Result = new System.Windows.Forms.TextBox();
             this.button_Save_Result = new System.Windows.Forms.Button();
+            this.button_Close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_Result
@@ -49,11 +50,21 @@
             this.button_Save_Result.Text = "Zapisz wynik";
             this.button_Save_Result.UseVisualStyleBackColor = true;
             // 
+            // button_Close
+            // 
+            this.button_Close.Location = new System.Drawing.Point(93, 404);
+            this.button_Close.Name = "button_Close";
+            this.button_Close.Size = new System.Drawing.Size(75, 34);
+            this.button_Close.TabIndex = 2;
+            this.button_Close.Text = "Anuluj";
+            this.button_Close.UseVisualStyleBackColor = true;
+            // 
             // Result_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_Close);
             this.Controls.Add(this.button_Save_Result);
             this.Controls.Add(this.textBox_Result);
             this.Name = "Result_Form";
@@ -67,5 +78,6 @@
 
         private System.Windows.Forms.TextBox textBox_Result;
         private System.Windows.Forms.Button button_Save_Result;
+        private System.Windows.Forms.Button button_Close;
     }
 }
