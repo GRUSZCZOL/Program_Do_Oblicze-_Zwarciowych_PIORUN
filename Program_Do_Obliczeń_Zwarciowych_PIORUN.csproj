@@ -144,6 +144,7 @@
     <Compile Include="Transformator_Data.cs" />
     <Compile Include="Variables.cs" />
     <Compile Include="VoltageZone.cs" />
+    <Compile Include="Voltage_Zone.cs" />
     <EmbeddedResource Include="FormSetGenerator.resx">
       <DependentUpon>FormSetGenerator.cs</DependentUpon>
     </EmbeddedResource>

@@ -454,11 +454,6 @@
             // listBox_Voltage_Zones
             // 
             this.listBox_Voltage_Zones.FormattingEnabled = true;
-            this.listBox_Voltage_Zones.Items.AddRange(new object[] {
-            "400",
-            "220",
-            "30",
-            "6"});
             this.listBox_Voltage_Zones.Location = new System.Drawing.Point(198, 8);
             this.listBox_Voltage_Zones.Name = "listBox_Voltage_Zones";
             this.listBox_Voltage_Zones.Size = new System.Drawing.Size(64, 69);

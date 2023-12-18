@@ -27,8 +27,11 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static List<Node> Support = new List<Node>(); // Lista wspomagająca
 
 
-        public static List<VoltageZone> ListOfVoltageZones = new List<VoltageZone>(); // Zapamiętuje strefy napięcia
-        
+        // Zapamiętuje strefy napięcia     public static List<VoltageZone> ListOfVoltageZones = new List<VoltageZone>();
+
+        public static List<Voltage_Zone> ListOfVoltage_Zones = new List<Voltage_Zone>(); // Nowy system Voltage Zones
+
+
         public static List<Line_Data> ListOfLineData = new List<Line_Data>(); // Lista przechowująca wszystkie typy linii
         public static List<Generator_Data> ListOfGeneratorData = new List<Generator_Data>(); // Lista przechowująca wszystkie typy Generatorów
         public static List<Transformator_Data> ListOfTransformatorData = new List<Transformator_Data>(); // Lista przechowująca wszystkie typy Transformatorów

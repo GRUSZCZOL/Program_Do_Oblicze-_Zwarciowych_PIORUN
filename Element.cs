@@ -29,6 +29,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
        public Complex X_1=0;
        public Complex Z_1= new Complex(1, 1);
 
+        public Complex Z_1_H = new Complex(1, 1); // zmienne dla transformatora
+        public Complex Z_1_L = new Complex(1, 1);
+
         //PRZECIWNA
         public Complex R_2 = 0;
         public Complex X_2 = 0;
@@ -38,6 +41,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public Complex R_0 = 0;
         public Complex X_0 = 0;
         public Complex Z_0 = new Complex(1, 1);
+
+        
 
         // Napięcie dla generatora
 

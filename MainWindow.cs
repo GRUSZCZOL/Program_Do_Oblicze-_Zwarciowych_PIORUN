@@ -29,6 +29,21 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         private void MainWindow_Load(object sender, EventArgs e)
         {
             // UZUPEŁNIANIE BAZ DANYCH
+
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(400,Color.Orange) { Name = "400" });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(220, Color.Blue) { Name = "220" });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(30, Color.Yellow) { Name = "30" });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(6, Color.Red) { Name = "6" });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(1, Color.Purple) { Name = "1" });
+
+
+            listBox_Voltage_Zones.DataSource = Database.ListOfVoltage_Zones;
+            listBox_Voltage_Zones.DisplayMember = "Name";
+
+
+
+
+
                         Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04",temp = 25,resistivity=200,lenght=10,conductivity=44,cross_section=280,r = 6,r_0=7,D1_1=6,D2_1=5,D3_1=6 }); 
                         Database.ListOfLineData.Add(new Line_Data() {  Name = "AFL2", PoleType = "A03", temp = 25, resistivity = 100, lenght = 8, conductivity = 44, cross_section = 140, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 2, D3_1 = 2 }); 
                         Database.ListOfLineData.Add(new Line_Data() {  Name = "Test", PoleType = "C02", temp = 25, resistivity = 300, lenght = 2, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 8, D3_1 = 6}); 
@@ -256,16 +271,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Var.index_setup++; // Zwi?z?kowanie indeksu elementu
                 this.Controls.Add(Nd);
 
-                Nd.voltage_Zone = Convert.ToDouble(listBox_Voltage_Zones.SelectedItem);
+                Nd.voltage_Zone = Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].V_Z;
                 Nd.Name = "Node_" + Var.N.ToString();
-                Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle)); // Do odkomentowania
+                Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle));
                 Nd.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Nd.Location = new Point(Var.m_X + panel_Main_Map.HorizontalScroll.Value - (Nd.Size.Width / 2), Var.m_Y + panel_Main_Map.VerticalScroll.Value - (Nd.Size.Height / 2));
                 Nd.Text = Nd.Index.ToString();
 
-                Color bc = Color.FromArgb(Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[0], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[1], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[2]);
+                // Color bc = Color.FromArgb(Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[0], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[1], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[2]);
                 //;
-                Nd.BackColor = bc;
+                Nd.BackColor = Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].color;
                 Nd.BringToFront();
                 Nd.Show();
 
@@ -282,6 +297,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Nd.Parent = pictureBox_Map;
 
                 Database.ListOfNodes.Add(Nd);
+                Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].ListOfNodes.Add(Nd);
 
             } else { MessageBox.Show("Nie wybrano strefy napięcia"); }
 
@@ -331,6 +347,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Elm.ListOfNghbNode.Add(Nd);
                 Database.ListOfElements.Add(Elm);
                 Database.ListOfGenerators.Add(Elm);
+
+                Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].ListOfGenerators.Add(Elm);
 
 
                 // Wydarzenia zaimplementowane do elementu
@@ -385,6 +403,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                     Database.ListOfLines.Add(Elm);
                     Database.ListOfElements.Add(Elm);
+
+                    Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].ListOfLines.Add(Elm);
+
                     Elm.ListOfNghbNode[0].ListOfNghElements.Add(Elm);
                     Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
 
@@ -461,6 +482,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                     Database.ListOfTransformators.Add(Elm);
                     Database.ListOfElements.Add(Elm);
+
+                    Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].ListOfTransformators.Add(Elm);
+
                     Elm.ListOfNghbNode[0].ListOfNghElements.Add(Elm);
                     Elm.ListOfNghbNode[1].ListOfNghElements.Add(Elm);
                     Elm.Click += new EventHandler(this.Inspector_Element);

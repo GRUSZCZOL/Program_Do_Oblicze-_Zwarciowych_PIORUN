@@ -65,27 +65,34 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 
 
                 double D_Pcu = Convert.ToDouble(textBox_D_Pcu.Text);
-                double D_Pfe = Convert.ToDouble(textBox_D_Pfe.Text);
+                double D_Pfe = Convert.ToDouble(textBox_D_Pfe.Text); // Nie wybierane w tej wersji
                 double U_k = Convert.ToDouble(textBox_uk_prc.Text);
                 double S = Convert.ToDouble(textBox_S_value.Text);
                 double Ur_H = Convert.ToDouble(textBox_t_H.Text);
                 double Ur_L = Convert.ToDouble(textBox_t_L.Text);
 
                 double R_H = (D_Pcu / 100) * (Math.Pow(Ur_H, 2) / S);
+                double R_L = (D_Pcu / 100) * (Math.Pow(Ur_L, 2) / S);
 
-                
+
                 double Z_H = (U_k / 100) * (Math.Pow(Ur_H, 2)/S);
+                double Z_L = (U_k / 100) * (Math.Pow(Ur_L, 2) / S);
 
                 double X_H = Math.Sqrt(Math.Pow(Z_H,2) - Math.Pow(R_H,2));
+                double X_L = Math.Sqrt(Math.Pow(Z_L, 2) - Math.Pow(R_L, 2));
 
-                Complex Set_Impedance = new Complex(R_H,X_H);
+                Complex Set_Impedance_H = new Complex(R_H,X_H);
+                Complex Set_Impedance_L = new Complex(R_L, X_L);
+
                 foreach (Element line in Database.ListOfTransformators)
                 {
                     if (line.Index == Var.selectedIndex)
-                    { line.Z_1 = Set_Impedance; Hide(); }
+                    { line.Z_1_H = Set_Impedance_H; line.Z_1_L = Set_Impedance_L ;}
                 }
 
-               // MessageBox.Show("R_H = "+R_H+"  X_H = "+ X_H + "Z_H = "+Z_H);
+                Hide();
+
+                // MessageBox.Show("R_H = "+R_H+"  X_H = "+ X_H + "Z_H = "+Z_H);
 
             }
         }
