@@ -21,12 +21,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
     public partial class MainWindow : Form
     {
-        public MainWindow()
+            public MainWindow()
         {
             InitializeComponent();      
         }
 
-        private void MainWindow_Load(object sender, EventArgs e)
+            private void MainWindow_Load(object sender, EventArgs e)
         {
             // UZUPEŁNIANIE BAZ DANYCH
 
@@ -51,7 +51,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------
 
-        #region MODE TYPE PARTS
+        #region MODE TYPE PARTS =================================================================
 
         // TRYB MAPY / MAP MODE
 
@@ -222,17 +222,30 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         } // Pokazuje parametry zwarciowe
             private void button_Short_Run_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show("Włączono przycisk");
+            // 3-Faz             - trójfazowe
+            // 3-Faz_GND         - trójfazowe z ziemią
+            // 2-Faz             - międzyprewodowe
+            // 2-Faz_GND         - międzyprewodowe
+            // 1-Faz             - jednofazowe
+            // 1-Faz_GND         - jednofazowe z ziemią
 
+            switch (Var.short_mode) 
+            {
+                case "3-Faz": Solv_3_Faz(); setToResults_3_Faz(); break;
+                case "3-Faz_GND": MessageBox.Show("Brak Solvera !"); break;
+                case "2-Faz": MessageBox.Show("Brak Solvera !"); break;
+                case "2-Faz_GND": MessageBox.Show("Brak Solvera !"); break;
+                case "1-Faz": MessageBox.Show("Brak Solvera !"); break;
+                case "1-Faz_GND": MessageBox.Show("Brak Solvera !"); break;                
+            }
         } // Rozpoczyna obliczenia zwarciowe
 
         #endregion
 
+        #region FUNCTION =================================================================
 
-
-
-
-
-            // Funkcje / Metody
+            // FUNCTION / METHODS
 
             public void Delete_Button(Object sender, EventArgs e)
             {
@@ -594,6 +607,35 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         } // Wyświetla informacje o obiekcie
 
+        #endregion
+
+        #region SOLVERS =================================================================
+
+            // SOLVERS
+
+            public void setToResults_3_Faz() 
+        {
+            Result_Form R_F = new Result_Form(Solv_3_Faz()[0], Solv_3_Faz()[1], Solv_3_Faz()[2]);
+            R_F.Show();
+
+        }
+            public double[] Solv_3_Faz() 
+        {
+
+
+
+
+
+            double I_k = 1;
+            double I_c = 3;
+            double I_b = 2;
+
         
-    } 
+        return new double[] { I_k, I_b, I_c };
+        }
+
+
+        #endregion
+
+    }
 }

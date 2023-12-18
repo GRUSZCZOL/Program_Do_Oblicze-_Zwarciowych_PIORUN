@@ -69,6 +69,7 @@
             this.Controls.Add(this.textBox_Result);
             this.Name = "Result_Form";
             this.Text = "Result_Form";
+            this.Shown += new System.EventHandler(this.Result_Form_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

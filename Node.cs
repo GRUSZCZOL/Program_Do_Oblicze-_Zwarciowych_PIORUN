@@ -15,6 +15,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public double voltage_Zone; // Strefa napięcia w jakiej znajduje sie Node
 
+        public bool isShort = false;
+
         public int Index; // Index Node'a unikalny dla każdego
 
         public Complex Z_1;
