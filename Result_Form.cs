@@ -40,9 +40,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         // Wydarzenia
         private void Result_Form_Shown(object sender, EventArgs e)
         {
-            textBox_Result.Text += I_k.ToString() + "\n\r";
-            textBox_Result.Text += I_b.ToString() + "\n\r";
-            textBox_Result.Text += I_c.ToString() + "\n\r";
+            textBox_Result.Text += Var.res + "\n\r";
+           
         }
     }
 }

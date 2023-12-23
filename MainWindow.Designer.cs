@@ -68,15 +68,13 @@
             this.button_Build_Line = new System.Windows.Forms.Button();
             this.button_Build_Node = new System.Windows.Forms.Button();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Short_Set_Node = new System.Windows.Forms.Button();
             this.button_Short_Run = new System.Windows.Forms.Button();
             this.button_Short_parameters = new System.Windows.Forms.Button();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage8 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.comboBox_Control_3 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Control_2 = new System.Windows.Forms.ComboBox();
-            this.comboBox_Control_1 = new System.Windows.Forms.ComboBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.kryptonNavigator2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -100,6 +98,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button_Check_Elements = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -259,7 +258,7 @@
             this.kryptonPage5,
             this.kryptonPage6,
             this.kryptonPage8});
-            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonNavigator1.SelectedIndex = 6;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 111);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -542,6 +541,7 @@
             // kryptonPage3
             // 
             this.kryptonPage3.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage3.Controls.Add(this.button_Short_Set_Node);
             this.kryptonPage3.Controls.Add(this.button_Short_Run);
             this.kryptonPage3.Controls.Add(this.button_Short_parameters);
             this.kryptonPage3.Flags = 65534;
@@ -552,6 +552,16 @@
             this.kryptonPage3.Text = "Zwarcie";
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "1378D86E742D472512BFACCB9F4A561A";
+            // 
+            // button_Short_Set_Node
+            // 
+            this.button_Short_Set_Node.Location = new System.Drawing.Point(178, 15);
+            this.button_Short_Set_Node.Name = "button_Short_Set_Node";
+            this.button_Short_Set_Node.Size = new System.Drawing.Size(75, 57);
+            this.button_Short_Set_Node.TabIndex = 5;
+            this.button_Short_Set_Node.Text = "Ustal miejsce zwarcia";
+            this.button_Short_Set_Node.UseVisualStyleBackColor = true;
+            this.button_Short_Set_Node.Click += new System.EventHandler(this.button_Short_Set_Node_Click);
             // 
             // button_Short_Run
             // 
@@ -612,9 +622,7 @@
             // kryptonPage8
             // 
             this.kryptonPage8.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage8.Controls.Add(this.comboBox_Control_3);
-            this.kryptonPage8.Controls.Add(this.comboBox_Control_2);
-            this.kryptonPage8.Controls.Add(this.comboBox_Control_1);
+            this.kryptonPage8.Controls.Add(this.button_Check_Elements);
             this.kryptonPage8.Flags = 65534;
             this.kryptonPage8.LastVisibleSet = true;
             this.kryptonPage8.MinimumSize = new System.Drawing.Size(50, 50);
@@ -623,36 +631,6 @@
             this.kryptonPage8.Text = "Kontrola elementów";
             this.kryptonPage8.ToolTipTitle = "Page ToolTip";
             this.kryptonPage8.UniqueName = "6273A0BC2D634AEEE2BC1189B6857918";
-            // 
-            // comboBox_Control_3
-            // 
-            this.comboBox_Control_3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox_Control_3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox_Control_3.FormattingEnabled = true;
-            this.comboBox_Control_3.Location = new System.Drawing.Point(320, 0);
-            this.comboBox_Control_3.Name = "comboBox_Control_3";
-            this.comboBox_Control_3.Size = new System.Drawing.Size(160, 84);
-            this.comboBox_Control_3.TabIndex = 2;
-            // 
-            // comboBox_Control_2
-            // 
-            this.comboBox_Control_2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox_Control_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox_Control_2.FormattingEnabled = true;
-            this.comboBox_Control_2.Location = new System.Drawing.Point(160, 0);
-            this.comboBox_Control_2.Name = "comboBox_Control_2";
-            this.comboBox_Control_2.Size = new System.Drawing.Size(160, 84);
-            this.comboBox_Control_2.TabIndex = 1;
-            // 
-            // comboBox_Control_1
-            // 
-            this.comboBox_Control_1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBox_Control_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.comboBox_Control_1.FormattingEnabled = true;
-            this.comboBox_Control_1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox_Control_1.Name = "comboBox_Control_1";
-            this.comboBox_Control_1.Size = new System.Drawing.Size(160, 84);
-            this.comboBox_Control_1.TabIndex = 0;
             // 
             // splitContainer3
             // 
@@ -850,6 +828,16 @@
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
             // 
+            // button_Check_Elements
+            // 
+            this.button_Check_Elements.Location = new System.Drawing.Point(16, 15);
+            this.button_Check_Elements.Name = "button_Check_Elements";
+            this.button_Check_Elements.Size = new System.Drawing.Size(75, 54);
+            this.button_Check_Elements.TabIndex = 0;
+            this.button_Check_Elements.Text = "wykaz elementów";
+            this.button_Check_Elements.UseVisualStyleBackColor = true;
+            this.button_Check_Elements.Click += new System.EventHandler(this.button_Check_Elements_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -963,9 +951,6 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.Panel panel_Main_Map;
         private ComponentFactory.Krypton.Navigator.KryptonPage kryptonPage8;
-        private System.Windows.Forms.ComboBox comboBox_Control_3;
-        private System.Windows.Forms.ComboBox comboBox_Control_2;
-        private System.Windows.Forms.ComboBox comboBox_Control_1;
         private System.Windows.Forms.BindingSource databaseBindingSource;
         private System.Windows.Forms.Button button_Build_Inspector;
         private System.Windows.Forms.Button button_Build_Grab;
@@ -979,6 +964,8 @@
         private System.Windows.Forms.Button button_Short_parameters;
         private System.Windows.Forms.Button button_Short_Run;
         private System.Windows.Forms.Button button_Build_Transformator;
+        private System.Windows.Forms.Button button_Short_Set_Node;
+        private System.Windows.Forms.Button button_Check_Elements;
     }
 }
 

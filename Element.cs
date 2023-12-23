@@ -16,18 +16,22 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Index = setIndex; // Ustala Index dla wybranego elementu
             Type = setType; // Ustala typ elementu
         }
+        // Początek i koniec
+        public int Start; // Początek
+        public int End; // Koniec
 
-       public List<Node> ListOfNghbNode = new List<Node>(); // Lista sąsiednich Nodeów  
 
-       public int Index;
-       public string Type;
+        public List<Node> ListOfNghbNode = new List<Node>(); // Lista sąsiednich Nodeów  
+
+        public int Index;
+        public string Type;
 
         // Rezystancja, Reaktancja, Impedancja
 
         //ZGODNA
-       public Complex R_1=0;
-       public Complex X_1=0;
-       public Complex Z_1= new Complex(1, 1);
+        public Complex R_1=0;
+        public Complex X_1=0;
+        public Complex Z_1= new Complex(1, 1);
 
         public Complex Z_1_H = new Complex(1, 1); // zmienne dla transformatora
         public Complex Z_1_L = new Complex(1, 1);
@@ -46,19 +50,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // Napięcie dla generatora
 
-        public Complex U = new Complex(0, 0);
-
-    
+        public Complex U = new Complex(0, 0);   
         
        public Complex Zfunc(Complex setR, Complex setX)
         {
             Complex c = Complex.Sqrt(setR * setR + setX * setX);
             return c;
-        }
-
-      
-        
-        
+        }       
        public void LineReposition() 
         {          // MessageBox.Show(ListOfNghbNode.Count.ToString());
 
@@ -69,8 +67,6 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                     Location = new Point(Convert.ToInt32(X1 + X2) / 2, Convert.ToInt32(Y1 + Y2) / 2);
         }
-      
-
        public void DrawingLine(PaintEventArgs e) 
         {
             

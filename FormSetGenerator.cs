@@ -25,15 +25,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         private void button_Accept_Click(object sender, EventArgs e)
         {
+            // Sprawdzenie warunku dla checkbox Impedancja i ustawienie wartości
             if (checkBox_Impedance_Static.Checked == true)
             {
-                if (textBox_Impedance_Static_Re.Text != null && textBox_Impedance_Static_Im.Text != null)
+                if (textBox_Impedance_Static_Re.Text != null || textBox_Impedance_Static_Im.Text != null)
                 {
                     Complex Set_Impedance = new Complex(Convert.ToDouble(textBox_Impedance_Static_Re.Text), Convert.ToDouble(textBox_Impedance_Static_Im.Text));
-                    foreach (Element line in Database.ListOfLines)
+                    foreach (Element gen in Database.ListOfGenerators)
                     {
-                        if (line.Index == Var.selectedIndex)
-                        { line.Z_1 = Set_Impedance; Hide(); }
+                        if (gen.Index == Var.selectedIndex)
+                        { gen.Z_1 = Set_Impedance; Hide(); }
                     }
                 }
                 else
@@ -41,8 +42,25 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     MessageBox.Show("Wykryto błąd!", "Funkcja: Wymuś impedancje jest włączona, natomiast wymagane pola nie zwracają wartości");
                 }
 
-           
-            } // Sprawdzenie warunku dla checkbox Impedancja i ustawienie wartości
+
+            }
+            else 
+            {
+                // Wykonanie obliczeń
+                MessageBox.Show("Trwa wykonywanie obliczeń");
+
+                
+                double X = (Convert.ToDouble(textBox_Xdprc_value.Text)/100)*(Math.Pow((Convert.ToDouble(textBox_Urg_value.Text)),2  )/(Convert.ToDouble(textBox_Srg_value.Text)));
+                double R = 0.07 * X;
+
+                Complex Set_Impedance = new Complex(R, X);
+                foreach (Element gen in Database.ListOfGenerators)
+                {
+                    if (gen.Index == Var.selectedIndex)
+                    { gen.Z_1 = Set_Impedance; Hide(); }
+                }
+
+            } 
 
             
         }
@@ -52,30 +70,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         }
 
 
-        private void checkBox_Impedance_Static_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox_Impedance_Static.Checked == true)
-            {
-                textBox_Impedance_Static_Re.Enabled = true;
-                textBox_Impedance_Static_Im.Enabled = true;
-            }
-            else if (checkBox_Impedance_Static.Checked == false)
-            {
-                textBox_Impedance_Static_Re.Enabled = false;
-                textBox_Impedance_Static_Im.Enabled = true;
-            }
-        }
+       
 
-        private void button_Hide_Click_1(object sender, EventArgs e)
-        {
-            Hide();
-        }
+        
 
         private void textBox_listbox_Name_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-      
+       
     }
 }

@@ -16,6 +16,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Numerics;
 using static System.Windows.Forms.AxHost;
 using System.Runtime.Remoting.Channels;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
@@ -26,15 +27,17 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             InitializeComponent();      
         }
 
+        
+
             private void MainWindow_Load(object sender, EventArgs e)
         {
             // UZUPEŁNIANIE BAZ DANYCH
 
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(400,Color.Orange) { Name = "400" });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(220, Color.Blue) { Name = "220" });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(30, Color.Yellow) { Name = "30" });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(6, Color.Red) { Name = "6" });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(1, Color.Purple) { Name = "1" });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(400,Color.Orange) { Name = "400" , Index = 1});
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(220, Color.Blue) { Name = "220",Index = 2 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(30, Color.Yellow) { Name = "30", Index = 3 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(6, Color.Red) { Name = "6", Index = 4 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(1, Color.Purple) { Name = "1", Index = 5 });
 
 
             listBox_Voltage_Zones.DataSource = Database.ListOfVoltage_Zones;
@@ -44,9 +47,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
 
 
-                        Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04",temp = 25,resistivity=200,lenght=10,conductivity=44,cross_section=280,r = 6,r_0=7,D1_1=6,D2_1=5,D3_1=6 }); 
-                        Database.ListOfLineData.Add(new Line_Data() {  Name = "AFL2", PoleType = "A03", temp = 25, resistivity = 100, lenght = 8, conductivity = 44, cross_section = 140, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 2, D3_1 = 2 }); 
-                        Database.ListOfLineData.Add(new Line_Data() {  Name = "Test", PoleType = "C02", temp = 25, resistivity = 300, lenght = 2, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 8, D3_1 = 6}); 
+            Database.ListOfLineData.Add(new Line_Data() { Name = "AFL", PoleType = "B04",temp = 25,resistivity=200,lenght=10,conductivity=44,cross_section=280,r = 6,r_0=7,D1_1=6,D2_1=5,D3_1=6 }); 
+            Database.ListOfLineData.Add(new Line_Data() {  Name = "AFL2", PoleType = "A03", temp = 25, resistivity = 100, lenght = 8, conductivity = 44, cross_section = 140, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 2, D3_1 = 2 }); 
+            Database.ListOfLineData.Add(new Line_Data() {  Name = "Test", PoleType = "C02", temp = 25, resistivity = 300, lenght = 2, conductivity = 33, cross_section = 280, r = 6, r_0 = 5, D1_1 = 6, D2_1 = 8, D3_1 = 6}); 
         }
 
         // Wydarzenia ----------------------------------------------------------------------------------------------------------------------------
@@ -240,6 +243,21 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 case "1-Faz_GND": MessageBox.Show("Brak Solvera !"); break;                
             }
         } // Rozpoczyna obliczenia zwarciowe
+            private void button_Short_Set_Node_Click(object sender, EventArgs e)
+            {
+            Database.Support.Clear();
+            Cancel_Grab();
+            Var.mode = "Short_Set_Node";
+            HELP.Text = Var.mode;
+        } // Ustala miejsce zwarcia
+
+            // TRYB: KONTROLI
+             private void button_Check_Elements_Click(object sender, EventArgs e)
+             {
+                Result_Form R_F = new Result_Form();
+                Check_Elements();
+                R_F.Show();
+             } // Sprawdzanie przypisania elementów
 
         #endregion
 
@@ -304,13 +322,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Nd.Click += new EventHandler(this.Create_Element_Line);
                 Nd.Click += new EventHandler(this.Create_Element_Generator);
                 Nd.Click += new EventHandler(this.Create_Element_Transformator);
+                Nd.Click += new EventHandler(this.Short_Set_Node);
                 Nd.MouseUp += new MouseEventHandler(MousePressGrab);
 
 
                 Nd.Parent = pictureBox_Map;
 
-                Database.ListOfNodes.Add(Nd);
-                Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].ListOfNodes.Add(Nd);
+                Database.ListOfNodes.Add(Nd); // Dodawanie Node'a do ogólnej listy nodów
+
+                Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].ListOfNodes.Add(Nd); // Dodawanie Node'a do strefy napięcia
 
             } else { MessageBox.Show("Nie wybrano strefy napięcia"); }
 
@@ -323,10 +343,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             {
             Database.Support.Add(Nd);
 
-                
+                Var.index_setup++; // Zwi?z?kowanie indeksu elementu
                 Element Elm = new Element(Var.index_setup, "Generator"); // Tworzenie nwego elementu
                 
-                Var.index_setup++; // Zwi?z?kowanie indeksu elementu
+                
                 this.Controls.Add(Elm);
 
                 Elm.ListOfNghbNode.Add(Database.Support[0]);
@@ -341,28 +361,37 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Elm.BringToFront();
                 Elm.Show();
 
+                Elm.ListOfNghbNode.Add(Nd);
+                Database.ListOfElements.Add(Elm);
+                Database.ListOfGenerators.Add(Elm);
+                
+                foreach (Voltage_Zone vz in Database.ListOfVoltage_Zones) 
+                {
+                    if (Elm.ListOfNghbNode[0].voltage_Zone == vz.V_Z) 
+                    {
+                        vz.ListOfGenerators.Add(Elm);
+                    }
+                } // Dodawanie linii do strefy napięcia
+
+                
+
+                // Wydarzenia
+                Elm.Click += new EventHandler(this.Inspector_Element);
 
                 FormSetGenerator FSGen = new FormSetGenerator(Elm.Name, Elm.Index, Elm.ListOfNghbNode[0].Name, Elm.ListOfNghbNode[0].Index);
-
-
-                Elm.Click += new EventHandler(this.Inspector_Element);
                 Elm.Click += (FormSetGenerator, args) =>
                 {
                     if (Var.mode == "Build_Inspector")
                     {
                         Var.selectedIndex = Elm.Index;
+                        MessageBox.Show("Nadano indeks: "+ Var.selectedIndex.ToString());
                         FSGen.Show();
                     }
 
 
                 };
 
-                Elm.ListOfNghbNode.Add(Nd);
-                Database.ListOfElements.Add(Elm);
-                Database.ListOfGenerators.Add(Elm);
-
-                Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].ListOfGenerators.Add(Elm);
-
+                
 
                 // Wydarzenia zaimplementowane do elementu
                 
@@ -606,6 +635,44 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
 
         } // Wyświetla informacje o obiekcie
+            public void Short_Set_Node(Object sender, EventArgs e) 
+            {
+            Node Nd = sender as Node;
+            if(Var.mode == "Short_Set_Node")
+            Var.short_Voltage_Zone = Nd.voltage_Zone;
+            Var.short_Index = Nd.Index;
+        } // Metoda ustalająca miejsce zwarcia
+            public void Check_Elements() 
+            {
+            for (int i = 0; i < Database.ListOfVoltage_Zones.Count; i++ ) 
+            {
+                //MessageBox.Show(Database.ListOfVoltage_Zones.Count.ToString());
+                Var.res += "Strefa napięcia: " + Database.ListOfVoltage_Zones[i].Name + "\r\n"+"\r\n";
+                Var.res += "Elementy typu: LINIA:" + "\r\n";
+                foreach(Element line in Database.ListOfVoltage_Zones[i].ListOfLines) 
+                {
+                    Var.res += line.Name + "\r\n";
+                }
+                Var.res += "\r\n\r\n";
+                Var.res += "Elementy typu: GENERATOR:" + "\r\n";
+                foreach (Element gen in Database.ListOfVoltage_Zones[i].ListOfGenerators)
+                {
+                    Var.res += gen.Name + "\r\n";
+                }
+                Var.res += "\r\n\r\n";
+                Var.res += "Elementy typu: TRANSFORMATOR:" + "\r\n";
+                foreach (Element tran in Database.ListOfVoltage_Zones[i].ListOfTransformators)
+                {
+                    Var.res += tran.Name + "\r\n";
+                }
+                Var.res += "\r\n\r\n";
+                Var.res += "Elementy typu: WĘZEŁ:" + "\r\n";
+                foreach (Node Nd in Database.ListOfVoltage_Zones[i].ListOfNodes)
+                {
+                    Var.res += Nd.Name + "\r\n";
+                }
+            }
+            } // Funkcja odpowiadająca przypisaniu elementów
 
         #endregion
 
@@ -614,28 +681,91 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             // SOLVERS
 
             public void setToResults_3_Faz() 
-        {
-            Result_Form R_F = new Result_Form(Solv_3_Faz()[0], Solv_3_Faz()[1], Solv_3_Faz()[2]);
+            {
+            Result_Form R_F = new Result_Form();
             R_F.Show();
+            }
 
-        }
-            public double[] Solv_3_Faz() 
-        {
-
-
-
+            public void Solv_3_Faz() 
+            {
+             
 
 
-            double I_k = 1;
+
+
+
+
+
+
+
+            /*// Ustalenie kolejności
+            List<VoltageZone> Stock = new List<VoltageZone>();
+
+
+
+
+            var mtx_Y = Matrix<Complex>.Build.Dense(Var.N ,Var.N);
+            var mtx_Z = Matrix<Complex>.Build.Dense(Var.N, Var.N);
+
+            // Ustawienie do macierzy admitancji
+
+            foreach (Voltage_Zone item in Database.ListOfVoltage_Zones)
+            {
+                if (Var.short_Voltage_Zone == item.V_Z) 
+                {
+                    foreach (Element elm in item.ListOfLines)
+                    {                       
+                        mtx_Y[elm.ListOfNghbNode[0].Index-1, elm.ListOfNghbNode[1].Index-1] = -1 / elm.Z_1;
+                        mtx_Y[elm.ListOfNghbNode[1].Index - 1, elm.ListOfNghbNode[0].Index-1] = -1 / elm.Z_1;
+                    }
+
+                    */
+            /*foreach (Element elm in item.ListOfGenerators)
+                    {
+                        mtx_Y[0, elm.ListOfNghbNode[0].Index] = -1 / elm.Z_1;
+                        mtx_Y[elm.ListOfNghbNode[0].Index, 0] = -1 / elm.Z_1;
+                    }*/
+            /*
+
+                } else 
+                {
+                
+                }
+            
+            
+            }
+
+            // Admitancje węzła
+
+            foreach (Node Nd in Database.ListOfNodes) 
+            {              
+                for (int i = 0; i <= Nd.ListOfNghElements.Count-1; i++) 
+                {
+                    mtx_Y[Nd.Index-1, Nd.Index-1] += 1/Nd.ListOfNghElements[i].Z_1;
+                }                
+            }
+
+
+
+            Var.res += mtx_Y.ToString();
+
+            mtx_Z = mtx_Y.Inverse();
+
+            
+            Database.I_k = (Var.c*Var.short_Voltage_Zone) / (Math.Sqrt(3) * mtx_Z[Var.short_Index-1, Var.short_Index-1]) ;
             double I_c = 3;
             double I_b = 2;
 
-        
-        return new double[] { I_k, I_b, I_c };
-        }
+            Var.res += Database.I_k.ToString();*/
+
+
+
+            }
+
 
 
         #endregion
 
+       
     }
 }

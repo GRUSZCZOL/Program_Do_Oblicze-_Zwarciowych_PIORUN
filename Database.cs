@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Numerics;
+using MathNet.Numerics.LinearAlgebra;
 
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
@@ -35,6 +37,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static List<Line_Data> ListOfLineData = new List<Line_Data>(); // Lista przechowująca wszystkie typy linii
         public static List<Generator_Data> ListOfGeneratorData = new List<Generator_Data>(); // Lista przechowująca wszystkie typy Generatorów
         public static List<Transformator_Data> ListOfTransformatorData = new List<Transformator_Data>(); // Lista przechowująca wszystkie typy Transformatorów
+
+
+        public static double I_k_Re;
+        public static double I_k_Im;
+
+        public static Complex I_k = new Complex();
 
 
     }

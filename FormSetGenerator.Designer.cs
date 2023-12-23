@@ -129,7 +129,7 @@
             this.kryptonPage1,
             this.kryptonPage2,
             this.kryptonPage3});
-            this.kryptonNavigator1.SelectedIndex = 0;
+            this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(416, 541);
             this.kryptonNavigator1.TabIndex = 1;
             this.kryptonNavigator1.Text = "Parametry Ogólne";
@@ -313,7 +313,7 @@
             // textBox_Firg_value
             // 
             this.textBox_Firg_value.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox_Firg_value.Location = new System.Drawing.Point(121, 168);
+            this.textBox_Firg_value.Location = new System.Drawing.Point(120, 168);
             this.textBox_Firg_value.Name = "textBox_Firg_value";
             this.textBox_Firg_value.Size = new System.Drawing.Size(100, 31);
             this.textBox_Firg_value.TabIndex = 7;
@@ -340,11 +340,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(55, 171);
+            this.label4.Location = new System.Drawing.Point(21, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 25);
+            this.label4.Size = new System.Drawing.Size(85, 25);
             this.label4.TabIndex = 6;
-            this.label4.Text = "φrg:";
+            this.label4.Text = "sin φrg:";
             // 
             // label2
             // 
@@ -432,7 +432,6 @@
             this.checkBox_Impedance_Static.TabIndex = 3;
             this.checkBox_Impedance_Static.Text = "Wymuś opór elektryczny";
             this.checkBox_Impedance_Static.UseVisualStyleBackColor = true;
-            this.checkBox_Impedance_Static.CheckedChanged += new System.EventHandler(this.checkBox_Impedance_Static_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -539,6 +538,7 @@
             this.button_Accept.TabIndex = 8;
             this.button_Accept.Text = "Zatwierdź";
             this.button_Accept.UseVisualStyleBackColor = true;
+            this.button_Accept.Click += new System.EventHandler(this.button_Accept_Click);
             // 
             // button_Add
             // 
@@ -566,7 +566,7 @@
             this.button_Hide.TabIndex = 7;
             this.button_Hide.Text = "Anuluj";
             this.button_Hide.UseVisualStyleBackColor = true;
-            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click_1);
+            this.button_Hide.Click += new System.EventHandler(this.button_Hide_Click);
             // 
             // button_Duplicate
             // 

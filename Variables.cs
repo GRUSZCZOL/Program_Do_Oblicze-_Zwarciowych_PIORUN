@@ -20,7 +20,10 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static int N; // Liczba węzłów
 
-        
+        public static double short_Voltage_Zone;
+        public static int short_Index;
+
+        public static string res;
 
         public static int selectedIndex;
 
