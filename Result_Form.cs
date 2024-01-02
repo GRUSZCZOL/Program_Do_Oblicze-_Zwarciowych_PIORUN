@@ -40,8 +40,18 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         // Wydarzenia
         private void Result_Form_Shown(object sender, EventArgs e)
         {
-            textBox_Result.Text += Var.res + "\n\r";
-           
+            textBox_Result.Text += Var.res + "\n\r";          
         }
+
+        private void button_Save_Result_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.Filter = "*.txt|*.txt";
+            dlg.RestoreDirectory = true;
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.File.WriteAllText(dlg.FileName, textBox_Result.Text);
+            }
+        } // Zapis do formy tekstowej
     }
 }

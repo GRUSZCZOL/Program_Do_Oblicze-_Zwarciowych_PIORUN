@@ -49,6 +49,7 @@
             this.button_Save_Result.TabIndex = 1;
             this.button_Save_Result.Text = "Zapisz wynik";
             this.button_Save_Result.UseVisualStyleBackColor = true;
+            this.button_Save_Result.Click += new System.EventHandler(this.button_Save_Result_Click);
             // 
             // button_Close
             // 

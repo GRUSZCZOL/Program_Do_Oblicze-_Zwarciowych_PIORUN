@@ -65,6 +65,8 @@
             this.textBox_Line_Name = new System.Windows.Forms.TextBox();
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_t_L = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.comboBox_connect_group = new System.Windows.Forms.ComboBox();
             this.comboBox_columns = new System.Windows.Forms.ComboBox();
             this.textBox_i0 = new System.Windows.Forms.TextBox();
@@ -91,8 +93,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox_t_L = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonNavigator1)).BeginInit();
             this.kryptonNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
@@ -529,6 +529,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "parametry elektryczne";
             // 
+            // textBox_t_L
+            // 
+            this.textBox_t_L.Location = new System.Drawing.Point(325, 47);
+            this.textBox_t_L.Name = "textBox_t_L";
+            this.textBox_t_L.Size = new System.Drawing.Size(100, 26);
+            this.textBox_t_L.TabIndex = 18;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(305, 50);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(14, 20);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "/";
+            // 
             // comboBox_connect_group
             // 
             this.comboBox_connect_group.FormattingEnabled = true;
@@ -787,22 +803,6 @@
             this.label6.Size = new System.Drawing.Size(198, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "Nazwa wybranego obiektu:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(305, 50);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(14, 20);
-            this.label20.TabIndex = 17;
-            this.label20.Text = "/";
-            // 
-            // textBox_t_L
-            // 
-            this.textBox_t_L.Location = new System.Drawing.Point(325, 47);
-            this.textBox_t_L.Name = "textBox_t_L";
-            this.textBox_t_L.Size = new System.Drawing.Size(100, 26);
-            this.textBox_t_L.TabIndex = 18;
             // 
             // FormSetTransformator
             // 

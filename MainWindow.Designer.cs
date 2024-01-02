@@ -75,6 +75,9 @@
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage8 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Show_Ngh_VZ = new System.Windows.Forms.Button();
+            this.button_Show_elements_Data = new System.Windows.Forms.Button();
+            this.button_Check_Elements = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.kryptonNavigator2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -98,7 +101,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button_Check_Elements = new System.Windows.Forms.Button();
+            this.button_Check_Impedance_Status = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -490,7 +493,7 @@
             // 
             // button_Build_Grab
             // 
-            this.button_Build_Grab.Location = new System.Drawing.Point(892, 3);
+            this.button_Build_Grab.Location = new System.Drawing.Point(892, 13);
             this.button_Build_Grab.Name = "button_Build_Grab";
             this.button_Build_Grab.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Grab.TabIndex = 5;
@@ -500,7 +503,7 @@
             // 
             // button_Build_Inspector
             // 
-            this.button_Build_Inspector.Location = new System.Drawing.Point(811, 4);
+            this.button_Build_Inspector.Location = new System.Drawing.Point(811, 12);
             this.button_Build_Inspector.Name = "button_Build_Inspector";
             this.button_Build_Inspector.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Inspector.TabIndex = 4;
@@ -510,7 +513,7 @@
             // 
             // button_Build_Delete
             // 
-            this.button_Build_Delete.Location = new System.Drawing.Point(973, 4);
+            this.button_Build_Delete.Location = new System.Drawing.Point(973, 12);
             this.button_Build_Delete.Name = "button_Build_Delete";
             this.button_Build_Delete.Size = new System.Drawing.Size(75, 57);
             this.button_Build_Delete.TabIndex = 3;
@@ -622,6 +625,9 @@
             // kryptonPage8
             // 
             this.kryptonPage8.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
+            this.kryptonPage8.Controls.Add(this.button_Check_Impedance_Status);
+            this.kryptonPage8.Controls.Add(this.button_Show_Ngh_VZ);
+            this.kryptonPage8.Controls.Add(this.button_Show_elements_Data);
             this.kryptonPage8.Controls.Add(this.button_Check_Elements);
             this.kryptonPage8.Flags = 65534;
             this.kryptonPage8.LastVisibleSet = true;
@@ -631,6 +637,36 @@
             this.kryptonPage8.Text = "Kontrola elementów";
             this.kryptonPage8.ToolTipTitle = "Page ToolTip";
             this.kryptonPage8.UniqueName = "6273A0BC2D634AEEE2BC1189B6857918";
+            // 
+            // button_Show_Ngh_VZ
+            // 
+            this.button_Show_Ngh_VZ.Location = new System.Drawing.Point(178, 15);
+            this.button_Show_Ngh_VZ.Name = "button_Show_Ngh_VZ";
+            this.button_Show_Ngh_VZ.Size = new System.Drawing.Size(75, 54);
+            this.button_Show_Ngh_VZ.TabIndex = 2;
+            this.button_Show_Ngh_VZ.Text = "pokaż sąsiednie strefy";
+            this.button_Show_Ngh_VZ.UseVisualStyleBackColor = true;
+            this.button_Show_Ngh_VZ.Click += new System.EventHandler(this.button_Show_Ngh_VZ_Click);
+            // 
+            // button_Show_elements_Data
+            // 
+            this.button_Show_elements_Data.Location = new System.Drawing.Point(97, 15);
+            this.button_Show_elements_Data.Name = "button_Show_elements_Data";
+            this.button_Show_elements_Data.Size = new System.Drawing.Size(75, 54);
+            this.button_Show_elements_Data.TabIndex = 1;
+            this.button_Show_elements_Data.Text = "pokaż dane elementów";
+            this.button_Show_elements_Data.UseVisualStyleBackColor = true;
+            this.button_Show_elements_Data.Click += new System.EventHandler(this.button_Show_elements_Data_Click);
+            // 
+            // button_Check_Elements
+            // 
+            this.button_Check_Elements.Location = new System.Drawing.Point(16, 15);
+            this.button_Check_Elements.Name = "button_Check_Elements";
+            this.button_Check_Elements.Size = new System.Drawing.Size(75, 54);
+            this.button_Check_Elements.TabIndex = 0;
+            this.button_Check_Elements.Text = "wykaz elementów";
+            this.button_Check_Elements.UseVisualStyleBackColor = true;
+            this.button_Check_Elements.Click += new System.EventHandler(this.button_Check_Elements_Click);
             // 
             // splitContainer3
             // 
@@ -828,15 +864,15 @@
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
             // 
-            // button_Check_Elements
+            // button_Check_Impedance_Status
             // 
-            this.button_Check_Elements.Location = new System.Drawing.Point(16, 15);
-            this.button_Check_Elements.Name = "button_Check_Elements";
-            this.button_Check_Elements.Size = new System.Drawing.Size(75, 54);
-            this.button_Check_Elements.TabIndex = 0;
-            this.button_Check_Elements.Text = "wykaz elementów";
-            this.button_Check_Elements.UseVisualStyleBackColor = true;
-            this.button_Check_Elements.Click += new System.EventHandler(this.button_Check_Elements_Click);
+            this.button_Check_Impedance_Status.Location = new System.Drawing.Point(259, 15);
+            this.button_Check_Impedance_Status.Name = "button_Check_Impedance_Status";
+            this.button_Check_Impedance_Status.Size = new System.Drawing.Size(73, 55);
+            this.button_Check_Impedance_Status.TabIndex = 3;
+            this.button_Check_Impedance_Status.Text = "załaduj impedancje elementów";
+            this.button_Check_Impedance_Status.UseVisualStyleBackColor = true;
+            this.button_Check_Impedance_Status.Click += new System.EventHandler(this.button_Check_Impedance_Status_Click);
             // 
             // MainWindow
             // 
@@ -966,6 +1002,9 @@
         private System.Windows.Forms.Button button_Build_Transformator;
         private System.Windows.Forms.Button button_Short_Set_Node;
         private System.Windows.Forms.Button button_Check_Elements;
+        private System.Windows.Forms.Button button_Show_elements_Data;
+        private System.Windows.Forms.Button button_Show_Ngh_VZ;
+        private System.Windows.Forms.Button button_Check_Impedance_Status;
     }
 }
 

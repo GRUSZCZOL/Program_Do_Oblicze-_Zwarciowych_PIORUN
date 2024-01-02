@@ -16,9 +16,17 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Index = setIndex; // Ustala Index dla wybranego elementu
             Type = setType; // Ustala typ elementu
         }
-        // Początek i koniec
+        // Początek i koniec gałęzi
         public int Start; // Początek
         public int End; // Koniec
+
+        // Początek i koniec strefy napięcia
+        public int VZ_Start; // Początek
+        public int VZ_End; // Koniec
+
+        // Przekładnia
+        public double elm_tr_H =1;
+        public double elm_tr_L =1;
 
 
         public List<Node> ListOfNghbNode = new List<Node>(); // Lista sąsiednich Nodeów  
@@ -46,7 +54,11 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public Complex X_0 = 0;
         public Complex Z_0 = new Complex(1, 1);
 
-        
+        //OBLICZENIOWE
+
+        public Complex R = 0;
+        public Complex X = 0;
+        public Complex Z = new Complex(1,1);
 
         // Napięcie dla generatora
 

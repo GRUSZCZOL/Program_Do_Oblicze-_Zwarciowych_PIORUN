@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using MathNet.Numerics.LinearAlgebra;
+using System.Numerics;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
@@ -26,6 +28,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static string res;
 
         public static int selectedIndex;
+        public static int selectedVoltage_ZoneIndex;
 
         public static int m_X; // Wspolrzedne myszy X
         public static int m_Y; // Wspolrzedne myszy Y
@@ -56,62 +59,13 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public static double Frec = 50; //Częstotliwość
 
         public static double c = 1.1 ; // Parametr korygujący zwarcie
-     
 
-        #region Graphics
-        // Zmienne dla grafiki
-        //Kolory
-
-        public static Color color_background = Color.White;
-        public static Color color_foreground = Color.Black;
-
-        //Inne
-
-        public static int penSize=3;
-
-        public static int m; // zmienna pomocnicza wykorzystywanaa w tworzeniu obiektu linni
-
-        public static int v = 0; // przechowalnia indexów elementów
-        public static int b = 0;
-        public static bool IsVoltageZones = false; // Określa czy wybór strefy powstał pierwszy raz
-
-        public static int[] InterpolateColor(double t, double n) // t - wybrany indeks // n - wszystkie indexy
-        {
-            /*int blueR = 0;
-            int blueG = 0;
-            int blueB = 255;
-
-            // Kolor czerwony
-            int redR = 255;
-            int redG = 0;
-            int redB = 0;
-
-            // Interpolacja wartości RGB w zależności od parametru t
-            int interpolatedR = (int)(blueR + (redR - blueR) * t/n);
-            int interpolatedG = (int)(blueG + (redG - blueG) * t/n);
-            int interpolatedB = (int)(blueB + (redB - blueB) * t/n);*/
-
-            // Interpolacja kolorów tęczy w przestrzeni RGB
-            double red = Math.Max(0, Math.Cos(((t * 10 / n) - 1) * Math.PI)); // od 1 do 0
-            double green = Math.Max(0, Math.Cos(((t * 10 / n) + 1.0 / 3) * Math.PI)); // od 0 do 1
-            double blue = Math.Max(0, Math.Cos(((t * 10 / n) + 2.0 / 3) * Math.PI)); // od 0 do 0
-
-            int interpolatedR = (int)(red * 255);
-            int interpolatedG = (int)(green * 255);
-            int interpolatedB = (int)(blue * 255);
-
-            return new int[] { interpolatedR, interpolatedG, interpolatedB };
-        }
-        #endregion
-
-
-        // Zmienne pomocnicze
+        public static Matrix<Complex> Z_1 = Matrix<Complex>.Build.Dense(1, 1);
+        public static Matrix<Complex> Y_1 = Matrix<Complex>.Build.Dense(1, 1);
 
 
 
-        // Listy
 
-    
 
 
 

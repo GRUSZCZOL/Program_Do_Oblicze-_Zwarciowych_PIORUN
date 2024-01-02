@@ -84,10 +84,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Complex Set_Impedance_H = new Complex(R_H,X_H);
                 Complex Set_Impedance_L = new Complex(R_L, X_L);
 
-                foreach (Element line in Database.ListOfTransformators)
+                foreach (Element tran in Database.ListOfTransformators)
                 {
-                    if (line.Index == Var.selectedIndex)
-                    { line.Z_1_H = Set_Impedance_H; line.Z_1_L = Set_Impedance_L ;}
+                    if (tran.Index == Var.selectedIndex)
+                    {   
+                        tran.Z_1_H = Set_Impedance_H; 
+                        tran.Z_1_L = Set_Impedance_L ;
+                        tran.elm_tr_H = Ur_H / Ur_L;
+                        tran.elm_tr_L = Ur_L / Ur_H;
+                    }
                 }
 
                 Hide();

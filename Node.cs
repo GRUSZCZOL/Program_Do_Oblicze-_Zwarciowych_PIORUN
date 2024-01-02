@@ -27,9 +27,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public Complex U_2;
         public Complex U_3;
 
-        public Complex I;
+        public Complex I_1;
+        public Complex I_2;
+        public Complex I_3;
 
         public List<Element> ListOfNghElements = new List<Element> { }; // Lista innych elementów skojarzonych z Node'em
+
+        // Zmienne dla transformatora
+
+        public Complex Tran_Z_H;
+        public Complex Tran_Z_L;
 
     }
 }
