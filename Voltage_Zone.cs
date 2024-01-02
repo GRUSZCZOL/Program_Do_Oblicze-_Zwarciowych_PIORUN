@@ -66,12 +66,14 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                             if (tran.ListOfNghbNode[0].voltage_Zone == V_Z)  // Gdy pierwszy Node jest po stronie górnej grafu //tj od strony z której przyszedł sygnał
                             {
                                 tran.Z_1 = tran.Z_1_H;
+                                tran.Z = tran.Z_1*tr;
                                 //wartość w kwadracie !!!!
                                 vz_ngh.tr = Math.Pow(tran.elm_tr_H, 2) * prev_tr;
                             }
                             else // Druga opcja
                             {
                                 tran.Z_1 = tran.Z_1_L;
+                                tran.Z = tran.Z_1 * tr;
                                 //wartość w kwadracie !!!!
                                 vz_ngh.tr = Math.Pow(tran.elm_tr_L, 2) * prev_tr;
                             }

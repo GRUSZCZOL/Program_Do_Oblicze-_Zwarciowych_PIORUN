@@ -680,24 +680,46 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         } // Tworzenie elementu transformator
             public void Create_Y_mtx()
         {
-            foreach (Voltage_Zone vz in Database.ListOfVoltage_Zones) 
+            Var.Y_1 = Matrix<Complex>.Build.Dense(Var.N, Var.N);
+            Var.Z_1 = Matrix<Complex>.Build.Dense(Var.N, Var.N);
+
+            foreach (Voltage_Zone vz in Database.ListOfVoltage_Zones)
             {
-                Var.Y_1 = Matrix<Complex>.Build.Dense(Var.N, Var.N);
-                Var.Z_1 = Matrix<Complex>.Build.Dense(Var.N, Var.N);
+
 
                 // Przeliczanie impedancji przez przekłądnie strefy // Transformatory osobno
 
-                foreach (Element gen in vz.ListOfGenerators) 
+
+                foreach (Element gen in vz.ListOfGenerators)
                 {
-                    gen.Z = gen.Z_1 * Math.Pow(vz.tr,2);
+                    gen.Z = gen.Z_1 * vz.tr;
+                    MessageBox.Show(gen.Name +" / "+ gen.Z.ToString() + " = "+gen.Z_1.ToString() +" * " + vz.tr.ToString());
+                    /*                    Var.Y_1[gen.ListOfNghbNode[0].Index - 1, gen.ListOfNghbNode[1].Index - 1] = -1 / gen.Z;
+                                        Var.Y_1[gen.ListOfNghbNode[1].Index - 1, gen.ListOfNghbNode[2].Index - 1] = -1 / gen.Z;*/
                 }
-                foreach (Element line in vz.ListOfLines) 
+                foreach (Element line in vz.ListOfLines)
                 {
                     line.Z = line.Z_1 * Math.Pow(vz.tr, 2);
-                }                
+                    Var.Y_1[line.ListOfNghbNode[0].Index - 1, line.ListOfNghbNode[1].Index - 1] = -1 / line.Z;
+                    Var.Y_1[line.ListOfNghbNode[1].Index - 1, line.ListOfNghbNode[0].Index - 1] = -1 / line.Z;
+                }
+                foreach (Element tran in vz.ListOfTransformators)
+                {
+                    Var.Y_1[tran.ListOfNghbNode[0].Index - 1, tran.ListOfNghbNode[1].Index - 1] = -1 / tran.Z;
+                    Var.Y_1[tran.ListOfNghbNode[1].Index - 1, tran.ListOfNghbNode[0].Index - 1] = -1 / tran.Z;
+                }
+                foreach (Node nd in vz.ListOfNodes)
+                {
+                    foreach (Element elm in nd.ListOfNghElements)
+                    {
+                        Var.Y_1[nd.Index - 1, nd.Index - 1] += 1 / elm.Z;
+                    }
+                }
 
-                Var.Z_1 = Var.Y_1.Inverse();
+                
             }
+
+            Var.Z_1 = Var.Y_1.Inverse();
 
         } // Wypełnia macierz poprzez wybór elementów strefy napięcia i uwzględnia przekładnie
 
@@ -746,7 +768,14 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             Node Nd = sender as Node;
             if (Var.mode == "Build_Inspector")
-            { HELP_Multiline1.Text = Nd.Location.ToString() +"\r\n"+Nd.voltage_Zone.ToString(); }
+            { HELP_Multiline1.Text = Nd.Location.ToString() +"\r\n"+Nd.voltage_Zone.ToString()+"\r\n";
+            
+            foreach(Element elm in Nd.ListOfNghElements) 
+                {
+                    HELP_Multiline1.Text += elm.Name + " Z_1 => " + elm.Z_1+"\r\n";
+                }
+                      
+            }
         } // Wyświetla informacje o obiekcie
             public void Inspector_Element(Object sender, EventArgs e)
         {
@@ -819,17 +848,17 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         } // Pokazuje informacje o elementach takie jak początek i koniec
             public void Vz_tr_Data() 
         {
-            foreach (Voltage_Zone vz in Database.ListOfVoltage_Zones) 
+            foreach (Voltage_Zone vz in Database.ListOfVoltage_Zones)
             {
                 Var.res += vz.Name + " ==> [";
-                foreach (Voltage_Zone ngh_vz in vz.ListOfNghVoltage_Zones) 
+                foreach (Voltage_Zone ngh_vz in vz.ListOfNghVoltage_Zones)
                 {
-                    Var.res += ngh_vz.Name + " tr => "+ngh_vz.tr+",";
+                    Var.res += ngh_vz.Name + " tr => " + ngh_vz.tr + ",";
                 }
                 Var.res += "]\r\n";
             }
-            Result_Form r_f = new Result_Form();
-            r_f.Show();
+            /*Result_Form r_f = new Result_Form();
+            r_f.Show();*/
         }
             
 
@@ -856,14 +885,15 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     vz.GraphSearch(vz.tr);
                 }
             }
-            Vz_tr_Data();
-            Create_Y_mtx();
 
-           // I_1 = (Var.c * Var.short_Voltage_Zone) / (Math.Sqrt(3) * Var.Z_1[Var.short_Index,Var.short_Index]);
+            Vz_tr_Data(); // Wyświetla informacje o stanie przekładni
+            Create_Y_mtx(); // Wypełnia macierz admitancji
+           
+            I_1 = (Var.c * Var.short_Voltage_Zone) / (Math.Sqrt(3) *2* Var.Z_1[Var.short_Index-1,Var.short_Index-1]);
+            Var.res += "Macierz Admitancji: Y:\r\n" + Var.Y_1;
+            Var.res += "Macierz Impedancji: Z:\r\n" + Var.Z_1;
+            Var.res += "Prąd I_k: " + I_1.Real + " " + I_1.Imaginary + "i" + " [kA]";
 
-            /*Var.res = "Prąd I_k: "+ I_1.Real +" "+ I_1.Imaginary + "i" + " [kA]";
-            Result_Form r_F = new Result_Form();
-            r_F.Show();*/
         }
 
 
