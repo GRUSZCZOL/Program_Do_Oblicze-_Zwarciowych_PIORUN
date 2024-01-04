@@ -133,9 +133,49 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Generator {
+            get {
+                object obj = ResourceManager.GetObject("Generator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Generator_Alert {
+            get {
+                object obj = ResourceManager.GetObject("Generator_Alert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Inspector {
             get {
                 object obj = ResourceManager.GetObject("Inspector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Line {
+            get {
+                object obj = ResourceManager.GetObject("Line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Line_Alert {
+            get {
+                object obj = ResourceManager.GetObject("Line_Alert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +243,26 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Node {
+            get {
+                object obj = ResourceManager.GetObject("Node", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Node_Alert {
+            get {
+                object obj = ResourceManager.GetObject("Node_Alert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Short_Mode_64__True {
             get {
                 object obj = ResourceManager.GetObject("Short_Mode(64)_True", resourceCulture);
@@ -236,6 +296,26 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties {
         internal static System.Drawing.Bitmap Square {
             get {
                 object obj = ResourceManager.GetObject("Square", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transformator {
+            get {
+                object obj = ResourceManager.GetObject("Transformator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Transformator_Alert {
+            get {
+                object obj = ResourceManager.GetObject("Transformator_Alert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

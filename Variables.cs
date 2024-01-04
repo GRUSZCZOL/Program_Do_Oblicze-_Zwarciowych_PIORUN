@@ -39,8 +39,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static int index_setup = 1111; // Indeks przypisywany do elementu
 
-        public static int button_size_Width = 45; // Rozmiar przycisku
-        public static int button_size_Height = 45;
+        public static int button_size_Width = 64; // Rozmiar przycisku
+        public static int button_size_Height = 64;
 
 
         // Parametry elektryczne

@@ -34,7 +34,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     foreach (Element gen in Database.ListOfGenerators)
                     {
                         if (gen.Index == Var.selectedIndex)
-                        { gen.Z_1 = Set_Impedance; Hide(); }
+                        { gen.Z_1 = Set_Impedance;
+                            gen.Image = ((System.Drawing.Image)(Properties.Resources.Generator));
+                            Hide(); }
                     }
                 }
                 else

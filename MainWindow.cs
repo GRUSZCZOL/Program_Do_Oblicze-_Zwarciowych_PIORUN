@@ -349,7 +349,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                 Nd.voltage_Zone = Database.ListOfVoltage_Zones[listBox_Voltage_Zones.SelectedIndex].V_Z;
                 Nd.Name = "Node_" + Var.N.ToString();
-                Nd.Image = ((System.Drawing.Image)(Properties.Resources.Circle));
+                Nd.Image = ((System.Drawing.Image)(Properties.Resources.Node));
                 Nd.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Nd.Location = new Point(Var.m_X + panel_Main_Map.HorizontalScroll.Value - (Nd.Size.Width / 2), Var.m_Y + panel_Main_Map.VerticalScroll.Value - (Nd.Size.Height / 2));
                 Nd.Text = Nd.Index.ToString();
@@ -402,7 +402,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
                 Elm.Parent = pictureBox_Map;
                 Elm.Name = "Element_Generator_" + Var.index_setup.ToString();
-                Elm.Image = ((System.Drawing.Image)(Properties.Resources.Square)); // Do odkomentowania
+                Elm.Image = ((System.Drawing.Image)(Properties.Resources.Generator_Alert)); // Do odkomentowania
                 Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Elm.Location = new Point( Nd.Location.X, Nd.Location.Y + 80);
                 Elm.Text = "Gen_"+Elm.Index.ToString();
@@ -482,7 +482,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.Name = "Element_Line_" + Var.index_setup.ToString();
                     
                     Elm.BackColor = Elm.ListOfNghbNode[1].BackColor;
-                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Cross)); // Do odkomentowania
+                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Line_Alert)); // Do odkomentowania
                     Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                     Elm.Location = new Point(
                         ((Elm.ListOfNghbNode[0].Location.X + Elm.ListOfNghbNode[1].Location.X) / 2) /*+ (Elm.Size.Width / 2)*/,
@@ -564,7 +564,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     Elm.Name = "Element_Transformator_" + Var.index_setup.ToString();
 
                     Elm.BackColor = Color.Purple;
-                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Square)); // Do odkomentowania
+                    Elm.Image = ((System.Drawing.Image)(Properties.Resources.Transformator_Alert)); // Do odkomentowania
                     Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                     Elm.Location = new Point(
                         ((Elm.ListOfNghbNode[0].Location.X + Elm.ListOfNghbNode[1].Location.X) / 2) /*+ (Elm.Size.Width / 2)*/,

@@ -259,5 +259,29 @@
   <ItemGroup>
     <None Include="Resources\Short_Mode_Options.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Generator_Alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Line_Alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Node.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Node_Alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transformator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transformator_Alert.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

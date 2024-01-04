@@ -47,10 +47,12 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 if (textBox_Impedance_Static_Re.Text != null || textBox_Impedance_Static_Im.Text != null)
                 {
                     Complex Set_Impedance = new Complex(Convert.ToDouble(textBox_Impedance_Static_Re.Text), Convert.ToDouble(textBox_Impedance_Static_Im.Text));
-                    foreach (Element line in Database.ListOfTransformators)
+                    foreach (Element tran in Database.ListOfTransformators)
                     {
-                        if (line.Index == Var.selectedIndex)
-                        { line.Z_1 = Set_Impedance; Hide(); }
+                        if (tran.Index == Var.selectedIndex)
+                        { tran.Z_1 = Set_Impedance;
+                            tran.Image =  ((System.Drawing.Image)(Properties.Resources.Transformator));
+                            Hide(); }
                     }
                 }
                 else
