@@ -83,6 +83,56 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Map_Mode_Delete_All {
+            get {
+                object obj = ResourceManager.GetObject("Map_Mode_Delete_All", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Map_Mode_Delete_Image {
+            get {
+                object obj = ResourceManager.GetObject("Map_Mode_Delete_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Map_Mode_Load_Image {
+            get {
+                object obj = ResourceManager.GetObject("Map_Mode_Load_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Map_Mode_Set_Scale_By_Mouse {
+            get {
+                object obj = ResourceManager.GetObject("Map_Mode_Set_Scale_By_Mouse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Map_Mode_Set_Scale_Calculator {
+            get {
+                object obj = ResourceManager.GetObject("Map_Mode_Set_Scale_Calculator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Square {
             get {
                 object obj = ResourceManager.GetObject("Square", resourceCulture);

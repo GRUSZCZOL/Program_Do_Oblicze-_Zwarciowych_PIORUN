@@ -214,5 +214,20 @@
   <ItemGroup>
     <None Include="Resources\Square.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map_Mode_Load_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map_Mode_Delete_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map_Mode_Delete_All.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map_Mode_Set_Scale_By_Mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map_Mode_Set_Scale_Calculator.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

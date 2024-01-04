@@ -235,7 +235,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
             switch (Var.short_mode) 
             {
-                case "3-Faz": Solv_3_Faz(); setToResults_3_Faz(); break;
+                case "3-Faz": Solv_3_Faz(); setToResults(); break;
                 case "3-Faz_GND": MessageBox.Show("Brak Solvera !"); break;
                 case "2-Faz": MessageBox.Show("Brak Solvera !"); break;
                 case "2-Faz_GND": MessageBox.Show("Brak Solvera !"); break;
@@ -464,7 +464,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             } else if(Database.Support.Count == 1 && Var.mode == "Build_Line") 
             {
                 Database.Support.Add(Nd);
-                HELP_Multiline1.Text = Database.Support[0].Name.ToString() +" / " +Database.Support[1].Name.ToString();
+                HELP_Multiline2.Text = Database.Support[0].Name.ToString() +" / " +Database.Support[1].Name.ToString();
 
                 if (Database.Support[0].Location != Database.Support[1].Location && Var.mode == "Build_Line" && Database.Support[0].voltage_Zone == Database.Support[1].voltage_Zone)
                 {
@@ -768,11 +768,11 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             Node Nd = sender as Node;
             if (Var.mode == "Build_Inspector")
-            { HELP_Multiline1.Text = Nd.Location.ToString() +"\r\n"+Nd.voltage_Zone.ToString()+"\r\n";
+            { HELP_Multiline2.Text = Nd.Location.ToString() +"\r\n"+Nd.voltage_Zone.ToString()+"\r\n";
             
             foreach(Element elm in Nd.ListOfNghElements) 
                 {
-                    HELP_Multiline1.Text += elm.Name + " Z_1 => " + elm.Z_1+"\r\n";
+                    HELP_Multiline2.Text += elm.Name + " Z_1 => " + elm.Z_1+"\r\n";
                 }
                       
             }
@@ -781,19 +781,19 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             Element Elm = sender as Element;
             if (Var.mode == "Build_Inspector" && Elm.Type == "Generator")
-            { HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n"+ 
+            { HELP_Multiline2.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n"+ 
                     "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() +"\r\n" + 
                     "Impedancja: " + "\r\n" + Elm.Z_1.Real + " +j" + Elm.Z_1.Imaginary; }
             else if (Var.mode == "Build_Inspector" && Elm.Type == "Line") 
             {
-                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() + "\r\n" + "Impedancja: " + "\r\n" + Elm.Z_1.Real + " +j" + Elm.Z_1.Imaginary;
+                HELP_Multiline2.Text = Elm.Location.ToString() + "\r\n" + Elm.Name + "\r\n" + "Napięcie: " + Elm.U.Real.ToString() + " +j" + Elm.U.Imaginary.ToString() + "\r\n" + "Impedancja: " + "\r\n" + Elm.Z_1.Real + " +j" + Elm.Z_1.Imaginary;
             }
             else if(Var.mode == "Build_Inspector")
             {
-                HELP_Multiline1.Text = Elm.Location.ToString() + "\r\n" + Elm.Name;
-                HELP_Multiline1.Text += "\r\n" + "Impedancja" + Elm.Z_1.Real + " " + Elm.Z_1.Imaginary+"i"+ "\r\n";
-                HELP_Multiline1.Text += "Impedancja" + Elm.Z_1_H.Real + " " + Elm.Z_1_H.Imaginary + "i" + "\r\n";
-                HELP_Multiline1.Text += "Impedancja" + Elm.Z_1_L.Real + " " + Elm.Z_1_L.Imaginary + "i" + "\r\n";
+                HELP_Multiline2.Text = Elm.Location.ToString() + "\r\n" + Elm.Name;
+                HELP_Multiline2.Text += "\r\n" + "Impedancja" + Elm.Z_1.Real + " " + Elm.Z_1.Imaginary+"i"+ "\r\n";
+                HELP_Multiline2.Text += "Impedancja" + Elm.Z_1_H.Real + " " + Elm.Z_1_H.Imaginary + "i" + "\r\n";
+                HELP_Multiline2.Text += "Impedancja" + Elm.Z_1_L.Real + " " + Elm.Z_1_L.Imaginary + "i" + "\r\n";
             }
 
 
@@ -868,12 +868,11 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         // SOLVERS
 
-            public void setToResults_3_Faz() 
+            public void setToResults() 
             {
             Result_Form R_F = new Result_Form();
             R_F.Show();
             }
-
             public void Solv_3_Faz() 
             {
             Complex I_1 = new Complex(12,13);
