@@ -50,7 +50,6 @@
             this.button_Voltage_Zones_Delete = new System.Windows.Forms.Button();
             this.button_Voltage_Zones_Add = new System.Windows.Forms.Button();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
-            this.button_Short_parameters = new System.Windows.Forms.Button();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -94,6 +93,7 @@
             this.button_Build_Node = new System.Windows.Forms.Button();
             this.button_Short_Set_Node = new System.Windows.Forms.Button();
             this.button_Short_Run = new System.Windows.Forms.Button();
+            this.button_Short_parameters = new System.Windows.Forms.Button();
             this.pictureBox_Map = new System.Windows.Forms.PictureBox();
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -243,7 +243,7 @@
             this.kryptonPage5,
             this.kryptonPage6,
             this.kryptonPage8});
-            this.kryptonNavigator1.SelectedIndex = 2;
+            this.kryptonNavigator1.SelectedIndex = 1;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 181);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -335,12 +335,12 @@
             this.listBox_Voltage_Zones.FormattingEnabled = true;
             this.listBox_Voltage_Zones.Location = new System.Drawing.Point(15, 30);
             this.listBox_Voltage_Zones.Name = "listBox_Voltage_Zones";
-            this.listBox_Voltage_Zones.Size = new System.Drawing.Size(64, 108);
+            this.listBox_Voltage_Zones.Size = new System.Drawing.Size(95, 108);
             this.listBox_Voltage_Zones.TabIndex = 10;
             // 
             // button_Voltage_Zones_Delete
             // 
-            this.button_Voltage_Zones_Delete.Location = new System.Drawing.Point(85, 68);
+            this.button_Voltage_Zones_Delete.Location = new System.Drawing.Point(116, 69);
             this.button_Voltage_Zones_Delete.Name = "button_Voltage_Zones_Delete";
             this.button_Voltage_Zones_Delete.Size = new System.Drawing.Size(36, 35);
             this.button_Voltage_Zones_Delete.TabIndex = 9;
@@ -350,7 +350,7 @@
             // 
             // button_Voltage_Zones_Add
             // 
-            this.button_Voltage_Zones_Add.Location = new System.Drawing.Point(85, 30);
+            this.button_Voltage_Zones_Add.Location = new System.Drawing.Point(116, 30);
             this.button_Voltage_Zones_Add.Name = "button_Voltage_Zones_Add";
             this.button_Voltage_Zones_Add.Size = new System.Drawing.Size(36, 35);
             this.button_Voltage_Zones_Add.TabIndex = 8;
@@ -372,18 +372,6 @@
             this.kryptonPage3.Text = "Zwarcie";
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "1378D86E742D472512BFACCB9F4A561A";
-            // 
-            // button_Short_parameters
-            // 
-            this.button_Short_parameters.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_Options;
-            this.button_Short_parameters.Location = new System.Drawing.Point(16, 12);
-            this.button_Short_parameters.Name = "button_Short_parameters";
-            this.button_Short_parameters.Size = new System.Drawing.Size(75, 106);
-            this.button_Short_parameters.TabIndex = 3;
-            this.button_Short_parameters.Text = "Ustawienia zwarciowe";
-            this.button_Short_parameters.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Short_parameters.UseVisualStyleBackColor = true;
-            this.button_Short_parameters.Click += new System.EventHandler(this.button_Short_parameters_Click);
             // 
             // kryptonPage4
             // 
@@ -737,6 +725,7 @@
             // 
             // button_Build_Transformator
             // 
+            this.button_Build_Transformator.BackColor = System.Drawing.Color.Pink;
             this.button_Build_Transformator.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Transformator;
             this.button_Build_Transformator.Location = new System.Drawing.Point(436, 30);
             this.button_Build_Transformator.Name = "button_Build_Transformator";
@@ -744,11 +733,12 @@
             this.button_Build_Transformator.TabIndex = 13;
             this.button_Build_Transformator.Text = "Transformator";
             this.button_Build_Transformator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Transformator.UseVisualStyleBackColor = true;
+            this.button_Build_Transformator.UseVisualStyleBackColor = false;
             this.button_Build_Transformator.Click += new System.EventHandler(this.button_Build_Transformator_Click);
             // 
             // button_Build_Generator
             // 
+            this.button_Build_Generator.BackColor = System.Drawing.Color.Pink;
             this.button_Build_Generator.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Generator;
             this.button_Build_Generator.Location = new System.Drawing.Point(355, 31);
             this.button_Build_Generator.Name = "button_Build_Generator";
@@ -756,11 +746,12 @@
             this.button_Build_Generator.TabIndex = 6;
             this.button_Build_Generator.Text = "Generator";
             this.button_Build_Generator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Generator.UseVisualStyleBackColor = true;
+            this.button_Build_Generator.UseVisualStyleBackColor = false;
             this.button_Build_Generator.Click += new System.EventHandler(this.button_Build_Generator_Click);
             // 
             // button_Build_Grab
             // 
+            this.button_Build_Grab.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_Build_Grab.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Move;
             this.button_Build_Grab.Location = new System.Drawing.Point(634, 31);
             this.button_Build_Grab.Name = "button_Build_Grab";
@@ -768,11 +759,12 @@
             this.button_Build_Grab.TabIndex = 5;
             this.button_Build_Grab.Text = "Przesuń";
             this.button_Build_Grab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Grab.UseVisualStyleBackColor = true;
+            this.button_Build_Grab.UseVisualStyleBackColor = false;
             this.button_Build_Grab.Click += new System.EventHandler(this.button_Build_Grab_Click);
             // 
             // button_Build_Inspector
             // 
+            this.button_Build_Inspector.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_Build_Inspector.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Inspector;
             this.button_Build_Inspector.Location = new System.Drawing.Point(553, 30);
             this.button_Build_Inspector.Name = "button_Build_Inspector";
@@ -780,11 +772,12 @@
             this.button_Build_Inspector.TabIndex = 4;
             this.button_Build_Inspector.Text = "Inspektor";
             this.button_Build_Inspector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Inspector.UseVisualStyleBackColor = true;
+            this.button_Build_Inspector.UseVisualStyleBackColor = false;
             this.button_Build_Inspector.Click += new System.EventHandler(this.button_Build_Inspector_Click);
             // 
             // button_Build_Delete
             // 
+            this.button_Build_Delete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button_Build_Delete.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Bucket;
             this.button_Build_Delete.Location = new System.Drawing.Point(715, 31);
             this.button_Build_Delete.Name = "button_Build_Delete";
@@ -792,11 +785,12 @@
             this.button_Build_Delete.TabIndex = 3;
             this.button_Build_Delete.Text = "Usuń element";
             this.button_Build_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Delete.UseVisualStyleBackColor = true;
+            this.button_Build_Delete.UseVisualStyleBackColor = false;
             this.button_Build_Delete.Click += new System.EventHandler(this.button_Build_Delete_Click);
             // 
             // button_Build_Line
             // 
+            this.button_Build_Line.BackColor = System.Drawing.Color.Pink;
             this.button_Build_Line.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Line;
             this.button_Build_Line.Location = new System.Drawing.Point(274, 30);
             this.button_Build_Line.Name = "button_Build_Line";
@@ -804,11 +798,12 @@
             this.button_Build_Line.TabIndex = 2;
             this.button_Build_Line.Text = "Linia";
             this.button_Build_Line.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Line.UseVisualStyleBackColor = true;
+            this.button_Build_Line.UseVisualStyleBackColor = false;
             this.button_Build_Line.Click += new System.EventHandler(this.button_Build_Line_Click);
             // 
             // button_Build_Node
             // 
+            this.button_Build_Node.BackColor = System.Drawing.Color.Pink;
             this.button_Build_Node.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Node;
             this.button_Build_Node.Location = new System.Drawing.Point(193, 30);
             this.button_Build_Node.Name = "button_Build_Node";
@@ -816,13 +811,13 @@
             this.button_Build_Node.TabIndex = 1;
             this.button_Build_Node.Text = "Węzeł";
             this.button_Build_Node.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Node.UseVisualStyleBackColor = true;
+            this.button_Build_Node.UseVisualStyleBackColor = false;
             this.button_Build_Node.Click += new System.EventHandler(this.button_Build_Node_Click);
             // 
             // button_Short_Set_Node
             // 
             this.button_Short_Set_Node.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_64__True;
-            this.button_Short_Set_Node.Location = new System.Drawing.Point(178, 15);
+            this.button_Short_Set_Node.Location = new System.Drawing.Point(178, 24);
             this.button_Short_Set_Node.Name = "button_Short_Set_Node";
             this.button_Short_Set_Node.Size = new System.Drawing.Size(75, 103);
             this.button_Short_Set_Node.TabIndex = 5;
@@ -834,7 +829,7 @@
             // button_Short_Run
             // 
             this.button_Short_Run.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_Run;
-            this.button_Short_Run.Location = new System.Drawing.Point(97, 12);
+            this.button_Short_Run.Location = new System.Drawing.Point(97, 21);
             this.button_Short_Run.Name = "button_Short_Run";
             this.button_Short_Run.Size = new System.Drawing.Size(75, 106);
             this.button_Short_Run.TabIndex = 4;
@@ -842,6 +837,18 @@
             this.button_Short_Run.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_Short_Run.UseVisualStyleBackColor = true;
             this.button_Short_Run.Click += new System.EventHandler(this.button_Short_Run_Click);
+            // 
+            // button_Short_parameters
+            // 
+            this.button_Short_parameters.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_Options;
+            this.button_Short_parameters.Location = new System.Drawing.Point(16, 21);
+            this.button_Short_parameters.Name = "button_Short_parameters";
+            this.button_Short_parameters.Size = new System.Drawing.Size(75, 106);
+            this.button_Short_parameters.TabIndex = 3;
+            this.button_Short_parameters.Text = "Ustawienia zwarciowe";
+            this.button_Short_parameters.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Short_parameters.UseVisualStyleBackColor = true;
+            this.button_Short_parameters.Click += new System.EventHandler(this.button_Short_parameters_Click);
             // 
             // pictureBox_Map
             // 
