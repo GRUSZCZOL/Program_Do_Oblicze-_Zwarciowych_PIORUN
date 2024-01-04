@@ -113,9 +113,9 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             //////////////////////////////// Strefa napięcia
             private void button_Voltage_Zones_Add_Click(object sender, EventArgs e) // Dodawanie stryfy napięcia
         {
-            if (textBox_Set_Voltage_Zone.Text != null)
+           /* if (textBox_Set_Voltage_Zone.Text != null)
             { listBox_Voltage_Zones.Items.Add(textBox_Set_Voltage_Zone.Text); }
-            else { MessageBox.Show("Nie ustawiono wartości"); }
+            else { MessageBox.Show("Nie ustawiono wartości"); }*/
         }
             private void button_Voltage_Zones_Delete_Click(object sender, EventArgs e)
         {

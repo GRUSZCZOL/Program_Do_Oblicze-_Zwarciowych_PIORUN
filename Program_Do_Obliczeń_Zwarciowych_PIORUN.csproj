@@ -229,5 +229,35 @@
   <ItemGroup>
     <None Include="Resources\Map_Mode_Set_Scale_Calculator.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Build_Mode_Node.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Build_Mode_Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Build_Mode_Generator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Build_Mode_Transformator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inspector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bucket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Short_Mode%2864%29_True.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Short_Mode_Run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Short_Mode_Options.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
