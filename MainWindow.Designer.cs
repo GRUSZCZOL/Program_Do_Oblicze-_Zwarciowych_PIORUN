@@ -41,15 +41,31 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.kryptonNavigator1 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage2 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Map_Select = new System.Windows.Forms.Button();
+            this.button_Map_Delete = new System.Windows.Forms.Button();
+            this.button_Map_Delete_All = new System.Windows.Forms.Button();
+            this.button_Map_Set_Scale_Selected = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Map_Set_Scale_Kilometers = new System.Windows.Forms.TextBox();
             this.textBox_Map_Set_Scale_Pixels = new System.Windows.Forms.TextBox();
+            this.button_Map_Set_Scale_Hand = new System.Windows.Forms.Button();
             this.kryptonPage1 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.kryptonGroupBox1 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.button_Build_Transformator = new System.Windows.Forms.Button();
             this.listBox_Voltage_Zones = new System.Windows.Forms.ListBox();
             this.button_Voltage_Zones_Delete = new System.Windows.Forms.Button();
             this.button_Voltage_Zones_Add = new System.Windows.Forms.Button();
+            this.button_Build_Generator = new System.Windows.Forms.Button();
+            this.button_Build_Grab = new System.Windows.Forms.Button();
+            this.button_Build_Inspector = new System.Windows.Forms.Button();
+            this.button_Build_Delete = new System.Windows.Forms.Button();
+            this.button_Build_Line = new System.Windows.Forms.Button();
+            this.button_Build_Node = new System.Windows.Forms.Button();
             this.kryptonPage3 = new ComponentFactory.Krypton.Navigator.KryptonPage();
+            this.button_Short_Set_Node = new System.Windows.Forms.Button();
+            this.button_Short_Run = new System.Windows.Forms.Button();
+            this.button_Short_parameters = new System.Windows.Forms.Button();
             this.kryptonPage4 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage5 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.kryptonPage6 = new ComponentFactory.Krypton.Navigator.KryptonPage();
@@ -62,6 +78,7 @@
             this.kryptonNavigator2 = new ComponentFactory.Krypton.Navigator.KryptonNavigator();
             this.kryptonPage7 = new ComponentFactory.Krypton.Navigator.KryptonPage();
             this.panel_Main_Map = new System.Windows.Forms.Panel();
+            this.pictureBox_Map = new System.Windows.Forms.PictureBox();
             this.textBox_Console_Write = new System.Windows.Forms.TextBox();
             this.textBox_Console_Read = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -78,24 +95,15 @@
             this.poradnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button_Map_Select = new System.Windows.Forms.Button();
-            this.button_Map_Delete = new System.Windows.Forms.Button();
-            this.button_Map_Delete_All = new System.Windows.Forms.Button();
-            this.button_Map_Set_Scale_Selected = new System.Windows.Forms.Button();
-            this.button_Map_Set_Scale_Hand = new System.Windows.Forms.Button();
-            this.button_Build_Transformator = new System.Windows.Forms.Button();
-            this.button_Build_Generator = new System.Windows.Forms.Button();
-            this.button_Build_Grab = new System.Windows.Forms.Button();
-            this.button_Build_Inspector = new System.Windows.Forms.Button();
-            this.button_Build_Delete = new System.Windows.Forms.Button();
-            this.button_Build_Line = new System.Windows.Forms.Button();
-            this.button_Build_Node = new System.Windows.Forms.Button();
-            this.button_Short_Set_Node = new System.Windows.Forms.Button();
-            this.button_Short_Run = new System.Windows.Forms.Button();
-            this.button_Short_parameters = new System.Windows.Forms.Button();
-            this.pictureBox_Map = new System.Windows.Forms.PictureBox();
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.kryptonGroupBox2 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox3 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox4 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox5 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox6 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox7 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox8 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -110,6 +118,10 @@
             this.kryptonPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).BeginInit();
             this.kryptonPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).BeginInit();
+            this.kryptonGroupBox1.Panel.SuspendLayout();
+            this.kryptonGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).BeginInit();
             this.kryptonPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).BeginInit();
@@ -126,9 +138,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage7)).BeginInit();
             this.kryptonPage7.SuspendLayout();
             this.panel_Main_Map.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).BeginInit();
+            this.kryptonGroupBox2.Panel.SuspendLayout();
+            this.kryptonGroupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3.Panel)).BeginInit();
+            this.kryptonGroupBox3.Panel.SuspendLayout();
+            this.kryptonGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).BeginInit();
+            this.kryptonGroupBox4.Panel.SuspendLayout();
+            this.kryptonGroupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5.Panel)).BeginInit();
+            this.kryptonGroupBox5.Panel.SuspendLayout();
+            this.kryptonGroupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox6.Panel)).BeginInit();
+            this.kryptonGroupBox6.Panel.SuspendLayout();
+            this.kryptonGroupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox7.Panel)).BeginInit();
+            this.kryptonGroupBox7.Panel.SuspendLayout();
+            this.kryptonGroupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox8.Panel)).BeginInit();
+            this.kryptonGroupBox8.Panel.SuspendLayout();
+            this.kryptonGroupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -178,33 +218,32 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.splitContainer1.Panel1.Controls.Add(this.HELP_Multiline2);
-            this.splitContainer1.Panel1.Controls.Add(this.HELP);
+            this.splitContainer1.Panel1.Controls.Add(this.kryptonGroupBox7);
+            this.splitContainer1.Panel1.Controls.Add(this.kryptonGroupBox6);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1184, 537);
-            this.splitContainer1.SplitterDistance = 127;
+            this.splitContainer1.SplitterDistance = 136;
             this.splitContainer1.TabIndex = 0;
             // 
             // HELP_Multiline2
             // 
             this.HELP_Multiline2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 20);
+            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 0);
             this.HELP_Multiline2.Multiline = true;
             this.HELP_Multiline2.Name = "HELP_Multiline2";
-            this.HELP_Multiline2.Size = new System.Drawing.Size(127, 517);
+            this.HELP_Multiline2.Size = new System.Drawing.Size(132, 470);
             this.HELP_Multiline2.TabIndex = 2;
-            this.HELP_Multiline2.Text = "Informator:";
             // 
             // HELP
             // 
-            this.HELP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.HELP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HELP.Location = new System.Drawing.Point(0, 0);
             this.HELP.Name = "HELP";
-            this.HELP.Size = new System.Drawing.Size(127, 20);
+            this.HELP.Size = new System.Drawing.Size(132, 20);
             this.HELP.TabIndex = 0;
             // 
             // splitContainer2
@@ -222,8 +261,8 @@
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1053, 537);
-            this.splitContainer2.SplitterDistance = 181;
+            this.splitContainer2.Size = new System.Drawing.Size(1044, 537);
+            this.splitContainer2.SplitterDistance = 184;
             this.splitContainer2.TabIndex = 0;
             // 
             // kryptonNavigator1
@@ -243,37 +282,84 @@
             this.kryptonPage5,
             this.kryptonPage6,
             this.kryptonPage8});
-            this.kryptonNavigator1.SelectedIndex = 1;
-            this.kryptonNavigator1.Size = new System.Drawing.Size(1053, 181);
+            this.kryptonNavigator1.SelectedIndex = 0;
+            this.kryptonNavigator1.Size = new System.Drawing.Size(1044, 184);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
             // 
             // kryptonPage2
             // 
             this.kryptonPage2.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage2.Controls.Add(this.button_Map_Select);
-            this.kryptonPage2.Controls.Add(this.button_Map_Delete);
-            this.kryptonPage2.Controls.Add(this.button_Map_Delete_All);
-            this.kryptonPage2.Controls.Add(this.button_Map_Set_Scale_Selected);
-            this.kryptonPage2.Controls.Add(this.label2);
-            this.kryptonPage2.Controls.Add(this.label1);
-            this.kryptonPage2.Controls.Add(this.textBox_Map_Set_Scale_Kilometers);
-            this.kryptonPage2.Controls.Add(this.textBox_Map_Set_Scale_Pixels);
-            this.kryptonPage2.Controls.Add(this.button_Map_Set_Scale_Hand);
+            this.kryptonPage2.Controls.Add(this.kryptonGroupBox5);
+            this.kryptonPage2.Controls.Add(this.kryptonGroupBox4);
             this.kryptonPage2.Flags = 65534;
             this.kryptonPage2.LastVisibleSet = true;
             this.kryptonPage2.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage2.Name = "kryptonPage2";
-            this.kryptonPage2.Size = new System.Drawing.Size(1051, 154);
+            this.kryptonPage2.Size = new System.Drawing.Size(1042, 157);
             this.kryptonPage2.Text = "Mapa";
             this.kryptonPage2.ToolTipTitle = "Page ToolTip";
             this.kryptonPage2.UniqueName = "F4A6012C153145B6E394BB5199BED7CB";
+            // 
+            // button_Map_Select
+            // 
+            this.button_Map_Select.BackColor = System.Drawing.Color.PowderBlue;
+            this.button_Map_Select.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Load_Image;
+            this.button_Map_Select.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_Map_Select.Location = new System.Drawing.Point(3, 5);
+            this.button_Map_Select.Name = "button_Map_Select";
+            this.button_Map_Select.Size = new System.Drawing.Size(75, 119);
+            this.button_Map_Select.TabIndex = 0;
+            this.button_Map_Select.Text = "Wybierz mape";
+            this.button_Map_Select.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Map_Select.UseVisualStyleBackColor = false;
+            this.button_Map_Select.Click += new System.EventHandler(this.button_Map_Select_Click);
+            // 
+            // button_Map_Delete
+            // 
+            this.button_Map_Delete.BackColor = System.Drawing.Color.PowderBlue;
+            this.button_Map_Delete.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Delete_Image;
+            this.button_Map_Delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_Map_Delete.Location = new System.Drawing.Point(81, 5);
+            this.button_Map_Delete.Name = "button_Map_Delete";
+            this.button_Map_Delete.Size = new System.Drawing.Size(75, 119);
+            this.button_Map_Delete.TabIndex = 1;
+            this.button_Map_Delete.Text = "Usuń mape";
+            this.button_Map_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Map_Delete.UseVisualStyleBackColor = false;
+            this.button_Map_Delete.Click += new System.EventHandler(this.button_Map_Delete_Click);
+            // 
+            // button_Map_Delete_All
+            // 
+            this.button_Map_Delete_All.BackColor = System.Drawing.Color.PowderBlue;
+            this.button_Map_Delete_All.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Delete_All;
+            this.button_Map_Delete_All.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_Map_Delete_All.Location = new System.Drawing.Point(162, 4);
+            this.button_Map_Delete_All.Name = "button_Map_Delete_All";
+            this.button_Map_Delete_All.Size = new System.Drawing.Size(75, 120);
+            this.button_Map_Delete_All.TabIndex = 2;
+            this.button_Map_Delete_All.Text = "Usuń wszystkie elementy";
+            this.button_Map_Delete_All.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Map_Delete_All.UseVisualStyleBackColor = false;
+            // 
+            // button_Map_Set_Scale_Selected
+            // 
+            this.button_Map_Set_Scale_Selected.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button_Map_Set_Scale_Selected.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Set_Scale_Calculator;
+            this.button_Map_Set_Scale_Selected.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_Map_Set_Scale_Selected.Location = new System.Drawing.Point(94, 5);
+            this.button_Map_Set_Scale_Selected.Name = "button_Map_Set_Scale_Selected";
+            this.button_Map_Set_Scale_Selected.Size = new System.Drawing.Size(75, 119);
+            this.button_Map_Set_Scale_Selected.TabIndex = 11;
+            this.button_Map_Set_Scale_Selected.Text = "Ustaw Wybraną Skale ";
+            this.button_Map_Set_Scale_Selected.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Map_Set_Scale_Selected.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(429, 68);
+            this.label2.Location = new System.Drawing.Point(183, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 10;
@@ -283,7 +369,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(429, 24);
+            this.label1.Location = new System.Drawing.Point(183, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 9;
@@ -291,7 +377,7 @@
             // 
             // textBox_Map_Set_Scale_Kilometers
             // 
-            this.textBox_Map_Set_Scale_Kilometers.Location = new System.Drawing.Point(421, 84);
+            this.textBox_Map_Set_Scale_Kilometers.Location = new System.Drawing.Point(175, 74);
             this.textBox_Map_Set_Scale_Kilometers.Name = "textBox_Map_Set_Scale_Kilometers";
             this.textBox_Map_Set_Scale_Kilometers.Size = new System.Drawing.Size(72, 20);
             this.textBox_Map_Set_Scale_Kilometers.TabIndex = 8;
@@ -300,47 +386,83 @@
             // 
             // textBox_Map_Set_Scale_Pixels
             // 
-            this.textBox_Map_Set_Scale_Pixels.Location = new System.Drawing.Point(421, 40);
+            this.textBox_Map_Set_Scale_Pixels.Location = new System.Drawing.Point(175, 30);
             this.textBox_Map_Set_Scale_Pixels.Name = "textBox_Map_Set_Scale_Pixels";
             this.textBox_Map_Set_Scale_Pixels.Size = new System.Drawing.Size(72, 20);
             this.textBox_Map_Set_Scale_Pixels.TabIndex = 7;
             this.textBox_Map_Set_Scale_Pixels.Text = "0";
             this.textBox_Map_Set_Scale_Pixels.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button_Map_Set_Scale_Hand
+            // 
+            this.button_Map_Set_Scale_Hand.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button_Map_Set_Scale_Hand.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Set_Scale_By_Mouse;
+            this.button_Map_Set_Scale_Hand.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button_Map_Set_Scale_Hand.Location = new System.Drawing.Point(13, 5);
+            this.button_Map_Set_Scale_Hand.Name = "button_Map_Set_Scale_Hand";
+            this.button_Map_Set_Scale_Hand.Size = new System.Drawing.Size(75, 119);
+            this.button_Map_Set_Scale_Hand.TabIndex = 3;
+            this.button_Map_Set_Scale_Hand.Text = "Ustaw Skale Ręcznie";
+            this.button_Map_Set_Scale_Hand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Map_Set_Scale_Hand.UseVisualStyleBackColor = false;
+            // 
             // kryptonPage1
             // 
             this.kryptonPage1.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage1.Controls.Add(this.label3);
-            this.kryptonPage1.Controls.Add(this.button_Build_Transformator);
-            this.kryptonPage1.Controls.Add(this.listBox_Voltage_Zones);
-            this.kryptonPage1.Controls.Add(this.button_Voltage_Zones_Delete);
-            this.kryptonPage1.Controls.Add(this.button_Voltage_Zones_Add);
-            this.kryptonPage1.Controls.Add(this.button_Build_Generator);
-            this.kryptonPage1.Controls.Add(this.button_Build_Grab);
-            this.kryptonPage1.Controls.Add(this.button_Build_Inspector);
-            this.kryptonPage1.Controls.Add(this.button_Build_Delete);
-            this.kryptonPage1.Controls.Add(this.button_Build_Line);
-            this.kryptonPage1.Controls.Add(this.button_Build_Node);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox3);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox2);
+            this.kryptonPage1.Controls.Add(this.kryptonGroupBox1);
             this.kryptonPage1.Flags = 65534;
             this.kryptonPage1.LastVisibleSet = true;
             this.kryptonPage1.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage1.Name = "kryptonPage1";
-            this.kryptonPage1.Size = new System.Drawing.Size(1051, 154);
+            this.kryptonPage1.Size = new System.Drawing.Size(1042, 157);
             this.kryptonPage1.Text = "Budowanie";
             this.kryptonPage1.ToolTipTitle = "Page ToolTip";
             this.kryptonPage1.UniqueName = "9110C834021D44397AAC87818037AF22";
             // 
+            // kryptonGroupBox1
+            // 
+            this.kryptonGroupBox1.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox1.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox1.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox1.Location = new System.Drawing.Point(0, 0);
+            this.kryptonGroupBox1.Name = "kryptonGroupBox1";
+            // 
+            // kryptonGroupBox1.Panel
+            // 
+            this.kryptonGroupBox1.Panel.Controls.Add(this.listBox_Voltage_Zones);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.button_Voltage_Zones_Add);
+            this.kryptonGroupBox1.Panel.Controls.Add(this.button_Voltage_Zones_Delete);
+            this.kryptonGroupBox1.Size = new System.Drawing.Size(166, 157);
+            this.kryptonGroupBox1.TabIndex = 15;
+            this.kryptonGroupBox1.Values.Heading = "Edycja Strefy Napięcia";
+            // 
+            // button_Build_Transformator
+            // 
+            this.button_Build_Transformator.BackColor = System.Drawing.Color.Pink;
+            this.button_Build_Transformator.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Transformator;
+            this.button_Build_Transformator.Location = new System.Drawing.Point(256, 10);
+            this.button_Build_Transformator.Name = "button_Build_Transformator";
+            this.button_Build_Transformator.Size = new System.Drawing.Size(75, 104);
+            this.button_Build_Transformator.TabIndex = 13;
+            this.button_Build_Transformator.Text = "Transformator";
+            this.button_Build_Transformator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Build_Transformator.UseVisualStyleBackColor = false;
+            this.button_Build_Transformator.Click += new System.EventHandler(this.button_Build_Transformator_Click);
+            // 
             // listBox_Voltage_Zones
             // 
             this.listBox_Voltage_Zones.FormattingEnabled = true;
-            this.listBox_Voltage_Zones.Location = new System.Drawing.Point(15, 30);
+            this.listBox_Voltage_Zones.Location = new System.Drawing.Point(12, 10);
             this.listBox_Voltage_Zones.Name = "listBox_Voltage_Zones";
             this.listBox_Voltage_Zones.Size = new System.Drawing.Size(95, 108);
             this.listBox_Voltage_Zones.TabIndex = 10;
             // 
             // button_Voltage_Zones_Delete
             // 
-            this.button_Voltage_Zones_Delete.Location = new System.Drawing.Point(116, 69);
+            this.button_Voltage_Zones_Delete.Location = new System.Drawing.Point(113, 49);
             this.button_Voltage_Zones_Delete.Name = "button_Voltage_Zones_Delete";
             this.button_Voltage_Zones_Delete.Size = new System.Drawing.Size(36, 35);
             this.button_Voltage_Zones_Delete.TabIndex = 9;
@@ -350,7 +472,7 @@
             // 
             // button_Voltage_Zones_Add
             // 
-            this.button_Voltage_Zones_Add.Location = new System.Drawing.Point(116, 30);
+            this.button_Voltage_Zones_Add.Location = new System.Drawing.Point(113, 10);
             this.button_Voltage_Zones_Add.Name = "button_Voltage_Zones_Add";
             this.button_Voltage_Zones_Add.Size = new System.Drawing.Size(36, 35);
             this.button_Voltage_Zones_Add.TabIndex = 8;
@@ -358,20 +480,132 @@
             this.button_Voltage_Zones_Add.UseVisualStyleBackColor = true;
             this.button_Voltage_Zones_Add.Click += new System.EventHandler(this.button_Voltage_Zones_Add_Click);
             // 
+            // button_Build_Generator
+            // 
+            this.button_Build_Generator.BackColor = System.Drawing.Color.Pink;
+            this.button_Build_Generator.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Generator;
+            this.button_Build_Generator.Location = new System.Drawing.Point(175, 10);
+            this.button_Build_Generator.Name = "button_Build_Generator";
+            this.button_Build_Generator.Size = new System.Drawing.Size(75, 103);
+            this.button_Build_Generator.TabIndex = 6;
+            this.button_Build_Generator.Text = "Generator";
+            this.button_Build_Generator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Build_Generator.UseVisualStyleBackColor = false;
+            this.button_Build_Generator.Click += new System.EventHandler(this.button_Build_Generator_Click);
+            // 
+            // button_Build_Grab
+            // 
+            this.button_Build_Grab.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button_Build_Grab.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Move;
+            this.button_Build_Grab.Location = new System.Drawing.Point(93, 4);
+            this.button_Build_Grab.Name = "button_Build_Grab";
+            this.button_Build_Grab.Size = new System.Drawing.Size(75, 103);
+            this.button_Build_Grab.TabIndex = 5;
+            this.button_Build_Grab.Text = "Przesuń";
+            this.button_Build_Grab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Build_Grab.UseVisualStyleBackColor = false;
+            this.button_Build_Grab.Click += new System.EventHandler(this.button_Build_Grab_Click);
+            // 
+            // button_Build_Inspector
+            // 
+            this.button_Build_Inspector.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button_Build_Inspector.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Inspector;
+            this.button_Build_Inspector.Location = new System.Drawing.Point(12, 3);
+            this.button_Build_Inspector.Name = "button_Build_Inspector";
+            this.button_Build_Inspector.Size = new System.Drawing.Size(75, 104);
+            this.button_Build_Inspector.TabIndex = 4;
+            this.button_Build_Inspector.Text = "Inspektor";
+            this.button_Build_Inspector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Build_Inspector.UseVisualStyleBackColor = false;
+            this.button_Build_Inspector.Click += new System.EventHandler(this.button_Build_Inspector_Click);
+            // 
+            // button_Build_Delete
+            // 
+            this.button_Build_Delete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button_Build_Delete.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Bucket;
+            this.button_Build_Delete.Location = new System.Drawing.Point(174, 4);
+            this.button_Build_Delete.Name = "button_Build_Delete";
+            this.button_Build_Delete.Size = new System.Drawing.Size(75, 103);
+            this.button_Build_Delete.TabIndex = 3;
+            this.button_Build_Delete.Text = "Usuń element";
+            this.button_Build_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Build_Delete.UseVisualStyleBackColor = false;
+            this.button_Build_Delete.Click += new System.EventHandler(this.button_Build_Delete_Click);
+            // 
+            // button_Build_Line
+            // 
+            this.button_Build_Line.BackColor = System.Drawing.Color.Pink;
+            this.button_Build_Line.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Line;
+            this.button_Build_Line.Location = new System.Drawing.Point(94, 10);
+            this.button_Build_Line.Name = "button_Build_Line";
+            this.button_Build_Line.Size = new System.Drawing.Size(75, 104);
+            this.button_Build_Line.TabIndex = 2;
+            this.button_Build_Line.Text = "Linia";
+            this.button_Build_Line.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Build_Line.UseVisualStyleBackColor = false;
+            this.button_Build_Line.Click += new System.EventHandler(this.button_Build_Line_Click);
+            // 
+            // button_Build_Node
+            // 
+            this.button_Build_Node.BackColor = System.Drawing.Color.Pink;
+            this.button_Build_Node.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Node;
+            this.button_Build_Node.Location = new System.Drawing.Point(13, 9);
+            this.button_Build_Node.Name = "button_Build_Node";
+            this.button_Build_Node.Size = new System.Drawing.Size(75, 104);
+            this.button_Build_Node.TabIndex = 1;
+            this.button_Build_Node.Text = "Węzeł";
+            this.button_Build_Node.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Build_Node.UseVisualStyleBackColor = false;
+            this.button_Build_Node.Click += new System.EventHandler(this.button_Build_Node_Click);
+            // 
             // kryptonPage3
             // 
             this.kryptonPage3.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage3.Controls.Add(this.button_Short_Set_Node);
-            this.kryptonPage3.Controls.Add(this.button_Short_Run);
-            this.kryptonPage3.Controls.Add(this.button_Short_parameters);
+            this.kryptonPage3.Controls.Add(this.kryptonGroupBox8);
             this.kryptonPage3.Flags = 65534;
             this.kryptonPage3.LastVisibleSet = true;
             this.kryptonPage3.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage3.Name = "kryptonPage3";
-            this.kryptonPage3.Size = new System.Drawing.Size(1051, 154);
+            this.kryptonPage3.Size = new System.Drawing.Size(1042, 157);
             this.kryptonPage3.Text = "Zwarcie";
             this.kryptonPage3.ToolTipTitle = "Page ToolTip";
             this.kryptonPage3.UniqueName = "1378D86E742D472512BFACCB9F4A561A";
+            // 
+            // button_Short_Set_Node
+            // 
+            this.button_Short_Set_Node.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_64__True;
+            this.button_Short_Set_Node.Location = new System.Drawing.Point(166, 13);
+            this.button_Short_Set_Node.Name = "button_Short_Set_Node";
+            this.button_Short_Set_Node.Size = new System.Drawing.Size(75, 103);
+            this.button_Short_Set_Node.TabIndex = 5;
+            this.button_Short_Set_Node.Text = "Ustal miejsce zwarcia";
+            this.button_Short_Set_Node.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Short_Set_Node.UseVisualStyleBackColor = true;
+            this.button_Short_Set_Node.Click += new System.EventHandler(this.button_Short_Set_Node_Click);
+            // 
+            // button_Short_Run
+            // 
+            this.button_Short_Run.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_Run;
+            this.button_Short_Run.Location = new System.Drawing.Point(85, 10);
+            this.button_Short_Run.Name = "button_Short_Run";
+            this.button_Short_Run.Size = new System.Drawing.Size(75, 106);
+            this.button_Short_Run.TabIndex = 4;
+            this.button_Short_Run.Text = "Rozpocznij obliczenia";
+            this.button_Short_Run.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Short_Run.UseVisualStyleBackColor = true;
+            this.button_Short_Run.Click += new System.EventHandler(this.button_Short_Run_Click);
+            // 
+            // button_Short_parameters
+            // 
+            this.button_Short_parameters.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_Options;
+            this.button_Short_parameters.Location = new System.Drawing.Point(4, 10);
+            this.button_Short_parameters.Name = "button_Short_parameters";
+            this.button_Short_parameters.Size = new System.Drawing.Size(75, 106);
+            this.button_Short_parameters.TabIndex = 3;
+            this.button_Short_parameters.Text = "Ustawienia zwarciowe";
+            this.button_Short_parameters.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_Short_parameters.UseVisualStyleBackColor = true;
+            this.button_Short_parameters.Click += new System.EventHandler(this.button_Short_parameters_Click);
             // 
             // kryptonPage4
             // 
@@ -480,8 +714,8 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Write);
             this.splitContainer3.Panel2.Controls.Add(this.textBox_Console_Read);
-            this.splitContainer3.Size = new System.Drawing.Size(1053, 352);
-            this.splitContainer3.SplitterDistance = 281;
+            this.splitContainer3.Size = new System.Drawing.Size(1044, 349);
+            this.splitContainer3.SplitterDistance = 278;
             this.splitContainer3.TabIndex = 0;
             // 
             // kryptonNavigator2
@@ -494,7 +728,7 @@
             this.kryptonNavigator2.Pages.AddRange(new ComponentFactory.Krypton.Navigator.KryptonPage[] {
             this.kryptonPage7});
             this.kryptonNavigator2.SelectedIndex = 0;
-            this.kryptonNavigator2.Size = new System.Drawing.Size(1053, 281);
+            this.kryptonNavigator2.Size = new System.Drawing.Size(1044, 278);
             this.kryptonNavigator2.TabIndex = 1;
             this.kryptonNavigator2.Text = "kryptonNavigator2";
             // 
@@ -506,7 +740,7 @@
             this.kryptonPage7.LastVisibleSet = true;
             this.kryptonPage7.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage7.Name = "kryptonPage7";
-            this.kryptonPage7.Size = new System.Drawing.Size(1051, 254);
+            this.kryptonPage7.Size = new System.Drawing.Size(1042, 251);
             this.kryptonPage7.Text = "Mapa główna";
             this.kryptonPage7.ToolTipTitle = "Page ToolTip";
             this.kryptonPage7.UniqueName = "3C58A40CEAD844E2D4853D4D72F2F2EE";
@@ -518,8 +752,20 @@
             this.panel_Main_Map.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Main_Map.Location = new System.Drawing.Point(0, 0);
             this.panel_Main_Map.Name = "panel_Main_Map";
-            this.panel_Main_Map.Size = new System.Drawing.Size(1051, 254);
+            this.panel_Main_Map.Size = new System.Drawing.Size(1042, 251);
             this.panel_Main_Map.TabIndex = 0;
+            // 
+            // pictureBox_Map
+            // 
+            this.pictureBox_Map.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.pictureBox_Map.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox_Map.Name = "pictureBox_Map";
+            this.pictureBox_Map.Size = new System.Drawing.Size(1200, 800);
+            this.pictureBox_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox_Map.TabIndex = 0;
+            this.pictureBox_Map.TabStop = false;
+            this.pictureBox_Map.Click += new System.EventHandler(this.pictureBox_Map_Click);
+            this.pictureBox_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Map_MouseMove);
             // 
             // textBox_Console_Write
             // 
@@ -527,7 +773,7 @@
             this.textBox_Console_Write.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textBox_Console_Write.Location = new System.Drawing.Point(0, 47);
             this.textBox_Console_Write.Name = "textBox_Console_Write";
-            this.textBox_Console_Write.Size = new System.Drawing.Size(1053, 20);
+            this.textBox_Console_Write.Size = new System.Drawing.Size(1044, 20);
             this.textBox_Console_Write.TabIndex = 1;
             this.textBox_Console_Write.Text = "Console_Write//";
             // 
@@ -540,7 +786,7 @@
             this.textBox_Console_Read.Multiline = true;
             this.textBox_Console_Read.Name = "textBox_Console_Read";
             this.textBox_Console_Read.ReadOnly = true;
-            this.textBox_Console_Read.Size = new System.Drawing.Size(1053, 67);
+            this.textBox_Console_Read.Size = new System.Drawing.Size(1044, 67);
             this.textBox_Console_Read.TabIndex = 0;
             this.textBox_Console_Read.Text = "Console_Read";
             // 
@@ -645,226 +891,135 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(13, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 16);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Edycja strefy napięcia";
-            // 
-            // button_Map_Select
-            // 
-            this.button_Map_Select.BackColor = System.Drawing.Color.PowderBlue;
-            this.button_Map_Select.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Load_Image;
-            this.button_Map_Select.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Map_Select.Location = new System.Drawing.Point(16, 15);
-            this.button_Map_Select.Name = "button_Map_Select";
-            this.button_Map_Select.Size = new System.Drawing.Size(75, 120);
-            this.button_Map_Select.TabIndex = 0;
-            this.button_Map_Select.Text = "Wybierz mape";
-            this.button_Map_Select.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Map_Select.UseVisualStyleBackColor = false;
-            this.button_Map_Select.Click += new System.EventHandler(this.button_Map_Select_Click);
-            // 
-            // button_Map_Delete
-            // 
-            this.button_Map_Delete.BackColor = System.Drawing.Color.PowderBlue;
-            this.button_Map_Delete.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Delete_Image;
-            this.button_Map_Delete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Map_Delete.Location = new System.Drawing.Point(94, 15);
-            this.button_Map_Delete.Name = "button_Map_Delete";
-            this.button_Map_Delete.Size = new System.Drawing.Size(75, 120);
-            this.button_Map_Delete.TabIndex = 1;
-            this.button_Map_Delete.Text = "Usuń mape";
-            this.button_Map_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Map_Delete.UseVisualStyleBackColor = false;
-            this.button_Map_Delete.Click += new System.EventHandler(this.button_Map_Delete_Click);
-            // 
-            // button_Map_Delete_All
-            // 
-            this.button_Map_Delete_All.BackColor = System.Drawing.Color.PowderBlue;
-            this.button_Map_Delete_All.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Delete_All;
-            this.button_Map_Delete_All.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Map_Delete_All.Location = new System.Drawing.Point(175, 14);
-            this.button_Map_Delete_All.Name = "button_Map_Delete_All";
-            this.button_Map_Delete_All.Size = new System.Drawing.Size(75, 121);
-            this.button_Map_Delete_All.TabIndex = 2;
-            this.button_Map_Delete_All.Text = "Usuń wszystkie elementy";
-            this.button_Map_Delete_All.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Map_Delete_All.UseVisualStyleBackColor = false;
-            // 
-            // button_Map_Set_Scale_Selected
-            // 
-            this.button_Map_Set_Scale_Selected.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button_Map_Set_Scale_Selected.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Set_Scale_Calculator;
-            this.button_Map_Set_Scale_Selected.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Map_Set_Scale_Selected.Location = new System.Drawing.Point(340, 15);
-            this.button_Map_Set_Scale_Selected.Name = "button_Map_Set_Scale_Selected";
-            this.button_Map_Set_Scale_Selected.Size = new System.Drawing.Size(75, 120);
-            this.button_Map_Set_Scale_Selected.TabIndex = 11;
-            this.button_Map_Set_Scale_Selected.Text = "Ustaw Wybraną Skale ";
-            this.button_Map_Set_Scale_Selected.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Map_Set_Scale_Selected.UseVisualStyleBackColor = false;
-            // 
-            // button_Map_Set_Scale_Hand
-            // 
-            this.button_Map_Set_Scale_Hand.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button_Map_Set_Scale_Hand.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Map_Mode_Set_Scale_By_Mouse;
-            this.button_Map_Set_Scale_Hand.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Map_Set_Scale_Hand.Location = new System.Drawing.Point(259, 15);
-            this.button_Map_Set_Scale_Hand.Name = "button_Map_Set_Scale_Hand";
-            this.button_Map_Set_Scale_Hand.Size = new System.Drawing.Size(75, 120);
-            this.button_Map_Set_Scale_Hand.TabIndex = 3;
-            this.button_Map_Set_Scale_Hand.Text = "Ustaw Skale Ręcznie";
-            this.button_Map_Set_Scale_Hand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Map_Set_Scale_Hand.UseVisualStyleBackColor = false;
-            // 
-            // button_Build_Transformator
-            // 
-            this.button_Build_Transformator.BackColor = System.Drawing.Color.Pink;
-            this.button_Build_Transformator.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Transformator;
-            this.button_Build_Transformator.Location = new System.Drawing.Point(436, 30);
-            this.button_Build_Transformator.Name = "button_Build_Transformator";
-            this.button_Build_Transformator.Size = new System.Drawing.Size(75, 104);
-            this.button_Build_Transformator.TabIndex = 13;
-            this.button_Build_Transformator.Text = "Transformator";
-            this.button_Build_Transformator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Transformator.UseVisualStyleBackColor = false;
-            this.button_Build_Transformator.Click += new System.EventHandler(this.button_Build_Transformator_Click);
-            // 
-            // button_Build_Generator
-            // 
-            this.button_Build_Generator.BackColor = System.Drawing.Color.Pink;
-            this.button_Build_Generator.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Generator;
-            this.button_Build_Generator.Location = new System.Drawing.Point(355, 31);
-            this.button_Build_Generator.Name = "button_Build_Generator";
-            this.button_Build_Generator.Size = new System.Drawing.Size(75, 103);
-            this.button_Build_Generator.TabIndex = 6;
-            this.button_Build_Generator.Text = "Generator";
-            this.button_Build_Generator.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Generator.UseVisualStyleBackColor = false;
-            this.button_Build_Generator.Click += new System.EventHandler(this.button_Build_Generator_Click);
-            // 
-            // button_Build_Grab
-            // 
-            this.button_Build_Grab.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button_Build_Grab.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Move;
-            this.button_Build_Grab.Location = new System.Drawing.Point(634, 31);
-            this.button_Build_Grab.Name = "button_Build_Grab";
-            this.button_Build_Grab.Size = new System.Drawing.Size(75, 103);
-            this.button_Build_Grab.TabIndex = 5;
-            this.button_Build_Grab.Text = "Przesuń";
-            this.button_Build_Grab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Grab.UseVisualStyleBackColor = false;
-            this.button_Build_Grab.Click += new System.EventHandler(this.button_Build_Grab_Click);
-            // 
-            // button_Build_Inspector
-            // 
-            this.button_Build_Inspector.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button_Build_Inspector.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Inspector;
-            this.button_Build_Inspector.Location = new System.Drawing.Point(553, 30);
-            this.button_Build_Inspector.Name = "button_Build_Inspector";
-            this.button_Build_Inspector.Size = new System.Drawing.Size(75, 104);
-            this.button_Build_Inspector.TabIndex = 4;
-            this.button_Build_Inspector.Text = "Inspektor";
-            this.button_Build_Inspector.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Inspector.UseVisualStyleBackColor = false;
-            this.button_Build_Inspector.Click += new System.EventHandler(this.button_Build_Inspector_Click);
-            // 
-            // button_Build_Delete
-            // 
-            this.button_Build_Delete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button_Build_Delete.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Bucket;
-            this.button_Build_Delete.Location = new System.Drawing.Point(715, 31);
-            this.button_Build_Delete.Name = "button_Build_Delete";
-            this.button_Build_Delete.Size = new System.Drawing.Size(75, 103);
-            this.button_Build_Delete.TabIndex = 3;
-            this.button_Build_Delete.Text = "Usuń element";
-            this.button_Build_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Delete.UseVisualStyleBackColor = false;
-            this.button_Build_Delete.Click += new System.EventHandler(this.button_Build_Delete_Click);
-            // 
-            // button_Build_Line
-            // 
-            this.button_Build_Line.BackColor = System.Drawing.Color.Pink;
-            this.button_Build_Line.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Line;
-            this.button_Build_Line.Location = new System.Drawing.Point(274, 30);
-            this.button_Build_Line.Name = "button_Build_Line";
-            this.button_Build_Line.Size = new System.Drawing.Size(75, 104);
-            this.button_Build_Line.TabIndex = 2;
-            this.button_Build_Line.Text = "Linia";
-            this.button_Build_Line.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Line.UseVisualStyleBackColor = false;
-            this.button_Build_Line.Click += new System.EventHandler(this.button_Build_Line_Click);
-            // 
-            // button_Build_Node
-            // 
-            this.button_Build_Node.BackColor = System.Drawing.Color.Pink;
-            this.button_Build_Node.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Build_Mode_Node;
-            this.button_Build_Node.Location = new System.Drawing.Point(193, 30);
-            this.button_Build_Node.Name = "button_Build_Node";
-            this.button_Build_Node.Size = new System.Drawing.Size(75, 104);
-            this.button_Build_Node.TabIndex = 1;
-            this.button_Build_Node.Text = "Węzeł";
-            this.button_Build_Node.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Build_Node.UseVisualStyleBackColor = false;
-            this.button_Build_Node.Click += new System.EventHandler(this.button_Build_Node_Click);
-            // 
-            // button_Short_Set_Node
-            // 
-            this.button_Short_Set_Node.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_64__True;
-            this.button_Short_Set_Node.Location = new System.Drawing.Point(178, 24);
-            this.button_Short_Set_Node.Name = "button_Short_Set_Node";
-            this.button_Short_Set_Node.Size = new System.Drawing.Size(75, 103);
-            this.button_Short_Set_Node.TabIndex = 5;
-            this.button_Short_Set_Node.Text = "Ustal miejsce zwarcia";
-            this.button_Short_Set_Node.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Short_Set_Node.UseVisualStyleBackColor = true;
-            this.button_Short_Set_Node.Click += new System.EventHandler(this.button_Short_Set_Node_Click);
-            // 
-            // button_Short_Run
-            // 
-            this.button_Short_Run.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_Run;
-            this.button_Short_Run.Location = new System.Drawing.Point(97, 21);
-            this.button_Short_Run.Name = "button_Short_Run";
-            this.button_Short_Run.Size = new System.Drawing.Size(75, 106);
-            this.button_Short_Run.TabIndex = 4;
-            this.button_Short_Run.Text = "Rozpocznij obliczenia";
-            this.button_Short_Run.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Short_Run.UseVisualStyleBackColor = true;
-            this.button_Short_Run.Click += new System.EventHandler(this.button_Short_Run_Click);
-            // 
-            // button_Short_parameters
-            // 
-            this.button_Short_parameters.Image = global::Program_Do_Obliczeń_Zwarciowych_PIORUN.Properties.Resources.Short_Mode_Options;
-            this.button_Short_parameters.Location = new System.Drawing.Point(16, 21);
-            this.button_Short_parameters.Name = "button_Short_parameters";
-            this.button_Short_parameters.Size = new System.Drawing.Size(75, 106);
-            this.button_Short_parameters.TabIndex = 3;
-            this.button_Short_parameters.Text = "Ustawienia zwarciowe";
-            this.button_Short_parameters.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_Short_parameters.UseVisualStyleBackColor = true;
-            this.button_Short_parameters.Click += new System.EventHandler(this.button_Short_parameters_Click);
-            // 
-            // pictureBox_Map
-            // 
-            this.pictureBox_Map.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pictureBox_Map.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox_Map.Name = "pictureBox_Map";
-            this.pictureBox_Map.Size = new System.Drawing.Size(1200, 800);
-            this.pictureBox_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox_Map.TabIndex = 0;
-            this.pictureBox_Map.TabStop = false;
-            this.pictureBox_Map.Click += new System.EventHandler(this.pictureBox_Map_Click);
-            this.pictureBox_Map.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Map_MouseMove);
-            // 
             // databaseBindingSource
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
+            // 
+            // kryptonGroupBox2
+            // 
+            this.kryptonGroupBox2.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox2.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox2.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox2.Location = new System.Drawing.Point(166, 0);
+            this.kryptonGroupBox2.Name = "kryptonGroupBox2";
+            // 
+            // kryptonGroupBox2.Panel
+            // 
+            this.kryptonGroupBox2.Panel.Controls.Add(this.button_Build_Node);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.button_Build_Line);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.button_Build_Transformator);
+            this.kryptonGroupBox2.Panel.Controls.Add(this.button_Build_Generator);
+            this.kryptonGroupBox2.Size = new System.Drawing.Size(353, 157);
+            this.kryptonGroupBox2.TabIndex = 16;
+            this.kryptonGroupBox2.Values.Heading = "Elementy Zwarciowe";
+            // 
+            // kryptonGroupBox3
+            // 
+            this.kryptonGroupBox3.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox3.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox3.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox3.Location = new System.Drawing.Point(519, 0);
+            this.kryptonGroupBox3.Name = "kryptonGroupBox3";
+            // 
+            // kryptonGroupBox3.Panel
+            // 
+            this.kryptonGroupBox3.Panel.Controls.Add(this.button_Build_Inspector);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.button_Build_Delete);
+            this.kryptonGroupBox3.Panel.Controls.Add(this.button_Build_Grab);
+            this.kryptonGroupBox3.Size = new System.Drawing.Size(265, 157);
+            this.kryptonGroupBox3.TabIndex = 17;
+            this.kryptonGroupBox3.Values.Heading = "Narzędzia";
+            // 
+            // kryptonGroupBox4
+            // 
+            this.kryptonGroupBox4.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox4.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox4.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox4.Location = new System.Drawing.Point(0, 0);
+            this.kryptonGroupBox4.Name = "kryptonGroupBox4";
+            // 
+            // kryptonGroupBox4.Panel
+            // 
+            this.kryptonGroupBox4.Panel.Controls.Add(this.button_Map_Select);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.button_Map_Delete_All);
+            this.kryptonGroupBox4.Panel.Controls.Add(this.button_Map_Delete);
+            this.kryptonGroupBox4.Size = new System.Drawing.Size(247, 157);
+            this.kryptonGroupBox4.TabIndex = 16;
+            this.kryptonGroupBox4.Values.Heading = "Edycja Mapy";
+            // 
+            // kryptonGroupBox5
+            // 
+            this.kryptonGroupBox5.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox5.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox5.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox5.Location = new System.Drawing.Point(247, 0);
+            this.kryptonGroupBox5.Name = "kryptonGroupBox5";
+            // 
+            // kryptonGroupBox5.Panel
+            // 
+            this.kryptonGroupBox5.Panel.Controls.Add(this.button_Map_Set_Scale_Hand);
+            this.kryptonGroupBox5.Panel.Controls.Add(this.textBox_Map_Set_Scale_Pixels);
+            this.kryptonGroupBox5.Panel.Controls.Add(this.button_Map_Set_Scale_Selected);
+            this.kryptonGroupBox5.Panel.Controls.Add(this.textBox_Map_Set_Scale_Kilometers);
+            this.kryptonGroupBox5.Panel.Controls.Add(this.label2);
+            this.kryptonGroupBox5.Panel.Controls.Add(this.label1);
+            this.kryptonGroupBox5.Size = new System.Drawing.Size(274, 157);
+            this.kryptonGroupBox5.TabIndex = 17;
+            this.kryptonGroupBox5.Values.Heading = "Edycja Skali";
+            // 
+            // kryptonGroupBox6
+            // 
+            this.kryptonGroupBox6.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.kryptonGroupBox6.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox6.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox6.Location = new System.Drawing.Point(0, 0);
+            this.kryptonGroupBox6.Name = "kryptonGroupBox6";
+            // 
+            // kryptonGroupBox6.Panel
+            // 
+            this.kryptonGroupBox6.Panel.Controls.Add(this.HELP);
+            this.kryptonGroupBox6.Size = new System.Drawing.Size(136, 45);
+            this.kryptonGroupBox6.TabIndex = 16;
+            this.kryptonGroupBox6.Values.Heading = "Wybrany Tryb";
+            // 
+            // kryptonGroupBox7
+            // 
+            this.kryptonGroupBox7.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kryptonGroupBox7.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox7.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox7.Location = new System.Drawing.Point(0, 45);
+            this.kryptonGroupBox7.Name = "kryptonGroupBox7";
+            // 
+            // kryptonGroupBox7.Panel
+            // 
+            this.kryptonGroupBox7.Panel.Controls.Add(this.HELP_Multiline2);
+            this.kryptonGroupBox7.Size = new System.Drawing.Size(136, 492);
+            this.kryptonGroupBox7.TabIndex = 17;
+            this.kryptonGroupBox7.Values.Heading = "Informator";
+            // 
+            // kryptonGroupBox8
+            // 
+            this.kryptonGroupBox8.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox8.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox8.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox8.Location = new System.Drawing.Point(0, 0);
+            this.kryptonGroupBox8.Name = "kryptonGroupBox8";
+            // 
+            // kryptonGroupBox8.Panel
+            // 
+            this.kryptonGroupBox8.Panel.Controls.Add(this.button_Short_parameters);
+            this.kryptonGroupBox8.Panel.Controls.Add(this.button_Short_Set_Node);
+            this.kryptonGroupBox8.Panel.Controls.Add(this.button_Short_Run);
+            this.kryptonGroupBox8.Size = new System.Drawing.Size(251, 157);
+            this.kryptonGroupBox8.TabIndex = 16;
+            this.kryptonGroupBox8.Values.Heading = "Obsługa Zwarcia";
             // 
             // MainWindow
             // 
@@ -880,7 +1035,6 @@
             this.Text = "P.I.O.R.U.N.";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -892,10 +1046,12 @@
             this.kryptonNavigator1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage2)).EndInit();
             this.kryptonPage2.ResumeLayout(false);
-            this.kryptonPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage1)).EndInit();
             this.kryptonPage1.ResumeLayout(false);
-            this.kryptonPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1.Panel)).EndInit();
+            this.kryptonGroupBox1.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox1)).EndInit();
+            this.kryptonGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage3)).EndInit();
             this.kryptonPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPage4)).EndInit();
@@ -914,10 +1070,41 @@
             this.kryptonPage7.ResumeLayout(false);
             this.panel_Main_Map.ResumeLayout(false);
             this.panel_Main_Map.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2.Panel)).EndInit();
+            this.kryptonGroupBox2.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox2)).EndInit();
+            this.kryptonGroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3.Panel)).EndInit();
+            this.kryptonGroupBox3.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox3)).EndInit();
+            this.kryptonGroupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4.Panel)).EndInit();
+            this.kryptonGroupBox4.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox4)).EndInit();
+            this.kryptonGroupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5.Panel)).EndInit();
+            this.kryptonGroupBox5.Panel.ResumeLayout(false);
+            this.kryptonGroupBox5.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox5)).EndInit();
+            this.kryptonGroupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox6.Panel)).EndInit();
+            this.kryptonGroupBox6.Panel.ResumeLayout(false);
+            this.kryptonGroupBox6.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox6)).EndInit();
+            this.kryptonGroupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox7.Panel)).EndInit();
+            this.kryptonGroupBox7.Panel.ResumeLayout(false);
+            this.kryptonGroupBox7.Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox7)).EndInit();
+            this.kryptonGroupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox8.Panel)).EndInit();
+            this.kryptonGroupBox8.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox8)).EndInit();
+            this.kryptonGroupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -990,7 +1177,15 @@
         private System.Windows.Forms.Button button_Show_elements_Data;
         private System.Windows.Forms.Button button_Show_Ngh_VZ;
         private System.Windows.Forms.Button button_Check_Impedance_Status;
-        private System.Windows.Forms.Label label3;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox5;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox4;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox3;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox7;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox6;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox8;
     }
 }
 
