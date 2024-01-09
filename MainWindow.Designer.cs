@@ -37,7 +37,7 @@
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.kryptonGroupBox7 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
-            this.HELP_Multiline2 = new System.Windows.Forms.TextBox();
+            this.Info = new System.Windows.Forms.TextBox();
             this.kryptonGroupBox6 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.HELP = new System.Windows.Forms.TextBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -250,19 +250,19 @@
             // 
             // kryptonGroupBox7.Panel
             // 
-            this.kryptonGroupBox7.Panel.Controls.Add(this.HELP_Multiline2);
+            this.kryptonGroupBox7.Panel.Controls.Add(this.Info);
             this.kryptonGroupBox7.Size = new System.Drawing.Size(136, 492);
             this.kryptonGroupBox7.TabIndex = 17;
             this.kryptonGroupBox7.Values.Heading = "Informator";
             // 
-            // HELP_Multiline2
+            // Info
             // 
-            this.HELP_Multiline2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HELP_Multiline2.Location = new System.Drawing.Point(0, 0);
-            this.HELP_Multiline2.Multiline = true;
-            this.HELP_Multiline2.Name = "HELP_Multiline2";
-            this.HELP_Multiline2.Size = new System.Drawing.Size(132, 470);
-            this.HELP_Multiline2.TabIndex = 2;
+            this.Info.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Info.Location = new System.Drawing.Point(0, 0);
+            this.Info.Multiline = true;
+            this.Info.Name = "Info";
+            this.Info.Size = new System.Drawing.Size(132, 470);
+            this.Info.TabIndex = 2;
             // 
             // kryptonGroupBox6
             // 
@@ -1172,7 +1172,7 @@
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TextBox HELP_Multiline2;
+        private System.Windows.Forms.TextBox Info;
         private System.Windows.Forms.TextBox HELP;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.PictureBox pictureBox_Map;
