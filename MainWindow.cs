@@ -192,21 +192,22 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
 
             //////////////////////////////// Funkcje mapy
-            private void pictureBox_Map_Click(object sender, EventArgs e) // Inicjowanie budowania wybranego elementu poprzez kliknięcie w PictureBox
+            private void pictureBox_Map_Click(object sender, EventArgs e) // Kliknięcie w obiekt PictureBox
             {
                 switch (Var.mode) 
                 {
-                    case "Build_Node": Create_Element_Node(); break;
-                    case "Build_Line":  break;
-                    case "Build_Transformator": ; break;
-                    case "Build_Generator": ; break;
-                    case "Build_Receiver": ; break;
-                    case "Build_System": ; break;
+                    case "Build_Node": Create_Element_Node(); break; // Wybranie trybu Build_Node
+                    case "Build_Line":  break; // Wybranie trybu Build_Line
+                    case "Build_Transformator": ; break; // Wybranie trybu Build_Transformator
+                    case "Build_Generator": ; break; // Wybranie trybu Build_Generaator
+                    case "Build_Receiver": ; break; // Wybranie trybu Build_Receiver
+                    case "Build_System": ; break; // Wybranie trybu Build_System
 
                     case "Build_Delete": ; break; // Usuwanie wybranego elementu
                     case "Build_Inspector": ; break; // Przejście do trybu inspekcji
                     case "Build_Grab":; break; //Przejście do trybu przesuwania
-                    default: MessageBox.Show("Coś poszło nie tak. Upewnij sie, że zmienna Var.mode jest prawidłowo ustawiona"); break;
+
+                    default: MessageBox.Show("Błąd. Upewnij sie, że zmienna Var.mode jest prawidłowo ustawiona"); break;
 
                 }
 
@@ -249,19 +250,19 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         } // Ustala miejsce zwarcia
 
             // TRYB: KONTROLI
-             private void button_Check_Elements_Click(object sender, EventArgs e)
+            private void button_Check_Elements_Click(object sender, EventArgs e)
              {
                 Result_Form R_F = new Result_Form();
                 Check_Elements();
                 R_F.Show();
              } // Sprawdzanie przypisania elementów
-             private void button_Show_elements_Data_Click(object sender, EventArgs e) 
+            private void button_Show_elements_Data_Click(object sender, EventArgs e) 
             {
             Result_Form R_F = new Result_Form();
             Show_Elements_Data();
             R_F.Show();
         } // Pokaż dane elementów
-             private void button_Show_Ngh_VZ_Click(object sender, EventArgs e)
+            private void button_Show_Ngh_VZ_Click(object sender, EventArgs e)
         {
             Result_Form R_form = new Result_Form();
             foreach (Voltage_Zone item in Database.ListOfVoltage_Zones)
@@ -277,7 +278,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             R_form.Show();
 
         } // Pokazuje listę sąsiednich stref napięcia
-             private void button_Check_Impedance_Status_Click(object sender, EventArgs e)
+            private void button_Check_Impedance_Status_Click(object sender, EventArgs e)
         {
 
             foreach (Element item in Database.ListOfElements)
