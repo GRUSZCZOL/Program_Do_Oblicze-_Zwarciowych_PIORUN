@@ -103,6 +103,8 @@
             this.skrótyKlawiszoweToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.kryptonGroupBox9 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
+            this.kryptonGroupBox10 = new ComponentFactory.Krypton.Toolkit.KryptonGroupBox();
             this.databaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -168,6 +170,14 @@
             this.panel_Main_Map.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox9.Panel)).BeginInit();
+            this.kryptonGroupBox9.Panel.SuspendLayout();
+            this.kryptonGroupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox10.Panel)).BeginInit();
+            this.kryptonGroupBox10.Panel.SuspendLayout();
+            this.kryptonGroupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -314,7 +324,7 @@
             this.kryptonPage5,
             this.kryptonPage6,
             this.kryptonPage8});
-            this.kryptonNavigator1.SelectedIndex = 1;
+            this.kryptonNavigator1.SelectedIndex = 6;
             this.kryptonNavigator1.Size = new System.Drawing.Size(1044, 184);
             this.kryptonNavigator1.TabIndex = 0;
             this.kryptonNavigator1.Text = "kryptonNavigator1";
@@ -740,7 +750,7 @@
             this.kryptonPage4.LastVisibleSet = true;
             this.kryptonPage4.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage4.Name = "kryptonPage4";
-            this.kryptonPage4.Size = new System.Drawing.Size(1051, 125);
+            this.kryptonPage4.Size = new System.Drawing.Size(1042, 157);
             this.kryptonPage4.Text = "Rozpływ Mocy";
             this.kryptonPage4.ToolTipTitle = "Page ToolTip";
             this.kryptonPage4.UniqueName = "57BAD251C33349270ABD15D545CF3E81";
@@ -752,7 +762,7 @@
             this.kryptonPage5.LastVisibleSet = true;
             this.kryptonPage5.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage5.Name = "kryptonPage5";
-            this.kryptonPage5.Size = new System.Drawing.Size(1051, 125);
+            this.kryptonPage5.Size = new System.Drawing.Size(1042, 157);
             this.kryptonPage5.Text = "Nagrzewanie";
             this.kryptonPage5.ToolTipTitle = "Page ToolTip";
             this.kryptonPage5.UniqueName = "377892426D384060558757A1DEB331EE";
@@ -764,7 +774,7 @@
             this.kryptonPage6.LastVisibleSet = true;
             this.kryptonPage6.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage6.Name = "kryptonPage6";
-            this.kryptonPage6.Size = new System.Drawing.Size(1051, 125);
+            this.kryptonPage6.Size = new System.Drawing.Size(1042, 157);
             this.kryptonPage6.Text = "Rysowanie";
             this.kryptonPage6.ToolTipTitle = "Page ToolTip";
             this.kryptonPage6.UniqueName = "743438BE66BE4199BD9BC84246277C31";
@@ -772,57 +782,59 @@
             // kryptonPage8
             // 
             this.kryptonPage8.AutoHiddenSlideSize = new System.Drawing.Size(200, 200);
-            this.kryptonPage8.Controls.Add(this.button_Check_Impedance_Status);
-            this.kryptonPage8.Controls.Add(this.button_Show_Ngh_VZ);
-            this.kryptonPage8.Controls.Add(this.button_Show_elements_Data);
-            this.kryptonPage8.Controls.Add(this.button_Check_Elements);
+            this.kryptonPage8.Controls.Add(this.kryptonGroupBox10);
+            this.kryptonPage8.Controls.Add(this.kryptonGroupBox9);
             this.kryptonPage8.Flags = 65534;
             this.kryptonPage8.LastVisibleSet = true;
             this.kryptonPage8.MinimumSize = new System.Drawing.Size(50, 50);
             this.kryptonPage8.Name = "kryptonPage8";
-            this.kryptonPage8.Size = new System.Drawing.Size(1051, 125);
+            this.kryptonPage8.Size = new System.Drawing.Size(1042, 157);
             this.kryptonPage8.Text = "Kontrola elementów";
             this.kryptonPage8.ToolTipTitle = "Page ToolTip";
             this.kryptonPage8.UniqueName = "6273A0BC2D634AEEE2BC1189B6857918";
             // 
             // button_Check_Impedance_Status
             // 
-            this.button_Check_Impedance_Status.Location = new System.Drawing.Point(85, 63);
+            this.button_Check_Impedance_Status.BackColor = System.Drawing.Color.Ivory;
+            this.button_Check_Impedance_Status.Location = new System.Drawing.Point(87, 8);
             this.button_Check_Impedance_Status.Name = "button_Check_Impedance_Status";
-            this.button_Check_Impedance_Status.Size = new System.Drawing.Size(73, 55);
+            this.button_Check_Impedance_Status.Size = new System.Drawing.Size(73, 111);
             this.button_Check_Impedance_Status.TabIndex = 3;
             this.button_Check_Impedance_Status.Text = "załaduj impedancje elementów";
-            this.button_Check_Impedance_Status.UseVisualStyleBackColor = true;
+            this.button_Check_Impedance_Status.UseVisualStyleBackColor = false;
             this.button_Check_Impedance_Status.Click += new System.EventHandler(this.button_Check_Impedance_Status_Click);
             // 
             // button_Show_Ngh_VZ
             // 
-            this.button_Show_Ngh_VZ.Location = new System.Drawing.Point(85, 3);
+            this.button_Show_Ngh_VZ.BackColor = System.Drawing.Color.Ivory;
+            this.button_Show_Ngh_VZ.Location = new System.Drawing.Point(12, 11);
             this.button_Show_Ngh_VZ.Name = "button_Show_Ngh_VZ";
-            this.button_Show_Ngh_VZ.Size = new System.Drawing.Size(75, 54);
+            this.button_Show_Ngh_VZ.Size = new System.Drawing.Size(75, 111);
             this.button_Show_Ngh_VZ.TabIndex = 2;
             this.button_Show_Ngh_VZ.Text = "pokaż sąsiednie strefy";
-            this.button_Show_Ngh_VZ.UseVisualStyleBackColor = true;
+            this.button_Show_Ngh_VZ.UseVisualStyleBackColor = false;
             this.button_Show_Ngh_VZ.Click += new System.EventHandler(this.button_Show_Ngh_VZ_Click);
             // 
             // button_Show_elements_Data
             // 
-            this.button_Show_elements_Data.Location = new System.Drawing.Point(4, 64);
+            this.button_Show_elements_Data.BackColor = System.Drawing.Color.Ivory;
+            this.button_Show_elements_Data.Location = new System.Drawing.Point(166, 9);
             this.button_Show_elements_Data.Name = "button_Show_elements_Data";
-            this.button_Show_elements_Data.Size = new System.Drawing.Size(75, 54);
+            this.button_Show_elements_Data.Size = new System.Drawing.Size(75, 110);
             this.button_Show_elements_Data.TabIndex = 1;
             this.button_Show_elements_Data.Text = "pokaż dane elementów";
-            this.button_Show_elements_Data.UseVisualStyleBackColor = true;
+            this.button_Show_elements_Data.UseVisualStyleBackColor = false;
             this.button_Show_elements_Data.Click += new System.EventHandler(this.button_Show_elements_Data_Click);
             // 
             // button_Check_Elements
             // 
-            this.button_Check_Elements.Location = new System.Drawing.Point(4, 4);
+            this.button_Check_Elements.BackColor = System.Drawing.Color.Ivory;
+            this.button_Check_Elements.Location = new System.Drawing.Point(6, 9);
             this.button_Check_Elements.Name = "button_Check_Elements";
-            this.button_Check_Elements.Size = new System.Drawing.Size(75, 54);
+            this.button_Check_Elements.Size = new System.Drawing.Size(75, 110);
             this.button_Check_Elements.TabIndex = 0;
             this.button_Check_Elements.Text = "wykaz elementów";
-            this.button_Check_Elements.UseVisualStyleBackColor = true;
+            this.button_Check_Elements.UseVisualStyleBackColor = false;
             this.button_Check_Elements.Click += new System.EventHandler(this.button_Check_Elements_Click);
             // 
             // splitContainer3
@@ -1017,6 +1029,40 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // kryptonGroupBox9
+            // 
+            this.kryptonGroupBox9.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox9.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox9.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox9.Location = new System.Drawing.Point(0, 0);
+            this.kryptonGroupBox9.Name = "kryptonGroupBox9";
+            // 
+            // kryptonGroupBox9.Panel
+            // 
+            this.kryptonGroupBox9.Panel.Controls.Add(this.button_Check_Elements);
+            this.kryptonGroupBox9.Panel.Controls.Add(this.button_Check_Impedance_Status);
+            this.kryptonGroupBox9.Panel.Controls.Add(this.button_Show_elements_Data);
+            this.kryptonGroupBox9.Size = new System.Drawing.Size(254, 157);
+            this.kryptonGroupBox9.TabIndex = 16;
+            this.kryptonGroupBox9.Values.Heading = "Elementy";
+            // 
+            // kryptonGroupBox10
+            // 
+            this.kryptonGroupBox10.CaptionStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.BoldPanel;
+            this.kryptonGroupBox10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.kryptonGroupBox10.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonStandalone;
+            this.kryptonGroupBox10.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom2;
+            this.kryptonGroupBox10.Location = new System.Drawing.Point(254, 0);
+            this.kryptonGroupBox10.Name = "kryptonGroupBox10";
+            // 
+            // kryptonGroupBox10.Panel
+            // 
+            this.kryptonGroupBox10.Panel.Controls.Add(this.button_Show_Ngh_VZ);
+            this.kryptonGroupBox10.Size = new System.Drawing.Size(180, 157);
+            this.kryptonGroupBox10.TabIndex = 17;
+            this.kryptonGroupBox10.Values.Heading = "Strefy Napięcia";
+            // 
             // databaseBindingSource
             // 
             this.databaseBindingSource.DataSource = typeof(Program_Do_Obliczeń_Zwarciowych_PIORUN.Database);
@@ -1104,6 +1150,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Map)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox9.Panel)).EndInit();
+            this.kryptonGroupBox9.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox9)).EndInit();
+            this.kryptonGroupBox9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox10.Panel)).EndInit();
+            this.kryptonGroupBox10.Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.kryptonGroupBox10)).EndInit();
+            this.kryptonGroupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.databaseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1186,6 +1240,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox7;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox6;
         private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox8;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox9;
+        private ComponentFactory.Krypton.Toolkit.KryptonGroupBox kryptonGroupBox10;
     }
 }
 

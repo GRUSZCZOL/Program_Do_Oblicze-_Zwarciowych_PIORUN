@@ -119,10 +119,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         }
             private void button_Voltage_Zones_Delete_Click(object sender, EventArgs e)
         {
-            while (listBox_Voltage_Zones.SelectedItems.Count > 0)
-            {
-                listBox_Voltage_Zones.Items.Remove(listBox_Voltage_Zones.SelectedItems[0]);
-            }
+           
         } // Usuwanie strefy napięcia
 
 
@@ -352,6 +349,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Nd.Image = ((System.Drawing.Image)(Properties.Resources.Node));
                 Nd.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Nd.Location = new Point(Var.m_X + panel_Main_Map.HorizontalScroll.Value - (Nd.Size.Width / 2), Var.m_Y + panel_Main_Map.VerticalScroll.Value - (Nd.Size.Height / 2));
+                Nd.TextAlign = ContentAlignment.MiddleLeft; 
                 Nd.Text = Nd.Index.ToString();
 
                 // Color bc = Color.FromArgb(Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[0], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[1], Var.InterpolateColor(listBox_Voltage_Zones.SelectedIndex, listBox_Voltage_Zones.Items.Count)[2]);

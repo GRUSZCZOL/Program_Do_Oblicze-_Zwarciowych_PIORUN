@@ -94,6 +94,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                         tran.Z_1_L = Set_Impedance_L ;
                         tran.elm_tr_H = Ur_H / Ur_L;
                         tran.elm_tr_L = Ur_L / Ur_H;
+                        tran.Image = ((System.Drawing.Image)(Properties.Resources.Transformator));
                     }
                 }
 
