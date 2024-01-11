@@ -28,7 +28,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         public double elm_tr_H =1;
         public double elm_tr_L =1;
 
-
+        public int vz_Parent_Index;
         public List<Node> ListOfNghbNode = new List<Node>(); // Lista sąsiednich Nodeów  
 
         public int Index;

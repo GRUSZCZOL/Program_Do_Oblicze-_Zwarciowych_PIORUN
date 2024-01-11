@@ -69,6 +69,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                                 tran.Z = tran.Z_1*tr;
                                 //wartość w kwadracie !!!!
                                 vz_ngh.tr = Math.Pow(tran.elm_tr_H, 2) * prev_tr;
+                                //Database.Tr_Data.Add(vz_ngh.Index,vz_ngh.tr);
                             }
                             else // Druga opcja
                             {
@@ -76,6 +77,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                                 tran.Z = tran.Z_1 * tr;
                                 //wartość w kwadracie !!!!
                                 vz_ngh.tr = Math.Pow(tran.elm_tr_L, 2) * prev_tr;
+                                //Database.Tr_Data.Add(vz_ngh.Index, vz_ngh.tr);
                             }
 
 
