@@ -34,13 +34,14 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
         {
             // UZUPEŁNIANIE BAZ DANYCH
 
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(400,Color.Orange) { Name = "400" , Index = 1});
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(220, Color.Blue) { Name = "220",Index = 2 });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(110, Color.Green) { Name = "110", Index = 3 });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(30, Color.Yellow) { Name = "30", Index = 4 });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(10, Color.Yellow) { Name = "10", Index = 5 });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(6, Color.Red) { Name = "6", Index = 6 });
-            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(1, Color.Purple) { Name = "1", Index = 7 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(400,Color.Orange) { Name = "400 kV" , Index = 1});
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(220, Color.Blue) { Name = "220 kV",Index = 2 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(110, Color.Green) { Name = "110 kV", Index = 3 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(30, Color.Yellow) { Name = "30 kV", Index = 4 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(10, Color.Pink) { Name = "10 kV", Index = 5 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(6, Color.Red) { Name = "6 kV", Index = 6 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(1, Color.Purple) { Name = "1 kV", Index = 7 });
+            Database.ListOfVoltage_Zones.Add(new Voltage_Zone(0.4, Color.Black) { Name = "0,4 kV", Index = 8 });
 
 
             listBox_Voltage_Zones.DataSource = Database.ListOfVoltage_Zones;
@@ -708,25 +709,31 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             foreach (Element Elm in Database.ListOfLines) 
             {
                 Elm.Z = Elm.Z_1 * Database.Tr_Data[Elm.vz_Parent_Index];
-                MessageBox.Show("Nazwa: "+Elm.Name+" Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : "+Elm.Z_1+" Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index]);
-                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] = -1 / Elm.Z;
-                Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] = -1 / Elm.Z;
+                MessageBox.Show("Nazwa: "+Elm.Name+" Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : "+Elm.Z_1+" Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index] + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
+                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += -1 / Elm.Z;
+                Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += -1 / Elm.Z;
+                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += 1 / Elm.Z;
+                Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += 1 / Elm.Z;
             }
+
+
 
             foreach (Element Elm in Database.ListOfGenerators)
             {
                 Elm.Z = Elm.Z_1 * Database.Tr_Data[Elm.vz_Parent_Index];
-                MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : " + Elm.Z_1 + " Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index]);
-                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] = -1 / Elm.Z;
-                Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] = -1 / Elm.Z;
+                MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : " + Elm.Z_1 + " Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index] + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
+                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += -1 / Elm.Z;
+                //Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] = -1 / Elm.Z;
             }
 
             foreach (Element Elm in Database.ListOfTransformators)
             {
                // Elm.Z = Elm.Z_1 * Database.Tr_Data[Elm.vz_Parent_Index];
-                MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1_H : " + Elm.Z_1_H + " Impedancja Z_1_L : " + Elm.Z_1_L);
-                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] = -1 / Elm.Z;
-                Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] = -1 / Elm.Z;
+                MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1_H : " + Elm.Z_1_H + " Impedancja Z_1_L : " + Elm.Z_1_L + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
+                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += -1 / Elm.Z;
+                Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += -1 / Elm.Z;
+                Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += 1 / Elm.Z;
+                Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += 1 / Elm.Z;
             }
 
             foreach (Node Nd in Database.ListOfNodes) 
