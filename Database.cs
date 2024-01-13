@@ -35,6 +35,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 
         public static List<Voltage_Zone> ListOfVoltage_Zones = new List<Voltage_Zone>(); // Nowy system Voltage Zones
 
+        public static List<PictureBox> ListOfShortImages = new List<PictureBox>();  // Lista grafik zwarcia
+
 
         public static List<Line_Data> ListOfLineData = new List<Line_Data>(); // Lista przechowująca wszystkie typy linii
         public static List<Generator_Data> ListOfGeneratorData = new List<Generator_Data>(); // Lista przechowująca wszystkie typy Generatorów

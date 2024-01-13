@@ -127,8 +127,17 @@
   <data name="Bucket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bucket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Build_Mode_Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Build_Mode_Generator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Generator_Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Generator_Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Short_Mode(64)_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Short_Mode(64)_True.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Short_Mode_Options" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Short_Mode_Options.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line_Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Line_Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,14 +148,26 @@
   <data name="Map_Mode_Delete_All" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Map_Mode_Delete_All.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Move" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Generator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transformator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Transformator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Map_Mode_Load_Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Map_Mode_Load_Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Node" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Node.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Map_Mode_Set_Scale_Calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Map_Mode_Set_Scale_Calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inspector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inspector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +178,8 @@
   <data name="Short_Mode_Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Short_Mode_Run.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Short_Mode_Options" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Short_Mode_Options.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Node_Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Node_Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Build_Mode_Node" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Build_Mode_Node.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,34 +187,16 @@
   <data name="Build_Mode_Transformator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Build_Mode_Transformator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Short_Mode(64)_True" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Short_Mode(64)_True.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Map_Mode_Set_Scale_Calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Map_Mode_Set_Scale_Calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Generator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Generator_Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Generator_Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Line" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Line_Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Line_Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Node" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Node.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Node_Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Node_Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Transformator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Transformator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Build_Mode_Generator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Build_Mode_Generator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Transformator_Alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Transformator_Alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Short_Mode_Set_Short(32)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Short_Mode_Set_Short(32).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

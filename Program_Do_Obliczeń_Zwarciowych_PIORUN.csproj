@@ -283,5 +283,8 @@
   <ItemGroup>
     <None Include="Resources\Transformator_Alert.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Short_Mode_Set_Short%2832%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

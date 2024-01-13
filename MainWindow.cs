@@ -921,6 +921,16 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             Var.short_Voltage_Zone = Nd.voltage_Zone; // Strefa napięcia od któej zaczyna się rysowanie grafu
             Var.short_Index = Nd.Index; // Indeks węzła w któym nastąpiło zwarcie
 
+            PictureBox short_image = new PictureBox();
+            this.Controls.Add(short_image);
+            short_image.Parent = pictureBox_Map;
+            Database.ListOfShortImages.Add(short_image);
+            short_image.Image = ((System.Drawing.Image)(Properties.Resources.Short_Mode_Set_Short_32_));
+            short_image.Location = new Point(Nd.Location.X + (Nd.Width/2) +10, Nd.Location.Y - 10);
+            short_image.Size = new Size(32,32);
+            short_image.BringToFront();
+            short_image.BackColor = Color.Red;
+            
         } // Metoda ustalająca miejsce zwarcia
             public void Check_Elements() 
             {
@@ -1085,7 +1095,8 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             I_1 = (Var.c * Var.short_Voltage_Zone) / (Math.Sqrt(3) * Var.Z_1[Var.short_Index-1,Var.short_Index-1]);
             Var.res += "Macierz Admitancji: Y:\r\n" + Var.Y_1;
             Var.res += "Macierz Impedancji: Z:\r\n" + Var.Z_1;
-            Var.res += "Prąd I_k: " + I_1.Real + " " + I_1.Imaginary + "i" + " [kA]";
+            Var.res += "Prąd I_k: " + I_1.Real + " " + I_1.Imaginary + "i" + " [kA]"+"\r\n";
+            Var.res += "|I_k|: " + Math.Sqrt(Math.Pow(I_1.Real,2)+Math.Pow(I_1.Imaginary,2)) + " [kA]";
 
         }
 
