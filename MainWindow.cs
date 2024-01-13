@@ -417,7 +417,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Elm.Image = ((System.Drawing.Image)(Properties.Resources.Generator_Alert)); // Do odkomentowania
                 Elm.Size = new Size(Var.button_size_Width, Var.button_size_Height);
                 Elm.Location = new Point( Nd.Location.X-80, Nd.Location.Y + 80);
-                Elm.Text = "Gen_"+Elm.Index.ToString();
+                // Elm.Text = "Gen_"+Elm.Index.ToString();
                 Elm.BackColor = Elm.ListOfNghbNode[0].BackColor;
                 Elm.BringToFront();
                 Elm.Show();
@@ -445,7 +445,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                     if (Var.mode == "Build_Inspector")
                     {
                         Var.selectedIndex = Elm.Index;
-                        MessageBox.Show("Nadano indeks: "+ Var.selectedIndex.ToString());
+                        //MessageBox.Show("Nadano indeks: "+ Var.selectedIndex.ToString());
                         FSGen.Show();
                     }
 
@@ -571,7 +571,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 Database.Support.Add(Nd);
                 if (Database.Support[0].voltage_Zone != Database.Support[1].voltage_Zone && Database.Support[0].Location != Database.Support[1].Location) 
                 {
-                    MessageBox.Show("POWODZENIE: Wybrano dwie różne strefy napięcia");
+                    //MessageBox.Show("POWODZENIE: Wybrano dwie różne strefy napięcia");
 
                     Var.index_setup++;
                     Element Elm = new Element(Var.index_setup, "Transformator"); // Tworzenie nowego element
@@ -709,7 +709,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             foreach (Element Elm in Database.ListOfLines) 
             {
                 Elm.Z = Elm.Z_1 * Database.Tr_Data[Elm.vz_Parent_Index];
-                MessageBox.Show("Nazwa: "+Elm.Name+" Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : "+Elm.Z_1+" Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index] + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
+                //MessageBox.Show("Nazwa: "+Elm.Name+" Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : "+Elm.Z_1+" Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index] + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
                 Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += -1 / Elm.Z;
                 Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += -1 / Elm.Z;
                 Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += 1 / Elm.Z;
@@ -721,7 +721,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             foreach (Element Elm in Database.ListOfGenerators)
             {
                 Elm.Z = Elm.Z_1 * Database.Tr_Data[Elm.vz_Parent_Index];
-                MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : " + Elm.Z_1 + " Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index] + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
+                //MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1 : " + Elm.Z_1 + " Przekładnia : " + Database.Tr_Data[Elm.vz_Parent_Index] + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
                 Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += -1 / Elm.Z;
                 //Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] = -1 / Elm.Z;
             }
@@ -729,7 +729,7 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             foreach (Element Elm in Database.ListOfTransformators)
             {
                // Elm.Z = Elm.Z_1 * Database.Tr_Data[Elm.vz_Parent_Index];
-                MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1_H : " + Elm.Z_1_H + " Impedancja Z_1_L : " + Elm.Z_1_L + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
+                //MessageBox.Show("Nazwa: " + Elm.Name + " Impedancja Z: " +Elm.Z+ " Impedancja Z_1_H : " + Elm.Z_1_H + " Impedancja Z_1_L : " + Elm.Z_1_L + "Węzły: (" + (Elm.ListOfNghbNode[0].Index - 1) + ", " + (Elm.ListOfNghbNode[1].Index - 1) + ")");
                 Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[1].Index - 1] += -1 / Elm.Z;
                 Var.Y_1[Elm.ListOfNghbNode[1].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += -1 / Elm.Z;
                 Var.Y_1[Elm.ListOfNghbNode[0].Index - 1, Elm.ListOfNghbNode[0].Index - 1] += 1 / Elm.Z;
@@ -743,95 +743,18 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
                 {
                     sum+= 1/Elm.Z;
                     //Database.ListOf_Nd_Ngh_Elm_Y.Add(1 / Elm.Z);
-                   MessageBox.Show("Sum => " + sum.ToString());
+                   //MessageBox.Show("Sum => " + sum.ToString());
                 }
                 //MessageBox.Show("Admitancja zastępcza dla => " + Nd.Name + " = " + Var.Y_1[Nd.Index - 1, Nd.Index - 1] + "   /   "+list);
-               /* foreach (Complex item in Database.ListOf_Nd_Ngh_Elm_Y) 
-                {
-                    sum += item;
-                }*/
+               
 
                 Var.Y_1[Nd.Index - 1, Nd.Index - 1] = sum;
                 //Database.ListOf_Nd_Ngh_Elm_Y = null;
-                MessageBox.Show("Admitancja zastępcza dla => " + Nd.Name + " = " + Var.Y_1[Nd.Index - 1, Nd.Index - 1]);
+                //MessageBox.Show("Admitancja zastępcza dla => " + Nd.Name + " = " + Var.Y_1[Nd.Index - 1, Nd.Index - 1]);
 
             }
 
-            /*foreach (Voltage_Zone vz in Database.ListOfVoltage_Zones)
-            {
-                // Var.res += "\r\n" + "\r\n";
-                // Var.res += vz.Name + " / tr: " + vz.tr;
-                // Var.res += "\r\n" + "\r\n";
-
-                foreach (Element line in vz.ListOfLines)
-                {
-                    Var.res += "\r\n" + "\r\n";
-                    line.Z = line.Z_1 * vz.tr;
-                    //    Var.res += line.Name + " Z = " +line.Z +" = " + line.Z_1.ToString() + " * " + vz.tr.ToString();
-
-                    Var.Y_1[line.ListOfNghbNode[0].Index - 1, line.ListOfNghbNode[1].Index - 1] = -1 / line.Z;
-                    Var.Y_1[line.ListOfNghbNode[1].Index - 1, line.ListOfNghbNode[0].Index - 1] = -1 / line.Z;
-                }
-
-                foreach (Element gen in vz.ListOfGenerators)
-                {
-                    Var.res += "\r\n" + "\r\n";
-                    gen.Z = gen.Z_1 * vz.tr;
-                    //   MessageBox.Show(gen.Name + " / " + gen.Z.ToString() + " = " + gen.Z_1.ToString() + " * " + vz.tr.ToString());
-                }
-
-                foreach (Element tran in vz.ListOfTransformators)
-                {
-                    Var.Y_1[tran.ListOfNghbNode[0].Index - 1, tran.ListOfNghbNode[1].Index - 1] = -1 / tran.Z;
-                    Var.Y_1[tran.ListOfNghbNode[1].Index - 1, tran.ListOfNghbNode[0].Index - 1] = -1 / tran.Z;
-                    //   MessageBox.Show(tran.Name + " / " + tran.Z.ToString());
-                }
-
-                foreach (Node nd in vz.ListOfNodes)
-                {
-                    foreach (Element elm in nd.ListOfNghElements)
-                    {
-                        Var.Y_1[nd.Index - 1, nd.Index - 1] += 1 / elm.Z;
-                        MessageBox.Show(Var.Y_1[nd.Index - 1, nd.Index - 1].ToString());
-                    }
-                }
-
-
-                // Przeliczanie impedancji przez przekłądnie strefy // Transformatory osobno
-                Var.res += "\r\n" + "\r\n";
-                Var.res += vz.Name + " tr: " + vz.tr;
-                Var.res += "\r\n" + "\r\n";
-
-
-                foreach (Element gen in vz.ListOfGenerators)
-                {
-                    gen.Z = gen.Z_1 * vz.tr;
-                    MessageBox.Show(gen.Name + " / " + gen.Z.ToString() + " = " + gen.Z_1.ToString() + " * " + vz.tr.ToString());
-                }
-                foreach (Element line in vz.ListOfLines)
-                {
-                    line.Z = line.Z_1 * vz.tr;
-                    Var.Y_1[line.ListOfNghbNode[0].Index - 1, line.ListOfNghbNode[1].Index - 1] = -1 / line.Z;
-                    Var.Y_1[line.ListOfNghbNode[1].Index - 1, line.ListOfNghbNode[0].Index - 1] = -1 / line.Z;
-                    MessageBox.Show(line.Name + " / " + line.Z.ToString() + " = " + line.Z_1.ToString() + " * " + vz.tr.ToString());
-                }
-                foreach (Element tran in vz.ListOfTransformators)
-                {
-                    Var.Y_1[tran.ListOfNghbNode[0].Index - 1, tran.ListOfNghbNode[1].Index - 1] = -1 / tran.Z;
-                    Var.Y_1[tran.ListOfNghbNode[1].Index - 1, tran.ListOfNghbNode[0].Index - 1] = -1 / tran.Z;
-                    MessageBox.Show(tran.Name + " / " + tran.Z.ToString());
-                }
-                foreach (Node nd in vz.ListOfNodes)
-                {
-                    foreach (Element elm in nd.ListOfNghElements)
-                    {
-                        Var.Y_1[nd.Index - 1, nd.Index - 1] += 1 / elm.Z;
-                        MessageBox.Show(Var.Y_1[nd.Index - 1, nd.Index - 1].ToString());
-                    }
-                }
-
-
-            }*/
+            
 
             Var.Z_1 = Var.Y_1.Inverse();
 
