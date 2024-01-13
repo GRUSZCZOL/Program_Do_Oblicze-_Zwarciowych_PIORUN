@@ -917,19 +917,21 @@ namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
             {
             Node Nd = sender as Node;
             if(Var.mode == "Short_Set_Node")
+            {
+                Var.short_Voltage_Zone = Nd.voltage_Zone; // Strefa napięcia od któej zaczyna się rysowanie grafu
+                Var.short_Index = Nd.Index; // Indeks węzła w któym nastąpiło zwarcie
 
-            Var.short_Voltage_Zone = Nd.voltage_Zone; // Strefa napięcia od któej zaczyna się rysowanie grafu
-            Var.short_Index = Nd.Index; // Indeks węzła w któym nastąpiło zwarcie
-
-            PictureBox short_image = new PictureBox();
-            this.Controls.Add(short_image);
-            short_image.Parent = pictureBox_Map;
-            Database.ListOfShortImages.Add(short_image);
-            short_image.Image = ((System.Drawing.Image)(Properties.Resources.Short_Mode_Set_Short_32_));
-            short_image.Location = new Point(Nd.Location.X + (Nd.Width/2) +10, Nd.Location.Y - 10);
-            short_image.Size = new Size(32,32);
-            short_image.BringToFront();
-            short_image.BackColor = Color.Red;
+                PictureBox short_image = new PictureBox();
+                this.Controls.Add(short_image);
+                short_image.Parent = pictureBox_Map;
+                Database.ListOfShortImages.Add(short_image);
+                short_image.Image = ((System.Drawing.Image)(Properties.Resources.Short_Mode_Set_Short_32_));
+                short_image.Location = new Point(Nd.Location.X + (Nd.Width / 2) + 10, Nd.Location.Y - 10);
+                short_image.Size = new Size(32, 32);
+                short_image.BringToFront();
+                short_image.BackColor = Color.Red;
+            }
+           
             
         } // Metoda ustalająca miejsce zwarcia
             public void Check_Elements() 
