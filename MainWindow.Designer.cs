@@ -1044,19 +1044,19 @@
             // odAutoraToolStripMenuItem
             // 
             this.odAutoraToolStripMenuItem.Name = "odAutoraToolStripMenuItem";
-            this.odAutoraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.odAutoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.odAutoraToolStripMenuItem.Text = "Od Autora";
             // 
             // poradnikToolStripMenuItem
             // 
             this.poradnikToolStripMenuItem.Name = "poradnikToolStripMenuItem";
-            this.poradnikToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.poradnikToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.poradnikToolStripMenuItem.Text = "Poradnik";
             // 
             // skrótyKlawiszoweToolStripMenuItem
             // 
             this.skrótyKlawiszoweToolStripMenuItem.Name = "skrótyKlawiszoweToolStripMenuItem";
-            this.skrótyKlawiszoweToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.skrótyKlawiszoweToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.skrótyKlawiszoweToolStripMenuItem.Text = "Skróty klawiszowe";
             // 
             // openFileDialog1
