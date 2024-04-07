@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Program_Do_Obliczeń_Zwarciowych_PIORUN
 {
-    public partial class Form1 : Form
+    public partial class Form_Voltage_Zones_Add : Form
     {
-        public Form1()
+        public Form_Voltage_Zones_Add()
         {
             InitializeComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e) //Delete
+        {           
+            Close();           
+        }
+
+        private void button1_Click(object sender, EventArgs e) //Add
+        {
+
         }
     }
 }
